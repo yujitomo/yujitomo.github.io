@@ -1,0 +1,224 @@
+<html>
+
+<head>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link rel="stylesheet" href="../header.css" type="text/css">
+  <link rel="stylesheet" href="../style-file.css" type="text/css">
+
+  <meta http-equiv="Content-Language" content="ja">
+  <meta charset="utf-8">
+
+  <meta name="discription" content="湯地のホームページ">
+  <meta name="keywords" content="湯地智紀">
+  <meta name="author" content="湯地ともき">
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+  <script>
+    MathJax = {
+      chtml: {
+        matchFontHeight: false
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  <title>湯地智紀@RIMS</title>
+</head>
+
+
+<body bgcolor='#ffffff'>
+
+
+  <header class="clearfix border-line">
+    <div id="header-contents">
+      <div class="clearfix">
+        <div class="header-data-logo">
+          &nbsp; Tomoki Yuji &nbsp;
+        </div>
+        <div class="header-data-sublogo">
+          <p></p>
+          <p>&nbsp;&nbsp;</p>
+        </div>
+      </div>
+
+
+      <div class="header-manu clearfix">
+        <ul>
+          <li><a href="../Yujitomo_Top.html">Top</a></li>
+          <li><a href="../Yujitomo_Profile.html">About Me</a></li>
+          <li>
+            <div class="header-here">
+              <a href="../Yujitomo_Papers.html">Papers</a>
+            </div>
+          </li>
+          <li><a href="../Yujitomo_Talks.html">Talks</a></li>
+          <li><a href="../Yujitomo_Notes.html">Notes</a></li>
+          <li><a href="../Yujitomo_Contact.html">Contact</a></li>
+          <li><a href="../Yujitomo_Links.html">Links</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="papers-title">
+    <div class="papers-title-here">
+      <p><span>Category-Theoretic Reconstruction of Schemes</span></p>
+      <p><span>from Categories of Finite Schemes</span></p>
+    </div>
+  </div>
+
+
+  <div class="papers-intro">
+    <p>
+      <span class="papers-intro-en">PDF</span>: &nbsp;
+      <span class="papers-intro-jp">
+        <a href="http://www.kurims.kyoto-u.ac.jp/~motizuki/">望月先生</a>の許可が降り次第,
+        PDFファイルを公開します.
+      </span>
+    </p>
+    <p>
+      <span class="papers-intro-en">arXiv</span>: &nbsp;
+      <span class="papers-intro-jp">
+        公開し次第, リンクを貼ります.
+      </span>
+    </p>
+  </div>
+
+
+  <h1>
+    <div class="clearfix">
+      <div class="head-red">Abstract</div>
+    </div>
+  </h1>
+
+
+  <div class="papers-summary">
+    <p>
+      \(S\)をネータースキームとし,
+      有限\(S\)-スキームのなす
+      \(\mathsf{Sch}_{/S}\)
+      の充満部分圏を
+      \(\mathsf{Fin}_{/S}\)
+      と書くことにします.
+    </p>
+    <p>
+      本論文では, 圏
+      \(\mathsf{Fin}_{/S}\)
+      の圏としての構造のみから函手的に\(S\)を復元するアルゴリズムを与えました.
+    </p>
+  </div>
+
+
+  <h1>
+    Main <span class="this-red">T</span>heorem
+  </h1>
+
+
+  <div class="papers-summary">
+    <p>
+      \(\mathbf{U}\in \mathbf{V}\)をGrothendieck宇宙とし,
+      (\(\mathbf{U}\)-小な) 有限\(S\)-スキーム
+      のなす\(\mathsf{Sch}_{/S}\)の充満部分圏を\(\mathsf{Fin}_{/S}\)と書きます.
+    </p>
+    <p>以下が本論文の主定理です:</p>
+    <p><span class="papers-summary-theorem">Main Theorem</span></p>
+    <div class="papers-main-thm">
+      <p>
+        (1)
+        \(S\)を (\(\mathbf{U}\)-小な) ネータースキームとするとき,
+        以下の対象は\(\mathsf{Fin}_{/S}\)から圏論的に構成される:
+        <ul>
+          <li>
+            任意の\(\mathsf{Fin}_{/S}\)の対象\(T\)に対する
+            (\(\mathbf{V}\)-小な) スキーム\(T_{\mathbf{V}}\)と,
+            (\(\mathbf{V}\)-小な) スキームの間の同型射\(\varphi_{T}:T\to T_{\mathbf{V}}\)と,
+          </li>
+          <li>
+            任意の\(\mathsf{Fin}_{/S}\)の射\(f:T_1\to T_2\)に対する
+            (\(\mathbf{V}\)-小な) スキームの射\(f_{\mathbf{V}}: T_{1,\mathbf{V}}\to T_{2,\mathbf{V}}\)
+            であって, \(\varphi_{T_2}\circ f = f\circ \varphi_{T_1}\)を満たすもの.
+          </li>
+        </ul>
+      </p>
+      <p>
+        (2)
+        \(S,T\)を (\(\mathbf{U}\)-小な) ネータースキームとする.
+        このとき, 自然な射
+        \[\mathrm{Isom}(S,T) \to \mathbf{Isom}(\mathsf{Fin}_{/T},\mathsf{Fin}_{/S})\]
+        は圏同値である.
+      </p>
+    </div>
+    <p>
+      今, \(\mathsf{Fin}_{/S}\)という圏は,
+      \(S\)上の連接層のなす圏\(\mathsf{Coh}(S)\)のテンソル積に関する可換モノイド対象のなす部分圏
+      \(\mathsf{CMon}_{\otimes}(\mathsf{Coh}(S))\)
+      と圏同値ですから,
+    </p>
+    <p>
+      本論文の主定理(2)は以下のように言い換えられます:
+    </p>
+    <p><span class="papers-summary-theorem">Corollary</span></p>
+    <div class="papers-main-thm">
+      <p>
+        \(S,T\)を (\(\mathbf{U}\)-小な) ネータースキームとする.
+        このとき, 自然な射
+        \[\mathrm{Isom}(S,T) \to
+        \mathbf{Isom}(\mathsf{CMon}_{\otimes}(\mathsf{Coh}(T)),\mathsf{CMon}_{\otimes}(\mathsf{Coh}(S)))\]
+        は圏同値である.
+      </p>
+    </div>
+    <p>
+      詳細は
+      <a>PDFファイル</a>
+      をご覧ください。
+    </p>
+  </div>
+
+
+
+  <!--
+  <h1>
+    <div class="clearfix">
+      <div class="head-red">Observation</div>
+    </div>
+  </h1>
+
+
+  <div class="papers-summary">
+  </div>
+ -->
+
+
+
+  <footer>
+    <div class="footer-data">
+      <div class="clearfix">
+        <div class="footer-logo clearfix">
+          <div class="footer-head-red">Tomoki</div>
+          <div class="footer-head-red">Yuji</div>
+        </div>
+        <div class="footer-sublogo">
+          <p></p>
+          <p>
+            &nbsp; @ RIMS &nbsp;
+          </p>
+        </div>
+        <a href="../Yujitomo_Top.html"></a>
+      </div>
+      <div class="footer-copyright">
+        <p>Tomoki Yuji. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

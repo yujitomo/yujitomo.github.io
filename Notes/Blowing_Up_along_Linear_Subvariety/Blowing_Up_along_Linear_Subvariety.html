@@ -1,0 +1,189 @@
+<html>
+
+<head>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link rel="stylesheet" href="../../header.css" type="text/css">
+  <link rel="stylesheet" href="../../style-file.css" type="text/css">
+
+  <meta http-equiv="Content-Language" content="ja">
+  <meta charset="utf-8">
+
+  <meta name="discription" content="湯地のホームページ">
+  <meta name="keywords" content="湯地智紀">
+  <meta name="author" content="湯地ともき">
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+  <script>
+    MathJax = {
+      chtml: {
+        matchFontHeight: false
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+  </script>
+
+  <title>湯地ともき@RIMS</title>
+</head>
+
+
+<body bgcolor='#ffffff'>
+
+
+  <header class="clearfix border-line">
+    <div id="header-contents">
+      <div class="clearfix">
+        <div class="header-data-logo">
+          &nbsp; Tomoki Yuji &nbsp;
+        </div>
+        <div class="header-data-sublogo">
+          <p></p>
+          <p>&nbsp;　&nbsp;</p>
+        </div>
+      </div>
+
+
+      <div class="header-manu clearfix">
+        <ul>
+          <li><a href="../../Yujitomo_Top.html">Top</a></li>
+          <li><a href="../../Yujitomo_Profile.html">About Me</a></li>
+          <li><a href="../../Yujitomo_Papers.html">Papers</a></li>
+          <li><a href="../../Yujitomo_Talks.html">Talks</a></li>
+          <li>
+            <div class="header-here">
+              <a href="../../Yujitomo_Notes.html">Notes</a>
+            </div>
+          </li>
+          <li><a href="../../Yujitomo_Contact.html">Contact</a></li>
+          <li><a href="../../Yujitomo_Links.html">Links</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+
+
+  <div class="papers-title">
+    <div class="papers-title-here">
+      <p><span>Blowing Up along Linear Subvariety</span></p>
+    </div>
+  </div>
+
+
+  <div class="papers-intro">
+    <p>
+      <span class="papers-intro-jp">
+        射影空間を線形部分多様体に沿って爆発してできる多様体の構造に関するノートです.
+      </span>
+    </p>
+    <p>
+      <span class="papers-intro-en">
+        <a href="./Blow up along linear sub.pdf">[PDF]</a>
+      </span>
+    </p>
+  </div>
+
+
+
+
+
+  <h1>
+    Main <span class="this-red">T</span>heorem
+  </h1>
+
+
+  <div class="papers-summary">
+    <p>このノートでは以下の構造定理を証明します:</p>
+    <p>
+      <span class="papers-summary-theorem">Theorem</span>
+    </p>
+    <div class="papers-main-thm">
+      <p>
+        \(k\) を体, \(V\to W\) を有限次元 \(k\)-線形空間の全射,
+        \(K\) をその核とし,
+        \(B\) を \(\mathbb{P}(V)\) の \(\mathbb{P}(W)\) に沿った爆発とする.
+        このとき,
+        \[
+        B\cong \mathbb{P}_{\mathbb{P}(K)}
+        (\mathcal{O}_{\mathbb{P}(K)}(1)\oplus (\mathcal{O}_{\mathbb{P}(K)}\otimes_k W))
+        \]
+        となる.
+      </p>
+    </div>
+    <p>
+      証明は, コホモロジーの半連続性などの定理を用いることは避け,
+      射影束や爆発の普遍性 (cf. [Hartshorne, Theorem II.7.12])
+      などを用いて幾何的に行います.
+    </p>
+    <p>
+      この定理を用いることで, グラスマン多様体と射影空間の直積を
+      incidence varietyに沿って爆発してできる多様体の構造についても調べることができます.
+    </p>
+    <p>
+      この定理を示す過程で, オイラー完全列と呼ばれる以下の完全列の存在も証明します.
+    </p>
+    <p>
+      <span class="papers-summary-theorem">Theorem</span> (Eular Exact Sequence)
+    </p>
+    <div class="papers-main-thm">
+      <p>
+        \(k\) を体, \(n\) を自然数とする.
+        このとき, \(\mathbb{P}^n=\mathbb{P}^n_k\) 上に以下の完全列が存在する:
+        \[
+        0 \to \Omega_{\mathbb{P}^n}(1) \to V\otimes_k\mathcal{O}_{\mathbb{P}^n}
+        \to \mathcal{O}_{\mathbb{P}^n}(1) \to 0.
+        \]
+      </p>
+    </div>
+    <p>
+      Hartshorne氏による教科書「Algebraic Geometry」
+      では, 次数つき加群を用いて計算することによりオイラー完全列の存在が証明されていましたが,
+      このノートでは, それとは異なる視点による証明を与えます.
+    </p>
+    <p>
+      オイラー完全列については変形理論を用いた別証明もありますが,
+      それについては別のノートを作成しようと考えています.
+    </p>
+    <p>
+      詳細は
+      <a href="./Blow up along linear sub.pdf">PDFファイル</a>
+      をご覧ください。
+    </p>
+  </div>
+
+
+
+
+
+
+  <footer>
+    <div class="footer-data">
+      <div class="clearfix">
+        <div class="footer-logo clearfix">
+          <div class="footer-head-red">Tomoki</div>
+          <div class="footer-head-red">Yuji</div>
+        </div>
+        <div class="footer-sublogo">
+          <p></p>
+          <p>
+            &nbsp; @ RIMS &nbsp;
+          </p>
+        </div>
+        <a href="./Yujitomo_Top.html"></a>
+      </div>
+      <div class="footer-copyright">
+        <p>Tomoki Yuji. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,481 @@
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.head-red {
+  float: left;
+  margin-right: 8px;
+}
+
+.head-red:first-letter {
+  color: rgba(255, 46, 71, 0.85);
+}
+
+.head-non {
+  float: left;
+  margin-right: 8px;
+}
+
+.this-red {
+  color: rgba(255, 46, 71, 0.85);
+}
+
+h1 {
+  font-size: 25px;
+  font-weight: lighter;
+  font-family: 'Cormorant Garamond';
+  border-bottom: 1px solid #dadada;
+  padding-left: 10px;
+}
+
+.page-intro {
+  position: relative;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.page-intro p {
+  text-align: center;
+  font-weight: lighter;
+  font-family: 'Noto Serif JP';
+  font-size: small;
+}
+
+.page-intro p span {
+  text-align: center;
+  font-weight: lighter;
+  font-family: 'Cinzel';
+  font-size: 16px;
+}
+
+.page-intro p a {
+  color: #000000;
+  transition: all 0.05s ease-in-out;
+  text-decoration: none;
+}
+
+.page-intro p a:hover {
+  opacity: 0.5;
+}
+
+.page-intro-text {
+  width: 350px;
+  margin: 0 auto;
+}
+
+/*  ここからTop　*/
+.page-intro-text p {
+  text-align: center;
+  font-weight: lighter;
+  font-family: 'Noto Serif JP';
+  font-size: small;
+}
+
+.top-text-bottom {
+  animation-name: top-text-animation;
+  animation-duration: 3.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes top-text-animation {
+  0% {
+    opacity: 0
+  }
+
+  75% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
+.top-text-box {
+  width: 48%;
+  float: left;
+  margin-right: 10px;
+}
+
+.top-text-box p {
+  font-weight: lighter;
+  font-family: 'Noto Serif JP';
+  font-size: small;
+}
+
+.top-text-box p span {
+  border-bottom: 1px solid #dadada;
+}
+
+.top-text-box p a {
+  color: #000000;
+  font-family: 'Cinzel';
+  font-size: 16px;
+  transition: all 0.05s ease-in-out;
+  text-decoration: none;
+}
+
+.top-text-box p a:hover {
+  opacity: 0.5;
+}
+
+/*  ここまでTop　*/
+/*  ここからAbout Me　*/
+.profile-right {
+  width: 25%;
+  float: left;
+  text-align: right;
+  font-size: small;
+  font-family: 'Noto Serif JP';
+}
+
+.profile-left {
+  font-size: small;
+  width: 70%;
+  float: left;
+  padding-left: 15px;
+}
+
+.profile-left p {
+  /*  font-size: 20px;*/
+  font-weight: lighter;
+  font-family: 'Noto Serif JP';
+}
+
+.profile-left p a {
+  color: #000000;
+  transition: all 0.05s ease-in-out;
+  text-decoration: none;
+}
+
+.profile-left p a:hover {
+  opacity: 0.5;
+}
+
+.profile-left p span {
+  border-bottom: 1px solid #dadada;
+  /*color: rgba(255, 46, 71, 0.85);*/
+}
+
+.CV-box {
+  padding-left: 15px;
+}
+
+.CV-box p {
+  font-weight: lighter;
+  font-family: 'Noto Serif JP';
+  font-size: small;
+}
+
+.CV-box p span {
+  border-bottom: 1px solid #dadada;
+}
+
+/*  ここまでAbout Me　*/
+/*  ここからPapers　*/
+.papers-list {
+  width: 300px;
+  float: left;
+  position: relative;
+  z-index: 1;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-bottom: 20px;
+  /*text-align: right;*/
+  border-right: 1px solid #dadada;
+}
+
+.papers-list p {
+  text-align: left;
+  font-weight: lighter;
+  font-family: 'Cormorant Garamond';
+}
+
+.papers-list-text-en {
+  padding-left: 7px;
+  text-align: left;
+  font-weight: lighter;
+  font-family: 'Cormorant Garamond';
+}
+
+.papers-list p span {
+  border-bottom: 1px solid #dadada;
+}
+
+.papers-list a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.papers-list a:hover {
+  opacity: 0.03;
+  background-color: #000000;
+}
+
+.papers-title {
+  position: relative;
+  height: 125px;
+  width: 100%;
+  /*  border-bottom: 1px solid #dadada;*/
+}
+
+.papers-title-here {
+  position: absolute;
+  width: 75%;
+  top: 62%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.papers-title-here p {
+  text-align: center;
+  font-family: 'Cinzel';
+  font-size: 20px;
+}
+
+.papers-title-here p span {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-bottom: 1px solid #dadada;
+}
+
+.papers-intro {
+  position: relative;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.papers-intro p {
+  text-align: center;
+  font-weight: lighter;
+  font-family: 'Cormorant Garamond';
+  /*  font-size: small;*/
+}
+
+/*
+.papers-intro p span {
+  border-bottom: 1px solid #dadada;
+}
+*/
+.papers-intro p a {
+  color: #000000;
+  transition: all 0.05s ease-in-out;
+  text-decoration: none;
+}
+
+.papers-intro p a:hover {
+  opacity: 0.5;
+}
+
+.papers-intro-en {
+  font-family: 'Cormorant Garamond';
+  /*border-bottom: 1px solid #dadada;*/
+}
+
+.papers-intro-jp {
+  font-family: 'Noto Serif JP';
+  font-size: small;
+}
+
+.papers-summary {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.papers-summary p {
+  font-family: 'Noto Serif JP';
+  font-size: small;
+}
+
+.papers-summary p a {
+  color: #000000;
+  transition: all 0.05s ease-in-out;
+  text-decoration: none;
+}
+
+.papers-summary p a:hover {
+  opacity: 0.5;
+}
+
+.papers-summary-theorem {
+  font-size: normal;
+  border-bottom: 1px solid #dadada;
+}
+
+.papers-summary ul li {
+  font-family: 'Noto Serif JP';
+  font-size: small;
+}
+
+.papers-main-thm {
+  margin-left: 10px;
+  padding-left: 10px;
+  /*  border-left: 1px solid #dadada;*/
+}
+
+.papers-main-thm p ul li a {
+  color: #000000;
+  transition: all 0.05s ease-in-out;
+  text-decoration: none;
+}
+
+.papers-main-thm p ul li a:hover {
+  opacity: 0.5;
+}
+
+/*  ここまでPapers　*/
+/*  ここからTalks　*/
+.talks-list {
+  width: 300px;
+  float: left;
+  position: relative;
+  z-index: 1;
+  padding: 5px;
+  border-right: 1px solid #dadada;
+}
+
+.talks-list-text-en {
+  padding-left: 7px;
+  text-align: left;
+  font-weight: lighter;
+  font-family: 'Cormorant Garamond';
+}
+
+.talks-list p {
+  /*text-align: center;*/
+  font-weight: lighter;
+  font-family: 'Cormorant Garamond';
+}
+
+.talks-list p span {
+  border-bottom: 1px solid #dadada;
+}
+
+.talks-list p a {
+  color: #000000;
+  transition: all 0.05s ease-in-out;
+  text-decoration: none;
+}
+
+.talks-list p a:hover {
+  opacity: 0.5;
+}
+
+/*
+.talks-list a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.talks-list a:hover {
+  opacity: 0.03;
+  background-color: #000000;
+}
+*/
+.talk-page-info {
+  position: relative;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.talk-page-info p {
+  text-align: center;
+  font-weight: lighter;
+  font-family: 'Cormorant Garamond';
+  font-size: small;
+}
+
+.talk-page-info p span {
+  border-bottom: 1px solid #dadada;
+}
+
+.talk-page-info p a {
+  color: #000000;
+  transition: all 0.05s ease-in-out;
+  text-decoration: none;
+}
+
+.talk-page-info p a:hover {
+  opacity: 0.5;
+}
+
+/*  ここまでTalks　*/
+/*  ここからContact　*/
+.page-contact-intro {
+  position: relative;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.page-contact-intro p {
+  text-align: center;
+  font-weight: lighter;
+  font-family: 'Noto Serif JP';
+  font-size: small;
+}
+
+.page-contact-intro p span {
+  border-bottom: 1px solid #dadada;
+}
+
+/*
+.postal-address {
+  margin: 0px auto;
+}
+
+.postal-address-left {
+  float: left;
+  font-weight: lighter;
+  font-family: 'Noto Serif JP';
+  font-size: small;
+}
+
+.postal-address-left span {
+  border-bottom: 1px solid #dadada;
+}
+
+.postal-address-right {
+  float: left;
+  font-weight: lighter;
+  font-family: 'Noto Serif JP';
+  font-size: small;
+}
+*/
+/*  ここまでContact　*/
+/*  ここからLinks　*/
+.links-list {
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+  padding: 8px;
+}
+
+.links-list p {
+  font-size: small;
+  font-family: 'Noto Serif JP';
+}
+
+.links-list a {
+  color: #000000;
+  transition: all 0.05s ease-in-out;
+  text-decoration: none;
+}
+
+.links-list a:hover {
+  opacity: 0.5;
+}
+
+/*  ここまでLinks　*/

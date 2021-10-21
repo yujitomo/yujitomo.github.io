@@ -343,17 +343,8 @@ h1 {
   border-right: 1px solid #dadada;
 }
 
-.talks-list-text-en {
-  padding-left: 7px;
-  text-align: left;
-  font-weight: lighter;
-  font-family: 'Cormorant Garamond';
-}
-
 .talks-list p {
   /*text-align: center;*/
-  font-weight: lighter;
-  font-family: 'Cormorant Garamond';
 }
 
 .talks-list p span {
@@ -368,6 +359,22 @@ h1 {
 
 .talks-list p a:hover {
   opacity: 0.5;
+}
+
+.talks-list-text-en {
+  font-weight: lighter;
+  font-family: 'Cormorant Garamond';
+}
+
+.talks-list-text-jp {
+  font-size: small;
+  font-weight: lighter;
+  font-family: 'Noto Serif JP';
+}
+
+.talk-list-title {
+  padding-left: 7px;
+  text-align: left;
 }
 
 /*

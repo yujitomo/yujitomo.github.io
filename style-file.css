@@ -30,6 +30,15 @@ h1 {
   padding-left: 10px;
 }
 
+h2 {
+  font-size: 23px;
+  font-weight: lighter;
+  font-family: 'Noto Serif JP';
+  /*text-decoration: underline;
+  border-bottom: 1px solid #dadada;*/
+  padding-left: 10px;
+}
+
 .page-intro {
   position: relative;
   width: 100%;

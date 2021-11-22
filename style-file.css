@@ -30,13 +30,51 @@ h1 {
   padding-left: 10px;
 }
 
-h2 {
-  font-size: 23px;
+.Midashi {
+  font-size: 19px;
   font-weight: lighter;
   font-family: 'Noto Serif JP';
-  /*text-decoration: underline;
-  border-bottom: 1px solid #dadada;*/
+  /*padding-left: 10px;*/
+}
+
+.small-Midashi {
+  font-size: 17px;
+  font-weight: lighter;
+  font-family: 'Noto Serif JP';
+  /*padding-left: 10px;*/
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: #dadada;
+}
+
+.Section {
+  font-size: 25px;
+  font-weight: lighter;
+  font-family: 'Cormorant Garamond';
+  border-bottom: 1px solid #dadada;
   padding-left: 10px;
+}
+
+.Div-Blocks {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.Div-Blocks p {
+  font-family: 'Noto Serif JP';
+  font-size: small;
+}
+
+.Div-Blocks p a {
+  color: #000000;
+  transition: all 0.05s ease-in-out;
+  text-decoration: none;
+}
+
+.Div-Blocks p a:hover {
+  opacity: 0.5;
 }
 
 .page-intro {

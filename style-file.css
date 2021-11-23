@@ -57,6 +57,14 @@ h1 {
   padding-left: 10px;
 }
 
+.Section-jp {
+  font-size: 23px;
+  font-weight: lighter;
+  font-family: 'Noto Serif JP';
+  border-bottom: 1px solid #dadada;
+  padding-left: 10px;
+}
+
 .Div-Blocks {
   padding-left: 15px;
   padding-right: 15px;
@@ -74,6 +82,20 @@ h1 {
 }
 
 .Div-Blocks p a:hover {
+  opacity: 0.5;
+}
+
+.Div-Blocks h3 {
+  font-family: 'Noto Serif JP';
+}
+
+.Div-Blocks h3 a {
+  color: #000000;
+  transition: all 0.05s ease-in-out;
+  text-decoration: none;
+}
+
+.Div-Blocks h3 a:hover {
   opacity: 0.5;
 }
 
@@ -158,8 +180,8 @@ h1 {
 
 .top-text-box p a {
   color: #000000;
-  font-family: 'Cinzel';
-  font-size: 16px;
+  /*font-family: 'Cinzel';
+  font-size: 15px;*/
   transition: all 0.05s ease-in-out;
   text-decoration: none;
 }

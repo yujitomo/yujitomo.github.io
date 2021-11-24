@@ -97,12 +97,14 @@
 			(「config」関係のwarningの解消のしかたがわかりません. 有名問題だそうですが...)
 		</p>
 		<p>
-			「Permission denied」に遭遇したら → 権限の確認と変更：<a href="https://dara-blog.com/about-rails-error01">やり方</a><br>
-			「Operation not permitted」に遭遇したら → とりあえず「sudo」つけてもう一回試す<br>
+			「Operation not permitted」や「Permission denied」に遭遇したら → とりあえず「sudo」つけてもう一回試す. <br>
+			権限の確認は「ls -la」. 以下は変更のやり方 (<a href="https://dara-blog.com/about-rails-error01">参考ページはここ</a>)： <br>
+			ファイルhogeの権限を「root」から「username」に変えたいなら → 「sudo chown username hoge」<br>
+			フォルダhoge以下の権限を「root」から「username」に変えたいなら → 「sudo chown -R username hoge」<br>
 			確認事項：ターミナルはフルディスクアクセス許可されているか??
 			(システム環境設定→セキュリティとプライバシー→左側から「フルディスクアクセス」を選択) <br>
-			困ったら：<a href="https://w3g.jp/apple/sip-disable/">ここを参照</a>
-		</p>
+			困ったら：<a href="https://w3g.jp/apple/sip-disable/">ここを参照</a>　/　
+			<a href="https://dara-blog.com/about-rails-error01">ここも参考になる</a>
 	</div>
 
 

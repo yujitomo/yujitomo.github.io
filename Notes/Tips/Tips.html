@@ -63,8 +63,26 @@
 
 	<div class="Div-Blocks">
 		<h3 class="small-Midashi">
+			全体的に言えること
+		</h3>
+		<p>
+			問題のパッケージはインストールされているか??　/　
+			「brew doctor」「jekyll doctor」などと打ってwarningが出てないか??　/　
+			完全素人でないなら公式の解説を読みこむ
+		</p>
+		<h3 class="small-Midashi">
 			HTML
 		</h3>
+		<p>
+			<a href="https://shu-naka-blog.com/html/tag01/">Webページの基本構造</a><br>
+			↑ CSSで装飾しまくって頑張るゲームではない!!!! ということがちょっとわかる. <br>
+			<a href="https://developer.mozilla.org/ja/docs/Web">Web関係の辞書的なサイト</a>
+		</p>
+		<p>
+			paddingとmarginの違いはハコの内側か外側か. <br>
+			[1] 余計な空白を入れたくないときはどちらも0にする. <br>
+			[2] marginを大きくするとボーダーラインが短くなったりする (当たり前だが, 気をつけよ). <br>
+		</p>
 		<p>
 			HTMLでソースコードを表示させるときはcodeタグで囲む.
 			ただし特殊文字はエスケープしなければいけない.
@@ -78,9 +96,24 @@
 			↑ちなみにこれはソース内で<code>&lt;code&gt;&amp;lt;code&amp;gt;&amp;amp;lt;code&amp;amp;gt;&amp;amp;amp;lt;br&amp;amp;amp;gt;&amp;amp;lt;/code&amp;amp;gt;&amp;lt;/code&amp;gt;&lt;/code&gt;</code>と書いている<br>
 		</p>
 		<p>
+			SCSSというのがある.
+			コンパイルしてCSSファイルを作成する何らからしい.
+			(→ <a href="https://blog.maromaro.co.jp/archives/8010">SCSSについて解説</a>).
+			拡張子「.scss」で記述するが, HTMLファイル内に読み込む時はコンパイル後のCSSファイルなので,
+			HTMLファイル内では「.css」と書かなければエラーが出る. <br>
+			SCSSでは自分でclearfixのclassを書かなくてもincludeできる. → <a href="https://qiita.com/naoyeah/items/e03b01a98a762b78d265">ここ参照</a>
+		</p>
+		<p>
+			<a href="https://web-guided.com/1240/#:%7E:text=%E3%80%8Cliquid%E3%80%8D%E3%81%A8%E3%81%AF%E3%80%81Shopify,%E3%81%84%E3%81%9F%E8%A8%98%E8%BF%B0%E3%82%92%E3%81%97%E3%81%BE%E3%81%99%E3%80%82">Shopify</a>
+			というのがある.
+			新しくページを作る時にはテーマ選びの参考にしてもいいかもしれない.
+		</p>
+		<p>
 			<a href="http://jekyllrb-ja.github.io/">Jekyll</a>というものもある.
 			<a href="https://docs.github.com/ja/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll">GitHub Pagesでもサポートをしている</a>.
-			解説は<a href="https://www.codegrid.net/articles/jekyll-1/">こっち</a>の方がわかりやすいかも. <br>
+			Jekyllが何なのかについての解説は<a href="https://www.codegrid.net/articles/jekyll-1/">これ</a>がわかりやすかった. <br>
+			<a href="https://jekylltips-ja.github.io/">公式が使い方の詳しい解説をしている</a>.
+			これを見るとだいぶ使えるようになるかも<br>
 			<a href="http://alg-d.com/">alg-dさん</a>に教えていただきました. ありがとうございます.
 			このページも<a href="http://jekyllrb-ja.github.io/">Jekyll</a>で編集できるように移行中です.
 		</p>
@@ -105,6 +138,23 @@
 			(システム環境設定→セキュリティとプライバシー→左側から「フルディスクアクセス」を選択) <br>
 			困ったら：<a href="https://w3g.jp/apple/sip-disable/">ここを参照</a>　/　
 			<a href="https://dara-blog.com/about-rails-error01">ここも参考になる</a>
+			<h3 class="small-Midashi">
+				Ruby
+			</h3>
+			<p>
+				「`require': cannot load such file -- hoge」に遭遇したら → hogeがインストールされてないかもしれないから
+				「sudo bundle add hoge」をやる
+			</p>
+			<p>
+				<a href="https://www.autovice.jp/articles/118">Gemfileの書き方</a>　/　
+				<a href="https://lemniscus.hatenablog.com/entry/20090722/1248261257#server-for-testing">WEBrickを使うためのメモ</a>
+			</p>
+			<h3 class="small-Midashi">
+				その他
+			</h3>
+			<p>
+				YAMLのコメントアウトは#　\
+			</p>
 	</div>
 
 

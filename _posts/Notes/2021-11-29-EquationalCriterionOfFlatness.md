@@ -3,7 +3,7 @@ layout: article-type
 title:  "Equational Criterion of Flatness"
 category: Notes
 tag: "Commtative Algebra"
-author: jill
+author: Yujitomo
 description: "平坦性の Equational Criterion について"
 ---
 

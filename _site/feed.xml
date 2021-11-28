@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-29T02:10:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">Equational Criterion of Flatness</title><link href="http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness.html" rel="alternate" type="text/html" title="Equational Criterion of Flatness" /><published>2021-11-29T00:00:00+09:00</published><updated>2021-11-29T00:00:00+09:00</updated><id>http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness</id><content type="html" xml:base="http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness.html">&lt;h2 id=&quot;main-theorem&quot;&gt;Main Theorem&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-29T02:16:39+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">Equational Criterion of Flatness</title><link href="http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness.html" rel="alternate" type="text/html" title="Equational Criterion of Flatness" /><published>2021-11-29T00:00:00+09:00</published><updated>2021-11-29T00:00:00+09:00</updated><id>http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness</id><content type="html" xml:base="http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness.html">&lt;h2 id=&quot;main-theorem&quot;&gt;Main Theorem&lt;/h2&gt;
 
 &lt;p&gt;このノートで示される定理は以下の二つです:&lt;/p&gt;
 
@@ -22,7 +22,76 @@
 また逆に, 任意の素イデアルでの局所化が付値環となる整域はPrüfer整域である.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;詳細は PDFファイル をご覧ください。&lt;/p&gt;</content><author><name>jill</name></author><category term="Notes" /><category term="Commtative Algebra" /><summary type="html">Main Theorem</summary></entry><entry><title type="html">11月27日</title><link href="http://localhost:4000/diary/2021/11/27/Nikki.html" rel="alternate" type="text/html" title="11月27日" /><published>2021-11-27T00:00:00+09:00</published><updated>2021-11-27T00:00:00+09:00</updated><id>http://localhost:4000/diary/2021/11/27/Nikki</id><content type="html" xml:base="http://localhost:4000/diary/2021/11/27/Nikki.html">&lt;h3 id=&quot;今日もだめです&quot;&gt;今日もだめです.&lt;/h3&gt;
+&lt;p&gt;詳細は PDFファイル をご覧ください。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Commtative Algebra" /><summary type="html">Main Theorem</summary></entry><entry><title type="html">Memo (PC)</title><link href="http://localhost:4000/notes/2021/11/29/PCMemo.html" rel="alternate" type="text/html" title="Memo (PC)" /><published>2021-11-29T00:00:00+09:00</published><updated>2021-11-29T00:00:00+09:00</updated><id>http://localhost:4000/notes/2021/11/29/PCMemo</id><content type="html" xml:base="http://localhost:4000/notes/2021/11/29/PCMemo.html">&lt;h2 id=&quot;全体的に言えること&quot;&gt;全体的に言えること&lt;/h2&gt;
+&lt;p&gt;問題のパッケージはインストールされているか??　/　 「brew doctor」「jekyll doctor」などと打ってwarningが出てないか??　/　 完全素人でないなら公式の解説を読みこむ&lt;/p&gt;
+
+&lt;h2 id=&quot;web関係&quot;&gt;Web関係&lt;/h2&gt;
+
+&lt;h3 id=&quot;html&quot;&gt;HTML&lt;/h3&gt;
+&lt;p&gt;Webページの基本構造
+↑ CSSで装飾しまくって頑張るゲームではない!!!! ということがちょっとわかる.
+Web関係の辞書的なサイト
+装飾が効かないとき, 改行が変に変換されてemptyに対して装飾を施している可能性がある.&lt;/p&gt;
+
+&lt;p&gt;Chromeでコンソールを表示させるには, 右上の縦方向の三点のメニューマーク → その他のツール → デベロッパーツール.&lt;/p&gt;
+
+&lt;p&gt;paddingとmarginの違いはハコの内側か外側か.
+[1] 余計な空白を入れたくないときはどちらも0にする.
+[2] marginを大きくするとボーダーラインが短くなったりする (当たり前だが, 気をつけよ).
+HTMLでソースコードを表示させるときはcodeタグで囲む. ただし特殊文字はエスケープしなければいけない. → 主なエスケープ文字一覧. たとえば 「&amp;lt; は &amp;lt;」「&amp;gt; は &amp;gt; 」「&amp;amp; は &amp;amp;」&lt;/p&gt;
+
+&lt;p&gt;pタグ内で改行するときは&lt;br /&gt;と書く.
+↑ちなみにこれはソース内で&lt;code&gt;&amp;lt;br&amp;gt;&lt;/code&gt;と書いている
+↑ちなみにこれはソース内で&lt;code&gt;&amp;lt;code&amp;gt;&amp;amp;lt;br&amp;amp;gt;&amp;lt;/code&amp;gt;&lt;/code&gt;と書いている
+↑ちなみにこれはソース内で&lt;code&gt;&amp;lt;code&amp;gt;&amp;amp;lt;code&amp;amp;gt;&amp;amp;amp;lt;br&amp;amp;amp;gt;&amp;amp;lt;/code&amp;amp;gt;&amp;lt;/code&amp;gt;&lt;/code&gt;と書いている
+SCSSというのがある. コンパイルしてCSSファイルを作成する何らからしい. (→ SCSSについて解説). 拡張子「.scss」で記述するが, HTMLファイル内に読み込む時はコンパイル後のCSSファイルなので, HTMLファイル内では「.css」と書かなければエラーが出る.
+SCSSでは自分でclearfixのclassを書かなくてもincludeできる. → ここ参照&lt;/p&gt;
+
+&lt;h3 id=&quot;java-script&quot;&gt;Java Script&lt;/h3&gt;
+&lt;p&gt;jQuery 動かねーよクソがってなったらこれを確認
+JavaScriptのコメントアウトはCSSのコメントアウトとおなじ
+対象にしているオブジェクトのid名は.attr(“id”)で所得できる.&lt;/p&gt;
+
+&lt;h3 id=&quot;liquid&quot;&gt;Liquid&lt;/h3&gt;
+
+&lt;p&gt;Liquidのコメントアウトはcomment - endcomment
+assignとcaptureの違い
+Liquid Cheat Sheet
+appendやconcatでエラーを吐いたら、「辞書」型を「配列」型と間違えている可能性がある → Liquidの型について。 とくに、Jekyllで使う、タグ一覧を所得する「page.tags」などは「辞書型」なので、そのままではappendやconcatを使用できない。&lt;/p&gt;
+
+&lt;p&gt;Shopify というのがある. 新しくページを作る時にはテーマ選びの参考にしてもいいかもしれない.&lt;/p&gt;
+
+&lt;h3 id=&quot;jekyll&quot;&gt;Jekyll&lt;/h3&gt;
+
+&lt;p&gt;JekyllはGitHub Pagesでもサポートをしている.
+Jekyllが何なのかについての解説はこれがわかりやすかった.
+公式が使い方の詳しい解説をしている. これを見るとだいぶ使えるようになるかも
+alg-dさんに教えていただきました. ありがとうございます. このページもJekyllで編集できるように移行中です.&lt;/p&gt;
+
+&lt;h2 id=&quot;ターミナル&quot;&gt;ターミナル&lt;/h2&gt;
+
+&lt;p&gt;困ったらUseful LinksのPC関係の部分を見る&lt;/p&gt;
+
+&lt;p&gt;ターミナルで空白のファイルを扱うときは「”hoge hoge”」のように囲む&lt;/p&gt;
+
+&lt;p&gt;Homebrew関係のコマンド (pythonやrubyも含む) で困ったらとりあえず一回「brew doctor」してみる.
+→ 「Unexpected static libraries:」とか 「gettext files detected at a system prefix. ~~ Consider removing these files:」 が出てきたら, 「rm -rf (そのpath)」をやる.
+(「config」関係のwarningの解消のしかたがわかりません. 有名問題だそうですが…)&lt;/p&gt;
+
+&lt;p&gt;「Operation not permitted」や「Permission denied」に遭遇したら → とりあえず「sudo」つけてもう一回試す.
+権限の確認は「ls -la」. 以下は変更のやり方 (参考ページはここ)：
+ファイルhogeの権限を「root」から「username」に変えたいなら → 「sudo chown username hoge」
+フォルダhoge以下の権限を「root」から「username」に変えたいなら → 「sudo chown -R username hoge」
+確認事項：ターミナルはフルディスクアクセス許可されているか?? (システム環境設定→セキュリティとプライバシー→左側から「フルディスクアクセス」を選択)
+困ったら：ここを参照　/　 ここも参考になる&lt;/p&gt;
+
+&lt;h2 id=&quot;ruby&quot;&gt;Ruby&lt;/h2&gt;
+&lt;p&gt;「`require’: cannot load such file – hoge」に遭遇したら → hogeがインストールされてないかもしれないから 「sudo bundle add hoge」をやる&lt;/p&gt;
+
+&lt;p&gt;Gemfileの書き方　/　 WEBrickを使うためのメモ&lt;/p&gt;
+
+&lt;h2 id=&quot;その他&quot;&gt;その他&lt;/h2&gt;
+&lt;p&gt;YAMLのコメントアウトはシャープ&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Others" /><summary type="html">全体的に言えること 問題のパッケージはインストールされているか??　/　 「brew doctor」「jekyll doctor」などと打ってwarningが出てないか??　/　 完全素人でないなら公式の解説を読みこむ</summary></entry><entry><title type="html">11月27日</title><link href="http://localhost:4000/diary/2021/11/27/Nikki.html" rel="alternate" type="text/html" title="11月27日" /><published>2021-11-27T00:00:00+09:00</published><updated>2021-11-27T00:00:00+09:00</updated><id>http://localhost:4000/diary/2021/11/27/Nikki</id><content type="html" xml:base="http://localhost:4000/diary/2021/11/27/Nikki.html">&lt;h3 id=&quot;今日もだめです&quot;&gt;今日もだめです.&lt;/h3&gt;
 
 &lt;p&gt;まずい感じの夜ふかしが続いていてまずいのは昨日と同じです.
 今日は一日中JavaScriptをいじっていたら終わりました.

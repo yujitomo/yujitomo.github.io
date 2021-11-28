@@ -1,7 +1,9 @@
 - name: Top
   link: /Yujitomo_Top.html
-#- name: About me
-#  link: /about.html
+- name: About Me
+  link: /Profile.html
+- name: Research
+  link: /Research.html
 - name: Notes
   link: /Notes.html
 - name: Links

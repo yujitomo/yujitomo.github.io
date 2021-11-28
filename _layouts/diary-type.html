@@ -1,0 +1,27 @@
+---
+layout: default
+title: Diary
+category: Diary
+author: ted
+description: "日記です. "
+---
+
+<header class="main-header">
+  <h1>
+    {% if page.url == page.category %}
+    <span class="header-first-number-font">
+      {{ page.title }}
+    </span>
+    {% else %}
+    <span class="if-false">
+      {{ page.title }}
+    </span>
+    {% endif %}
+  </h1>
+  <p>
+  </p>
+</header>
+
+<article>
+  {{ content }}
+</article>

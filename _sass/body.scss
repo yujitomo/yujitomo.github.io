@@ -1,0 +1,118 @@
+@import "MyMixin";
+@import "MyFonts";
+
+/****装飾****/
+.first-character-color {
+  color: $current_color;
+}
+
+.first-number-font {
+  font-family: 'Cinzel';
+}
+
+.diary-this-is-hidden {
+  display: none;
+}
+
+.DiaryYMListCurrent {
+  color: $current_color;
+}
+
+/****メイン****/
+main {
+  width: 100%;
+  article {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  h2 {
+    @include heading-fonts;
+    padding: 0px 0px 0px 1em;
+    font-weight: 500;
+    font-size: 1.85em;
+    margin: 0px;
+    border-bottom: 0.5px solid $border_color_h2;
+  }
+  h3, h4, h5, h6 {
+    font-family: 'Noto Serif JP';
+  }
+  p {
+    @include default-fonts;
+  }
+  a {
+    /*font-size: 'small';*/
+    color: #000000;
+    transition: all 0.05s ease-in-out;
+    text-decoration: none;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+
+ul.note-top {
+  margin: 0px;
+  padding: 0.7em 0px 2.5em 0px;
+  list-style: none;
+  li {
+    margin: 0px;
+    padding: 0px;
+    h4 {
+      margin: 0.5em 0px 0em 0.5em;
+      padding: 0.5em 0px 0.3em 0em;
+      span {
+        padding: 0em 0.5em 0em 0.5em;
+        border-bottom: 0.5px solid $border_color;
+      }
+    }
+    p {
+      margin: 0px;
+      padding: 0.3em 0px .7em 0px;
+    }
+  }
+}
+
+
+@mixin small-block-mixin($width) {
+  @include default-fonts;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;  /*まわりこみ*/
+  justify-content: space-between;
+  h2 {
+    font-weight: 200;
+    font-size: 1.6em;
+    padding: 0px 0px 0px 10px;
+  }
+  li {
+    /*display: inline;*/
+    width: $width;
+    margin: 0 10px 1em 0px;
+    padding: 0px;
+    text-align: left;
+    ul.small-list {
+      margin: 0px 0px 0px 10px;
+      padding: 0px;
+      list-style: none;
+      li {
+        margin: 3px 0px 3px 0px;
+        padding: 0px;
+      }
+    }
+  }
+}
+
+ul.small-block1 {
+  @include small-block-mixin(150px);
+}
+
+ul.small-block2 {
+  @include small-block-mixin(175px);
+}
+
+p.article-foot {
+  text-align: right;
+}

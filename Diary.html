@@ -1,110 +1,96 @@
-<html>
-
-<head>
-	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
-
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-	<meta http-equiv="Content-Style-Type" content="text/css">
-	<link rel="stylesheet" href="./header.css" type="text/css">
-	<link rel="stylesheet" href="./style-file.css" type="text/css">
-
-	<meta http-equiv="Content-Language" content="ja">
-	<meta charset="utf-8">
-
-	<meta name="discription" content="湯地のホームページ">
-	<meta name="keywords" content="湯地智紀">
-	<meta name="author" content="湯地ともき">
-
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-	</script>
-	<script>
-		MathJax = {
-			chtml: {
-				matchFontHeight: false
-			}
-		};
-	</script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-	</script>
-
-	<title>湯地ともき@RIMS</title>
-</head>
+---
+layout: default
+title: Diary
+category: Diary
+description: "日記です. "
+---
 
 
-<body bgcolor='#ffffff'>
+{% comment %}latest_postという変数{% endcomment %}
+{% assign latest_post = site.categories.Diary[0] %}
 
 
-	<header class="clearfix border-line">
-		<div id="header-contents">
-			<div class="clearfix">
-				<div class="header-data-logo">
-					&nbsp; Tomoki Yuji &nbsp;
-				</div>
-				<div class="header-data-sublogo">
-					<p></p>
-					<p>&nbsp;　&nbsp;</p>
-				</div>
-			</div>
+{% for all_posts in site.categories.Diary %}
+{% capture this_year %}{{ all_posts.date | date: "%Y-%B" }}{% endcapture %}
 
+<div class="diary-here-{{ this_year }} diary-this-is-hidden">
+  <h2>
+    <a href="{{ all_posts.url }}">
+      <span class="first-color-change-IC">{{ all_posts.date | date: "%Y. %b. %d. (%a.)" }}</span>
+    </a>
+  </h2>
+  {{ all_posts.content | markdownify }}
+</div>
 
-			<div class="header-manu clearfix">
-				<ul>
-					<li><a href="./Yujitomo_Top.html">Top</a></li>
-					<li><a href="./Yujitomo_Profile.html">About Me</a></li>
-					<li><a href="./Papers/Yujitomo_Papers.html">Papers</a></li>
-					<li><a href="./Talks/Yujitomo_Talks.html">Talks</a></li>
-					<li><a href="./Notes/Yujitomo_Notes.html">Notes</a></li>
-					<li><a href="./Yujitomo_Contact.html">Contact</a></li>
-					<li><a href="./Yujitomo_Links.html">Links</a></li>
-					<li>
-						<div class="header-here">Diary</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</header>
+{% endfor %}
 
 
 
-	<div class="manu-here">
-		<p>Diary</p>
-	</div>
+<div class="diary-here-first">
+  <p>
+    Latest Post:
+    <a href="{{ latest_post.url }}">
+      <span class="first-color-change-II">{{ latest_post.date | date: "%Y. %b. %d (%a.)" }}</span>
+    </a>
+  </p>
+  <h2>
+    <a href="{{ latest_post.url }}">
+      <span class="first-color-change-IC">{{ latest_post.date | date: "%Y. %b. %d. (%a.)" }}</span>
+    </a>
+  </h2>
+  {{ latest_post.content | markdownify }}
+</div>
 
 
-	<div class="links-list">
-		<h1>
-			<div class="clearfix">
-				<div class="head-red">2021</div>
-			</div>
-		</h1>
-		<p><a href="./Diary/2021-nov.html">November</a></p>
-	</div>
+<div class="diary-here-first-hide diary-this-is-hidden">
+  <p>
+    Latest Post:
+    <a href="{{ latest_post.url }}">
+      <span class="first-color-change-II">{{ latest_post.date | date: "%Y. %b. %d (%a.)" }}</span>
+    </a>
+  </p>
+</div>
 
 
+<ul class="small-block1">
+  {% for diary_year in site.categories.Diary %}
+  {% capture current_year %}{{ diary_year.date | date: "%Y" }}{% endcapture %}
+  {% if current_year != previous_year %}
+  <li>
+    <h2><span class="first-color-change-CC">{{ current_year }}</span></h2>
+    {% assign current_years_posts_words = "" %}
 
-	<footer>
-		<div class="footer-data">
-			<div class="clearfix">
-				<div class="footer-logo clearfix">
-					<div class="footer-head-red">Tomoki</div>
-					<div class="footer-head-red">Yuji</div>
-				</div>
-				<div class="footer-sublogo">
-					<p></p>
-					<p>
-						&nbsp; @ RIMS &nbsp;
-					</p>
-				</div>
-				<a href="./Yujitomo_Top.html"></a>
-			</div>
-			<div class="footer-copyright">
-				<p>Tomoki Yuji. All Rights Reserved.</p>
-			</div>
-		</div>
-	</footer>
+    {% for diary_month in site.categories.Diary %}
+    {% capture current_month_year %}{{ diary_month.date | date: "%Y" }}{% endcapture %}
 
-</body>
+    {% if current_month_year == current_year %}
+    {% capture current_month %}{{ diary_month.date | date: "%B" }}{% endcapture %}
 
-</html>
+    {% if current_month != previous_month %}
+    {% assign current_years_posts_words = current_years_posts_words | append: "," | append: current_month %}
+    {% assign previous_month = current_month %}
+    {% endif %}
+
+    {% endif %}
+
+    {% endfor %}
+
+    {% comment %} リストをひっくり返す {% endcomment %}
+    {% assign current_years_posts_words = current_years_posts_words | remove_first: "," %}
+    {% assign current_years_posts_array = current_years_posts_words | split: "," %}
+    {% assign current_years_posts_array = current_years_posts_array | reverse %}
+    <ul class="small-list">
+      {% for this_diary_month in current_years_posts_array %}
+      {% assign this_year_month = current_year | append: "-" | append: this_diary_month %}
+      <li id="ThisYearMonthIs-{{ this_year_month }}">
+        <a class="this-year-month">
+          {{ this_diary_month }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </li>
+  {% assign previous_year = current_year %}
+  {% endif %}
+  {% endfor %}
+</ul>

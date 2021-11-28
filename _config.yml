@@ -1,1 +1,78 @@
-theme: jekyll-theme-cayman
+theme:                  jekyll-theme-cayman
+
+
+# Name of website
+title:                  Yujitomo no Website
+
+# Your name to show in the footer
+author:                 Yuji Tomoki
+
+
+social-network-links:
+  email:                "yujitomo@kurims.kyoto-u.ac.jp"
+  github:               "https://github.com/yujitomo/yujitomo.github.io"
+
+
+# Select which social network share links to show in posts
+share-links-active:
+  twitter:              true
+  facebook:             true
+  linkedin:             true
+
+
+defaults:
+  - scope:
+      path:             ""
+      type:             "authors"
+    values:
+      layout:           "author"
+  - scope:
+      path:             ""
+      type:             "posts"
+    values:
+      layout:           "post"
+  - scope:
+      path:             ""
+    values:
+      layout:           "default"
+
+
+
+
+
+#
+#title:                 My awesome title
+#email:                 aaaaaaa@example.com
+#description:           >- # this means to ignore newlines until "baseurl:"
+  #Write an awesome description for your new site here. You can edit this
+  #line in _config.yml. It will appear in your document head meta (for
+  #Google search results) and in your feed.xml site description.
+#baseurl:               "" # the subpath of your site, e.g. /blog
+#url:                   "" # the base hostname & protocol for your site, e.g. http://example.com
+#twitter_username:      jekyllrb
+#github_username:       jekyll
+#
+## Build settings
+#theme:                 Minima
+#plugins:
+  #- jekyll-feed
+#
+## Exclude from processing.
+## The following items will not be processed, by default.
+## Any item listed under the `exclude:` key here will be automatically added to
+## the internal "default list".
+##
+## Excluded items can be processed by explicitly listing the directories or
+## their entries' file path in the `include:` list.
+##
+## exclude:
+##   - .sass-cache/
+##   - .jekyll-cache/
+##   - gemfiles/
+##   - Gemfile
+##   - Gemfile.lock
+##   - node_modules/
+##   - vendor/bundle/
+##   - vendor/cache/
+##   - vendor/gems/
+##   - vendor/ruby/

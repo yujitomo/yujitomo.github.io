@@ -1,0 +1,140 @@
+@import "MyMixin";
+@import "MyFonts";
+
+
+.top-header {
+  @include navi-fonts;
+  width: 100%;
+  padding: 0;
+  margin: 0 0 3em 0;
+  nav {
+    border-bottom: 1px solid $border_color_top;
+    padding-left: 15%;
+    align-items:left;
+    width:100%;
+    margin-right: auto;
+  }
+  h1 {
+    font-size: $navi_yujitomo_size;
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    font-weight: lighter;
+    color: #000000;
+    transition: all 0.1s ease-in-out;
+    text-decoration: none;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  ul {
+    font-size: $navi_size;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    li {
+      margin-right: 30px;
+      .top-current-navigation {
+        color: $current_color;
+      }
+    }
+  }
+}
+
+
+.main-header {
+  h1 {
+    text-align: center;
+    font-size: $main-header-title-size;
+    span.equals {
+      @include navi-fonts;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-bottom: 1px solid $border_color_h1;
+    }
+    span.nequals {
+      @include heading-fonts;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-bottom: 1px solid $border_color_h1;
+    }
+  }
+  p {
+    @include default-fonts;
+    text-align: center;
+    font-size: $main-header-size;
+  }
+}
+
+
+
+
+/***Footer***/
+
+.botom-footer {
+  @include clearfix;
+  width: 100%;
+  padding-top: 5px;
+  margin-top: 30px;
+  padding-bottom: 0;
+  margin-bottom: 3em;
+  border-top: 1px solid $border_color_top;
+  font-weight: lighter;
+  font-size: small;
+  nav {
+    padding-left: 15%;
+    padding-right: 15%;
+    align-items:left;
+    width:100%;
+    /*margin-right: auto;*/
+    div.footer-sitemap {
+      @include navi-fonts;
+      width: 35%;
+      float : left;
+    }
+    div.footer-contact {
+      @include default-fonts;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      float : left;
+    }
+    ul.footer-left {
+      list-style-type: none;
+      margin: 0px 0px 50px 0px;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      /*justify-content: center;*/
+      li {
+        margin-right: 30px;
+      }
+    }
+    ul.footer-right {
+      list-style-type: none;
+      margin: 0px 0px 50px 0px;
+      padding: 0;
+      /*display: flex;*/
+      /*justify-content: center;*/
+      li {
+        margin-right: 30px;
+      }
+    }
+    a {
+      color: #000000;
+      transition: all 0.1s ease-in-out;
+      text-decoration: none;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+  h2 {
+    display: inline;
+    font-weight: lighter;
+    padding: 0;
+    margin: 0;
+  }
+}

@@ -1,0 +1,66 @@
+---
+layout: default
+title: "Notes"
+category: Notes
+description: "ノートなど"
+---
+
+
+
+{% comment %} note_tag_list：ノートカテゴリの中のタグを格納しておくリスト {% endcomment %}
+{% assign note_tag_list = "" %}
+
+
+{% for current_post in site.categories.Notes %}
+{% unless current_post.tags == empty %}{% comment %} 空でない時だけ考える {% endcomment %}
+{% capture current_tag_name %}{{ current_post.tags[0] }}{% endcapture %}
+
+{% comment %} True_False_listは、note_tag_listの中身のそれぞれとcurrent_tagが一致しているかどうかのリスト {% endcomment %}
+{% assign True_False_list = "" %}
+
+{% if note_tag_list == "" %}
+{% assign note_tag_list = note_tag_list | append: current_tag_name %}
+{% assign note_tag_list = note_tag_list | split: "," %}
+{% else %}
+
+{% comment %} まずTrue_False_listをつくる。current_tag_nameがすでにnote_tag_listに含まれているタグならTrue、そうでないならFalse {% endcomment %}
+{% for listed_tag in note_tag_list %}
+{% if listed_tag == current_tag_name %}
+{% assign True_False_list = True_False_list | append: "T" %}
+{% endif %}
+{% assign True_False_list = True_False_list | append: "F" %}
+{% endfor %}
+{% comment %} ここまででTrue_False_listを作った {% endcomment %}
+{% comment %} True_False_listがTを含んでいたらnote_tag_listにcurrent_tagをappendする {% endcomment %}
+{% if True_False_list contains "T" %}
+{% else %}
+{% assign note_tag_list = note_tag_list | join: "," %}
+{% assign note_tag_list = note_tag_list | append: "," | append: current_tag_name %}
+{% assign note_tag_list = note_tag_list | split: "," %}
+{% endif %}
+{% endif %}
+
+{% endunless %}{% comment %} 空でない時の処理ここまで {% endcomment %}
+{% endfor %}
+
+{% comment %} 以上でノートカテゴリの中のすべてのタグが格納できた {% endcomment %}
+
+
+
+
+{% for note_tag in note_tag_list %}
+
+<h2><span class="first-color-change-IC">{{ note_tag }}</span></h2>
+
+<ul class="note-top">
+  {% for note_post in site.categories.Notes %}
+  {% capture current_tag %}{{ note_post.tag }}{% endcapture %}
+  {% if note_tag == current_tag %}
+  <li>
+    <h4><span><a href="{{ note_post.url }}">{{ note_post.title }}</a></span></h4>
+    <p>{{ note_post.description }}</p>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>
+{% endfor %}

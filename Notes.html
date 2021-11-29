@@ -45,10 +45,17 @@ description: "ノートなど"
 
 {% comment %} 以上でノートカテゴリの中のすべてのタグが格納できた {% endcomment %}
 
+{% comment %} アルファベット順にソート {% endcomment %}
+
+{% capture sorted_note_tag_list %}{{ note_tag_list | sort_natural | join: ","}}{% endcapture %}
+{% assign sorted_note_tag_list = sorted_note_tag_list | split: "," %}
 
 
+{% comment %} タグに従って記事を並べる {% endcomment %}
 
-{% for note_tag in note_tag_list %}
+{% for note_tag in sorted_note_tag_list %}
+{% comment %} Othersは最後 {% endcomment %}
+{% if note_tag != 'Others' %}
 
 <h2><span class="first-color-change-IC">{{ note_tag }}</span></h2>
 
@@ -63,4 +70,25 @@ description: "ノートなど"
   {% endif %}
   {% endfor %}
 </ul>
+{% endif %}
 {% endfor %}
+
+
+{% comment %} これはOthers用 {% endcomment %}
+
+<h2><span class="first-color-change-IC">Others</span></h2>
+
+<ul class="note-top">
+  <li>
+    <h4><span><a href="/assets/HTML/Links.html">Links</a></span></h4>
+    <p>リンク集です. </p>
+  </li>
+  {% for note_post in site.categories.Notes %}
+  {% if note_post.tag == 'Others' %}
+  <li>
+    <h4><span><a href="{{ note_post.url }}">{{ note_post.title }}</a></span></h4>
+    <p>{{ note_post.description }}</p>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>

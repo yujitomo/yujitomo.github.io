@@ -6,7 +6,11 @@
     {% if page.title == page.category %}
     <span class="equals">{{ page.title }}</span>
     {% else %}
+      {% if page.title == "About Me" %}
+      <span class="equals">{{ page.title }}</span>
+      {% else %}
     <span class="nequals">{{ page.title }}</span>
+    {% endif %}
     {% endif %}
   </h1>
   <p>

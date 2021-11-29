@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-29T22:08:15+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">Equational Criterion of Flatness</title><link href="http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness.html" rel="alternate" type="text/html" title="Equational Criterion of Flatness" /><published>2021-11-29T00:00:00+09:00</published><updated>2021-11-29T00:00:00+09:00</updated><id>http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness</id><content type="html" xml:base="http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness.html">&lt;h2 id=&quot;main-theorem&quot;&gt;Main Theorem&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-29T22:27:45+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">Equational Criterion of Flatness</title><link href="http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness.html" rel="alternate" type="text/html" title="Equational Criterion of Flatness" /><published>2021-11-29T00:00:00+09:00</published><updated>2021-11-29T00:00:00+09:00</updated><id>http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness</id><content type="html" xml:base="http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness.html">&lt;h2 id=&quot;main-theorem&quot;&gt;Main Theorem&lt;/h2&gt;
 
 &lt;p&gt;このノートで示される定理は以下の二つです:&lt;/p&gt;
 
@@ -22,7 +22,44 @@
 また逆に, 任意の素イデアルでの局所化が付値環となる整域はPrüfer整域である.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;詳細は PDFファイル をご覧ください。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Commtative Algebra" /><summary type="html">Main Theorem</summary></entry><entry><title type="html">Memo (PC)</title><link href="http://localhost:4000/notes/2021/11/29/PCMemo.html" rel="alternate" type="text/html" title="Memo (PC)" /><published>2021-11-29T00:00:00+09:00</published><updated>2021-11-29T00:00:00+09:00</updated><id>http://localhost:4000/notes/2021/11/29/PCMemo</id><content type="html" xml:base="http://localhost:4000/notes/2021/11/29/PCMemo.html">&lt;h2 id=&quot;overall&quot;&gt;Overall&lt;/h2&gt;
+&lt;p&gt;詳細は PDFファイル をご覧ください。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Commtative Algebra" /><summary type="html">Main Theorem</summary></entry><entry><title type="html">11月29日</title><link href="http://localhost:4000/diary/2021/11/29/Nikki.html" rel="alternate" type="text/html" title="11月29日" /><published>2021-11-29T00:00:00+09:00</published><updated>2021-11-29T00:00:00+09:00</updated><id>http://localhost:4000/diary/2021/11/29/Nikki</id><content type="html" xml:base="http://localhost:4000/diary/2021/11/29/Nikki.html">&lt;h3 id=&quot;そろそろこのホームページの以降作業が終わりそうで嬉しいです&quot;&gt;そろそろこのホームページの以降作業が終わりそうで嬉しいです。&lt;/h3&gt;
+
+&lt;p&gt;JavaScriptについてだいぶわかるようになってきて、
+いろいろできることの幅が広がってきたので、このホームページの移行作業もそろそろ終わりそうです。
+以前のホームページはHTMLファイルの構文上の問題点がたくさんありましたが、
+今のホームページは、以前よりはもう少し文章構造に従ったタグ選択ができているはずです。
+良かった。嬉しい。
+それに応じて見た目の方もいじりやすくなりました。
+良かった。嬉しい。&lt;/p&gt;
+
+&lt;p&gt;Includeされたmarkdownファイルに対して施す装飾を考えなければなりません。
+たとえば、&lt;/p&gt;
+
+&lt;h2 id=&quot;markdown&quot;&gt;Markdown&lt;/h2&gt;
+
+&lt;p&gt;↑これはこの日記を書いているMarkdownファイルの中で「## Markdown」と表示しており、
+HTMLファイルにincludeすると、h2タグになんらかのidが付与されたものに変換されるのですが、
+そのh2タグに対する適切な装飾を施すにはどうすればいいか、などを考えなければいけないのです
+(h2に対してはその作業が終わっているので上のような「装飾後の表示」になります)。
+あと、TeXをincludeして上手に表示する方法があればいいなぁなどと思っています。
+TeXに関しては、そんなことが可能なことなのかは疑わしいですが。&lt;/p&gt;
+
+&lt;h3 id=&quot;夜ご飯&quot;&gt;夜ご飯&lt;/h3&gt;
+
+&lt;p&gt;昨日は気づいたらハイレモンとアーモンド小魚だけになっていたので、
+これはまずいと思って今日はコンビニで焼き芋と肉とおでんとおにぎりといろいろ食べました。
+水を買おうと思っていたのに忘れてしまったので大変厳しい気持ちになっています。
+しかし、これは、裏を返せば、web制作は食欲が抑制されてダイエットに良い、ということかもしれません。&lt;/p&gt;
+
+&lt;h3 id=&quot;今日はもう寝ます&quot;&gt;今日はもう寝ます。&lt;/h3&gt;
+
+&lt;p&gt;眠いです。
+ここ数日は意図せず夜ふかしが続いてしまったので最悪でした。
+人間のデフォルトの状態は睡眠状態 (←本当か？) であり、
+睡眠はいかなる事柄よりも最優先される事柄です。
+すなわち、最高の人生は、最高の睡眠なくしてはあり得ないのです。
+そういうわけで今日はもう寝ます。
+ここ数日の出来事の振り返りは明日にさせてください。おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">そろそろこのホームページの以降作業が終わりそうで嬉しいです。</summary></entry><entry><title type="html">Memo (PC)</title><link href="http://localhost:4000/notes/2021/11/29/PCMemo.html" rel="alternate" type="text/html" title="Memo (PC)" /><published>2021-11-29T00:00:00+09:00</published><updated>2021-11-29T00:00:00+09:00</updated><id>http://localhost:4000/notes/2021/11/29/PCMemo</id><content type="html" xml:base="http://localhost:4000/notes/2021/11/29/PCMemo.html">&lt;h2 id=&quot;overall&quot;&gt;Overall&lt;/h2&gt;
 &lt;p&gt;問題のパッケージはインストールされているか??　/　 「brew doctor」「jekyll doctor」などと打ってwarningが出てないか??　/　 完全素人でないなら公式の解説を読みこむ&lt;/p&gt;
 
 &lt;h2 id=&quot;around-web-creating&quot;&gt;Around Web Creating&lt;/h2&gt;
@@ -254,38 +291,4 @@ Jekyllのインストールのためにrbenvをインストールするために
 &lt;p&gt;私はこのページをアプリなどを用いずに適当にHTML, CSS, Java Scriptを書くなどして作ったのですが, 私はこれらの言語の「作法」についてよくわかっておりません. 今日, どうやらHTMLには「h1は各記事に一つしか使ってはいけない」というルールがあるらしい, ということを知り, このホームページのさまざまな記事が複数のh1を使っているなあと思い, 修正めんどくさいなあ, などと思っています. いつか修正しなければいけません. 本当に面倒くさいです.&lt;/p&gt;
 
 &lt;h3 id=&quot;私と類体論&quot;&gt;私と類体論&lt;/h3&gt;
-&lt;p&gt;Cassels and Fröhlich はコホモロジカルに大域類体論を解説した本でとても良くまとまっている, と友人に紹介されて買いました. 私は学部3年生のときに Serreの Local Fields を読んで局所類体論について勉強し, Serreの上手な論理展開に感銘を受けて 「p進っぽいことをやろう」と思い, 数論の研究室を選びました (本当は, これは数論の研究室を選んだ理由のうちの半分で, もう半分の理由は, 学部4年のはじめに行われる研究室選びで このLocal Fieldsの面倒を見てくれた先生とは違う先生を選ぶのは気が引けた, というものです). しかしその後, Hartshorne を読んだり dg圏の勉強 をしながら学部4年を終え, 修士の1年間を Hartshorne 2周目にあてて, M2は修論, そのまま博士まで来てしまい, 局所類体論のかなりの部分を忘れてしまいました. 数論の研究室にいるにもかかわらず局所類体論を忘れたまま卒業するのもなんだかなあと思い, ちゃんと復習しようと意気込んでいるのです. そして, 大域類体論もついでに勉強しようというわけです.&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry><entry><title type="html">11月21日</title><link href="http://localhost:4000/diary/2021/11/21/Nikki.html" rel="alternate" type="text/html" title="11月21日" /><published>2021-11-21T00:00:00+09:00</published><updated>2021-11-21T00:00:00+09:00</updated><id>http://localhost:4000/diary/2021/11/21/Nikki</id><content type="html" xml:base="http://localhost:4000/diary/2021/11/21/Nikki.html">&lt;h3 id=&quot;はじめに&quot;&gt;はじめに&lt;/h3&gt;
-
-&lt;p&gt;今日からなるべく日記を書こうと思います. 理由は, 私のことを気にして下さっている方々が意外とこのページを訪れていることが判明したからです. 今日の日記は初めての日記なので, とりあえず思いつくままにたくさん書いてみようと思います.&lt;/p&gt;
-
-&lt;h3 id=&quot;今日あったこと&quot;&gt;今日あったこと&lt;/h3&gt;
-
-&lt;p&gt;今日は朝起きてすぐにシャワーを浴びて化粧をし, すぐに家を出て実家へ帰りました. 電車内では, 星先生へ送るあるメールの内容を考えていました. 実家への手土産は, 普段は アンリ・シャルパンテイエのフィナンシェ16個入りか, ビアードパパのクッキーシューなどを選んでいるのですが, 今日はアンリ・シャルパンテイエのフィナンシェ8個とモンブランタルトを買って帰りました. 実家では猫をいじりながら延々とドラマを見ていました. その後, 京都へ帰っている途中, 中学高校の6年のうちのある4年間, 私のクラスの担任した先生とたまたま電車で同じになりました (そこで「ホームページを見た」と仰っておられたのが, 日記を書こうと思った大きな理由です).&lt;/p&gt;
-
-&lt;h3 id=&quot;1週間のルーティンについて&quot;&gt;1週間のルーティンについて&lt;/h3&gt;
-
-&lt;p&gt;私の生活ルーティンですと, 日曜日は実家へ帰る日です. 録画しているドラマを母親と見ながら, デパ地下で買ったおやつを食べ, そして猫をわしゃわしゃするのが日曜日のルーティンになっています. それ以外は基本的に, 京都大学の周辺をうろうろしながら人生の残り時間と数学の能力をトレードしています.&lt;/p&gt;
-
-&lt;h3 id=&quot;スイーツの話&quot;&gt;スイーツの話&lt;/h3&gt;
-
-&lt;p&gt;先週, 母親から「健康診断が終わった」と聞いたので, 今週はいつものアンリ・シャルパンテイエのフィナンシェに加えて, モンブランタルトまで買ってしまいました. 健康診断のために食事制限をする, という状態で適切な健康診断を行えるのか私は疑っていますが, 薬剤師である母親がそれでいいのだと言うのだから良いのでしょう. ちなみに, 毎年何らかの数値が糖尿病判定基準ギリギリまで高いらしく, かなり心配です.&lt;/p&gt;
-
-&lt;p&gt;アンリ・シャルパンティエと聞くと, 望月研の先輩であるMさんのことを思い出します. 私は修士課程の間, その先輩から”Hartshorne”と呼ばれる教科書で代数幾何学の指導を受けていたことがあるのですが, Mさんはよく雑談で「フィナンシェはアンリ・シャルパンティエ一択だ」と仰っていました. そのことを確認すべく, 大手コンビニ3社のフィナンシェや, デパ地下の他のフィナンシェを食べ比べたりしてみたのですが, 確かに私もアンリ・シャルパンティエのフィナンシェが最も美味しいように感じます.&lt;/p&gt;
-
-&lt;p&gt;母親の好みのスイーツはフィナンシェとシュークリームであることがわかっています. フィナンシェはアンリ・シャルパンティエで間違いないわけですが, ではシュークリームはどうかというと, これは私的にはビアードパパが最も美味しいように感じます. ここ以外のシュークリームは, 「シュー」の部分が湿気ていてべちゃっとしているものが多いと思います. ビアードパパはおそらく, 店頭で注文を受けてから中のクリームを入れるシステムを採用したり, 中のクリームに水気の少ない物を使ったり, さまざまな対策をすることで, この「湿気」の問題を回避しているのだと思います.&lt;/p&gt;
-
-&lt;p&gt;アンリ・シャルパンティエのフィナンシェは, 16個入りが2100円程度ですが, ビアードパパのクッキーシューは1つ250円以下で買うことができます. 私としては, ビアードパパのクッキーシュー4つ (家族全員分) の方がお財布には優しいのですが, 毎週ビアードパパなのも面白くないと思って, 他のおやつもたまに買うようにしています.&lt;/p&gt;
-
-&lt;h3 id=&quot;ドラマの話&quot;&gt;ドラマの話&lt;/h3&gt;
-
-&lt;p&gt;今期は「日本沈没」「真犯人フラグ」「ラジエーションハウスII」「晴天を突け」を見ています. どれも泣きそうになるシーンが多くて困っています. 私は感動回想シーンなどですぐに目に涙が溜まるタイプの人間なのですが, おそらく家族からはそう思われていません. ですので, 感動シーンで目に涙を溜めているところを家族に見られるわけにはいかないのです. もし見られてしまうと, 絶対に指摘され, 恥ずかしい思いをしてしまいます.&lt;/p&gt;
-
-&lt;p&gt;「日本沈没」は, 日曜夜9時に放送されている関係で, 私は1週間遅れで追いかけている感じになっています. 天海と常盤の「仕事人ぶり」が純粋にカッコいいなと思います (小栗旬と松山ケンイチの顔がカッコいいだけかもしれません). 今回私が見たのは、関東沈没第一波が来たところでした. 天海が椎名に国家機密をリークしたことがバレて, 総理や常盤から「君のことは信頼できない」と言われた直後に関東の一部が沈み, その結果, 総理の方から「君の方が正しかった」と言われていました. 手のひら返しが早すぎて, そんなこと言われても私なら拒絶してしまうかもしれないなと思ってしまいました.&lt;/p&gt;
-
-&lt;p&gt;「真犯人フラグ」は, 次回が特に面白そうです. そろそろやっと犯人像が見えてくる頃かもしれません. ワクワクしています.&lt;/p&gt;
-
-&lt;p&gt;「ラジエーションハウスII」は, 悲しい話でした (涙腺を刺激されました). 甘春先生のお父さんの末期癌が見つかったり, 愛想のない技師の悠木が26歳末期癌の患者に心を動かされたりする話でした. ぼーっと見ているだけで目に涙が溜まってきて, あー, 感動ポルノだなぁと思いました. 最近白血病で亡くなった23歳の京都大学の院生の方を思い出し, 人間いつ死ぬのか本当にわからないし, 健康を大切にして今を大事に生きなければと思いました.&lt;/p&gt;
-
-&lt;p&gt;「晴天を突け」は, 千代がコレラで亡くなる回でした. 千代はドラマ内で大変素晴らしい女性として描かれていると感じていましたので, まさか亡くなるとは思ってもいませんでした. 現実は残酷なものです. やはり健康を大切にして今を大事に生きなければと思いました.&lt;/p&gt;
-
-&lt;p&gt;以上の「今期のドラマ」とは別に, 「沈まぬ太陽」のドラマを以前からAmazon Primeで見ていました. これはJALを元ネタにした半分フィクション半分ノンフィクションのようなドラマです. 中曽根元総理大臣や, カネボウの会長の方など, 実在の人物がモデルとなって, 実際に起きたJALにまつわる多くの事件 (労組問題, 墜落事故, ドル10年先物予約など) が面白くまとめられています. 個人的に面白いと思ったのは, 渡部篤郎の演じる行天四郎の立ち居振る舞いです. 悪役なのですが, なんというか, 上品!! かっこいいですね. 接待のシーンなどがたくさんあったのですが, 行天の接待は動きや言葉遣いが上品で, 参考になるなぁと思ったものが多いです (何の参考??).&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">はじめに</summary></entry></feed>
+&lt;p&gt;Cassels and Fröhlich はコホモロジカルに大域類体論を解説した本でとても良くまとまっている, と友人に紹介されて買いました. 私は学部3年生のときに Serreの Local Fields を読んで局所類体論について勉強し, Serreの上手な論理展開に感銘を受けて 「p進っぽいことをやろう」と思い, 数論の研究室を選びました (本当は, これは数論の研究室を選んだ理由のうちの半分で, もう半分の理由は, 学部4年のはじめに行われる研究室選びで このLocal Fieldsの面倒を見てくれた先生とは違う先生を選ぶのは気が引けた, というものです). しかしその後, Hartshorne を読んだり dg圏の勉強 をしながら学部4年を終え, 修士の1年間を Hartshorne 2周目にあてて, M2は修論, そのまま博士まで来てしまい, 局所類体論のかなりの部分を忘れてしまいました. 数論の研究室にいるにもかかわらず局所類体論を忘れたまま卒業するのもなんだかなあと思い, ちゃんと復習しようと意気込んでいるのです. そして, 大域類体論もついでに勉強しようというわけです.&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry></feed>

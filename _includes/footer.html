@@ -1,20 +1,25 @@
-<footer class="botom-footer">
-  <nav>
-    <div class="footer-sitemap">
-      <h2><a href="/Top.html"><span class="first-color-change">Tomoki Yuji</span></a></h2>
+<footer class="bottom-footer">
+  <ul>
+    <li>
+      <h1><a href="/Top.html"><span class="first-color-change">Tomoki Yuji</span></a></h1>
       <a href="https://www.kurims.kyoto-u.ac.jp/ja/">@RIMS</a>
-      <ul class="footer-left">
-        {% for item in site.data.navigation %}
-        <li><a href="{{ item.link }}">{{ item.name }}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    <div class="footer-contact">
+      <nav>
+        <ul class="footer-left">
+          {% for item in site.data.navigation %}
+          <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </li>
+    <li>
       <ul class="footer-right">
-        <li> Mail: yujitomo [at] kurims.kyoto-u.ac.jp</li>
-        <li> GitHub: yujitomo@github.io</li>
+        <li>Mail: yujitomo [at] kurims.kyoto-u.ac.jp</li>
+        <li>GitHub: yujitomo@github.io</li>
       </ul>
-    </div>
-  </nav>
+    </li>
+  </ul>
 </footer>
+
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script type="text/javascript" src="/assets/js/MyJavaScript.js"></script>

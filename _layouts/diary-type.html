@@ -1,27 +1,12 @@
 ---
 layout: default
-title: Diary
-category: Diary
-author: ted
-description: "日記です. "
 ---
 
-<header class="main-header">
-  <h1>
-    {% if page.url == page.category %}
-    <span class="header-first-number-font">
-      {{ page.title }}
-    </span>
-    {% else %}
-    <span class="if-false">
-      {{ page.title }}
-    </span>
-    {% endif %}
-  </h1>
-  <p>
-  </p>
-</header>
 
-<article>
-  {{ content }}
-</article>
+<h2><span class="first-color-change-IC">{{ page.date | date: "%Y. %b. %d. (%a.)" }}</span></h2>
+
+{{ content | markdownify }}
+
+<p class="article-foot">
+  投稿日時：<span class="first-color-change-IC">{{ page.date | date: "%Y. %b. %d. (%a.)" }}</span>
+</p>

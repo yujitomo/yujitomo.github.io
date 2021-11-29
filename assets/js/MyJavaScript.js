@@ -1,4 +1,6 @@
 
+
+
 function myfunctUppColorChange(var_str) { /*最初の文字が小文字でないなら色を変える*/
   let first_char_of_str = var_str.slice(0,1);
   let new_str = "";
@@ -59,7 +61,6 @@ CIの値に応じて、各単語の先頭の文字の色やフォントを変え
 CCなら、文字列の先頭が数字であれば色とフォントを変え、そのあとの各単語の先頭の数字はいじらず、大文字に対して色を変える
 ***/
 
-
 function myfunctChangeFC_CSS(var_str) {
   $( var_str ).text(function() {
     let var_A = var_str.slice( -2, -1 ); /* var_strの末尾から2文字目を所得 */
@@ -89,10 +90,33 @@ $(function() {
   myfunctChangeFC_CSS(".first-color-change-IC");
   myfunctChangeFC_CSS(".first-color-change-II");
   myfunctChangeFC_CSS(".first-color-change");
+  console.log("AAAA");
 });
 
 
 
+/* IC版 */
+function myfunctChangeFC_IC_CSS(var_str) {
+  var ary_this = var_str.split(" "); /* aryにする */
+  let new_ary = []; /* aryの各要素を変換した後のものを格納するary */
+  for ( var i = 0; i < ary_this.length; i++ ) {
+    new_ary.push(myfunctNumFC_Change("I", "C", ary_this[i]));
+  }
+  let new_str = new_ary.join(' ');
+  return new_str
+}
+
+$("h2").text(function() {
+  const var_str = $(this).text();
+  const new_str = "<h2>" + myfunctChangeFC_IC_CSS(var_str) + "</h2>";
+  const child_elements = $(this).children();
+  const child_tags = child_elements.prop("tagName");
+  console.log(child_tags);
+  if ( child_tags === undefined ) {
+    $(this).replaceWith(new_str);
+    console.log(new_str);
+  };
+});
 
 
 

@@ -132,9 +132,9 @@ footer.bottom-footer ul li h1 span { font-family: 'Cinzel'; font-weight: 100; }
 
 footer.bottom-footer ul li a { font-family: 'Cinzel'; font-weight: 100; }
 
-footer.bottom-footer ul li ul.footer-left { font-family: 'Cinzel'; font-weight: 100; display: flex; justify-content: space-between; }
+footer.bottom-footer ul li ul.footer-left { font-family: 'Cinzel'; font-weight: 100; display: flex; /*justify-content: space-between;*/ }
 
-footer.bottom-footer ul li ul.footer-left li { width: auto; padding-right: 0px; }
+footer.bottom-footer ul li ul.footer-left li { width: auto; padding-right: 30px; }
 
 footer.bottom-footer ul li ul.footer-right { display: auto; }
 

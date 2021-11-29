@@ -99,10 +99,10 @@ footer.bottom-footer {
       ul.footer-left {
         @include navi-fonts;
         display: flex;
-        justify-content: space-between;
+        /*justify-content: space-between;*/
         li {
           width: auto;
-          padding-right: 0px;
+          padding-right: 30px;
         }
       }
       ul.footer-right {

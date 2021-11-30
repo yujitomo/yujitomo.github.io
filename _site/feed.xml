@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-30T23:58:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">11月30日</title><link href="http://localhost:4000/diary/2021/11/30/Nikki.html" rel="alternate" type="text/html" title="11月30日" /><published>2021-11-30T00:00:00+09:00</published><updated>2021-11-30T00:00:00+09:00</updated><id>http://localhost:4000/diary/2021/11/30/Nikki</id><content type="html" xml:base="http://localhost:4000/diary/2021/11/30/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-12-01T00:02:13+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">11月30日</title><link href="http://localhost:4000/diary/2021/11/30/Nikki.html" rel="alternate" type="text/html" title="11月30日" /><published>2021-11-30T00:00:00+09:00</published><updated>2021-11-30T00:00:00+09:00</updated><id>http://localhost:4000/diary/2021/11/30/Nikki</id><content type="html" xml:base="http://localhost:4000/diary/2021/11/30/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
 
 &lt;p&gt;今日はある恥ずかしい出来事によって始まりました。
 ここで弁明するのもみっともないので詳細については省略しますが、
@@ -78,9 +78,9 @@ logスキームの圏からの復元問題に関しては、
 ドリルで壁を破壊してゴリ押しするような証明は私もあまり好きではないです。
 しかし、後者の方が「数学者の現場感」はあるかと思います (本当か???)。
 特殊な対象の特殊性に興味があるのが数論であり、
-数学の多くもそういう方向性を向いている、という意見には私もある程度賛同するのですが、
-特殊な対象の特殊性を用いて何かを証明するというのは、
-かなり「現場感」のある数学だなと思います。
+数学の多くもそういう方向性を向いている、という意見には私もある程度賛同します。
+そして、特殊な対象の特殊性を用いて何かを証明するというのは、
+かなり「現場感」のある数学だなとも思います。
 しかし、特殊な対象の特殊性を「用いなければ」証明できないことというのは、裏を返せば、
 我々人類はまだその事象が成立する本質的な根拠を見抜けていないということなのではないか、
 という指摘もあり得ます。

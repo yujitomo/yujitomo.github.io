@@ -1,65 +1,104 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-29T22:28:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">Equational Criterion of Flatness</title><link href="http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness.html" rel="alternate" type="text/html" title="Equational Criterion of Flatness" /><published>2021-11-29T00:00:00+09:00</published><updated>2021-11-29T00:00:00+09:00</updated><id>http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness</id><content type="html" xml:base="http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness.html">&lt;h2 id=&quot;main-theorem&quot;&gt;Main Theorem&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-11-30T23:58:34+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">11月30日</title><link href="http://localhost:4000/diary/2021/11/30/Nikki.html" rel="alternate" type="text/html" title="11月30日" /><published>2021-11-30T00:00:00+09:00</published><updated>2021-11-30T00:00:00+09:00</updated><id>http://localhost:4000/diary/2021/11/30/Nikki</id><content type="html" xml:base="http://localhost:4000/diary/2021/11/30/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
 
-&lt;p&gt;このノートで示される定理は以下の二つです:&lt;/p&gt;
+&lt;p&gt;今日はある恥ずかしい出来事によって始まりました。
+ここで弁明するのもみっともないので詳細については省略しますが、
+恥ずかしい出来事とは、要は
+「logを取って評価するべき累乗の計算問題を二項展開によって処理しようとしたため、泥沼に陥った」
+というものです (数学が苦手な高校生がやりそうなことをやってしまいました)。
+自分は数学の博士じゃなかったのか！いや、まだ博士号を取ってないため博士ではないのですが、しかし、深く反省しています。
+その後、セミナーがあったので、この恥ずかしいミスを引きずったまま大学に行き、
+星先生と6時間くらいセミナーをやりました。
+セミナーでは、私の最近の研究に関する報告と、星先生からの質問に対する私の考察の提示と、
+最近の出来事の振り返りと、
+今後の人生についてと、数学の研究 (一般論) について話をしました。
+セミナー後は院生室である論文を印刷し、そのまま家へ帰ってこれを書いています。今22時半くらいです。&lt;/p&gt;
 
-&lt;h3 id=&quot;lazards-theorem-cf-stacks-theorem-10804&quot;&gt;Lazard’s Theorem [cf. Stacks, Theorem 10.80.4]&lt;/h3&gt;
+&lt;h3 id=&quot;数学科生という人生&quot;&gt;数学科生という人生&lt;/h3&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;Aを環, MをA-加群とする. このとき, 以下は同値である：&lt;/p&gt;
-  &lt;ol&gt;
-    &lt;li&gt;Mは平坦である.&lt;/li&gt;
-    &lt;li&gt;Mは有限自由加群からなるfilteredな図式の余極限として表示できる.&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;星先生とのセミナーでも話題になったのですが、多くの数学科では、
+修士を卒業するまでの間に、修論研究以外でまともに「研究」をやりません。
+数学科生の中でも博士課程に進学する人は稀です。
+私の所属していた大阪大学では、学部時代の同級生50人のうち、博士まで残ったのは7人程度だと思います
+(今脳内で数えたら7人もいたので、正直かなり驚いています。これは「非常に多い」のです)。
+博士過程に進学しないということは、かなり直接的に「数学の研究をしない人生を送る」ということを帰結するように思います。
+もちろん、その後のその人の人生選択によってはそうはならない可能性があることは否定しませんが、
+やはり「純粋数学を研究する」という言葉の具体的な意味を体感することは、
+大学に戻るなどの選択をしない限り、かなり難しくなるだろうと容易に想像できます。
+私が博士課程に進学した理由は、単に社会に出ることをほとんど想定していなかったというのもありますが、
+数学を研究するということを体感する機会を失いたくなかったから、というのもかなり大きいです。
+そして、数学科生の中でも博士課程に進学する人は稀だということはつまり、
+多くの数学科生は「数学の研究」に深く関わることなく卒業する、ということです
+(これが良いことか悪いことかの評価は保留します。これは単なる事実の指摘です)。&lt;/p&gt;
 
-&lt;p&gt;任意のねじれなし加群が平坦であるような整域のことをPrüfer整域と言います。&lt;/p&gt;
+&lt;p&gt;ところで、これはよく見かける言い回しですが、
+博士課程に進学するということは「人生をかけたギャンブル」なのでしょうか。
+どうでしょう。正直判断しかねます。
+修士課程でもそうですが、
+博士課程を卒業するためには博士論文を提出しなければなりません。
+修士論文はサーベイでもある程度許される (???本当か???) と思うのですが、
+博士はおそらく、それでは卒業できないでしょう。
+つまり、「自分の数学の研究」をある程度やらねばなりません。
+また、ある程度自立して新しい数学的主張を作る機会を得なければ、
+この「自分の数学の研究」が何か具体的なものを指し示しうるのだ、
+ということはなかなか納得できないかと思います。
+そして、「ある程度自立して新しい数学的主張を作る機会」は、
+主に修士2年以降にやってくるものです。
+博士課程に進学するという決断は、修士1年が終わるまでにある程度やっておかねばなりませんから、
+この意味では、少しギャンブル性があると言っても良いかもしれません。
+ですが、「人生をかけたギャンブルだ」と断言するほどでもないかなとは思います。&lt;/p&gt;
 
-&lt;h3 id=&quot;theorem&quot;&gt;Theorem&lt;/h3&gt;
+&lt;h3 id=&quot;数学の研究について&quot;&gt;数学の研究について&lt;/h3&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;Aを整域とする. AがPrüfer整域であれば, 任意の素イデアルpに対してApは付値環である.
-特に, NoetherなPrüfer整域はDedekind環である.
-また逆に, 任意の素イデアルでの局所化が付値環となる整域はPrüfer整域である.&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;p&gt;私は、私の研究を結構「独創的」な方だと思っているのですが、
+しかし、技術的には (←??) そんなに難しいことはあまりしていないような気もしています。
+つまり、自分ではかなり面白いことを証明しているつもりですが、
+一方で、自分以外の誰かであっても、やろうと思えばあっさりできたことのように思うのです。
+そういうわけで、自分の研究の自己評価がそんなに高くない方です
+(低いわけでもない (??) です。どちらかというと「評価不能」という方向の「評価」です)。
+もちろん、技術的に難しい研究が良い研究かと言われれば、それはそんなことはない気もするのですが、
+「自分でなければ乗り越えられなかった壁」を乗り越えた研究、
+という感じがあまりしません。
+「もし星先生や望月先生が3ヶ月真剣に考えたら解けたのではないか」
+と思うと、「そうではない」と断言できる研究をしたかどうかは微妙です。
+logスキームの圏からの復元問題に関しては、
+望月先生も星先生も論文を書いている事柄について自分の研究がそれを大きく改良する形になったので、
+もしかしたら、技術的にももう少し自信を持って良いのかもしれませんが、
+それでもやっぱり、あまり強くは断言できないです
+(この結果についてはまだ誰も読めない (=非公開) 状態なのですが…)。
+つまり、「望月先生も星先生もたまたま気づかなかっただけで、本当に本気を出せば気づいたのではないか」
+と思わずにはいられないのです
+(本当に本気を出す、の意味が明確ではないため、これは意味のない問いなのですが…)。
+証明を押し通す能力の高さ低さは目に見えて測り易い一方で、
+独創性というのはなかなか評価しづらく、
+それゆえに私は自分の研究の自己評価がいつまでも定まらないままでいます。&lt;/p&gt;
 
-&lt;p&gt;詳細は PDFファイル をご覧ください。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Commtative Algebra" /><summary type="html">Main Theorem</summary></entry><entry><title type="html">11月29日</title><link href="http://localhost:4000/diary/2021/11/29/Nikki.html" rel="alternate" type="text/html" title="11月29日" /><published>2021-11-29T00:00:00+09:00</published><updated>2021-11-29T00:00:00+09:00</updated><id>http://localhost:4000/diary/2021/11/29/Nikki</id><content type="html" xml:base="http://localhost:4000/diary/2021/11/29/Nikki.html">&lt;h3 id=&quot;そろそろこのホームページの移行作業が終わりそうで嬉しいです&quot;&gt;そろそろこのホームページの移行作業が終わりそうで嬉しいです。&lt;/h3&gt;
+&lt;p&gt;星先生はむしろ、「壁を感じさせないことこそが良い仕事だ」と仰ります。
+そうかもしれません。
+正しく本質を突いていれば問題は「氷解」するのであって、
+ドリルで壁を破壊してゴリ押しするような証明は私もあまり好きではないです。
+しかし、後者の方が「数学者の現場感」はあるかと思います (本当か???)。
+特殊な対象の特殊性に興味があるのが数論であり、
+数学の多くもそういう方向性を向いている、という意見には私もある程度賛同するのですが、
+特殊な対象の特殊性を用いて何かを証明するというのは、
+かなり「現場感」のある数学だなと思います。
+しかし、特殊な対象の特殊性を「用いなければ」証明できないことというのは、裏を返せば、
+我々人類はまだその事象が成立する本質的な根拠を見抜けていないということなのではないか、
+という指摘もあり得ます。
+どうなんでしょう。
+重要なことはさまざまな角度から疑問をなげかけることそのものなのです
+(←困ったときは「何も言ってないけど何か言ってそうなこと」に帰着させるのです)。&lt;/p&gt;
 
-&lt;p&gt;JavaScriptについてだいぶわかるようになってきて、
-いろいろできることの幅が広がってきたので、このホームページの移行作業もそろそろ終わりそうです。
-以前のホームページはHTMLファイルの構文上の問題点がたくさんありましたが、
-今のホームページは、以前よりはもう少し文章構造に従ったタグ選択ができているはずです。
-良かった。嬉しい。
-それに応じて見た目の方もいじりやすくなりました。
-良かった。嬉しい。&lt;/p&gt;
-
-&lt;p&gt;Includeされたmarkdownファイルに対して施す装飾を考えなければなりません。
-たとえば、&lt;/p&gt;
-
-&lt;h2 id=&quot;markdown&quot;&gt;Markdown&lt;/h2&gt;
-
-&lt;p&gt;↑これはこの日記を書いているMarkdownファイルの中で「## Markdown」と表示しており、
-HTMLファイルにincludeすると、h2タグになんらかのidが付与されたものに変換されるのですが、
-そのh2タグに対する適切な装飾を施すにはどうすればいいか、などを考えなければいけないのです
-(h2に対してはその作業が終わっているので上のような「装飾後の表示」になります)。
-あと、TeXをincludeして上手に表示する方法があればいいなぁなどと思っています。
-TeXに関しては、そんなことが可能なことなのかは疑わしいですが。&lt;/p&gt;
-
-&lt;h3 id=&quot;夜ご飯&quot;&gt;夜ご飯&lt;/h3&gt;
-
-&lt;p&gt;昨日は気づいたらハイレモンとアーモンド小魚だけになっていたので、
-これはまずいと思って今日はコンビニで焼き芋と肉とおでんとおにぎりといろいろ食べました。
-水を買おうと思っていたのに忘れてしまったので大変厳しい気持ちになっています。
-しかし、これは、裏を返せば、web制作は食欲が抑制されてダイエットに良い、ということかもしれません。&lt;/p&gt;
-
-&lt;h3 id=&quot;今日はもう寝ます&quot;&gt;今日はもう寝ます。&lt;/h3&gt;
-
-&lt;p&gt;眠いです。
-ここ数日は意図せず夜ふかしが続いてしまったので最悪でした。
-人間のデフォルトの状態は睡眠状態 (←本当か？) であり、
-睡眠はいかなる事柄よりも最優先される事柄です。
-すなわち、最高の人生は、最高の睡眠なくしてはあり得ないのです。
-そういうわけで今日はもう寝ます。
-ここ数日の出来事の振り返りは明日にさせてください。おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">そろそろこのホームページの移行作業が終わりそうで嬉しいです。</summary></entry><entry><title type="html">Memo (PC)</title><link href="http://localhost:4000/notes/2021/11/29/PCMemo.html" rel="alternate" type="text/html" title="Memo (PC)" /><published>2021-11-29T00:00:00+09:00</published><updated>2021-11-29T00:00:00+09:00</updated><id>http://localhost:4000/notes/2021/11/29/PCMemo</id><content type="html" xml:base="http://localhost:4000/notes/2021/11/29/PCMemo.html">&lt;h2 id=&quot;overall&quot;&gt;Overall&lt;/h2&gt;
+&lt;p&gt;私は、数学の研究をするということがどういうことかについてある程度体感して理解したので、
+おそらく、このまま普通に (←???) 生きているだけでも、
+毎年コンスタントにいろいろと結果を出し続ける人には正直なれるだろうと思います (←こういうところは自信過剰なのです)。
+しかし、それでいいのだろうか、と思わなくもないです (←こういうところも自信過剰です)。
+つまり「次のレベル」にステップアップしたいのです (←そしてこれも自信過剰さの一種の出現です)。
+今までの私の研究はかなり「一般論寄り」だったので、
+もう少し具体的な対象の特殊性を詳しく見ていくような研究ができれば、
+私の今までの研究の「評価不能さ」も軽減されると思います
+(その結果「あまり大した結果ではなかった」という評価になる可能性はありますが)。
+結局、いろいろな方向性の研究を「体感」しなければ、
+自分や他者の研究の「正当な評価 (←???)」は難しいのです。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry><entry><title type="html">Memo (PC)</title><link href="http://localhost:4000/notes/2021/11/29/PCMemo.html" rel="alternate" type="text/html" title="Memo (PC)" /><published>2021-11-29T00:00:00+09:00</published><updated>2021-11-29T00:00:00+09:00</updated><id>http://localhost:4000/notes/2021/11/29/PCMemo</id><content type="html" xml:base="http://localhost:4000/notes/2021/11/29/PCMemo.html">&lt;h2 id=&quot;overall&quot;&gt;Overall&lt;/h2&gt;
 &lt;p&gt;問題のパッケージはインストールされているか??　/　 「brew doctor」「jekyll doctor」などと打ってwarningが出てないか??　/　 完全素人でないなら公式の解説を読みこむ&lt;/p&gt;
 
 &lt;h2 id=&quot;around-web-creating&quot;&gt;Around Web Creating&lt;/h2&gt;
@@ -143,7 +182,68 @@ alg-dさんに教えていただきました. ありがとうございます. &l
 &lt;p&gt;Gemfileの書き方　/　 WEBrickを使うためのメモ&lt;/p&gt;
 
 &lt;h2 id=&quot;others&quot;&gt;Others&lt;/h2&gt;
-&lt;p&gt;YAMLのコメントアウトはシャープ&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Others" /><summary type="html">Overall 問題のパッケージはインストールされているか??　/　 「brew doctor」「jekyll doctor」などと打ってwarningが出てないか??　/　 完全素人でないなら公式の解説を読みこむ</summary></entry><entry><title type="html">11月27日</title><link href="http://localhost:4000/diary/2021/11/28/Nikki.html" rel="alternate" type="text/html" title="11月27日" /><published>2021-11-28T00:00:00+09:00</published><updated>2021-11-28T00:00:00+09:00</updated><id>http://localhost:4000/diary/2021/11/28/Nikki</id><content type="html" xml:base="http://localhost:4000/diary/2021/11/28/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
+&lt;p&gt;YAMLのコメントアウトはシャープ&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Others" /><summary type="html">Overall 問題のパッケージはインストールされているか??　/　 「brew doctor」「jekyll doctor」などと打ってwarningが出てないか??　/　 完全素人でないなら公式の解説を読みこむ</summary></entry><entry><title type="html">Equational Criterion of Flatness</title><link href="http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness.html" rel="alternate" type="text/html" title="Equational Criterion of Flatness" /><published>2021-11-29T00:00:00+09:00</published><updated>2021-11-29T00:00:00+09:00</updated><id>http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness</id><content type="html" xml:base="http://localhost:4000/notes/2021/11/29/EquationalCriterionOfFlatness.html">&lt;h2 id=&quot;main-theorem&quot;&gt;Main Theorem&lt;/h2&gt;
+
+&lt;p&gt;このノートで示される定理は以下の二つです:&lt;/p&gt;
+
+&lt;h3 id=&quot;lazards-theorem-cf-stacks-theorem-10804&quot;&gt;Lazard’s Theorem [cf. Stacks, Theorem 10.80.4]&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Aを環, MをA-加群とする. このとき, 以下は同値である：&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;Mは平坦である.&lt;/li&gt;
+    &lt;li&gt;Mは有限自由加群からなるfilteredな図式の余極限として表示できる.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;任意のねじれなし加群が平坦であるような整域のことをPrüfer整域と言います。&lt;/p&gt;
+
+&lt;h3 id=&quot;theorem&quot;&gt;Theorem&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Aを整域とする. AがPrüfer整域であれば, 任意の素イデアルpに対してApは付値環である.
+特に, NoetherなPrüfer整域はDedekind環である.
+また逆に, 任意の素イデアルでの局所化が付値環となる整域はPrüfer整域である.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;詳細は PDFファイル をご覧ください。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Commtative Algebra" /><summary type="html">Main Theorem</summary></entry><entry><title type="html">11月29日</title><link href="http://localhost:4000/diary/2021/11/29/Nikki.html" rel="alternate" type="text/html" title="11月29日" /><published>2021-11-29T00:00:00+09:00</published><updated>2021-11-29T00:00:00+09:00</updated><id>http://localhost:4000/diary/2021/11/29/Nikki</id><content type="html" xml:base="http://localhost:4000/diary/2021/11/29/Nikki.html">&lt;h3 id=&quot;そろそろこのホームページの移行作業が終わりそうで嬉しいです&quot;&gt;そろそろこのホームページの移行作業が終わりそうで嬉しいです。&lt;/h3&gt;
+
+&lt;p&gt;JavaScriptについてだいぶわかるようになってきて、
+いろいろできることの幅が広がってきたので、このホームページの移行作業もそろそろ終わりそうです。
+以前のホームページはHTMLファイルの構文上の問題点がたくさんありましたが、
+今のホームページは、以前よりはもう少し文章構造に従ったタグ選択ができているはずです。
+良かった。嬉しい。
+それに応じて見た目の方もいじりやすくなりました。
+良かった。嬉しい。&lt;/p&gt;
+
+&lt;p&gt;Includeされたmarkdownファイルに対して施す装飾を考えなければなりません。
+たとえば、&lt;/p&gt;
+
+&lt;h2 id=&quot;markdown&quot;&gt;Markdown&lt;/h2&gt;
+
+&lt;p&gt;↑これはこの日記を書いているMarkdownファイルの中で「## Markdown」と表記しており、
+HTMLファイルにincludeすると、h2タグになんらかのidが付与されたものに変換されるのですが、
+そのh2タグに対する適切な装飾を施すにはどうすればいいか、などを考えなければいけないのです
+(h2に対してはその作業が終わっているので上のような「装飾後の表示」になります)。
+あと、TeXをincludeして上手に表示する方法があればいいなぁなどと思っています。
+TeXに関しては、そんなことが可能なことなのかは疑わしいですが。&lt;/p&gt;
+
+&lt;h3 id=&quot;夜ご飯&quot;&gt;夜ご飯&lt;/h3&gt;
+
+&lt;p&gt;昨日は気づいたらハイレモンとアーモンド小魚だけになっていたので、
+これはまずいと思って今日はコンビニで焼き芋と肉とおでんとおにぎりといろいろ食べました。
+水を買おうと思っていたのに忘れてしまったので大変厳しい気持ちになっています。
+しかし、これは、裏を返せば、web制作は食欲が抑制されてダイエットに良い、ということかもしれません。&lt;/p&gt;
+
+&lt;h3 id=&quot;今日はもう寝ます&quot;&gt;今日はもう寝ます。&lt;/h3&gt;
+
+&lt;p&gt;眠いです。
+ここ数日は意図せず夜ふかしが続いてしまったので最悪でした。
+人間のデフォルトの状態は睡眠状態 (←本当か？) であり、
+睡眠はいかなる事柄よりも最優先される事柄です。
+すなわち、最高の人生は、最高の睡眠なくしてはあり得ないのです。
+そういうわけで今日はもう寝ます。
+ここ数日の出来事の振り返りは明日にさせてください。おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">そろそろこのホームページの移行作業が終わりそうで嬉しいです。</summary></entry><entry><title type="html">11月27日</title><link href="http://localhost:4000/diary/2021/11/28/Nikki.html" rel="alternate" type="text/html" title="11月27日" /><published>2021-11-28T00:00:00+09:00</published><updated>2021-11-28T00:00:00+09:00</updated><id>http://localhost:4000/diary/2021/11/28/Nikki</id><content type="html" xml:base="http://localhost:4000/diary/2021/11/28/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
 
 &lt;p&gt;まずい感じの夜ふかしが続いていてまずいのは昨日と同じですが、おかげであと一息のところまできました。
 今日も一日中JavaScriptをいじっていたら終わりました。
@@ -270,25 +370,4 @@ Jekyllのインストールのためにrbenvをインストールするために
 
 &lt;p&gt;ところで, 違いに可換な正方行列がいくつか与えられれば, もとの線形空間を多変数多項式環上の長さ有限加群とみなせます. この場合もやはりsupportが閉点からなる有限離散集合なので, 各点でのstalkの直積に分解します. これは「同時固有空間分解」や「ウェイト分解」などと呼ばれているもので, supportの点が「同時固有値」「ウェイト」になります (「同時固有空間分解」は「同時固有値」の概念に先立って行うことができるし, 「同時固有値」の概念の定義に「同時固有ベクトル」の概念を使う必要もない, ということに注意しておきます). アルティン局所-代数上の有限生成加群は, によるfiltrationのsubquotientの直和と同型ですから, この直和分解と両立的なの基底を選んでやれば, の元のへの作用の「同時三角化」が得られます. 結局, 上の議論と全く同様に, 違い可換な正方行列が与えられれば, それらを同時三角化する基底がとれる, ということが従います. しかし「同時ジョルダン標準形」までは辿り着けません.&lt;/p&gt;
 
-&lt;p&gt;同時ジョルダン標準形が得られないことは次のような観察をすると「雰囲気」がわかります: 有限次元-線形空間とその部分空間を選び, の基底を に送ることを考えてみます. の元はに「合成すると0」で作用するので, これらは互いに可換です. との基底を選んで行列表示すると, 「同時ジョルダン標準形できなさそうな感じ」が少し見えてきます. 余談ですが, 上の方法は「互いに可換で一次独立な行列の数」の最大値 (  ) を実現する方法でもあります.&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry><entry><title type="html">11月22日</title><link href="http://localhost:4000/diary/2021/11/22/Nikki.html" rel="alternate" type="text/html" title="11月22日" /><published>2021-11-22T00:00:00+09:00</published><updated>2021-11-22T00:00:00+09:00</updated><id>http://localhost:4000/diary/2021/11/22/Nikki</id><content type="html" xml:base="http://localhost:4000/diary/2021/11/22/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
-
-&lt;p&gt;今日は起きるのが遅かった (正午). 昨日張り切って大量に日記を書いて (そして大量に消して) いたら寝るのが04時になってしまったので, それが原因です. なんとしてでも生活週間を改善しなければならない, というわけで明日は09時に起きます. 明後日は07時に起きます.&lt;/p&gt;
-
-&lt;p&gt;今日は起きたら少しTwitterを見てそのあとシャワーを浴び, そのまま化粧をして家を出ました. 家を出るということをきちんとやらないと精神状態がおかしくなるので, とりあえず家は出ています. といっても今日は特に用事がなく, 科研費で注文していた Cassels and Fröhlich を取りに行ったらそのまま院生室に直行し, 特にやることもないと思いながらパソコンを開いていました (これがだいたい16時半です). その後はこのホームページの Links をいじっていたら23時半になってしまい, 時間を溶かして家に帰ってきました (←いまここです)。 この日記はファミマで買った夜ご飯 (野菜, 焼き芋, クリスピーチキン ハバネロ, おでん, 納豆, イワシ缶) を食べながら書いています. 本当は節約のことも考えて自炊した方が良いのですが, 今日は炊飯器の予約をしていなかった上に帰る時間が思いのほか遅くなってしまったのでしょうがないです.&lt;/p&gt;
-
-&lt;h3 id=&quot;ご飯について&quot;&gt;ご飯について&lt;/h3&gt;
-
-&lt;p&gt;私は実は博士になるまで納豆が食べれませんでした. 小学校の時に食べさせられた納豆があまりにまずく, その記憶がずっと残っていたからです. ですが, 去年, 「食べれないものを克服しよう」というチャレンジをやっていたことがあり, その一環で, 納豆も克服しました. このチャレンジによって, 他にもコーヒーが飲めるようになったりしたので, やって良かったかなと思います. 好きか嫌いかで言えばよくわからないのですが, コーヒーも納豆も健康食というイメージがあるので, 積極的に摂取するようにしています. 味に関してはよくわからないです. 今日もファミマで150円くらいのコーヒーを買ったのですが, コーヒーには大変優れた空腹軽減効果があります (個人的な感想です). ダイエットにはおすすめです.&lt;/p&gt;
-
-&lt;p&gt;コーヒーに含まれるカフェインの量は, たとえばスタバのトールサイズのドリップコーヒーでは260mgものカフェインが入っているそうです. モンスターエナジー1本に含まれるカフェインの量がだいたい142mg程度だそうですから, 単純にカフェインの量で比較するとスタバのドリップコーヒーは恐ろしい飲料だということになります. しかし, コーヒーにはタンニンも含まれており, どうやらカフェインとタンニンは結合 (??) してその効果が薄れるのだそうです (←エセ科学かもしれません). なので, 単純にカフェインの量でエナジードリンクとコーヒーを比較するのは間違いかもしれません. 何が言いたかったのかというと, カフェインとタンニンは結合するらしい, ということです (←??).&lt;/p&gt;
-
-&lt;p&gt;私は魚が好きで, 魚は健康に良いということもあって, イワシの缶詰をよく食べます. 本当は, 節約のことを考えると, 鯖缶の方が安いかなと思うのですが, イワシ缶の方がおいしいのと, イワシ缶の方がDHAやEPAの量が多いのとで, イワシ缶を選んでしまいます. 冷やした缶詰を開けた時に見える黄色くて泡っぽい脂がDHAかEPAのどちらかだそうです. 「魚を食べると頭がよくなる」という噂は, DHAやEPAが脳神経の再生や保護などに関わっている (←エセ科学かもしれません) ということから来ているのでしょう. 私も, 数学をやる人間として, 脳には十分に働いてもわらねば困るので, DHAやEPAはなるべく摂取するようにしています (去年から). 血液をサラサラにする効果もあるそうなので, 二重にお得なのですが, 摂りすぎると良くないらしいので, その辺は気をつけています. 具体的には, 毎日イワシ缶を食べていると摂りすぎになるそうです.&lt;/p&gt;
-
-&lt;h3 id=&quot;linksについて&quot;&gt;Linksについて&lt;/h3&gt;
-&lt;p&gt;今日は起きている時間のほとんどをLinksいじりに費やしてしまったのですが, おかげで少し充実しました. いろんな数学者のリンクを追加しようとごちゃごちゃやっていたのですが, 途中で, 阪大時代の先輩である 関さんのリンク集 を見つけ, 「こんなに集めるのは無理だ」と思い, 自分で集めるのは途中で断念しました. 一方, 「他人のリンク集や数学者の名簿を集めておけば有用なのでは？」などと思い至り, さまざまな大学の数学科のページのリンクを集め回っていました. おかげでかなり充実してきたと思います. もう少し集めたいリンクがあるので, 明日も少しそれをやろうと思います.&lt;/p&gt;
-
-&lt;h3 id=&quot;htmlについて&quot;&gt;HTMLについて&lt;/h3&gt;
-&lt;p&gt;私はこのページをアプリなどを用いずに適当にHTML, CSS, Java Scriptを書くなどして作ったのですが, 私はこれらの言語の「作法」についてよくわかっておりません. 今日, どうやらHTMLには「h1は各記事に一つしか使ってはいけない」というルールがあるらしい, ということを知り, このホームページのさまざまな記事が複数のh1を使っているなあと思い, 修正めんどくさいなあ, などと思っています. いつか修正しなければいけません. 本当に面倒くさいです.&lt;/p&gt;
-
-&lt;h3 id=&quot;私と類体論&quot;&gt;私と類体論&lt;/h3&gt;
-&lt;p&gt;Cassels and Fröhlich はコホモロジカルに大域類体論を解説した本でとても良くまとまっている, と友人に紹介されて買いました. 私は学部3年生のときに Serreの Local Fields を読んで局所類体論について勉強し, Serreの上手な論理展開に感銘を受けて 「p進っぽいことをやろう」と思い, 数論の研究室を選びました (本当は, これは数論の研究室を選んだ理由のうちの半分で, もう半分の理由は, 学部4年のはじめに行われる研究室選びで このLocal Fieldsの面倒を見てくれた先生とは違う先生を選ぶのは気が引けた, というものです). しかしその後, Hartshorne を読んだり dg圏の勉強 をしながら学部4年を終え, 修士の1年間を Hartshorne 2周目にあてて, M2は修論, そのまま博士まで来てしまい, 局所類体論のかなりの部分を忘れてしまいました. 数論の研究室にいるにもかかわらず局所類体論を忘れたまま卒業するのもなんだかなあと思い, ちゃんと復習しようと意気込んでいるのです. そして, 大域類体論もついでに勉強しようというわけです.&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry></feed>
+&lt;p&gt;同時ジョルダン標準形が得られないことは次のような観察をすると「雰囲気」がわかります: 有限次元-線形空間とその部分空間を選び, の基底を に送ることを考えてみます. の元はに「合成すると0」で作用するので, これらは互いに可換です. との基底を選んで行列表示すると, 「同時ジョルダン標準形できなさそうな感じ」が少し見えてきます. 余談ですが, 上の方法は「互いに可換で一次独立な行列の数」の最大値 (  ) を実現する方法でもあります.&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry></feed>

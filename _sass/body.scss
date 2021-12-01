@@ -16,13 +16,13 @@ article {
 }
 
 section {
-  padding: 1em 0 1em 0;
+  padding: 0px 0px 1.5em 0px;
 }
-
 
 h2 {
   @include heading-fonts;
-  padding: 0px 0px 0px 5%;
+  margin: 0.5em 0em 0.5em 0em;
+  padding: 0px 5% 0px 5%;
   font-weight: 500;
   font-size: 1.85em;
   margin: 0px;
@@ -35,14 +35,18 @@ h2 {
   }
 }
 
-h3, h4, h5, h6 {
-  padding: 0.5em 7% 0.5em 5%;
-  font-family: 'Noto Serif JP';
-  margin: auto;
+h3, h4, h5, h6, p, ul, ol {
+  padding: 0px 5% 0px 5%;
+  margin: 0.5em 0em 0.5em 0em;
 }
 
-p {
-  padding: 0.5em 5% 0.5em 5%;
+ul {
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+ol {
+  flex-wrap: wrap;
 }
 
 a {
@@ -52,16 +56,6 @@ a {
   &:hover {
     opacity: 0.5;
   }
-}
-
-ul {
-  list-style: none;
-  flex-wrap: wrap;
-}
-
-ol {
-  padding: 0px 5% 0px 5%;
-  flex-wrap: wrap;
 }
 
 
@@ -82,18 +76,26 @@ ol {
   color: $current_color;
 }
 
+.diary-here-first > span {
+    padding: 0em 5% 0.5em 5%;
+}
+
 /****メイン****/
 
+ul.ul-links li {
+	display: inline;
+}
 
 ul.note-top {
   margin: 0px;
   padding: 0px 5% 0px 5%;
-  list-style: none;
   li {
     margin: 0px;
     padding: 0px;
   }
-  h4 {
+  h3 {
+    font-size: 16px; /*これはh4の大きさと同じ*/
+    font-weight: 600;
     margin: 0.5em 0px 0em 0.5em;
     padding: 0.5em 0px 0.3em 0em;
     span {

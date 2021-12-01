@@ -10,7 +10,7 @@ description: "日記です. "
 {% assign latest_post = site.categories.Diary[0] %}
 
 
-{% for all_posts in site.categories.Diary %}
+{% for all_posts in site.categories.Diary reversed %}
 {% capture this_year %}{{ all_posts.date | date: "%Y-%B" }}{% endcapture %}
 
 <div class="diary-here-{{ this_year }} diary-this-is-hidden">
@@ -29,18 +29,19 @@ description: "日記です. "
 
 
 <div class="diary-here-first">
-  <p>
-    Latest Post:
+  <span>Latest Post:</span>
+  <!--
     <a href="{{ latest_post.url }}">
       <span class="first-color-change-II">{{ latest_post.date | date: "%Y. %b. %d (%a.)" }}</span>
-    </a>
-  </p>
-  <h2>
-    <a href="{{ latest_post.url }}">
-      <span class="first-color-change-IC">{{ latest_post.date | date: "%Y. %b. %d. (%a.)" }}</span>
-    </a>
-  </h2>
-  {{ latest_post.content | markdownify }}
+    </a>-->
+  <section>
+    <h2>
+      <a href="{{ latest_post.url }}">
+        <span class="first-color-change-IC">{{ latest_post.date | date: "%Y. %b. %d. (%a.)" }}</span>
+      </a>
+    </h2>
+    {{ latest_post.content | markdownify }}
+  </section>
 </div>
 
 

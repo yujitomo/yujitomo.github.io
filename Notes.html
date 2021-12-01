@@ -65,14 +65,14 @@ description: "ノートなど"
     {% capture current_tag %}{{ note_post.tag }}{% endcapture %}
     {% if note_tag == current_tag %}
     <li>
-      <h4><span><a href="{{ note_post.url }}">{{ note_post.title }}</a></span></h4>
+      <h3><span><a href="{{ note_post.url }}">{{ note_post.title }}</a></span></h3>
       <p>{{ note_post.description }}</p>
     </li>
     {% endif %}
     {% endfor %}
   </ul>
-
 </section>
+
 {% endif %}
 {% endfor %}
 
@@ -83,17 +83,21 @@ description: "ノートなど"
   <h2><span class="first-color-change-IC">Others</span></h2>
 
   <ul class="note-top">
-    <li>
-      <h4><span><a href="/assets/HTML/Links.html">Links</a></span></h4>
-      <p>リンク集です. </p>
-    </li>
     {% for note_post in site.categories.Notes %}
     {% if note_post.tag == 'Others' %}
     <li>
-      <h4><span><a href="{{ note_post.url }}">{{ note_post.title }}</a></span></h4>
+      <h3><span><a href="{{ note_post.url }}">{{ note_post.title }}</a></span></h3>
       <p>{{ note_post.description }}</p>
     </li>
     {% endif %}
     {% endfor %}
+    <li>
+      <h3><span><a href="/assets/HTML/Links.html">Links</a></span></h3>
+      <p>リンク集です. </p>
+    </li>
+    <li>
+      <h3><span><a href="/assets/HTML/PCMemo.html">Memo (PC)</a></span></h3>
+      <p>パソコン関係のメモ. </p>
+    </li>
   </ul>
 </section>

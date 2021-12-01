@@ -8,12 +8,12 @@ nav {
   margin-right: auto;
   ul {
     display: flex;
+    padding: 0;
   }
 }
 
 header.top-header {
   padding: 0 15% 0 15%;
-  margin: 0 0 2em 0;
   border-bottom: 1px solid $border_color_top;
   h1 {
     font-size: $navi_yujitomo_size;
@@ -36,25 +36,21 @@ header.top-header {
 
 
 header.main-header {
-  padding-bottom: 1em;
   h1 {
+    padding-top: 1em;
     text-align: center;
     font-size: $main-header-title-size;
     span.equals {
       @include navi-fonts;
-      padding-left: 15px;
-      padding-right: 15px;
       border-bottom: 1px solid $border_color_h1;
     }
     span.nequals {
       @include heading-fonts;
-      padding-left: 15px;
-      padding-right: 15px;
       border-bottom: 1px solid $border_color_h1;
     }
   }
   p {
-    padding-top: 1em;
+    padding: 1em 0em 1em 0em;
     text-align: center;
     font-size: $main-header-size;
   }
@@ -102,7 +98,7 @@ footer.bottom-footer {
         /*justify-content: space-between;*/
         li {
           width: auto;
-          padding-right: 30px;
+          padding-right: 10px;
         }
       }
       ul.footer-right {
@@ -110,11 +106,8 @@ footer.bottom-footer {
         li {
           width: auto;
           p {
-            @include default-fonts;
             font-size: 5px;
           }
-          /*@include default-fonts;
-          margin-right: 30px;*/
         }
       }
     }

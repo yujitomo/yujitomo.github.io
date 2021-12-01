@@ -1,0 +1,62 @@
+
+{% if page.category != "Diary" %}
+
+<header class="main-header">
+  <h1>
+    {% if page.title == page.category %}
+    <span class="equals">{{ page.title }}</span>
+    {% else %}
+      {% if page.title == "About Me" %}
+      <span class="equals">{{ page.title }}</span>
+      {% else %}
+    <span class="nequals">{{ page.title }}</span>
+    {% endif %}
+    {% endif %}
+  </h1>
+  <p>
+    {{ page.description }}
+  </p>
+</header>
+
+
+{% else %}
+
+{% if page.url == "/Diary.html"%}
+
+<header class="main-header">
+  {% for post in site.categories.Diary %}
+  {% capture current_ym %}{{ post.date | date: "%Y-%B" }}{% endcapture %}
+  {% if current_ym != previous_ym %}
+  {% capture this_year %}{{ post.date | date: "%Y-%B" }}{% endcapture %}
+  <h1>
+    <span class="diary-here-first equals">Diary</span>
+    <span class="diary-here-{{ this_year }} diary-this-is-hidden nequals">
+      <span class="first-number-font">2</span>0{{ post.date | date: "%y. %B." }}
+    </span>
+  </h1>
+  <p>
+    <span class="diary-here-first">日記. </span>
+    <span class="diary-here-{{ this_year }} diary-this-is-hidden">
+      {{ post.date | date: "%Y年 %m月" }}の日記.
+    </span>
+  </p>
+  {% assign previous_ym = current_ym %}
+  {% endif %}
+  {% endfor %}
+</header>
+
+
+{% else %}
+
+<header class="main-header">
+  <h1>
+    <span class="nequals">
+      <span class="first-number-font">2</span>0{{ page.date | date: "%y. %b. %d. (%a)" }}
+    </span>
+  </h1>
+  <p>{{ page.date | date: "%Y年 %m月 %d日" }}の日記.</span>
+  </p>
+</header>
+
+{% endif %}
+{% endif %}

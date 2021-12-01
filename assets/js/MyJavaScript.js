@@ -119,6 +119,35 @@ $("h2").text(function() {
 });
 
 
+$(function() {
+  if ( location.pathname == "/assets/HTML/Links.html" ) {
+    const ul_elements = document.getElementsByTagName("ul");
+    for ( i = 0 ; i < ul_elements.length ; i++ ) {
+      console.log(ul_elements[i].classList.length);
+      if ( ul_elements[i].parentNode.tagName != "FOOTER"
+        && ul_elements[i].parentNode.tagName != "NAV"
+        && ul_elements[i].classList.length == 0
+      ) {
+        ul_elements[i].classList.add("ul-links");
+        console.log(ul_elements[i].children);
+        var li_elements_list = ul_elements[i].children;
+        for ( j = 1 ; j < li_elements_list.length ; j++) {
+          li_elements_list[j].innerHTML = "　/　" + li_elements_list[j].innerHTML;
+        };
+      }
+    }
+  }
+});
+
+
+
+$(function() {
+  console.log(location.pathname);
+});
+
+
+
+
 
 
 var this_ym_previous = ["first"]; /*** 一つ前にクリックした年月を格納しておくリスト ***/
@@ -178,5 +207,23 @@ $(function() {
     myfunctAddRmvHidden("rmv", "diary-here-first-hide");  /*** 最初は隠されているけど二回目以降は表示する ***/
 
     this_ym_previous.shift(); /*** 最後にリストを更新 ***/
+    window.scrollTo(0, 0); /*** ページの上に移動 ***/
   });
+});
+
+
+$(document).ready(function() {
+  renderMathInElement(
+    document.body, {
+      delimiters: [{
+        left: "[[",
+        right: "]]",
+        display: true
+      }, {
+        left: "\\(",
+        right: "\\)",
+        display: false
+      }]
+    }
+  );
 });

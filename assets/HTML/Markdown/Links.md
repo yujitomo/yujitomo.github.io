@@ -131,7 +131,9 @@
 - [明治 数理科学科](http://www.isc.meiji.ac.jp/~math/index.html)
 - [青山 数理サイエンス学科](http://www.math.aoyama.ac.jp/)
 - [近大 数学コース](https://www.math.kindai.ac.jp/)
-- - [数学科のある日本の大学の一覧 (Wikipedia)](https://ja.wikipedia.org/wiki/%E6%95%B0%E5%AD%A6%E7%A7%91#%E6%97%A5%E6%9C%AC%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E6%95%B0%E5%AD%A6%E7%A7%91)
+- [数学科のある日本の大学の一覧 (Wikipedia)](https://ja.wikipedia.org/wiki/%E6%95%B0%E5%AD%A6%E7%A7%91#%E6%97%A5%E6%9C%AC%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E6%95%B0%E5%AD%A6%E7%A7%91)
+
+<!-- dummy comment line for breaking list -->
 
 - [iTHEMS (理研)](https://ithems.riken.jp/ja): ここは数学の研究もしている組織という認識で良いのでしょうか?
 - [NTTが基礎数学の研究センターを設立するそうです](https://group.ntt/jp/newsrelease/2021/10/01/211001a.html)

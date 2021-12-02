@@ -48,12 +48,6 @@ a:hover { opacity: 0.5; }
 
 .diary-here-first > span { padding: 0em 5% 0.5em 5%; }
 
-.h1-like-h2 { font-family: 'Cormorant Garamond'; font-weight: 100; margin: 0.5em 0em 0.5em 0em; padding: 0px 5% 0px 5%; font-weight: 500; font-size: 1.85em; margin: 0px; border-bottom: 0.5px solid #dadada; }
-
-.h1-like-h2 span { font-family: 'Cormorant Garamond'; font-weight: 100; }
-
-.h1-like-h2 a { font-family: 'Cormorant Garamond'; font-weight: 100; }
-
 /****メイン****/
 ul.ul-links li { display: inline; }
 

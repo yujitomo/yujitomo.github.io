@@ -25,7 +25,7 @@
 
 ### HTML
 
-- 構文チェッカー: [これ](http://www.htmllint.net/wac/ja/)とか[これ](https://validator.w3.org/)とかがある。
+- 構文チェッカー: [これ](http://www.htmllint.net/html-lint/htmllint.html)とか[これ](https://validator.w3.org/)とかがある。
 - [Webページの基本構造](https://shu-naka-blog.com/html/tag01/)
   - ↑ CSSで装飾しまくって頑張るゲームではない!!!! ということがちょっとわかる.
 - [Web関係の辞書的なサイト](https://developer.mozilla.org/ja/docs/Web)

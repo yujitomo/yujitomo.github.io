@@ -66,12 +66,14 @@
 
 
 
-### 代数幾何色の強いもの：
+### 代数幾何・数論幾何色の強いもの：
 
 - [Stacks Project](https://stacks.math.columbia.edu/)
 - [EGA, FGA, SGA](https://webusers.imj-prg.fr/~leila.schneps/grothendieckcircle/pubtexts.php)
 - [SGA](http://library.msri.org/books/sga/)
 - [Mathematics Site - J.S. Milne (since 1996)](https://www.jmilne.org/math/index.html)
+- [Hard Arithmetic](https://ayoucis.wordpress.com/)
+(← [Alex Youcis さん](https://alex-youcis.github.io/)のブログ？)
 
 
 ### 圏論色の強いもの：

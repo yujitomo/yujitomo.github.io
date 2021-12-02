@@ -32,7 +32,7 @@
 - [主なエスケープ文字一覧](https://techacademy.jp/magazine/12553).
 - pタグ内で改行するときはbrタグで、ソースを載せるときはcodeタグ。
 - spanタグなどのinline系のタグの中で改行を打つと、それをJavaScriptなどでいじったときに変な挙動をすることがあるので注意。
-
+- [KaTeX: Supported Functions](https://katex.org/docs/supported.html)
 
 
 ### CSS

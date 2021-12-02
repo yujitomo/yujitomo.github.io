@@ -26,4 +26,4 @@ description: "Strangeな曲線の構造に関するノートです."
 Hurwitzの定理を用いたHartshorneによる証明とは異なる証明を与えます.
 証明では, 接ベクトルを分離することのある言い換えを用います
 (cf. [\[Separating Tangent Vectors\]](/notes/2021/12/01/SeparatingTangentVectors.html) ).
-詳細は[\[PDFファイル\]](/assets/TeX Files/Strange Curves/Strange Curves.pdf)をご覧ください。
+詳細は[\[PDFファイル\]](/assets/TeX Files/Strange_Curves/Strange Curves.pdf)をご覧ください。

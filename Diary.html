@@ -14,11 +14,11 @@ description: "日記です. "
 {% capture this_year %}{{ all_posts.date | date: "%Y-%B" }}{% endcapture %}
 
 <article class="diary-here-{{ this_year }} diary-this-is-hidden">
-  <h1>
+  <h2>
     <a href="{{ all_posts.url }}">
       <span class="first-color-change-IC">{{ all_posts.date | date: "%Y. %b. %d. (%a.)" }}</span>
     </a>
-  </h1>
+  </h2>
   {{ all_posts.content | markdownify }}
 </article>
 
@@ -27,16 +27,14 @@ description: "日記です. "
 
 
 <article class="diary-here-first">
-  <span>Latest Post:</span>
-  <!--
-    <a href="{{ latest_post.url }}">
-      <span class="first-color-change-II">{{ latest_post.date | date: "%Y. %b. %d (%a.)" }}</span>
-    </a>-->
-  <h1>
+  <p>
+    <span>Latest Post:</span>
+  </p>
+  <h2>
     <a href="{{ latest_post.url }}">
       <span class="first-color-change-IC">{{ latest_post.date | date: "%Y. %b. %d. (%a.)" }}</span>
     </a>
-  </h1>
+  </h2>
   {{ latest_post.content | markdownify }}
 </article>
 

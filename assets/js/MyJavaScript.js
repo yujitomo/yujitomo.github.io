@@ -144,7 +144,6 @@ if ( this_pathname_ary[1] == "notes" || this_pathname_ary[1] == "assets" ) {
     && h2_elements[i].parentNode.tagName != "FOOTER" ) {
       var h2_str = h2_elements[i].textContent;
       h2_elements[i].innerHTML = myfunctChangeFC_II_CSS(h2_str);
-      h2_elements[i].classList.add("h1-like-h2")
     }
   }
 };

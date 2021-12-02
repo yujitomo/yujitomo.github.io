@@ -16,25 +16,25 @@ main {
 
 article {
 	margin: 0px 0px 1.5em 0px;
-	h1 {
-	  @include heading-fonts;
-	  margin: 0.5em 0em 0.5em 0em;
-	  padding: 0px 5% 0px 5%;
-	  font-weight: 500;
-	  font-size: 1.85em;
-	  margin: 0px;
-	  border-bottom: 0.5px solid $border_color;
-	  span {
-	    @include heading-fonts;
-	  }
-	  a {
-	    @include heading-fonts;
-	  }
+}
+
+h2 {
+	@include heading-fonts;
+	margin: 0.5em 0em 0.5em 0em;
+	padding: 0px 5% 0px 5%;
+	font-weight: 500;
+	font-size: 1.85em;
+	margin: 0px;
+	border-bottom: 0.5px solid $border_color;
+	span {
+		@include heading-fonts;
+	}
+	a {
+		@include heading-fonts;
 	}
 }
 
-
-h2, h3, h4, h5, h6, p, ul, ol {
+h3, h4, h5, h6, p, ul, ol {
   padding: 0px 5% 0px 5%;
   margin: 0.5em 0em 0.5em 0em;
 }

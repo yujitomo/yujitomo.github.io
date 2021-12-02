@@ -13,10 +13,25 @@
   <link rel="stylesheet" href="/assets/css/styles.css">
 
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha256-tkzDFSl16wERzhCWg0ge2tON2+D6Qe9iEaJqM4ZGd4E=" crossorigin="anonymous" type="text/css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha256-gNVpJCw01Tg4rruvtWJp9vS0rRchXP2YF+U+b2lp8Po=" crossorigin="anonymous" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha256-ExtbCSBuYA7kq1Pz362ibde9nnsHYPt6JxuxYeZbU+c=" crossorigin="anonymous" type="text/javascript"></script>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      renderMathInElement(document.body, {
+        delimiters: [{
+          left: "\\[",
+          right: "\\]",
+          display: true
+        }, {
+          left: "\\(",
+          right: "\\)",
+          display: false
+        }]
+      })
+    });
+  </script>
 
   <title>湯地ともき@RIMS</title>
 </head>
@@ -63,7 +78,7 @@
   <h1>
     
       
-    <span class="nequals">Equational Criterion of Flatness</span>
+    <span class="nequals"> Equational Criterion of Flatness </span>
     
     
   </h1>
@@ -80,27 +95,28 @@
 
 <p>このノートで示される定理は以下の二つです:</p>
 
-<h3 id="lazards-theorem-cf-stacks-theorem-10804">Lazard’s Theorem [cf. Stacks, Theorem 10.80.4]</h3>
-
 <blockquote>
-  <p>Aを環, MをA-加群とする. このとき, 以下は同値である：</p>
+  <p><strong>Lazard’s Theorem (cf. <a href="https://stacks.math.columbia.edu/tag/058G">[Stacks, Theorem 10.80.4]</a>)</strong></p>
+
+  <p>\(A\)を環, \(M\)を\(A\)-加群とする. このとき, 以下は同値である：</p>
   <ol>
-    <li>Mは平坦である.</li>
-    <li>Mは有限自由加群からなるfilteredな図式の余極限として表示できる.</li>
+    <li>\(M\)は平坦である.</li>
+    <li>\(M\)は何らかの有限自由加群からなるfilteredな図式の余極限として表示できる.</li>
   </ol>
 </blockquote>
 
 <p>任意のねじれなし加群が平坦であるような整域のことをPrüfer整域と言います。</p>
 
-<h3 id="theorem">Theorem</h3>
-
 <blockquote>
-  <p>Aを整域とする. AがPrüfer整域であれば, 任意の素イデアルpに対してApは付値環である.
+  <p><strong>Theorem</strong></p>
+
+  <p>\(A\)を整域とする. \(A\)がPrüfer整域であれば,
+任意の素イデアル\(\mathfrak{p}\)に対して\(A_{\mathfrak{p}}\)は付値環である.
 特に, NoetherなPrüfer整域はDedekind環である.
 また逆に, 任意の素イデアルでの局所化が付値環となる整域はPrüfer整域である.</p>
 </blockquote>
 
-<p>詳細は PDFファイル をご覧ください。</p>
+<p>詳細は<a href="/assets/TeX Files/Equational Criterion/Equational Criterion.pdf">[PDFファイル]</a>をご覧ください。</p>
 
   </main>
   <footer class="bottom-footer">
@@ -130,6 +146,7 @@
     </li>
   </ul>
 </footer>
+
 
 <script type="text/javascript" src="/assets/js/MyJavaScript.js"></script>
 </body>

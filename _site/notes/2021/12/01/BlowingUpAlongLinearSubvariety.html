@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="discription" content="湯地のホームページ">
+  <meta name="keywords" content="湯地智紀">
+  <meta name="author" content="湯地ともき">
+  <!--
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+-->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      renderMathInElement(document.body, {
+        delimiters: [{
+          left: "\\[",
+          right: "\\]",
+          display: true
+        }, {
+          left: "\\(",
+          right: "\\)",
+          display: false
+        }]
+      })
+    });
+  </script>
+
+  <title>湯地ともき@RIMS</title>
+</head>
+
+<body>
+  <header class="top-header">
+  <h1><a href="/Yujitomo_Top.html">Tomoki Yuji</a></h1>
+  <nav>
+    <ul>
+      
+      <li>
+        <a href="/Profile.html" >
+          About
+        </a>
+      </li>
+      
+      <li>
+        <a href="/Research.html" >
+          Research
+        </a>
+      </li>
+      
+      <li>
+        <a href="/Notes.html"  class="top-current-navigation" >
+          Notes
+        </a>
+      </li>
+      
+      <li>
+        <a href="/Diary.html" >
+          Diary
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+</header>
+  <main>
+
+    
+
+
+<header class="main-header">
+  <h1>
+    
+      
+    <span class="nequals"> Blow Up along Linear Subvarieties </span>
+    
+    
+  </h1>
+  <p>
+    線形部分多様体に沿った射影空間の爆発について
+  </p>
+</header>
+
+
+
+
+
+    <h2 id="main-theorem">Main Theorem</h2>
+
+<p>このノートでは以下の構造定理を証明します:</p>
+
+<blockquote>
+  <p><strong>Theorem</strong></p>
+
+  <p>\(k\)を体, \(V\to W\)を有限次元\(k\)-線形空間の全射, \(K\)をその核とし,
+\(B\)を\(\mathbb{P}(V)\)の\(\mathbb{P}(W)\)に沿った爆発とする. このとき,
+\[ B \cong \mathbb{P}_{\mathbb{P}(K)}(\mathcal{O}_{\mathbb{P}(K)}(1)\oplus (\mathcal{O}_{\mathbb{P}(K)}\otimes W)) \]
+となる.</p>
+</blockquote>
+
+<p>証明は, コホモロジーの半連続性などの定理を用いることは避け,
+射影束や爆発の普遍性 (cf. [ Hartshorne, Theorem II.7.12 ],
+<a href="https://stacks.math.columbia.edu/tag/0806">[Stacks, Lemma 0806]</a> ) などを用いて幾何的に行います.</p>
+
+<p>この定理を用いることで, グラスマン多様体と射影空間の直積を incidence varietyに沿って爆発してできる多様体の構造についても調べることができます.</p>
+
+<p>この定理を示す過程で, オイラー完全列と呼ばれる以下の完全列の存在も証明します.</p>
+
+<blockquote>
+  <p><strong>Theorem (Eular Exact Sequence)</strong></p>
+
+  <p>\(k\)を体, \(n\)を自然数とする. このとき, \(\mathbb{P}^n=\mathbb{P}^n_k\)上には以下の完全列が存在する:
+\[ 0 \to \Omega_{\mathbb{P}^n}(1) \to \mathcal{O}_{\mathbb{P}^n}^{n+1} \to \mathcal{O}_{\mathbb{P}^n}(1) \to 0. \]</p>
+</blockquote>
+
+<p>Hartshorne氏による教科書「Algebraic Geometry」では,
+次数つき加群を用いて計算することによりオイラー完全列の存在が証明されていましたが,
+このノートでは, それとは異なる視点による証明を与えます.</p>
+
+<p>オイラー完全列については変形理論を用いた別証明もありますが, それについては別のノートを作成しようと考えています.</p>
+
+<p>詳細は<a href="/assets/TeX Files/Blowing_Up_along_Linear_Subvariety/Blow up along linear sub.pdf">[PDFファイル]</a>をご覧ください。</p>
+
+  </main>
+  <footer class="bottom-footer">
+  <ul>
+    <li>
+      <h2><a href="/Yujitomo_Top.html"><span class="first-color-change">Tomoki Yuji</span></a></h2>
+      <a href="https://www.kurims.kyoto-u.ac.jp/ja/">@RIMS</a>
+      <nav>
+        <ul class="footer-left">
+          
+          <li><a href="/Profile.html">About</a></li>
+          
+          <li><a href="/Research.html">Research</a></li>
+          
+          <li><a href="/Notes.html">Notes</a></li>
+          
+          <li><a href="/Diary.html">Diary</a></li>
+          
+        </ul>
+      </nav>
+    </li>
+    <li>
+      <ul class="footer-right">
+        <li>Mail: yujitomo [at] kurims.kyoto-u.ac.jp</li>
+        <li>GitHub: yujitomo@github.io</li>
+      </ul>
+    </li>
+  </ul>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/MyJavaScript.js"></script>
+</body>
+
+</html>

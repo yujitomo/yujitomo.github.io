@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="discription" content="湯地のホームページ">
+  <meta name="keywords" content="湯地智紀">
+  <meta name="author" content="湯地ともき">
+  <!--
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+-->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      renderMathInElement(document.body, {
+        delimiters: [{
+          left: "\\[",
+          right: "\\]",
+          display: true
+        }, {
+          left: "\\(",
+          right: "\\)",
+          display: false
+        }]
+      })
+    });
+  </script>
+
+  <title>湯地ともき@RIMS</title>
+</head>
+
+<body>
+  <header class="top-header">
+  <h1><a href="/Yujitomo_Top.html">Tomoki Yuji</a></h1>
+  <nav>
+    <ul>
+      
+      <li>
+        <a href="/Profile.html" >
+          About
+        </a>
+      </li>
+      
+      <li>
+        <a href="/Research.html" >
+          Research
+        </a>
+      </li>
+      
+      <li>
+        <a href="/Notes.html"  class="top-current-navigation" >
+          Notes
+        </a>
+      </li>
+      
+      <li>
+        <a href="/Diary.html" >
+          Diary
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+</header>
+  <main>
+
+    
+
+
+<header class="main-header">
+  <h1>
+    
+      
+    <span class="nequals"> Strange Curves </span>
+    
+    
+  </h1>
+  <p>
+    Strangeな曲線の構造に関するノートです.
+  </p>
+</header>
+
+
+
+
+
+    <h2 id="definition">Definition</h2>
+
+<p>射影空間\(\mathbb{P}^N\)内の射影曲線\(C\subset \mathbb{P}^N\)は,
+任意の非特異点での接線がある共通の点を通るとき, (この埋め込みのもと, \(\mathbb{P}^N\)内で) __<strong>strangeである</strong>__と言います.</p>
+
+<h2 id="main-theorem">Main Theorem</h2>
+
+<p>このノートの主なテーマは, 以下の定理にスキーム論的な証明を与えることです:</p>
+
+<blockquote>
+  <p><strong>Samuel’s Theorem [cf. Hartshorne, Theorem IV.3.9]</strong></p>
+
+  <p>射影空間\(\mathbb{P}^N\)内のstrangeな非特異射影曲線\(C\subset \mathbb{P}^N\)は,
+\(\mathbb{P}^N\)内の直線か,
+またはある平面\(\mathbb{P}^2\subset \mathbb{P}^N\)に含まれる二次曲線に限る.</p>
+</blockquote>
+
+<p>Hurwitzの定理を用いたHartshorneによる証明とは異なる証明を与えます.
+証明では, 接ベクトルを分離することのある言い換えを用います
+(cf. <a href="/notes/2021/12/01/SeparatingTangentVectors.html">[Separating Tangent Vectors]</a> ).
+詳細は<a href="/assets/TeX Files/Strange Curves/Strange Curves.pdf">[PDFファイル]</a>をご覧ください。</p>
+
+  </main>
+  <footer class="bottom-footer">
+  <ul>
+    <li>
+      <h2><a href="/Yujitomo_Top.html"><span class="first-color-change">Tomoki Yuji</span></a></h2>
+      <a href="https://www.kurims.kyoto-u.ac.jp/ja/">@RIMS</a>
+      <nav>
+        <ul class="footer-left">
+          
+          <li><a href="/Profile.html">About</a></li>
+          
+          <li><a href="/Research.html">Research</a></li>
+          
+          <li><a href="/Notes.html">Notes</a></li>
+          
+          <li><a href="/Diary.html">Diary</a></li>
+          
+        </ul>
+      </nav>
+    </li>
+    <li>
+      <ul class="footer-right">
+        <li>Mail: yujitomo [at] kurims.kyoto-u.ac.jp</li>
+        <li>GitHub: yujitomo@github.io</li>
+      </ul>
+    </li>
+  </ul>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/MyJavaScript.js"></script>
+</body>
+
+</html>

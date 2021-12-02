@@ -13,10 +13,25 @@
   <link rel="stylesheet" href="/assets/css/styles.css">
 
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha256-tkzDFSl16wERzhCWg0ge2tON2+D6Qe9iEaJqM4ZGd4E=" crossorigin="anonymous" type="text/css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha256-gNVpJCw01Tg4rruvtWJp9vS0rRchXP2YF+U+b2lp8Po=" crossorigin="anonymous" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha256-ExtbCSBuYA7kq1Pz362ibde9nnsHYPt6JxuxYeZbU+c=" crossorigin="anonymous" type="text/javascript"></script>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      renderMathInElement(document.body, {
+        delimiters: [{
+          left: "\\[",
+          right: "\\]",
+          display: true
+        }, {
+          left: "\\(",
+          right: "\\)",
+          display: false
+        }]
+      })
+    });
+  </script>
 
   <title>湯地ともき@RIMS</title>
 </head>
@@ -76,7 +91,7 @@
 
 
     <article>
-  <h1><span class="first-color-change-IC">2021. Nov. 27. (Sat.)</span></h1>
+  <h2><span class="first-color-change-IC">2021. Nov. 27. (Sat.)</span></h2>
 
   <h3 id="今日もだめです">今日もだめです.</h3>
 
@@ -125,6 +140,7 @@
     </li>
   </ul>
 </footer>
+
 
 <script type="text/javascript" src="/assets/js/MyJavaScript.js"></script>
 </body>

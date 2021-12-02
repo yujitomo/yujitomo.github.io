@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="discription" content="湯地のホームページ">
+  <meta name="keywords" content="湯地智紀">
+  <meta name="author" content="湯地ともき">
+  <!--
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+-->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      renderMathInElement(document.body, {
+        delimiters: [{
+          left: "\\[",
+          right: "\\]",
+          display: true
+        }, {
+          left: "\\(",
+          right: "\\)",
+          display: false
+        }]
+      })
+    });
+  </script>
+
+  <title>湯地ともき@RIMS</title>
+</head>
+
+<body>
+  <header class="top-header">
+  <h1><a href="/Yujitomo_Top.html">Tomoki Yuji</a></h1>
+  <nav>
+    <ul>
+      
+      <li>
+        <a href="/Profile.html" >
+          About
+        </a>
+      </li>
+      
+      <li>
+        <a href="/Research.html" >
+          Research
+        </a>
+      </li>
+      
+      <li>
+        <a href="/Notes.html"  class="top-current-navigation" >
+          Notes
+        </a>
+      </li>
+      
+      <li>
+        <a href="/Diary.html" >
+          Diary
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+</header>
+  <main>
+
+    
+
+
+<header class="main-header">
+  <h1>
+    
+      
+    <span class="nequals"> Separating Tangent Vectors </span>
+    
+    
+  </h1>
+  <p>
+    接ベクトルを分離する線形系に関するノートです.
+  </p>
+</header>
+
+
+
+
+
+    <h2 id="introduction">Introduction</h2>
+
+<p>基礎体\(k\)は代数閉であるとします.
+このノートの主な考察対象は, 代数多様体\(X\)上の直線束\(L\)と線形系\(V\subset H^0(X,L)\)です.
+\(V\)が基点なしであること, 点を分離すること, 接ベクトルを分離すること,
+に対して, それぞれ加群論的, 幾何学的な意味づけを与えます.
+特に, 接ベクトルを分離することについて調べる際,
+\(V\subset H^0(X,L)\)というデータから\(\mathcal{P}^1(L)\)という層
+(詳細は<a href="/assets/TeX Files/Separating Tangent Vectors/Separating Tangent Vectors.pdf">PDFファイル</a>を参照)
+を構成し, 層\(\mathcal{P}^1(L)\)の性質について簡単に調べるのですが,
+この層\(\mathcal{P}^1(L)\)は他の場面でもいろいろと役に立ちます
+(例えば<a href="/notes/2021/12/01/StrangeCurves.html">[Strange Curves]</a>などを参照).</p>
+
+<h2 id="main-theorem">Main Theorem</h2>
+
+<p>このノートの主なテーマは, 基点なしであること, 点を分離すること, 接ベクトルを分離すること, を次のように言い換えることです:</p>
+
+<blockquote>
+  <p><strong>Theorem</strong></p>
+
+  <p>\(X\)を\(k\)上の代数多様体,
+\(L\)を\(X\)上の直線束, \(V\subset H^0(X,L)\)を線形系とする.</p>
+  <ol>
+    <li>以下は同値である:
+      <ol>
+        <li>\(V\)は基点がない.</li>
+        <li>\(V\subset H^0(X,L)\)に対応する射\(V_X\to L\)は全射である.
+ただし\(V_X\)は\(V\)の\(X\to \mathrm{Spec}(k)\)でのpull-backを表す.</li>
+        <li>\(V\subset H^0(X,L)\)の引き起こす有理写像\(X\dashrightarrow \mathbb{P}(V)\)は不確定点を持たない (すなわち, 射である).</li>
+      </ol>
+    </li>
+    <li>以下は同値である：
+      <ol>
+        <li>\(V\)は点を分離する.</li>
+        <li>\(V\subset H^0(X,L)\)に対応する射\(p:V_X\to L\)を
+二つの射影\(\mathrm{pr}_1,\mathrm{pr}_2:X\times_kX\rightrightarrows X\)でpull-backしたのちに
+足し合わせることで得られる射
+\[\mathrm{pr}_1^* p + \mathrm{pr}_2^* p : V_{X\times_kX}\to \mathrm{pr}_1^* L\oplus \mathrm{pr}_2^* L \]
+は対角集合\(\Delta\subset X\times_kX\)の補集合上で全射である.</li>
+        <li>\(V\subset H^0(X,L)\)の引き起こす有理写像\(X\dashrightarrow \mathbb{P}(V)\)は射であり, さらに単射である.</li>
+      </ol>
+    </li>
+    <li>以下は同値である：
+      <ol>
+        <li>\(V\)は接ベクトルを分離する.</li>
+        <li>\(V\subset H^0(X,L)\)に対応する射\(p:V_X\to L\)が引き起こす射
+\[ V_X \to \mathcal{P}^1(L)\]
+は全射である.</li>
+        <li>\(V\subset H^0(X,L)\)の引き起こす有理写像\( X\dashrightarrow \mathbb{P}(V) \)は射であり, さらに不分岐である.</li>
+      </ol>
+    </li>
+  </ol>
+</blockquote>
+
+<p>証明ではEular完全列を用います (cf.
+<a href="/notes/2021/12/01/BlowingUpAlongLinearSubvariety.html">[Blowing Up along Linear Subvarieties]</a> )</p>
+
+<p>また, このノートでは, 代数多様体の間の不分岐な単射が埋め込みであることを確認することによって, 以下の定理も証明します:</p>
+
+<blockquote>
+  <p><strong>Theorem</strong></p>
+
+  <p>\(X\)を\(k\)上の代数多様体,
+\(L\)を\(X\)上の直線束, \(V\subset H^0(X,L)\)を基点のない線形系とする.
+このとき, 線形系\(V\subset H^0(X,L)\)が点と接ベクトルを分離することと,
+\(V\subset H^0(X,L)\)の引き起こす射\(X\dashrightarrow \mathbb{P}(V)\)が埋め込みであることは同値である.</p>
+</blockquote>
+
+<p>詳細は<a href="/assets/TeX Files/Separating Tangent Vectors/Separating Tangent Vectors.pdf">[PDFファイル]</a>をご覧ください。</p>
+
+  </main>
+  <footer class="bottom-footer">
+  <ul>
+    <li>
+      <h2><a href="/Yujitomo_Top.html"><span class="first-color-change">Tomoki Yuji</span></a></h2>
+      <a href="https://www.kurims.kyoto-u.ac.jp/ja/">@RIMS</a>
+      <nav>
+        <ul class="footer-left">
+          
+          <li><a href="/Profile.html">About</a></li>
+          
+          <li><a href="/Research.html">Research</a></li>
+          
+          <li><a href="/Notes.html">Notes</a></li>
+          
+          <li><a href="/Diary.html">Diary</a></li>
+          
+        </ul>
+      </nav>
+    </li>
+    <li>
+      <ul class="footer-right">
+        <li>Mail: yujitomo [at] kurims.kyoto-u.ac.jp</li>
+        <li>GitHub: yujitomo@github.io</li>
+      </ul>
+    </li>
+  </ul>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/MyJavaScript.js"></script>
+</body>
+
+</html>

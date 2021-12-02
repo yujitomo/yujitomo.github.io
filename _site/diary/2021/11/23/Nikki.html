@@ -13,10 +13,25 @@
   <link rel="stylesheet" href="/assets/css/styles.css">
 
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha256-tkzDFSl16wERzhCWg0ge2tON2+D6Qe9iEaJqM4ZGd4E=" crossorigin="anonymous" type="text/css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha256-gNVpJCw01Tg4rruvtWJp9vS0rRchXP2YF+U+b2lp8Po=" crossorigin="anonymous" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha256-ExtbCSBuYA7kq1Pz362ibde9nnsHYPt6JxuxYeZbU+c=" crossorigin="anonymous" type="text/javascript"></script>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      renderMathInElement(document.body, {
+        delimiters: [{
+          left: "\\[",
+          right: "\\]",
+          display: true
+        }, {
+          left: "\\(",
+          right: "\\)",
+          display: false
+        }]
+      })
+    });
+  </script>
 
   <title>湯地ともき@RIMS</title>
 </head>
@@ -76,7 +91,7 @@
 
 
     <article>
-  <h1><span class="first-color-change-IC">2021. Nov. 23. (Tue.)</span></h1>
+  <h2><span class="first-color-change-IC">2021. Nov. 23. (Tue.)</span></h2>
 
   <h3 id="今日1日の振り返り">今日1日の振り返り</h3>
 
@@ -96,9 +111,23 @@
 
 <p>ジョルダン標準形の存在はしばしば単因子論の系として扱われます. 単因子論とは, デデキント環上の有限生成加群の構造定理のことです. デデキント環上の加群有限生成加群が与えられると, 「商体テンソルをする」という射の像が射影加群なので, この射の核であるねじれ部分と「射影的な部分」に分解します. ねじれ部分のsupportは有限離散集合なので, この部分は各点でのstalkの直積に分解し (いわゆるArtin加群の構造定理, これは一般固有空間分解に対応します), 結局, 「極大イデアルが一元生成なArtin局所環」上の有限生成ねじれ加群の構造を調べることに帰着されますが, このような上の直既約入射加群はしかないことがBaerの判定法で直ちにわかるので, これにより単因子論が証明されます. 線形空間に自己準同型が与えられれば, それによってもとの線形空間を1変数多項式環上のねじれ加群とみなせるので, 単因子論を適用して一元生成加群の直和に分解すれば, 各直和成分の生成元を使って作った基底で行列表示してジョルダン標準形が出来上がります. 学部2年でジョルダン標準形について習うときはこれらのことを線形代数に落とし込んで証明するので, 結局何が効いてて証明が完了するのかよくわからない感じがします.</p>
 
-<p>ところで, 違いに可換な正方行列がいくつか与えられれば, もとの線形空間を多変数多項式環上の長さ有限加群とみなせます. この場合もやはりsupportが閉点からなる有限離散集合なので, 各点でのstalkの直積に分解します. これは「同時固有空間分解」や「ウェイト分解」などと呼ばれているもので, supportの点が「同時固有値」「ウェイト」になります (「同時固有空間分解」は「同時固有値」の概念に先立って行うことができるし, 「同時固有値」の概念の定義に「同時固有ベクトル」の概念を使う必要もない, ということに注意しておきます). アルティン局所-代数上の有限生成加群は, によるfiltrationのsubquotientの直和と同型ですから, この直和分解と両立的なの基底を選んでやれば, の元のへの作用の「同時三角化」が得られます. 結局, 上の議論と全く同様に, 違い可換な正方行列が与えられれば, それらを同時三角化する基底がとれる, ということが従います. しかし「同時ジョルダン標準形」までは辿り着けません.</p>
+<p>ところで, 違いに可換な正方行列がいくつか与えられれば, もとの線形空間を多変数多項式環上の長さ有限加群とみなせます.
+この場合もやはりsupportが閉点からなる有限離散集合なので, 各点でのstalkの直積に分解します.
+これは「同時固有空間分解」や「ウェイト分解」などと呼ばれているもので, supportの点が「同時固有値」「ウェイト」になります
+(「同時固有空間分解」は「同時固有値」の概念に先立って行うことができるし,
+「同時固有値」の概念の定義に「同時固有ベクトル」の概念を使う必要もない, ということに注意しておきます).
+アルティン局所\(k\)-代数\(A\)上 (\(k\)は体です) の有限生成\(A\)-加群\(V\)は,
+\(\mathfrak{m}^iV\) (\(\mathfrak{m}\)は\(A\)の極大イデアルです)
+によるfiltrationのsubquotientの直和と同型ですから, この直和分解と両立的なの基底を選んでやれば,
+\(\mathfrak{m}\)の元の\(V\)への作用の「同時三角化」が得られます.
+結局, 上の議論と全く同様に, 違い可換な正方行列が与えられれば, それらを同時三角化する基底がとれる, ということが従います.
+しかし「同時ジョルダン標準形」までは辿り着けません.</p>
 
-<p>同時ジョルダン標準形が得られないことは次のような観察をすると「雰囲気」がわかります: 有限次元-線形空間とその部分空間を選び, の基底を に送ることを考えてみます. の元はに「合成すると0」で作用するので, これらは互いに可換です. との基底を選んで行列表示すると, 「同時ジョルダン標準形できなさそうな感じ」が少し見えてきます. 余談ですが, 上の方法は「互いに可換で一次独立な行列の数」の最大値 (  ) を実現する方法でもあります.</p>
+<p>同時ジョルダン標準形が得られないことは次のような観察をすると「雰囲気」がわかります:
+有限次元\(k\)-線形空間\(V\)とその部分空間\(W\subset V\)を選び, \(V/W\)の基底を\(W\)に送ることを考えてみます.
+\(\mathrm{Hom}_k(V/W,W)\subset \mathrm{End}_k(V)\)の元は\(V\)に「合成すると0」で作用するので, これらは互いに可換です.
+\(W\)と\(V/W\)の基底を選んで行列表示すると, 「同時ジョルダン標準形できなさそうな感じ」が少し見えてきます.
+余談ですが, 上の方法は「互いに可換で一次独立な行列の数」の最大値 (\(=\left[1+(\dim(V)^2/4)\right]\)) を実現する方法でもあります.</p>
 
 
 </article>
@@ -136,6 +165,7 @@
     </li>
   </ul>
 </footer>
+
 
 <script type="text/javascript" src="/assets/js/MyJavaScript.js"></script>
 </body>

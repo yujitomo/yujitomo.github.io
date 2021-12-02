@@ -1,0 +1,22 @@
+I"i<h2 id="exercise">Exercise</h2>
+
+<p>基礎体を\(k\)とします.
+Hartshorneの本では代数閉体に限っていますが、
+この問題に関しては特にそのような制約なしに解くことができます (一般の体上有限次元なスキームに対して同様の事実が成立します).
+問題の内容は以下の通りです:</p>
+
+<blockquote>
+  <p><strong>Exercise (cf. [Hartshorne, Exercise II.8.2])</strong></p>
+
+  <p>\(X\)を\(k\)上の\(n\)次元代数多様体,
+\(\mathcal{E}\)をランクが\(n\)より真に大きい\(X\)上の局所自由層とする.
+\(\mathcal{E}\)は線形部分空間\(V\subset H^0(X,\mathcal{E})\)により生成されているとする.
+このとき, ある大域切断\(s\in V\)が存在して,
+任意の点\(x\in X\)に対して\(s_x\notin \mathfrak{m}_x\mathcal{E}_x\)となる.
+特に, 完全列
+\[ 0 \to \mathcal{O}_X\to \mathcal{E} \to \mathcal{F} \to 0\]
+であって, \(\mathcal{F}\)が局所自由となるものが存在する.</p>
+</blockquote>
+
+<p>解答は<a href="/assets/TeX Files/Ex_II_8_2/Ex_II_8_2.pdf">[PDFファイル]</a>をご覧ください。</p>
+:ET

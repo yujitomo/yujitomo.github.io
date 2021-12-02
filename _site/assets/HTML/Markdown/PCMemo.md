@@ -13,7 +13,7 @@
 - コンソールを注意深く見ること.
 - CSSやJavaScriptで困ったときは、「どれが有効になっているのか」をコンソールで確認すること。
 - とにかくコンソールと睨めっこせよ!!!!
-
+- [Web関係の辞書的なサイト](https://developer.mozilla.org/ja/docs/Web)
 
 
 ### Web Designing
@@ -28,7 +28,6 @@
 - 構文チェッカー: [これ](http://www.htmllint.net/html-lint/htmllint.html)とか[これ](https://validator.w3.org/)とかがある。
 - [Webページの基本構造](https://shu-naka-blog.com/html/tag01/)
   - ↑ CSSで装飾しまくって頑張るゲームではない!!!! ということがちょっとわかる.
-- [Web関係の辞書的なサイト](https://developer.mozilla.org/ja/docs/Web)
 - HTMLでソースコードを表示させるときはcodeタグで囲む. ただし特殊文字はエスケープしなければいけない.
 - [主なエスケープ文字一覧](https://techacademy.jp/magazine/12553).
 - pタグ内で改行するときはbrタグで、ソースを載せるときはcodeタグ。

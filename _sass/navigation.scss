@@ -9,6 +9,11 @@ nav {
   ul {
     display: flex;
     padding: 0;
+    margin: 0;
+    li {
+      padding: 0;
+      margin: 0;
+    }
   }
 }
 
@@ -41,10 +46,12 @@ header.main-header {
     text-align: center;
     font-size: $main-header-title-size;
     span.equals {
+      padding: 0 1em 0 1em;
       @include navi-fonts;
       border-bottom: 1px solid $border_color_h1;
     }
     span.nequals {
+      padding: 0 1em 0 1em;
       @include heading-fonts;
       border-bottom: 1px solid $border_color_h1;
     }
@@ -78,14 +85,17 @@ footer.bottom-footer {
   margin: 2em 0 3em 0;
   border-top: 1px solid $border_color_top;
   ul {
+    margin-top: 0;
     display: flex;
     li {
+      margin-top: 0;
       width: 35%;
       padding-right: 30px;
       h2 {
         @include navi-fonts;
         display: inline;
         padding-left: 0px;
+        border: 0px;
         span {
           @include navi-fonts;
         }
@@ -96,6 +106,8 @@ footer.bottom-footer {
       ul.footer-left {
         @include navi-fonts;
         display: flex;
+        margin: 0;
+        padding: 0;
         /*justify-content: space-between;*/
         li {
           width: auto;
@@ -105,6 +117,8 @@ footer.bottom-footer {
       ul.footer-right {
         display: auto;
         li {
+          padding: 0;
+          margin: 0;
           width: auto;
           p {
             font-size: 5px;

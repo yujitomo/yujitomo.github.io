@@ -13,10 +13,25 @@
   <link rel="stylesheet" href="/assets/css/styles.css">
 
   <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha256-tkzDFSl16wERzhCWg0ge2tON2+D6Qe9iEaJqM4ZGd4E=" crossorigin="anonymous" type="text/css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha256-gNVpJCw01Tg4rruvtWJp9vS0rRchXP2YF+U+b2lp8Po=" crossorigin="anonymous" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha256-ExtbCSBuYA7kq1Pz362ibde9nnsHYPt6JxuxYeZbU+c=" crossorigin="anonymous" type="text/javascript"></script>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      renderMathInElement(document.body, {
+        delimiters: [{
+          left: "\\[",
+          right: "\\]",
+          display: true
+        }, {
+          left: "\\(",
+          right: "\\)",
+          display: false
+        }]
+      })
+    });
+  </script>
 
   <title>湯地ともき@RIMS</title>
 </head>
@@ -76,14 +91,14 @@
 
 
     <article>
-  <h1><span class="first-color-change-IC">2021. Nov. 30. (Tue.)</span></h1>
+  <h2><span class="first-color-change-IC">2021. Nov. 30. (Tue.)</span></h2>
 
   <h3 id="今日1日の振り返り">今日1日の振り返り</h3>
 
 <p>今日はある恥ずかしい出来事によって始まりました。
 ここで弁明するのもみっともないので詳細については省略しますが、
 恥ずかしい出来事とは、要は
-「(\log)を取って評価するべき累乗の計算問題を二項展開によって処理しようとしたため、泥沼に陥った」
+「\(\log\)を取って評価するべき累乗の計算問題を二項展開によって処理しようとしたため、泥沼に陥った」
 というものです (数学が苦手な高校生がやりそうなことをやってしまいました)。
 自分は数学の博士じゃなかったのか！いや、まだ博士号を取ってないため博士ではないのですが、しかし、深く反省しています。
 その後、セミナーがあったので、この恥ずかしいミスを引きずったまま大学に行き、
@@ -140,7 +155,7 @@
 という感じがあまりしません。
 「もし星先生や望月先生が3ヶ月真剣に考えたら解けたのではないか」
 と思うと、「そうではない」と断言できる研究をしたかどうかは微妙です。
-logスキームの圏からの復元問題に関しては、
+\(\log\)スキームの圏からの復元問題に関しては、
 望月先生も星先生も論文を書いている事柄について自分の研究がそれを大きく改良する形になったので、
 もしかしたら、技術的にももう少し自信を持って良いのかもしれませんが、
 それでもやっぱり、あまり強くは断言できないです
@@ -216,6 +231,7 @@ logスキームの圏からの復元問題に関しては、
     </li>
   </ul>
 </footer>
+
 
 <script type="text/javascript" src="/assets/js/MyJavaScript.js"></script>
 </body>

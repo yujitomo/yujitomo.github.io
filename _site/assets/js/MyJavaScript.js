@@ -137,21 +137,26 @@ if ( location.pathname == "/assets/HTML/PCMemo.html" ) {
 
 
 const this_pathname_ary = location.pathname.split("/");
-if ( this_pathname_ary[1] == "notes"
-|| this_pathname_ary[1] == "assets"
-|| this_pathname_ary[1] == "Diary.html" ) {
-  const h2_elements = document.getElementsByTagName("h2");
-  for ( i = 0 ; i < h2_elements.length ; i++ ) {
-    if ( h2_elements[i].parentNode.tagName != "LI"
-    && h2_elements[i].parentNode.tagName != "FOOTER" ) {
-      var h2_str = h2_elements[i].textContent;
-      h2_elements[i].innerHTML = myfunctChangeFC_II_CSS(h2_str);
-    }
+
+var h2_elements = document.getElementsByTagName("h2");
+for ( i = 0 ; i < h2_elements.length ; i++ ) {
+  if ( h2_elements[i].children.length == 0 ) {
+    var h2_str = h2_elements[i].textContent;
+    h2_elements[i].innerHTML = myfunctChangeFC_II_CSS(h2_str);
   }
-  var h3_elements = document.getElementsByTagName("h3");
-  for ( i = 0 ; i < h3_elements.length ; i++ ) {
-    h3_elements[i].removeAttribute("id");
-  }
+}
+
+var h3_elements = document.getElementsByTagName("h3");
+for ( i = 0 ; i < h3_elements.length ; i++ ) {
+  h3_elements[i].removeAttribute("id"); /* markdownからきてるやつはidに日本語が付与されてるからを取り除いておく */
+};
+
+var strong_elements = document.getElementsByTagName("strong");
+for ( i = 0 ; strong_elements.length >= 1 ; i = 0 ) { /* strongを無くすとstrong_elementsの長さが1減るからi=0のままforを回す (バグかよ！) */
+  console.log(strong_elements[i].parentNode.parentNode);
+  if ( strong_elements[i].parentNode.parentNode.tagName == "BLOCKQUOTE" ) { /* 定理環境内のstrongをh3+spanに変換 */
+    strong_elements[i].parentNode.outerHTML = "<h3><span>" + strong_elements[i].innerHTML + "</span></h3>";
+  };
 };
 
 

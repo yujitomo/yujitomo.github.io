@@ -137,7 +137,9 @@ if ( location.pathname == "/assets/HTML/PCMemo.html" ) {
 
 
 const this_pathname_ary = location.pathname.split("/");
-if ( this_pathname_ary[1] == "notes" || this_pathname_ary[1] == "assets" ) {
+if ( this_pathname_ary[1] == "notes"
+|| this_pathname_ary[1] == "assets"
+|| this_pathname_ary[1] == "Diary.html" ) {
   const h2_elements = document.getElementsByTagName("h2");
   for ( i = 0 ; i < h2_elements.length ; i++ ) {
     if ( h2_elements[i].parentNode.tagName != "LI"
@@ -146,8 +148,11 @@ if ( this_pathname_ary[1] == "notes" || this_pathname_ary[1] == "assets" ) {
       h2_elements[i].innerHTML = myfunctChangeFC_II_CSS(h2_str);
     }
   }
+  var h3_elements = document.getElementsByTagName("h3");
+  for ( i = 0 ; i < h3_elements.length ; i++ ) {
+    h3_elements[i].removeAttribute("id");
+  }
 };
-
 
 
 

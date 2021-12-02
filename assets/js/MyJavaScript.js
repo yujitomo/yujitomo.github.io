@@ -38,6 +38,9 @@ function myfunctABtoSpan(var_A, var_B) {
   } else {
     if ( var_B == "C" ) {
       new_str = "first-number-font";
+    }
+    else {
+      new_str = "";
     };
   };
   return new_str;
@@ -95,56 +98,56 @@ $(function() {
 
 
 
-/* IC版 */
-function myfunctChangeFC_IC_CSS(var_str) {
+/* II版 */
+function myfunctChangeFC_II_CSS(var_str) {
   var ary_this = var_str.split(" "); /* aryにする */
   let new_ary = []; /* aryの各要素を変換した後のものを格納するary */
   for ( var i = 0; i < ary_this.length; i++ ) {
-    new_ary.push(myfunctNumFC_Change("I", "C", ary_this[i]));
+    new_ary.push(myfunctNumFC_Change("I", "I", ary_this[i]));
   }
   let new_str = new_ary.join(' ');
   return new_str
 }
 
-$("h2").text(function() {
-  const var_str = $(this).text();
-  const new_str = "<h2>" + myfunctChangeFC_IC_CSS(var_str) + "</h2>";
-  const child_elements = $(this).children();
-  const child_tags = child_elements.prop("tagName");
-  console.log(child_tags);
-  if ( child_tags === undefined ) {
-    $(this).replaceWith(new_str);
-    console.log(new_str);
+
+if ( location.pathname == "/assets/HTML/Links.html" ) {
+  const ul_elements = document.getElementsByTagName("ul");
+  for ( i = 0 ; i < ul_elements.length ; i++ ) {
+    if ( ul_elements[i].parentNode.tagName != "FOOTER"
+      && ul_elements[i].parentNode.tagName != "NAV"
+      && ul_elements[i].classList.length == 0
+    ) {
+      ul_elements[i].classList.add("ul-links");
+      var li_elements_list = ul_elements[i].children;
+      for ( j = 1 ; j < li_elements_list.length ; j++) {
+        li_elements_list[j].innerHTML = "　/　" + li_elements_list[j].innerHTML;
+      };
+    }
   };
-});
+};
 
-
-$(function() {
-  if ( location.pathname == "/assets/HTML/Links.html" ) {
-    const ul_elements = document.getElementsByTagName("ul");
-    for ( i = 0 ; i < ul_elements.length ; i++ ) {
-      console.log(ul_elements[i].classList.length);
-      if ( ul_elements[i].parentNode.tagName != "FOOTER"
-        && ul_elements[i].parentNode.tagName != "NAV"
-        && ul_elements[i].classList.length == 0
-      ) {
-        ul_elements[i].classList.add("ul-links");
-        console.log(ul_elements[i].children);
-        var li_elements_list = ul_elements[i].children;
-        for ( j = 1 ; j < li_elements_list.length ; j++) {
-          li_elements_list[j].innerHTML = "　/　" + li_elements_list[j].innerHTML;
-        };
-      }
+if ( location.pathname == "/assets/HTML/PCMemo.html" ) {
+  const ul_elements = document.getElementsByTagName("ul");
+  for ( i = 0 ; i < ul_elements.length ; i++ ) {
+    if ( ul_elements[i].parentNode.tagName == "MAIN") {
+      ul_elements[i].classList.add("ul-default");
     }
   }
-});
+}
 
 
-
-$(function() {
-  console.log(location.pathname);
-});
-
+const this_pathname_ary = location.pathname.split("/");
+if ( this_pathname_ary[1] == "notes" || this_pathname_ary[1] == "assets" ) {
+  const h2_elements = document.getElementsByTagName("h2");
+  for ( i = 0 ; i < h2_elements.length ; i++ ) {
+    if ( h2_elements[i].parentNode.tagName != "LI"
+    && h2_elements[i].parentNode.tagName != "FOOTER" ) {
+      var h2_str = h2_elements[i].textContent;
+      h2_elements[i].innerHTML = myfunctChangeFC_II_CSS(h2_str);
+      h2_elements[i].classList.add("h1-like-h2")
+    }
+  }
+};
 
 
 

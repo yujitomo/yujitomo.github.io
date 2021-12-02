@@ -3,10 +3,15 @@ layout: default-ja
 ---
 
 
-<h2><span class="first-color-change-IC">{{ page.date | date: "%Y. %b. %d. (%a.)" }}</span></h2>
+<article>
+  <h1><span class="first-color-change-IC">{{ page.date | date: "%Y. %b. %d. (%a.)" }}</span></h1>
 
-{{ content | markdownify }}
+  {{ content | markdownify }}
 
-<p class="article-foot">
-  投稿日時：<span class="first-color-change-IC">{{ page.date | date: "%Y. %b. %d. (%a.)" }}</span>
-</p>
+</article>
+
+<footer class="main-footer">
+  <p>
+    投稿日時：<span class="first-color-change-IC">{{ page.date | date: "%Y. %b. %d. (%a.)" }}</span>
+  </p>
+</footer>

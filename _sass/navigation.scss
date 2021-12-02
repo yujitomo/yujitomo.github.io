@@ -63,6 +63,7 @@ header.main-header {
 
 
 footer.main-footer {
+	margin: 0px 0px 1.5em 0px;
   p {
     padding-top: 1em;
     text-align: right;
@@ -81,7 +82,7 @@ footer.bottom-footer {
     li {
       width: 35%;
       padding-right: 30px;
-      h1 {
+      h2 {
         @include navi-fonts;
         display: inline;
         padding-left: 0px;

@@ -57,21 +57,21 @@ description: "ノートなど"
 {% comment %} Othersは最後 {% endcomment %}
 {% if note_tag != 'Others' %}
 
-<section>
-  <h2><span class="first-color-change-IC">{{ note_tag }}</span></h2>
+<article>
+  <h1><span class="first-color-change-IC">{{ note_tag }}</span></h1>
 
   <ul class="note-top">
     {% for note_post in site.categories.Notes %}
     {% capture current_tag %}{{ note_post.tag }}{% endcapture %}
     {% if note_tag == current_tag %}
     <li>
-      <h3><span><a href="{{ note_post.url }}">{{ note_post.title }}</a></span></h3>
+      <h2><a href="{{ note_post.url }}">{{ note_post.title }}</a></h2>
       <p>{{ note_post.description }}</p>
     </li>
     {% endif %}
     {% endfor %}
   </ul>
-</section>
+</article>
 
 {% endif %}
 {% endfor %}
@@ -79,25 +79,25 @@ description: "ノートなど"
 
 {% comment %} これはOthers用 {% endcomment %}
 
-<section>
-  <h2><span class="first-color-change-IC">Others</span></h2>
+<article>
+  <h1><span class="first-color-change-IC">Others</span></h1>
 
   <ul class="note-top">
     {% for note_post in site.categories.Notes %}
     {% if note_post.tag == 'Others' %}
     <li>
-      <h3><span><a href="{{ note_post.url }}">{{ note_post.title }}</a></span></h3>
+      <h2><a href="{{ note_post.url }}">{{ note_post.title }}</a></h2>
       <p>{{ note_post.description }}</p>
     </li>
     {% endif %}
     {% endfor %}
     <li>
-      <h3><span><a href="/assets/HTML/Links.html">Links</a></span></h3>
+      <h2><a href="/assets/HTML/Links.html">Links</a></h2>
       <p>リンク集です. </p>
     </li>
     <li>
-      <h3><span><a href="/assets/HTML/PCMemo.html">Memo (PC)</a></span></h3>
+      <h2><a href="/assets/HTML/PCMemo.html">Memo (PC)</a></h2>
       <p>パソコン関係のメモ. </p>
     </li>
   </ul>
-</section>
+</article>

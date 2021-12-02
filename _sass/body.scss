@@ -10,32 +10,31 @@
   font-family: 'Noto Serif JP';
 }
 
+main {
+	margin: 0px 20% 1.5em 20%;
+}
+
 article {
-  margin-left: 20%;
-  margin-right: 20%;
+	margin: 0px 0px 1.5em 0px;
+	h1 {
+	  @include heading-fonts;
+	  margin: 0.5em 0em 0.5em 0em;
+	  padding: 0px 5% 0px 5%;
+	  font-weight: 500;
+	  font-size: 1.85em;
+	  margin: 0px;
+	  border-bottom: 0.5px solid $border_color;
+	  span {
+	    @include heading-fonts;
+	  }
+	  a {
+	    @include heading-fonts;
+	  }
+	}
 }
 
-section {
-  padding: 0px 0px 1.5em 0px;
-}
 
-h2 {
-  @include heading-fonts;
-  margin: 0.5em 0em 0.5em 0em;
-  padding: 0px 5% 0px 5%;
-  font-weight: 500;
-  font-size: 1.85em;
-  margin: 0px;
-  border-bottom: 0.5px solid $border_color;
-  span {
-    @include heading-fonts;
-  }
-  a {
-    @include heading-fonts;
-  }
-}
-
-h3, h4, h5, h6, p, ul, ol {
+h2, h3, h4, h5, h6, p, ul, ol {
   padding: 0px 5% 0px 5%;
   margin: 0.5em 0em 0.5em 0em;
 }
@@ -68,6 +67,10 @@ a {
   font-family: 'Cinzel';
 }
 
+.first-number-default {
+  font-family: 'Cormorant Garamond';
+}
+
 .diary-this-is-hidden {
   display: none;
 }
@@ -80,10 +83,38 @@ a {
     padding: 0em 5% 0.5em 5%;
 }
 
+.h1-like-h2 {
+	@include heading-fonts;
+	margin: 0.5em 0em 0.5em 0em;
+	padding: 0px 5% 0px 5%;
+	font-weight: 500;
+	font-size: 1.85em;
+	margin: 0px;
+	border-bottom: 0.5px solid $border_color;
+	span {
+		@include heading-fonts;
+	}
+	a {
+		@include heading-fonts;
+	}
+}
+
+
+
+
 /****メイン****/
 
 ul.ul-links li {
 	display: inline;
+}
+
+ul.ul-default li {
+	margin: 0.3em 0em 0.3em 0em;
+	color: #000000;
+	&:before {
+		content: '• ';
+		color: #b0b0b0;
+	}
 }
 
 ul.note-top {
@@ -93,12 +124,12 @@ ul.note-top {
     margin: 0px;
     padding: 0px;
   }
-  h3 {
-    font-size: 16px; /*これはh4の大きさと同じ*/
+  h2 {
+    font-size: 18px; /*これはh4の大きさと同じ*/
     font-weight: 600;
     margin: 0.5em 0px 0em 0.5em;
     padding: 0.5em 0px 0.3em 0em;
-    span {
+    a {
       padding: 0em 0.5em 0em 0.5em;
       border-bottom: 0.5px solid $border_color;
     }

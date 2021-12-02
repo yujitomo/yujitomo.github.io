@@ -14,15 +14,26 @@
 - CSSやJavaScriptで困ったときは、「どれが有効になっているのか」をコンソールで確認すること。
 - とにかくコンソールと睨めっこせよ!!!!
 
+
+
+### Web Designing
+
+- 使う色の種類を増やさない方が見栄えする、似た系統の色3色以内？とか本屋で立ち読みした気がする。
+- 可読性の高い背景色を使うべき。とか言いながらこのホームページの可読性は高くない方だが...
+- [デザイナーじゃなくても知っておきたい色と配色の基本](https://baigie.me/officialblog/2021/01/27/color_theory/)
+
+
 ### HTML
 
+- 構文チェッカー: [これ](http://www.htmllint.net/wac/ja/)とか[これ](https://validator.w3.org/)とかがある。
 - [Webページの基本構造](https://shu-naka-blog.com/html/tag01/)
   - ↑ CSSで装飾しまくって頑張るゲームではない!!!! ということがちょっとわかる.
 - [Web関係の辞書的なサイト](https://developer.mozilla.org/ja/docs/Web)
 - HTMLでソースコードを表示させるときはcodeタグで囲む. ただし特殊文字はエスケープしなければいけない.
-- [主なエスケープ文字一覧](https://techacademy.jp/magazine/12553). たとえば 「< は &lt;」「> は &gt; 」「& は &amp;」
+- [主なエスケープ文字一覧](https://techacademy.jp/magazine/12553).
 - pタグ内で改行するときはbrタグで、ソースを載せるときはcodeタグ。
 - spanタグなどのinline系のタグの中で改行を打つと、それをJavaScriptなどでいじったときに変な挙動をすることがあるので注意。
+
 
 
 ### CSS

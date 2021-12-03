@@ -22,20 +22,19 @@ header.top-header {
   border-bottom: 1px solid $border_color_top;
   h1 {
     font-size: $navi_yujitomo_size;
-    a {
-      @include navi-fonts;
-      font-size: $navi_yujitomo_size;
-    }
   }
   ul li {
     margin-right: 30px;
     a {
-      @include navi-fonts;
       font-size: $navi_size;
     }
     .top-current-navigation {
       color: $current_color;
     }
+  }
+  a {
+    @include navi-fonts;
+    text-decoration: none;
   }
 }
 
@@ -102,6 +101,7 @@ footer.bottom-footer {
       }
       a {
         @include navi-fonts;
+      	text-decoration: none;
       }
       ul.footer-left {
         @include navi-fonts;

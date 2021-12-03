@@ -8,6 +8,7 @@
 	margin: 0;
 	padding: 0;
   font-family: 'Noto Serif JP';
+  color: #000000;
 }
 
 main {
@@ -31,6 +32,7 @@ h2 {
 	}
 	a {
 		@include heading-fonts;
+		text-decoration: none;
 	}
 }
 
@@ -54,29 +56,34 @@ ol {
 	list-style-position: inside;
 }
 
+
 a {
-  color: #000000;
-  transition: all 0.1s ease-in-out;
-  text-decoration: none;
-  &:hover {
-    opacity: 0.5;
-  }
+	transition: all 0.05s ease-in-out;
+	text-decoration-color: #b0b0b0;
+	/*text-decoration: none;*/
+	&:hover {
+		background-color: #ededed;
+	}
 }
+
 
 
 blockquote { /* 本来は引用だが、「定理」とか「定義」とかって引用みたいなもんだし、定理環境として使う */
   margin: 0px 5% 0px 5%;
 	border-left: 3px solid $border_color;
+	border-right: 3px solid $border_color;
 	h3 {
     font-size: 16px; /*これはh4の大きさと同じ*/
     font-weight: 600;
 		span {
 			padding: 0px 10px 0px 10px;
-			border-bottom: 0.5px solid $border_color;
+			/*text-decoration-color: $border_color;*/
+			/*border-bottom: 3px solid $border_color;*/
+			background: linear-gradient(to top, $border_color 2px, #ffffff 2px 100%);
 		}
 	}
 	p, ul, ol {
-	  padding: 0px 0px 0px 10px;
+	  padding: 0px 20px 0px 20px;
 	}
 }
 
@@ -103,7 +110,7 @@ blockquote { /* 本来は引用だが、「定理」とか「定義」とかっ�
 }
 
 .diary-here-first > span {
-    padding: 0em 5% 0.5em 5%;
+  padding: 0em 5% 0.5em 5%;
 }
 
 
@@ -111,38 +118,103 @@ blockquote { /* 本来は引用だが、「定理」とか「定義」とかっ�
 
 /****メイン****/
 
-ul.ul-links li {
-	display: inline;
+ul.ul-links {
+	li {
+		display: inline;
+	}
+	li:not(:last-child) {
+		&:after {
+			content: "";
+			display: inline-block;
+			border-right: 1px solid #000000;
+			position: relative;
+			height: 0.9em;
+			bottom: -0.1em;
+			margin: 0px 1.2em 0px 0px;
+			padding: 0px 0px 0px 1.55em;
+		}
+	}
 }
 
 ul.ul-default li {
-	color: #000000;
 	&:before {
-		content: '• ';
+		content: '•';
 		color: #b0b0b0;
+		padding: 0px 10px 0px 0px;
 	}
 }
+
+
+ul.ul-profile li {
+	h3 {
+		display: inline;
+	  font-size: 16px;
+		padding: 0;
+	}
+	ol {
+		list-style: none;
+		li {
+			&:before {
+				content: '•';
+				color: #b0b0b0;
+				padding: 0px 10px 0px 0px;
+			}
+			h4 {
+				display: inline;
+				padding: 0;
+				text-decoration-line: underline;
+				text-decoration-color: #b0b0b0;
+			}
+		}
+	}
+}
+
+ul.ul-top {
+  margin: 0px;
+  padding: 0px 5% 0px 5%;
+  li {
+    margin: 0.8em 0px 1em 0px;
+  }
+  h3 {
+    font-size: 18px; /*これはh4の大きさと同じ*/
+    font-weight: 600;
+    margin: 0.3em 0px 0.3em 0em;
+		padding: 0px;
+		&:before {
+			content: '•';
+			color: #b0b0b0;
+			padding: 0px 10px 0px 0px;
+		}
+    a {
+			text-decoration: none;
+    }
+  }
+}
+
 
 ul.note-top {
   margin: 0px;
   padding: 0px 5% 0px 5%;
   li {
-    margin: 0px;
-    padding: 0px;
+    margin: 0.8em 0px 1em 0px;
   }
   h3 {
     font-size: 18px; /*これはh4の大きさと同じ*/
     font-weight: 600;
-    margin: 0.5em 0px 0em 0.5em;
-    padding: 0.5em 0px 0.3em 0em;
+    margin: 0.3em 0px 0.3em 0em;
+		padding: 0px;
+		&:before {
+			content: '•';
+			color: #b0b0b0;
+			padding: 0px 10px 0px 0px;
+		}
     a {
-      padding: 0em 0.5em 0em 0.5em;
-      border-bottom: 0.5px solid $border_color;
+			text-decoration: none;
     }
   }
   p {
-    margin: 0px;
-    padding: 0.3em 0px .7em 0px;
+    margin: 0.3em 0px 0.3em 0px;
+		padding: 0px;
   }
 }
 

@@ -1,14 +1,20 @@
+{% if page.category != "Top" %}
 <header class="top-header">
-  <h1><a href="/Yujitomo_Top.html">Tomoki Yuji</a></h1>
-  <nav>
-    <ul>
-      {% for item in site.data.navigation %}
-      <li>
-        <a href="{{ item.link }}" {% if page.category == item.name %} class="top-current-navigation" {% endif %}>
-          {{ item.name }}
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-  </nav>
-</header>
+
+  {% else %}
+  <header class="top-header top-bodies">
+    {% endif %}
+
+    <h1><a href="/Yujitomo_Top.html">Tomoki Yuji</a></h1>
+    <nav>
+      <ul>
+        {% for item in site.data.navigation %}
+        <li>
+          <a href="{{ item.link }}" {% if page.category == item.name %} class="top-current-navigation" {% endif %}>
+            {{ item.name }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>

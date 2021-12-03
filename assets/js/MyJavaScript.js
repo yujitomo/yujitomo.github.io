@@ -118,10 +118,6 @@ if ( location.pathname == "/assets/HTML/Links.html" ) {
       && ul_elements[i].classList.length == 0
     ) {
       ul_elements[i].classList.add("ul-links");
-      var li_elements_list = ul_elements[i].children;
-      for ( j = 1 ; j < li_elements_list.length ; j++) {
-        li_elements_list[j].innerHTML = "　/　" + li_elements_list[j].innerHTML;
-      };
     }
   };
 };
@@ -138,7 +134,7 @@ if ( location.pathname == "/assets/HTML/PCMemo.html" ) {
 
 const this_pathname_ary = location.pathname.split("/");
 
-var h2_elements = document.getElementsByTagName("h2");
+const h2_elements = document.getElementsByTagName("h2");
 for ( i = 0 ; i < h2_elements.length ; i++ ) {
   if ( h2_elements[i].children.length == 0 ) {
     var h2_str = h2_elements[i].textContent;
@@ -146,18 +142,22 @@ for ( i = 0 ; i < h2_elements.length ; i++ ) {
   }
 }
 
-var h3_elements = document.getElementsByTagName("h3");
+const h3_elements = document.getElementsByTagName("h3");
 for ( i = 0 ; i < h3_elements.length ; i++ ) {
   h3_elements[i].removeAttribute("id"); /* markdownからきてるやつはidに日本語が付与されてるからを取り除いておく */
 };
 
-var strong_elements = document.getElementsByTagName("strong");
-for ( i = 0 ; strong_elements.length >= 1 ; i = 0 ) { /* strongを無くすとstrong_elementsの長さが1減るからi=0のままforを回す (バグかよ！) */
-  console.log(strong_elements[i].parentNode.parentNode);
-  if ( strong_elements[i].parentNode.parentNode.tagName == "BLOCKQUOTE" ) { /* 定理環境内のstrongをh3+spanに変換 */
-    strong_elements[i].parentNode.outerHTML = "<h3><span>" + strong_elements[i].innerHTML + "</span></h3>";
-  };
+const strong_elements = document.getElementsByTagName("strong");
+const l_strong_elements = strong_elements.length;
+for ( i = 0 ; i < l_strong_elements ; i++ ) {
+  /* strongを無くすとstrong_elementsの長さが1減るから、先頭に対する変更を施していく */
+  let j = 0 ; /* 親の親がblockquoteでない場合をカウント */
+  if ( strong_elements[j].parentNode.parentNode.tagName == "BLOCKQUOTE" ) { /* 定理環境内のstrongをh3+spanに変換 */
+    strong_elements[j].parentNode.outerHTML = "<h3><span>" + strong_elements[0].innerHTML + "</span></h3>";
+  } else {j++;};
 };
+
+
 
 
 
@@ -180,13 +180,11 @@ function myfunctAddRmvHidden(var_AR, var_str) {
   const var_class = document.getElementsByClassName(var_str);  /*** class「var_str」を所得 ***/
   if ( var_AR == "add" ) {  /*** addなら追加 ***/
     for (  var i = 0;  i < var_class.length;  i++  ) {
-      var classes = var_class[i].classList;
-      classes.add('diary-this-is-hidden');
+      var_class[i].classList.add('diary-this-is-hidden');
     };
   } else { /*** そうでないなら取り除く ***/
     for (  var i = 0;  i < var_class.length;  i++  ) {
-      var classes = var_class[i].classList;
-      classes.remove('diary-this-is-hidden');
+      var_class[i].classList.remove('diary-this-is-hidden');
     };
   };
 };

@@ -21,6 +21,7 @@ description: "ノートなど"
 {% if note_tag_list == "" %}
 {% assign note_tag_list = note_tag_list | append: current_tag_name %}
 {% assign note_tag_list = note_tag_list | split: "," %}
+{% comment %} あとでこのlistでfor文を回すので、ここの時点でnote_tag_listをリストとして作っておく必要がある {% endcomment %}
 {% else %}
 
 {% comment %} まずTrue_False_listをつくる。current_tag_nameがすでにnote_tag_listに含まれているタグならTrue、そうでないならFalse {% endcomment %}
@@ -61,14 +62,35 @@ description: "ノートなど"
   <h2><span class="first-color-change-IC">{{ note_tag }}</span></h2>
 
   <ul class="note-top">
+    {% comment %} このタグのポストをリスト化 {% endcomment %}
+    {% assign this_tag_posts = "" %}
+
     {% for note_post in site.categories.Notes %}
-    {% capture current_tag %}{{ note_post.tag }}{% endcapture %}
-    {% if note_tag == current_tag %}
-    <li>
-      <h3><a href="{{ note_post.url }}">{{ note_post.title }}</a></h3>
-      <p>{{ note_post.description }}</p>
-    </li>
+    {% capture note_post_tagname %}{{ note_post.tag }}{% endcapture %}
+
+    {% if note_tag == note_post_tagname %}
+    {% assign note_post_tagname_title = note_post.title %}
+    {% assign note_post_tagname_url = note_post.url %}
+    {% assign note_post_tagname_description = note_post.description %}
+    {% assign this_tag_posts = this_tag_posts | append: "|" | append: note_post_tagname_title | append: "#" | append: note_post_tagname_url | append: "#" | append: note_post_tagname_description %}
     {% endif %}
+
+    {% endfor %}
+
+    {% assign this_tag_posts = this_tag_posts | remove_first: "|" %}
+    {% assign this_tag_posts = this_tag_posts | split: '|' %}
+    {% comment %} このタグのポストをリスト化ここまで {% endcomment %}
+
+    {% comment %} alphabeticallyにsort {% endcomment %}
+    {% capture sorted_this_tag_posts %}{{ this_tag_posts | sort_natural | join: ","}}{% endcapture %}
+    {% assign sorted_this_tag_posts = sorted_this_tag_posts | split: "," %}
+
+    {% for sorted_post in sorted_this_tag_posts %}
+    {% assign postitems = sorted_post | split: '#' %}
+    <li>
+      <h3><a href="{{ postitems[1] }}">{{ postitems[0] }}</a></h3>
+      <p>{{ postitems[2] }}</p>
+    </li>
     {% endfor %}
   </ul>
 </article>

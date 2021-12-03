@@ -57,10 +57,14 @@ blockquote p, blockquote ul, blockquote ol { padding: 0px 20px 0px 20px; }
 
 .diary-here-first > span { padding: 0em 5% 0.5em 5%; }
 
+.no-text-line { text-decoration: none; }
+
 /****メイン****/
 ul.ul-links li { display: inline; }
 
-ul.ul-links li:not(:last-child):after { content: ""; display: inline-block; border-right: 1px solid #000000; position: relative; height: 0.9em; bottom: -0.1em; margin: 0px 1.2em 0px 0px; padding: 0px 0px 0px 1.55em; }
+ul.ul-links a { text-decoration-color: #dadada; }
+
+ul.ul-links li:not(:last-child):after { content: ""; display: inline-block; border-right: 1px solid #b0b0b0; position: relative; height: 0.9em; bottom: -0.1em; margin: 0px 1.2em 0px 0px; padding: 0px 0px 0px 1.55em; }
 
 ul.ul-default li:before { content: '•'; color: #b0b0b0; padding: 0px 10px 0px 0px; }
 
@@ -70,7 +74,7 @@ ul.ul-profile li ol { list-style: none; }
 
 ul.ul-profile li ol li:before { content: '•'; color: #b0b0b0; padding: 0px 10px 0px 0px; }
 
-ul.ul-profile li ol li h4 { display: inline; padding: 0; text-decoration-line: underline; text-decoration-color: #b0b0b0; }
+ul.ul-profile li ol li h4 { display: inline; padding: 0; text-decoration-line: underline; text-decoration-color: #dadada; }
 
 ul.ul-top { margin: 0px; padding: 0px 5% 0px 5%; }
 
@@ -104,6 +108,8 @@ ul.small-block1 li ul.small-list { margin: 0px 0px 0px 10px; padding: 0px; list-
 
 ul.small-block1 li ul.small-list li { margin: 3px 0px 3px 0px; padding: 0px; }
 
+ul.small-block1 a { text-decoration: none; }
+
 ul.small-block2 { display: flex; justify-content: space-between; }
 
 ul.small-block2 h2 { font-weight: 200; font-size: 1.6em; padding: 0px 0px 0px 10px; border-bottom: 0.5px solid #dadada; }
@@ -113,6 +119,8 @@ ul.small-block2 li { /*display: inline;*/ width: 175px; margin: 0 10px 1em 0px; 
 ul.small-block2 li ul.small-list { margin: 0px 0px 0px 10px; padding: 0px; list-style: none; }
 
 ul.small-block2 li ul.small-list li { margin: 3px 0px 3px 0px; padding: 0px; }
+
+ul.small-block2 a { text-decoration-color: #dadada; }
 
 p.article-foot { text-align: right; }
 

@@ -72,6 +72,7 @@
 ### Liquid
 
 - Liquidのコメントアウトはcomment - endcommentで囲む感じ。
+- [Liquidで配列を作る方法](https://qiita.com/momonoki1990/items/13f97a23436c142e4c9a)
 - [assignとcaptureの違い](https://im-sosleepy.com/webproduction/assign_capture/)
 - [Liquid Cheat Sheet](https://www.shopify.com/partners/shopify-cheat-sheet)
 - appendやconcatでエラーを吐いたら、「辞書」型を「配列」型と間違えている可能性がある
@@ -79,6 +80,7 @@
 とくに、Jekyllで使う、タグ一覧を所得する「page.tags」などは「辞書型」なので、そのままではappendやconcatを使用できない。
 - [Shopify](https://web-guided.com/1240/#:%7E:text=%E3%80%8Cliquid%E3%80%8D%E3%81%A8%E3%81%AF%E3%80%81Shopify,%E3%81%84%E3%81%9F%E8%A8%98%E8%BF%B0%E3%82%92%E3%81%97%E3%81%BE%E3%81%99%E3%80%82)というのがある. 新しくページを作る時にはテーマ選びの参考にしてもいいかもしれない.
 - [for文でリストの逆順にforを回すときは最後にreversedを入れると良い](https://templates.supply/sort-jekyll-collection-by-reverse-order-and-limit-results/)
+- [postsをalphabeticallyにソートする方法](https://stackoverflow.com/questions/8991995/using-liquid-to-sort-posts-alphabetically) postなどは辞書型なのでたんにsort_naturalするわけにはいかない。注意。
 
 
 ### Jekyll

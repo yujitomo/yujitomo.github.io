@@ -42,7 +42,7 @@ description: "日記です. "
 <footer class="main-footer">
   <p class=" diary-here-first-hide diary-this-is-hidden">
     Latest Post:
-    <a href="{{ latest_post.url }}">
+    <a href="{{ latest_post.url }}" class="no-text-line">
       <span class="first-color-change-II">{{ latest_post.date | date: "%Y. %b. %d (%a.)" }}</span>
     </a>
   </p>

@@ -1,16 +1,28 @@
 <!doctype html>
 <html lang="ja">
-{% include head.html %}
+
+<head>
+  {% include head.html %}
+  {% if jekyll.environment == "production" %}
+  {% include google-analytics.html %}
+  {% endif %}
+</head>
 
 <body>
   {% include header.html %}
+
+  {% if page.category != "Top" %}
   <main>
+    {% else %}
+    <p class="first-loading-text">Tomoki Yuji</p>
+    <main class="top-bodies">
+      {% endif %}
 
-    {% include main-header.liquid %}
+      {% include main-header.liquid %}
 
-    {{ content }}
-  </main>
-  {% include footer.html %}
+      {{ content }}
+    </main>
+    {% include footer.html %}
 </body>
 
 </html>

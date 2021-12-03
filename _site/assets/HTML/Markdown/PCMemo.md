@@ -93,6 +93,7 @@ alg-dさんに教えていただきました. ありがとうございます. ~~
 - Jekyllが何なのかについての解説は[このページの解説](https://www.codegrid.net/articles/jekyll-1/)が初見のときはわかりやすかった.
 - [公式が使い方の詳しい解説をしている.](https://jekylltips-ja.github.io/) これを見るとだいぶ使えるようになるかも.
 - [jekyllブログを始めたらまず最初に設定したいポイント](https://oshou.github.io/jekyll-blog-point/)
+- 環境を設定したければ「sudo JEKYLL_ENV=\*\*\* jekyll \*\*\*」のようにする。sudoは先頭。
 
 
 ### React

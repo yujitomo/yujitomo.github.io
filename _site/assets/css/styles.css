@@ -189,4 +189,32 @@ footer.bottom-footer ul li ul.footer-right li { padding: 0; margin: 0; width: au
 
 footer.bottom-footer ul li ul.footer-right li p { font-size: 5px; }
 
+@font-face { font-family: 'Cinzel'; src: url(/assets/MyFonts/Cinzel-Regular.ttf) format("truetype"); }
+
+@font-face { font-family: 'Cormorant Garamond'; src: url(/assets/MyFonts/CormorantGaramond-Light.ttf) format("truetype"); }
+
+@font-face { font-family: 'Noto Serif JP'; src: url(/assets/MyFonts/NotoSerifJP-ExtraLight.otf) format("Opentype"); }
+
+@font-face { font-family: 'Cinzel'; src: url(/assets/MyFonts/Cinzel-Regular.ttf) format("truetype"); }
+
+@font-face { font-family: 'Cormorant Garamond'; src: url(/assets/MyFonts/CormorantGaramond-Light.ttf) format("truetype"); }
+
+@font-face { font-family: 'Noto Serif JP'; src: url(/assets/MyFonts/NotoSerifJP-ExtraLight.otf) format("Opentype"); }
+
+.top-bodies { animation-name: first-loading-animation; animation-duration: 3.2s; animation-fill-mode: forwards; }
+
+@keyframes first-loading-animation { 0% { opacity: 0; }
+  80% { opacity: 0; }
+  95% { opacity: 0.5; }
+  100% { opacity: 1; } }
+
+p.first-loading-text { color: #dadada; position: relative; width: 100%; height: 70px; margin-top: 200px; text-align: center; top: 50%; left: 50%; -webkit-transform: translate(-50%); transform: translate(-50%); font-family: 'Cinzel'; font-weight: 100; font-size: 60px; }
+
+p.first-loading-text:after { content: "Tomoki Yuji"; position: absolute; color: #000000; top: 0; left: 0; width: 100%; font-size: 60px; font-family: 'Cinzel'; font-weight: 100; animation-name: first-loading-text-animation; animation-duration: 2.5s; animation-fill-mode: forwards; }
+
+@keyframes first-loading-text-animation { 0% { clip: rect(0, 1000px, 0, 0); }
+  5% { clip: rect(0, 1000px, 0, 0); }
+  75% { clip: rect(0, 1000px, 70px, 0); }
+  100% { clip: rect(0, 1000px, 70px, 0); } }
+
 /*# sourceMappingURL=styles.css.map */

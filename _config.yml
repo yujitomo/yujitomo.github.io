@@ -10,9 +10,11 @@ author:                 Yuji Tomoki
 
 social-network-links:
   email:                "yujitomo@kurims.kyoto-u.ac.jp"
-  github:               "https://github.com/yujitomo/yujitomo.github.io"
+  github:               "https://github.com/yujitomo/yujitomo.github.io/Yujitomo_Top.html"
 
-
+plugins:                # "gems" before Jekyll 3.5
+  - jekyll-environment-variables
+  
 # Select which social network share links to show in posts
 share-links-active:
   twitter:              true
@@ -35,7 +37,6 @@ defaults:
       path:             ""
     values:
       layout:           "default"
-
 
 
 

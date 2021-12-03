@@ -1,43 +1,57 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <meta name="discription" content="湯地のホームページ">
-  <meta name="keywords" content="湯地智紀">
-  <meta name="author" content="湯地ともき">
-  <!--
+<meta name="discription" content="湯地のホームページ">
+<meta name="keywords" content="湯地智紀">
+<meta name="author" content="湯地ともき">
+<!--
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
 -->
-  <link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/styles.css">
 
-  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      renderMathInElement(document.body, {
-        delimiters: [{
-          left: "\\[",
-          right: "\\]",
-          display: true
-        }, {
-          left: "\\(",
-          right: "\\)",
-          display: false
-        }]
-      })
-    });
-  </script>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/contrib/auto-render.min.js"></script>
+<script>
+  $(document).ready(function() {
+    renderMathInElement(document.body, {
+      delimiters: [{
+        left: "\\[",
+        right: "\\]",
+        display: true
+      }, {
+        left: "\\(",
+        right: "\\)",
+        display: false
+      }]
+    })
+  });
+</script>
+
+
+<title>湯地ともき@RIMS</title>
   
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9LTS7CCPPD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
 
-  <title>湯地ともき@RIMS</title>
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-9LTS7CCPPD');
+</script>
+  
 </head>
 
 <body>
@@ -77,9 +91,12 @@
       </ul>
     </nav>
   </header>
-  <main>
 
+  
+  <main>
     
+
+      
 
 
 <header class="main-header">
@@ -99,7 +116,7 @@
 
 
 
-    
+      
 <h2 id="overall">Overall</h2>
 
 <ul>
@@ -214,6 +231,7 @@ alg-dさんに教えていただきました. ありがとうございます. <d
   <li>Jekyllが何なのかについての解説は<a href="https://www.codegrid.net/articles/jekyll-1/">このページの解説</a>が初見のときはわかりやすかった.</li>
   <li><a href="https://jekylltips-ja.github.io/">公式が使い方の詳しい解説をしている.</a> これを見るとだいぶ使えるようになるかも.</li>
   <li><a href="https://oshou.github.io/jekyll-blog-point/">jekyllブログを始めたらまず最初に設定したいポイント</a></li>
+  <li>環境を設定したければ「sudo JEKYLL_ENV=*** jekyll ***」のようにする。sudoは先頭。</li>
 </ul>
 
 <h3 id="react">React</h3>
@@ -265,8 +283,8 @@ alg-dさんに教えていただきました. ありがとうございます. <d
   <li>YAMLのコメントアウトはシャープ</li>
 </ul>
 
-  </main>
-  
+    </main>
+    
 <footer class="bottom-footer">
 
   

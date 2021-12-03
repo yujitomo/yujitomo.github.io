@@ -68,9 +68,9 @@ ul.ul-profile li h3 { display: inline; font-size: 16px; padding: 0; }
 
 ul.ul-profile li ol { list-style: none; }
 
-ul.ul-profile li ol li:before { content: '•'; color: #b0b0b0; padding: 0px 10px 0px 0px; }
-
 ul.ul-profile li ol li h4 { display: inline; padding: 0; text-decoration-line: underline; text-decoration-color: #b0b0b0; }
+
+ul.ul-profile li ol li h4:before { content: '•'; color: #b0b0b0; padding: 0px 10px 0px 0px; }
 
 ul.ul-top { margin: 0px; padding: 0px 5% 0px 5%; }
 

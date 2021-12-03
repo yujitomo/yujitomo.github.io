@@ -154,12 +154,12 @@ ul.ul-profile li {
 	ol {
 		list-style: none;
 		li {
-			&:before {
-				content: '•';
-				color: #b0b0b0;
-				padding: 0px 10px 0px 0px;
-			}
 			h4 {
+				&:before {
+					content: '•';
+					color: #b0b0b0;
+					padding: 0px 10px 0px 0px;
+				}
 				display: inline;
 				padding: 0;
 				text-decoration-line: underline;

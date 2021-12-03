@@ -115,13 +115,15 @@ footer.bottom-footer {
         }
       }
       ul.footer-right {
-        display: auto;
+        margin: 0px;
+        margin: 10px;
         li {
-          padding: 0;
-          margin: 0;
+          display: inline;
+          padding: 20px;
           width: auto;
-          p {
-            font-size: 5px;
+          transition: background-color 0.05s ease-in-out;
+          &:hover {
+            background-color: #ededed;
           }
         }
       }

@@ -13,8 +13,9 @@ social-network-links:
   github:               "https://github.com/yujitomo/yujitomo.github.io/Yujitomo_Top.html"
 
 plugins:                # "gems" before Jekyll 3.5
-  - jekyll-environment-variables
-  
+#  - jekyll-environment-variablesplugins
+  - jekyll-octicons
+
 # Select which social network share links to show in posts
 share-links-active:
   twitter:              true

@@ -129,3 +129,4 @@ Gemfileの書き方　/　 WEBrickを使うためのメモ
 ## Others
 
 - YAMLのコメントアウトはシャープ
+- [GitHubっぽいアイコン](https://primer.style/octicons/)

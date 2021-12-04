@@ -1,6 +1,6 @@
 ---
 layout: article-type
-title:  "Blow Up along Linear Subvarieties"
+title:  "Blowing Up along Linear Subvarieties"
 category: Notes
 tag: "Algebraic Geometry"
 author: Yujitomo

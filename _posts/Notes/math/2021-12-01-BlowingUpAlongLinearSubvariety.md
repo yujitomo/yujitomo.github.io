@@ -1,5 +1,5 @@
 ---
-layout: article-type
+layout: math-note-type
 title:  "Blowing Up along Linear Subvarieties"
 category: Notes
 tag: "Algebraic Geometry"
@@ -36,5 +36,3 @@ Hartshorne氏による教科書「Algebraic Geometry」では,
 このノートでは, それとは異なる視点による証明を与えます.
 
 オイラー完全列については変形理論を用いた別証明もありますが, それについては別のノートを作成しようと考えています.
-
-詳細は[\[PDFファイル\]](/assets/TeX Files/Blowing_Up_along_Linear_Subvariety/Blow up along linear sub.pdf)をご覧ください。

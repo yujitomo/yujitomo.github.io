@@ -1,0 +1,23 @@
+---
+layout: default-ja
+---
+
+
+
+{{ content | markdownify }}
+
+{% capture page_name_ary %}
+{{ page.url }}
+{% endcapture %}
+{% assign page_name_ary = page_name_ary | split: "/" %}
+{% assign page_name_ary = page_name_ary | reverse | join: "." %}
+{% assign page_name_ary = page_name_ary | split: "." %}
+{% assign page_name = page_name_ary[0] %}
+
+<footer class="math-note-footer">
+  <p>
+    <a href="/assets/TeX Files/{{ page_name }}/{{ page_name }}.pdf">
+      PDFファイルはこちら.
+    </a>
+  </p>
+</footer>

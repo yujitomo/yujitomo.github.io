@@ -24,9 +24,11 @@ h2 span { font-family: 'Cormorant Garamond'; font-weight: 100; }
 
 h2 a { font-family: 'Cormorant Garamond'; font-weight: 100; text-decoration: none; }
 
-h3, h4, h5, h6, p, ul, ol { padding: 0px 5% 0px 5%; margin: 0.5em 0em 0.5em 0em; }
+h3, h4, h5, h6, p, ul, ol { padding: 0px 5% 0px 5%; margin: 0.7em 0em 0.7em 0em; }
 
-li { margin: 0.3em 0em 0.3em 0em; }
+p { letter-spacing: 0.05em; }
+
+li { margin: 0.4em 0em 0.4em 0em; }
 
 ul { list-style: none; flex-wrap: wrap; list-style-position: inside; }
 
@@ -88,15 +90,15 @@ ul.ul-top h3 a { text-decoration: none; }
 
 ul.note-top { margin: 0px; padding: 0px 5% 0px 5%; }
 
-ul.note-top li { margin: 0.8em 0px 1em 0px; }
+ul.note-top li { margin: 1em 0px 1em 0px; }
 
-ul.note-top h3 { font-size: 18px; /*これはh4の大きさと同じ*/ font-weight: 600; margin: 0.3em 0px 0.3em 0em; padding: 0px; }
+ul.note-top h3 { font-size: 18px; /*これはh4の大きさと同じ*/ font-weight: 600; margin: 0.4em 0px 0.4em 0em; padding: 0px; }
 
 ul.note-top h3:before { content: '•'; color: #b0b0b0; padding: 0px 10px 0px 0px; }
 
 ul.note-top h3 a { text-decoration: none; }
 
-ul.note-top p { margin: 0.3em 0px 0.3em 0px; padding: 0px; }
+ul.note-top p { margin: 0.3em 0px 0.3em 0px; padding: 0px 0px 0px 25px; }
 
 ul.small-block1 { display: flex; justify-content: space-between; }
 
@@ -165,7 +167,7 @@ header.main-header p { padding: 1em 0em 1em 0em; text-align: center; font-size: 
 /***Footer***/
 footer.main-footer { margin: 0px 0px 1.5em 0px; }
 
-footer.main-footer p { padding-top: 1em; text-align: right; }
+footer.main-footer p { letter-spacing: 0em; padding-top: 1em; text-align: right; }
 
 footer.bottom-footer { width: 100%; padding: 5px 15% 0 15%; margin: 2em 0 3em 0; border-top: 1px solid #cccccc; }
 

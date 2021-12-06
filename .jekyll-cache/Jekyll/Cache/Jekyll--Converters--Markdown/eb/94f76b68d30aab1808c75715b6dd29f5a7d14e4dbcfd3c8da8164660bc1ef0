@@ -1,0 +1,15 @@
+I"R<h2 id="exercise">Exercise</h2>
+
+<p>問題の内容は以下の通りです:</p>
+
+<blockquote>
+  <p><strong>Exercise (cf. [Hartshorne, Exercise I.4.9])</strong></p>
+
+  <p>基礎体を\(k\)として, \(n &gt; r + 2\)を自然数とする.
+\(X\subset \mathbb{P}^n\)を\(r\)次元射影多様体とする.
+このとき, ある点\(P\in \mathbb{P}^n\setminus X\)が存在して,
+点\(P\)から\(\mathbb{P}^{n-1}\)への射影の\(X\)への制限が像への双有理射となることを示せ.</p>
+</blockquote>
+
+<p>Hartshorneによる誘導とは異なる, 幾何的な解答を与えます.</p>
+:ET

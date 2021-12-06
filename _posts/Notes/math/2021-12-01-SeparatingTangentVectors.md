@@ -1,5 +1,5 @@
 ---
-layout: article-type
+layout: math-note-type
 title:  "Separating Tangent Vectors"
 category: Notes
 tag: "Algebraic Geometry"
@@ -61,5 +61,3 @@ description: "接ベクトルを分離する線形系に関するノートです
 > \\(L\\)を\\(X\\)上の直線束, \\(V\subset H^0(X,L)\\)を基点のない線形系とする.
 > このとき, 線形系\\(V\subset H^0(X,L)\\)が点と接ベクトルを分離することと,
 > \\(V\subset H^0(X,L)\\)の引き起こす射\\(X\dashrightarrow \mathbb{P}(V)\\)が埋め込みであることは同値である.
-
-詳細は[\[PDFファイル\]](/assets/TeX Files/Separating Tangent Vectors/Separating Tangent Vectors.pdf)をご覧ください。

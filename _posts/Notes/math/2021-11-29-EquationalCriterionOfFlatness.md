@@ -1,6 +1,6 @@
 ---
-layout: article-type
-title:  "Equational Criterion of Flatness"
+layout: math-note-type
+title: "Equational Criterion of Flatness"
 category: Notes
 tag: "Commtative Algebra"
 author: Yujitomo
@@ -25,5 +25,3 @@ description: "平坦性の Equational Criterion について"
 > 任意の素イデアル\\(\mathfrak{p}\\)に対して\\(A_{\mathfrak{p}}\\)は付値環である.
 > 特に, NoetherなPrüfer整域はDedekind環である.
 > また逆に, 任意の素イデアルでの局所化が付値環となる整域はPrüfer整域である.
-
-詳細は[\[PDFファイル\]](/assets/TeX Files/Equational Criterion/Equational Criterion.pdf)をご覧ください。

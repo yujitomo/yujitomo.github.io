@@ -1,4 +1,45 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-07T00:18:57+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">12月06日</title><link href="/diary/2021/12/06/Nikki.html" rel="alternate" type="text/html" title="12月06日" /><published>2021-12-06T00:00:00+09:00</published><updated>2021-12-06T00:00:00+09:00</updated><id>/diary/2021/12/06/Nikki</id><content type="html" xml:base="/diary/2021/12/06/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-08T00:40:10+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">12月07日</title><link href="/diary/2021/12/07/Nikki.html" rel="alternate" type="text/html" title="12月07日" /><published>2021-12-07T00:00:00+09:00</published><updated>2021-12-07T00:00:00+09:00</updated><id>/diary/2021/12/07/Nikki</id><content type="html" xml:base="/diary/2021/12/07/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
+
+&lt;p&gt;今日は8時半ごろに起きました。
+朝は論文の修正を行ったり掃除をしたりしていて、
+昼は望月先生とセミナー、
+夕方から夜はTeXファイルをHTMLに変換するプログラムを書いていました。
+夜ご飯はほうれん草祭りです。
+これを書いている今は0時半です。&lt;/p&gt;
+
+&lt;p&gt;ほうれん草祭りというのはただの鍋のことなのですが、
+具の80%をほうれん草が占めている鍋のことです。
+時期的にほうれん草が安くて美味しくなっているので、
+これからほうれん草祭りの回数が増えていくと思います。
+明日もほうれん草祭りの予定です (冷蔵庫事情的に)。
+食べ過ぎているとシュウ酸が気になってきますが、
+ほうれん草はおいしい上に健康にも良いですし、
+積極的に摂取したいですね。&lt;/p&gt;
+
+&lt;p&gt;Google Analyticsのレポートを見ていると、
+1日の間に誰にも見られない、ということはどうやらないそうで、
+10人前後は毎日このホームページを訪れているらしいということがわかります。
+意外と見られている！緊張しますね。&lt;/p&gt;
+
+&lt;p&gt;今週中に「TeXファイルをHTMLに変換するプログラム」を書き終えて新しいページを追加したいなと思います。
+PDFファイルで表示するのもいいですが、
+やはり、&lt;a href=&quot;https://stacks.math.columbia.edu/&quot;&gt;Stacks Project&lt;/a&gt; のように、
+webページのまま見れるとそっちの方が見やすいよなあと思うのです。
+なので、そういうページをノートのところに追加したいなと思っています。
+それに、このプログラムが完成すれば、
+「Stacks Projectのようなもの」
+も実現できるのではないか、とか思ってきます。
+つまり、複数人が共同で「TeXで」教科書を書き、
+それをwebページとして公開する、みたいなことができるのではないか、ということです。
+もちろん似たようなものはもうすでにあるわけですが (Mathpedia??とか??)、
+TeXファイルをTeXファイルのまま扱って、HTMLへの変換は自動、とかの方がやっぱりやりやすいじゃないですか、
+と私は思ってしまうのです。
+MarkdownですらTeXのように数式を書くのはやっぱり手間です、思うように動きませんし。
+というわけで、明日はおそらくこのプログラムを書く作業をやって1日を終えると思います。&lt;/p&gt;
+
+&lt;p&gt;明日はペットボトルのゴミを出さねばならないため、
+07:30には起きます (宣言)。
+なので今日はもう寝ます。おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry><entry><title type="html">12月06日</title><link href="/diary/2021/12/06/Nikki.html" rel="alternate" type="text/html" title="12月06日" /><published>2021-12-06T00:00:00+09:00</published><updated>2021-12-06T00:00:00+09:00</updated><id>/diary/2021/12/06/Nikki</id><content type="html" xml:base="/diary/2021/12/06/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
 
 &lt;p&gt;今日は9時半ごろに起きました。
 昼は同級生とお昼を食べることになっていたので、すぐにシャワーを浴びて家を出ました。
@@ -177,26 +218,70 @@ Stack Exchangeを見ながら家に帰って昨日作った晩御飯の残りを
 数学人は一般に「○○である。ここで××より、○○であることが従う。」を英語で書くことには慣れていますが、
 会話的な英語を生成することはあまり得意ではないことが多いように見えます (私だけではないですよね？)。
 しっかり練習して、滑らかに英語を生成できる人間になりたいものです
-(Stack Exchangeで解答することは、多少は英語の練習になっている気がします)。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry><entry><title type="html">Strange Curves</title><link href="/notes/2021/12/01/StrangeCurves.html" rel="alternate" type="text/html" title="Strange Curves" /><published>2021-12-01T00:00:00+09:00</published><updated>2021-12-01T00:00:00+09:00</updated><id>/notes/2021/12/01/StrangeCurves</id><content type="html" xml:base="/notes/2021/12/01/StrangeCurves.html">&lt;h2 id=&quot;definition&quot;&gt;Definition&lt;/h2&gt;
+(Stack Exchangeで解答することは、多少は英語の練習になっている気がします)。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry><entry><title type="html">Blowing Up along Linear Subvarieties</title><link href="/notes/2021/12/01/BlowingUpAlongLinearSubvariety.html" rel="alternate" type="text/html" title="Blowing Up along Linear Subvarieties" /><published>2021-12-01T00:00:00+09:00</published><updated>2021-12-01T00:00:00+09:00</updated><id>/notes/2021/12/01/BlowingUpAlongLinearSubvariety</id><content type="html" xml:base="/notes/2021/12/01/BlowingUpAlongLinearSubvariety.html">&lt;h2 id=&quot;main-theorem&quot;&gt;Main Theorem&lt;/h2&gt;
 
-&lt;p&gt;射影空間\(\mathbb{P}^N\)内の射影曲線\(C\subset \mathbb{P}^N\)は、
-任意の非特異点での接線がある共通の点を通るとき、(この埋め込みのもと、\(\mathbb{P}^N\)内で) strangeである と言います。&lt;/p&gt;
-
-&lt;h2 id=&quot;main-theorem&quot;&gt;Main Theorem&lt;/h2&gt;
-
-&lt;p&gt;このノートの主なテーマは、以下の定理にスキーム論的な証明を与えることです:&lt;/p&gt;
+&lt;p&gt;このノートでは以下の構造定理を証明します:&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Samuel’s Theorem [cf. Hartshorne, Theorem IV.3.9]&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt;&lt;/p&gt;
 
-  &lt;p&gt;射影空間\(\mathbb{P}^N\)内のstrangeな非特異射影曲線\(C\subset \mathbb{P}^N\)は、
-\(\mathbb{P}^N\)内の直線か、
-またはある平面\(\mathbb{P}^2\subset \mathbb{P}^N\)に含まれる二次曲線に限る。&lt;/p&gt;
+  &lt;p&gt;\(k\)を体, \(V\to W\)を有限次元\(k\)-線形空間の全射, \(K\)をその核とし,
+\(B\)を\(\mathbb{P}(V)\)の\(\mathbb{P}(W)\)に沿った爆発とする. このとき,
+\[ B \cong \mathbb{P}_{\mathbb{P}(K)}(\mathcal{O}_{\mathbb{P}(K)}(1)\oplus (\mathcal{O}_{\mathbb{P}(K)}\otimes W)) \]
+となる.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Hurwitzの定理を用いたHartshorneによる証明とは異なる証明を与えます。
-証明では, 接ベクトルを分離することのある言い換えを用います
-(cf. &lt;a href=&quot;/notes/2021/12/01/SeparatingTangentVectors.html&quot;&gt;[Separating Tangent Vectors]&lt;/a&gt; )。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Algebraic Geometry" /><summary type="html">Definition</summary></entry><entry><title type="html">Separating Tangent Vectors</title><link href="/notes/2021/12/01/SeparatingTangentVectors.html" rel="alternate" type="text/html" title="Separating Tangent Vectors" /><published>2021-12-01T00:00:00+09:00</published><updated>2021-12-01T00:00:00+09:00</updated><id>/notes/2021/12/01/SeparatingTangentVectors</id><content type="html" xml:base="/notes/2021/12/01/SeparatingTangentVectors.html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;証明は, コホモロジーの半連続性などの定理を用いることは避け,
+射影束や爆発の普遍性 (cf. [ Hartshorne, Theorem II.7.12 ],
+&lt;a href=&quot;https://stacks.math.columbia.edu/tag/0806&quot;&gt;[Stacks, Lemma 0806]&lt;/a&gt; ) などを用いて幾何的に行います.&lt;/p&gt;
+
+&lt;p&gt;この定理を用いることで, グラスマン多様体と射影空間の直積を incidence varietyに沿って爆発してできる多様体の構造についても調べることができます.&lt;/p&gt;
+
+&lt;p&gt;この定理を示す過程で, オイラー完全列と呼ばれる以下の完全列の存在も証明します.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Theorem (Eular Exact Sequence)&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;\(k\)を体, \(n\)を自然数とする. このとき, \(\mathbb{P}^n=\mathbb{P}^n_k\)上には以下の完全列が存在する:
+\[ 0 \to \Omega_{\mathbb{P}^n}(1) \to \mathcal{O}_{\mathbb{P}^n}^{n+1} \to \mathcal{O}_{\mathbb{P}^n}(1) \to 0. \]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hartshorne氏による教科書「Algebraic Geometry」では,
+次数つき加群を用いて計算することによりオイラー完全列の存在が証明されていましたが,
+このノートでは, それとは異なる視点による証明を与えます.&lt;/p&gt;
+
+&lt;p&gt;オイラー完全列については変形理論を用いた別証明もありますが, それについては別のノートを作成しようと考えています.&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Algebraic Geometry" /><summary type="html">Main Theorem</summary></entry><entry><title type="html">Hartshorne Exercise II.8.2.</title><link href="/notes/2021/12/01/Ex_II_8_2.html" rel="alternate" type="text/html" title="Hartshorne Exercise II.8.2." /><published>2021-12-01T00:00:00+09:00</published><updated>2021-12-01T00:00:00+09:00</updated><id>/notes/2021/12/01/Ex_II_8_2</id><content type="html" xml:base="/notes/2021/12/01/Ex_II_8_2.html">&lt;h2 id=&quot;exercise&quot;&gt;Exercise&lt;/h2&gt;
+
+&lt;p&gt;基礎体を\(k\)とします.
+Hartshorneの本では代数閉体に限っていますが、
+この問題に関しては特にそのような制約なしに解くことができます (一般の体上有限次元なスキームに対して同様の事実が成立します).
+問題の内容は以下の通りです:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Exercise (cf. [Hartshorne, Exercise II.8.2])&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;\(X\)を\(k\)上の\(n\)次元代数多様体,
+\(\mathcal{E}\)をランクが\(n\)より真に大きい\(X\)上の局所自由層とする.
+\(\mathcal{E}\)は線形部分空間\(V\subset H^0(X,\mathcal{E})\)により生成されているとする.
+このとき, ある大域切断\(s\in V\)が存在して,
+任意の点\(x\in X\)に対して\(s_x\notin \mathfrak{m}_x\mathcal{E}_x\)となる.
+特に, 完全列
+\[ 0 \to \mathcal{O}_X\to \mathcal{E} \to \mathcal{F} \to 0\]
+であって, \(\mathcal{F}\)が局所自由となるものが存在する.&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Algebraic Geometry" /><summary type="html">Exercise</summary></entry><entry><title type="html">Hartshorne Exercise I.4.9.</title><link href="/notes/2021/12/01/Ex_I_4_9.html" rel="alternate" type="text/html" title="Hartshorne Exercise I.4.9." /><published>2021-12-01T00:00:00+09:00</published><updated>2021-12-01T00:00:00+09:00</updated><id>/notes/2021/12/01/Ex_I_4_9</id><content type="html" xml:base="/notes/2021/12/01/Ex_I_4_9.html">&lt;h2 id=&quot;exercise&quot;&gt;Exercise&lt;/h2&gt;
+
+&lt;p&gt;問題の内容は以下の通りです:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Exercise (cf. [Hartshorne, Exercise I.4.9])&lt;/strong&gt;&lt;/p&gt;
+
+  &lt;p&gt;基礎体を\(k\)として, \(n &amp;gt; r + 2\)を自然数とする.
+\(X\subset \mathbb{P}^n\)を\(r\)次元射影多様体とする.
+このとき, ある点\(P\in \mathbb{P}^n\setminus X\)が存在して,
+点\(P\)から\(\mathbb{P}^{n-1}\)への射影の\(X\)への制限が像への双有理射となることを示せ.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hartshorneによる誘導とは異なる, 幾何的な解答を与えます.&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Algebraic Geometry" /><summary type="html">Exercise</summary></entry><entry><title type="html">Separating Tangent Vectors</title><link href="/notes/2021/12/01/SeparatingTangentVectors.html" rel="alternate" type="text/html" title="Separating Tangent Vectors" /><published>2021-12-01T00:00:00+09:00</published><updated>2021-12-01T00:00:00+09:00</updated><id>/notes/2021/12/01/SeparatingTangentVectors</id><content type="html" xml:base="/notes/2021/12/01/SeparatingTangentVectors.html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;基礎体\(k\)は代数閉であるとします.
 このノートの主な考察対象は, 代数多様体\(X\)上の直線束\(L\)と線形系\(V\subset H^0(X,L)\)です.
@@ -262,65 +347,4 @@ Stack Exchangeを見ながら家に帰って昨日作った晩御飯の残りを
 \(L\)を\(X\)上の直線束, \(V\subset H^0(X,L)\)を基点のない線形系とする.
 このとき, 線形系\(V\subset H^0(X,L)\)が点と接ベクトルを分離することと,
 \(V\subset H^0(X,L)\)の引き起こす射\(X\dashrightarrow \mathbb{P}(V)\)が埋め込みであることは同値である.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Algebraic Geometry" /><summary type="html">Introduction</summary></entry><entry><title type="html">12月01日</title><link href="/diary/2021/12/01/Nikki.html" rel="alternate" type="text/html" title="12月01日" /><published>2021-12-01T00:00:00+09:00</published><updated>2021-12-01T00:00:00+09:00</updated><id>/diary/2021/12/01/Nikki</id><content type="html" xml:base="/diary/2021/12/01/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
-
-&lt;p&gt;今日は朝起きてペットボトルのゴミを出し、そのまま買い物に行って食材を買うところから始まりました。
-日中は主にホームページをいじっていたのですが、
-markdownで書いたものを適切に綺麗にして表示するJavaScriptを書くタスクがだいぶ進んだため、
-かなりいい感じに綺麗になってきて嬉しいです。
-JavaScriptがぐちゃぐちゃなので、そこはもう少し綺麗に書きたいですが、まああまり気にしてません。
-それよりも、数学的なメモを記録したノートの表示方法が定まらないのが今の一番の問題点です。&lt;/p&gt;
-
-&lt;p&gt;夕方に夜ご飯を作り、そのまま学部生にアティマクを教えるバイトをやって、少しホームページをいじり、夕飯を済ませて今これを書いています。
-だいたい0時です。&lt;/p&gt;
-
-&lt;h3 id=&quot;どうやったら数学ができるようになるのか&quot;&gt;どうやったら数学ができるようになるのか&lt;/h3&gt;
-
-&lt;p&gt;一般に人間はどうすれば数学ができるようになるのでしょうか。
-演習問題をやっていればとりあえずそれが正解ルートだと思うとは以前書きましたが、
-しかし闇雲に解いていても仕方ないとも思うのです。
-代数幾何や可換環論であれば、どちらかというと、可換環論的手法に持ち込んで証明をしていく方針よりも、
-Specの幾何学的性質が何をimplyするのかを見ていく方向性で考える方が、人間の思考方法と合致するように思うのですが、
-「人間の」は言い過ぎでしょうか。
-スキームという概念を導入しなくても、
-Specの位相空間論的・幾何学的な性質と環論的な性質の密接な関係を辿ることでさまざまな可換環論的主張を証明できるわけですが、
-そういう思考方法でアティマクを書き直すようなことを一度やってみれば、かなりスキーム論が手に馴染むようになると思います。&lt;/p&gt;
-
-&lt;p&gt;演習問題を解くというのは私はかなり重要だと思います。
-数学者がやっていることの主要部分は「能動的に数学的主張を証明すること」であって、
-これは記述された証明を読むことという「受動的」な方向性とは少し違う感じがします。
-演習問題を解くという行為を行うためには、能動的に証明を作りにいく態度が必要になるので、
-この意味で、より「数学者の実務」に近いように感じます。
-いかがでしょうか。
-しかし、私も勉強不足を日々痛感している身ですので、あまり偉そうなことは言えないのですが…&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry><entry><title type="html">Hartshorne Exercise I.4.9.</title><link href="/notes/2021/12/01/Ex_I_4_9.html" rel="alternate" type="text/html" title="Hartshorne Exercise I.4.9." /><published>2021-12-01T00:00:00+09:00</published><updated>2021-12-01T00:00:00+09:00</updated><id>/notes/2021/12/01/Ex_I_4_9</id><content type="html" xml:base="/notes/2021/12/01/Ex_I_4_9.html">&lt;h2 id=&quot;exercise&quot;&gt;Exercise&lt;/h2&gt;
-
-&lt;p&gt;問題の内容は以下の通りです:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Exercise (cf. [Hartshorne, Exercise I.4.9])&lt;/strong&gt;&lt;/p&gt;
-
-  &lt;p&gt;基礎体を\(k\)として, \(n &amp;gt; r + 2\)を自然数とする.
-\(X\subset \mathbb{P}^n\)を\(r\)次元射影多様体とする.
-このとき, ある点\(P\in \mathbb{P}^n\setminus X\)が存在して,
-点\(P\)から\(\mathbb{P}^{n-1}\)への射影の\(X\)への制限が像への双有理射となることを示せ.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Hartshorneによる誘導とは異なる, 幾何的な解答を与えます.&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Algebraic Geometry" /><summary type="html">Exercise</summary></entry><entry><title type="html">Hartshorne Exercise II.8.2.</title><link href="/notes/2021/12/01/Ex_II_8_2.html" rel="alternate" type="text/html" title="Hartshorne Exercise II.8.2." /><published>2021-12-01T00:00:00+09:00</published><updated>2021-12-01T00:00:00+09:00</updated><id>/notes/2021/12/01/Ex_II_8_2</id><content type="html" xml:base="/notes/2021/12/01/Ex_II_8_2.html">&lt;h2 id=&quot;exercise&quot;&gt;Exercise&lt;/h2&gt;
-
-&lt;p&gt;基礎体を\(k\)とします.
-Hartshorneの本では代数閉体に限っていますが、
-この問題に関しては特にそのような制約なしに解くことができます (一般の体上有限次元なスキームに対して同様の事実が成立します).
-問題の内容は以下の通りです:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Exercise (cf. [Hartshorne, Exercise II.8.2])&lt;/strong&gt;&lt;/p&gt;
-
-  &lt;p&gt;\(X\)を\(k\)上の\(n\)次元代数多様体,
-\(\mathcal{E}\)をランクが\(n\)より真に大きい\(X\)上の局所自由層とする.
-\(\mathcal{E}\)は線形部分空間\(V\subset H^0(X,\mathcal{E})\)により生成されているとする.
-このとき, ある大域切断\(s\in V\)が存在して,
-任意の点\(x\in X\)に対して\(s_x\notin \mathfrak{m}_x\mathcal{E}_x\)となる.
-特に, 完全列
-\[ 0 \to \mathcal{O}_X\to \mathcal{E} \to \mathcal{F} \to 0\]
-であって, \(\mathcal{F}\)が局所自由となるものが存在する.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Algebraic Geometry" /><summary type="html">Exercise</summary></entry></feed>
+&lt;/blockquote&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Algebraic Geometry" /><summary type="html">Introduction</summary></entry></feed>

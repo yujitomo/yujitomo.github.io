@@ -50,12 +50,17 @@
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 
+\newcommand{\myTheoremEnvironments}[1]{#1}
+
 \usepackage{amsthm}
+
 
 %%%%%%%%%%%%Plain型%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%definition型%%%%%%%%%%%%
+
+\myTheoremEnvironments{
 
 \theoremstyle{definition}
 
@@ -109,11 +114,14 @@
 \newtheorem*{rrem*}{Remark}
 \newtheorem*{defi*}{Definition}
 
+}
 
+\myTheoremEnvironments{
 
 \theoremstyle{plain}
 
 \newtheorem*{mytheorem*}{mytheorem}
+}
 
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
@@ -178,17 +186,25 @@
 
 
 
+\newcommand{\myOriginalPackages}[1]{#1}
+
+\myOriginalPackages{
+
 \usepackage{mandorasymb}
 \usepackage{applekeys}
 \renewcommand{\qedsymbol}{\pencilkey}
 %\renewcommand{\qedsymbol}{\kinoposymbniko}
 
-
+}
 
 
 \usepackage{latexsym}
-\DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\Isom}{Isom}
+
+\newcommand{\myMacros}[1]{#1}
+
+\myMacros{
+\DeclareMathOperator{\Hom}{\mathrm{Hom}}
+\DeclareMathOperator{\Isom}{\mathrm{Isom}}
 \DeclareMathOperator{\ISOM}{\mathbf{Isom}}
 \DeclareMathOperator{\id}{\mathrm{id}}
 \DeclareMathOperator{\im}{\mathrm{Im}}
@@ -225,6 +241,8 @@
 \newcommand{\usm}{\(\univ{U}\)-small}
 \newcommand{\vsm}{\(\univ{V}\)-small}
 \newcommand{\unit}[1]{\mathbf{1}_{\mathcal{#1}}}
+
+\newcommand{\aehehsogrw}[3][{garho[ser]}]{\mathbb{#1}#2#3}
 
 \newcommand{\Qcoh}{\mathsf{Qcoh}}
 \newcommand{\Coh}{\mathsf{Coh}}
@@ -288,7 +306,7 @@
 
 \newcommand{\OO}[1]{\OOO_{#1}}
 
-
+}
 
 \title{Equational Criterion of Flatness}
 

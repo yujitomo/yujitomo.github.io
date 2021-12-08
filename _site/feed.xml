@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-08T00:40:10+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">12月07日</title><link href="/diary/2021/12/07/Nikki.html" rel="alternate" type="text/html" title="12月07日" /><published>2021-12-07T00:00:00+09:00</published><updated>2021-12-07T00:00:00+09:00</updated><id>/diary/2021/12/07/Nikki</id><content type="html" xml:base="/diary/2021/12/07/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-09T01:00:02+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">12月08日</title><link href="/diary/2021/12/08/Nikki.html" rel="alternate" type="text/html" title="12月08日" /><published>2021-12-08T00:00:00+09:00</published><updated>2021-12-08T00:00:00+09:00</updated><id>/diary/2021/12/08/Nikki</id><content type="html" xml:base="/diary/2021/12/08/Nikki.html">&lt;h3 id=&quot;今日は夜遅くなったので日記はサクッと終わらせます&quot;&gt;今日は夜遅くなったので日記はサクッと終わらせます&lt;/h3&gt;
+
+&lt;p&gt;今日は7時半ごろに起きました。
+ゴミ出しをしてからは、
+TeXファイルをHTMLに変換するプログラムを書いていました。
+このプログラムはかなりいい感じになりそうなので、
+とりあえずそれを早く完成させたいです。
+これができれば、もうあまりやりたいこともないので、ホームページについてはひと段落します。
+早く完成させたいですね (二回目)。&lt;/p&gt;
+
+&lt;p&gt;夕方は学部生にアティマクを教えるバイトがあったので、それをやっていました。
+余因子行列について不思議に思ったことがあったので、また今度整理したいなと思います。
+夜ご飯は昨日と同じくほうれん草祭りです。
+朝起きてプログラムを書いて、昼は院生室でプログラムを書いて、
+夜はご飯を食べながらプログラムを書いて…。
+あまりこういう生活をするつもりではなかったのですが、
+ホームページをいじると決心してしまったのでひと段落つくまではやります。
+今日は夜がふけたのでまずいです (今01時)。&lt;/p&gt;
+
+&lt;p&gt;とりあえず今日は夜遅いのでもう寝ます。
+明日はピアニストの友人と会う予定になっています。
+楽しみですね。おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日は夜遅くなったので日記はサクッと終わらせます</summary></entry><entry><title type="html">12月07日</title><link href="/diary/2021/12/07/Nikki.html" rel="alternate" type="text/html" title="12月07日" /><published>2021-12-07T00:00:00+09:00</published><updated>2021-12-07T00:00:00+09:00</updated><id>/diary/2021/12/07/Nikki</id><content type="html" xml:base="/diary/2021/12/07/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
 
 &lt;p&gt;今日は8時半ごろに起きました。
 朝は論文の修正を行ったり掃除をしたりしていて、
@@ -281,70 +302,4 @@ Hartshorneの本では代数閉体に限っていますが、
 点\(P\)から\(\mathbb{P}^{n-1}\)への射影の\(X\)への制限が像への双有理射となることを示せ.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Hartshorneによる誘導とは異なる, 幾何的な解答を与えます.&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Algebraic Geometry" /><summary type="html">Exercise</summary></entry><entry><title type="html">Separating Tangent Vectors</title><link href="/notes/2021/12/01/SeparatingTangentVectors.html" rel="alternate" type="text/html" title="Separating Tangent Vectors" /><published>2021-12-01T00:00:00+09:00</published><updated>2021-12-01T00:00:00+09:00</updated><id>/notes/2021/12/01/SeparatingTangentVectors</id><content type="html" xml:base="/notes/2021/12/01/SeparatingTangentVectors.html">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;基礎体\(k\)は代数閉であるとします.
-このノートの主な考察対象は, 代数多様体\(X\)上の直線束\(L\)と線形系\(V\subset H^0(X,L)\)です.
-\(V\)が基点なしであること, 点を分離すること, 接ベクトルを分離すること,
-に対して, それぞれ加群論的, 幾何学的な意味づけを与えます.
-特に, 接ベクトルを分離することについて調べる際,
-\(V\subset H^0(X,L)\)というデータから\(\mathcal{P}^1(L)\)という層
-(詳細は&lt;a href=&quot;/assets/TeX Files/Separating Tangent Vectors/Separating Tangent Vectors.pdf&quot;&gt;PDFファイル&lt;/a&gt;を参照)
-を構成し, 層\(\mathcal{P}^1(L)\)の性質について簡単に調べるのですが,
-この層\(\mathcal{P}^1(L)\)は他の場面でもいろいろと役に立ちます
-(例えば&lt;a href=&quot;/notes/2021/12/01/StrangeCurves.html&quot;&gt;[Strange Curves]&lt;/a&gt;などを参照).&lt;/p&gt;
-
-&lt;h2 id=&quot;main-theorem&quot;&gt;Main Theorem&lt;/h2&gt;
-
-&lt;p&gt;このノートの主なテーマは, 基点なしであること, 点を分離すること, 接ベクトルを分離すること, を次のように言い換えることです:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt;&lt;/p&gt;
-
-  &lt;p&gt;\(X\)を\(k\)上の代数多様体,
-\(L\)を\(X\)上の直線束, \(V\subset H^0(X,L)\)を線形系とする.&lt;/p&gt;
-  &lt;ol&gt;
-    &lt;li&gt;以下は同値である:
-      &lt;ol&gt;
-        &lt;li&gt;\(V\)は基点がない.&lt;/li&gt;
-        &lt;li&gt;\(V\subset H^0(X,L)\)に対応する射\(V_X\to L\)は全射である.
-ただし\(V_X\)は\(V\)の\(X\to \mathrm{Spec}(k)\)でのpull-backを表す.&lt;/li&gt;
-        &lt;li&gt;\(V\subset H^0(X,L)\)の引き起こす有理写像\(X\dashrightarrow \mathbb{P}(V)\)は不確定点を持たない (すなわち, 射である).&lt;/li&gt;
-      &lt;/ol&gt;
-    &lt;/li&gt;
-    &lt;li&gt;以下は同値である：
-      &lt;ol&gt;
-        &lt;li&gt;\(V\)は点を分離する.&lt;/li&gt;
-        &lt;li&gt;\(V\subset H^0(X,L)\)に対応する射\(p:V_X\to L\)を
-二つの射影\(\mathrm{pr}_1,\mathrm{pr}_2:X\times_kX\rightrightarrows X\)でpull-backしたのちに
-足し合わせることで得られる射
-\[\mathrm{pr}_1^* p + \mathrm{pr}_2^* p : V_{X\times_kX}\to \mathrm{pr}_1^* L\oplus \mathrm{pr}_2^* L \]
-は対角集合\(\Delta\subset X\times_kX\)の補集合上で全射である.&lt;/li&gt;
-        &lt;li&gt;\(V\subset H^0(X,L)\)の引き起こす有理写像\(X\dashrightarrow \mathbb{P}(V)\)は射であり, さらに単射である.&lt;/li&gt;
-      &lt;/ol&gt;
-    &lt;/li&gt;
-    &lt;li&gt;以下は同値である：
-      &lt;ol&gt;
-        &lt;li&gt;\(V\)は接ベクトルを分離する.&lt;/li&gt;
-        &lt;li&gt;\(V\subset H^0(X,L)\)に対応する射\(p:V_X\to L\)が引き起こす射
-\[ V_X \to \mathcal{P}^1(L)\]
-は全射である.&lt;/li&gt;
-        &lt;li&gt;\(V\subset H^0(X,L)\)の引き起こす有理写像\( X\dashrightarrow \mathbb{P}(V) \)は射であり, さらに不分岐である.&lt;/li&gt;
-      &lt;/ol&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;証明ではEular完全列を用います (cf.
-&lt;a href=&quot;/notes/2021/12/01/BlowingUpAlongLinearSubvariety.html&quot;&gt;[Blowing Up along Linear Subvarieties]&lt;/a&gt; )&lt;/p&gt;
-
-&lt;p&gt;また, このノートでは, 代数多様体の間の不分岐な単射が埋め込みであることを確認することによって, 以下の定理も証明します:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt;&lt;/p&gt;
-
-  &lt;p&gt;\(X\)を\(k\)上の代数多様体,
-\(L\)を\(X\)上の直線束, \(V\subset H^0(X,L)\)を基点のない線形系とする.
-このとき, 線形系\(V\subset H^0(X,L)\)が点と接ベクトルを分離することと,
-\(V\subset H^0(X,L)\)の引き起こす射\(X\dashrightarrow \mathbb{P}(V)\)が埋め込みであることは同値である.&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Algebraic Geometry" /><summary type="html">Introduction</summary></entry></feed>
+&lt;p&gt;Hartshorneによる誘導とは異なる, 幾何的な解答を与えます.&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Algebraic Geometry" /><summary type="html">Exercise</summary></entry></feed>

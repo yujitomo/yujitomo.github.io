@@ -93,13 +93,18 @@ alg-dさんに教えていただきました. ありがとうございます. ~~
 - Jekyllが何なのかについての解説は[このページの解説](https://www.codegrid.net/articles/jekyll-1/)が初見のときはわかりやすかった.
 - [公式が使い方の詳しい解説をしている.](https://jekylltips-ja.github.io/) これを見るとだいぶ使えるようになるかも.
 - [jekyllブログを始めたらまず最初に設定したいポイント](https://oshou.github.io/jekyll-blog-point/)
-- 環境を設定したければ「sudo JEKYLL_ENV=\*\*\* jekyll \*\*\*」のようにする。sudoは先頭。
+- 環境を設定したければ「sudo JEKYLL_ENV=\*\*\* jekyll \*\*\*」のようにする。sudoは先頭。たとえば「sudo JEKYLL_ENV=production jekyll b」など (←よく使うのでコピペ用に)
 
 
 ### React
 
 - Reactというものがある。
 - [Reactで静的サイトを作る話](https://nulab.com/ja/blog/typetalk/how-to-make-website-with-react-static/)
+
+
+### その他
+
+- [CMSを自作してオリジナル動的ホームページをフルスクラッチ開発してみよう！](https://denkenmusic.com/cms%E3%82%92%E8%87%AA%E4%BD%9C%E3%81%97%E3%81%A6%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E5%8B%95%E7%9A%84%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8%E3%82%92%E3%83%95%E3%83%AB/)
 
 
 ## Terminal

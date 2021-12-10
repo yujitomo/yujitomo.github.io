@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1639007068 "test.dvi" "test.pdf" "test" 1639007068
-  "test.dvi" 1639007068 55524 fd751ce6bb9153500273d8de01ad13f2 "latex"
+["dvipdf"] 1639139517 "test.dvi" "test.pdf" "test" 1639139517
+  "test.dvi" 1639139517 55876 7f87d53563420226f65628f7b03e71cd "latex"
   (generated)
   "test.pdf"
-["latex"] 1639007066 "test.tex" "test.dvi" "test" 1639007068
+["latex"] 1639139515 "test.tex" "test.dvi" "test" 1639139517
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -201,11 +201,11 @@
   "/usr/local/texlive/texmf-local/tex/latex/local/applekeys/applekeys.sty" 1124886972 2457 24db601311c9f25dce7e373fe4c6b984 ""
   "/usr/local/texlive/texmf-local/tex/latex/local/applekeys/pencil.pdf" 1068332390 1640 d049c7f6f76c05259999d52b6d7db251 ""
   "/usr/local/texlive/texmf-local/tex/latex/local/mandorasymb/mandorasymb.sty" 1607639133 561 597758ea36a1a82430c55f99e0d1ef63 ""
-  "test.aux" 1639007068 2925 64d506d9e65dec3c801368a9cc74e94f "latex"
-  "test.out" 1639007068 253 ff9c670ef490592bc680d6d7d83b1248 "latex"
-  "test.tex" 1639007065 33860 4691c370ec89642d5c57466ad2078cac ""
+  "test.aux" 1639139517 2951 45dfa12b7aed49c95370b9de500dadbc "latex"
+  "test.out" 1639139517 253 ff9c670ef490592bc680d6d7d83b1248 "latex"
+  "test.tex" 1639139513 33949 f7f4f7f940532a0174d13574ec70135c ""
   (generated)
+  "test.aux"
+  "test.log"
   "test.dvi"
   "test.out"
-  "test.log"
-  "test.aux"

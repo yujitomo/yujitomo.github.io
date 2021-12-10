@@ -124,6 +124,15 @@ alg-dさんに教えていただきました. ありがとうございます. ~~
   - 困ったら：[ここを参照](https://w3g.jp/apple/sip-disable/)　/　[ここも参考になる](https://dara-blog.com/about-rails-error01)
 
 
+
+
+## Python
+
+- [pythonのglobalの動作にちょっと驚いた](https://qiita.com/studio_haneya/items/dc072d4329fcacfaac2a) ← 私も驚いたのでリンクをメモしておく
+
+
+
+
 ## Ruby
 
 - 「`require': cannot load such file -- hoge」に遭遇したら

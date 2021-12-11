@@ -636,13 +636,13 @@ def func_math_mode_expand(var_str):
                 else:
                     num_v = i+2
                     if ( command_list_0[count_back_slash_0-1] == "\\(" ):
-                        return_str_0 += "\\\\("
+                        return_str_0 += "\\("
                     elif ( command_list_0[count_back_slash_0-1] == "\\)" ):
-                        return_str_0 += "\\\\)"
+                        return_str_0 += "\\)"
                     elif ( command_list_0[count_back_slash_0-1] == "\\[" ):
-                        return_str_0 += "\\\\["
+                        return_str_0 += "\\["
                     elif ( command_list_0[count_back_slash_0-1] == "\\]" ):
-                        return_str_0 += "\\\\]"
+                        return_str_0 += "\\]"
     return return_str_0
 
 
@@ -791,13 +791,15 @@ print(func_ref_expand("\\autoref{lem: Lazerd lem}と\\ref{enumi: eq flat cofinal
 
 section_counter = 0 ### セクション数カウンター
 theorem_counter = 0 ### 定理数カウンター
-enumi_counter = [] ### itemが箇条書き環境の先頭かどうか。enumerateやitemizeを読んだらTrueをappend、itemを読んだらすぐFalseにする
+enumi_head = [] ### itemが箇条書き環境の先頭かどうか。enumerateやitemizeを読んだらTrueをappend、itemを読んだらすぐFalseにする
 environment_data = [] ### どれだけ入れ子になった環境の中にいるかのデータ
 if_enumi_bool = False ### enumerate環境内かどうか
 if_enumii_bool = False ### enumerate環境内の中のenumerate環境内かどうか
 if_display_math_mode = False ### displayの数式環境内かどうか
 if_inline_math_mode = False ### inlineの数式環境内かどうか
-if_in_p_tag = False ### pタグで囲むべきかどうか
+if_math_mode = False ### 数式環境かどうか
+normal_previous_bool = False ### 直前の一文が通常の文かどうか
+normal_after_bool = False ### 直後の一文が通常の文かどうか
 
 
 
@@ -810,18 +812,31 @@ if_in_p_tag = False ### pタグで囲むべきかどうか
 
 def func_normal_text_expand(var_str):
     global if_inline_math_mode
+    global if_display_math_mode
+    global if_math_mode
     return_str_0 = func_href_expand(func_cite_expand(func_ref_expand(func_math_mode_expand(func_full_expand_Macros(func_text_command_expand(var_str))))))
     return_str_1 = ""
     for i in range(0,len(return_str_0)):
         if ( return_str_0[i] == "\\" ):
-            if ( return_str_0[i:i+3] == "\\\\(" ):
+            if ( return_str_0[i:i+2] == "\\(" ):
                 if_inline_math_mode = True
-            elif ( return_str_0[i:i+3] == "\\\\)" ):
+                if_math_mode = True
+            elif ( return_str_0[i:i+2] == "\\)" ):
                 if_inline_math_mode = False
+                if_math_mode = False
+            elif ( return_str_0[i:i+2] == "\\[" ):
+                if_display_math_mode = True
+                if_math_mode = True
+            elif ( return_str_0[i:i+2] == "\\]" ):
+                if_display_math_mode = False
+                if_math_mode = False
         if ( return_str_0[i] not in ["{","}"] ):
-            return_str_1 += return_str_0[i]
+            if ( return_str_0[i-1:i+2] == " \\ " ):
+                return_str_1 += ""
+            else:
+                return_str_1 += return_str_0[i]
         else:
-            if ( if_inline_math_mode ):
+            if ( if_math_mode ):
                 return_str_1 += return_str_0[i]
     return return_str_1
 
@@ -878,15 +893,13 @@ this_document_lines = this_documents.splitlines()
 ### var_strはtexファイルの1行、次がラベルならそれも含む
 
 def func_section_name(var_str):
-    return_html = "<section"
+    return_html = "<section>\n"
     return_str = ""
-    option_str = ""
     l = len("\\section")
     if ( var_str[l] == "[" ):
         j = 1
         bracket_num = 1
         while ( bracket_num != 0 ):
-            option_str += var_str[l+j]
             if ( var_str[l+j] == "[" ):
                 bracket_num += 1
             elif ( var_str[l+j] == "]" ):
@@ -897,14 +910,15 @@ def func_section_name(var_str):
     mid_bracket_num = 1
     while ( mid_bracket_num != 0 ):
         return_str += var_str[l+k]
-        if ( var_str[l+k] == "[" ):
+        if ( var_str[l+k] == "{" ):
             mid_bracket_num += 1
-        elif ( var_str[l+k] == "]" ):
+        elif ( var_str[l+k] == "}" ):
             mid_bracket_num -= 1
         k += 1
     l += k
-    if ( var_str[l:l+6] == "\\label" ):
-        m = 7
+    return_html += "<h2 class=\"section-name-h2\""
+    if ( len(var_str) >= l+1 ) and ( var_str[l+1:l+7] == "\\label" ):
+        m = 8
         label_name = ""
         while ( var_str[l+m] != "}" ):
             label_name += var_str[l+m]
@@ -912,7 +926,7 @@ def func_section_name(var_str):
         id_list = re.split(": | ", label_name)
         id_str = "-".join(id_list)
         return_html += " id=\"" + id_str + "\""
-    return_html += ">\n<h2 class=\"section-name-h2>\nSection " + str(section_counter) + ". "
+    return_html += ">\nSection " + str(section_counter) + ". "
     return_html += func_normal_text_expand(return_str) + "\n</h2>\n"
     return return_html
 
@@ -947,9 +961,9 @@ def func_if_end(var_str):
 ### \\beginの中身に応じてhtmlを返す処理
 ### var_strは各行みたいなやつ
 ### もし\\begin{thm}みたいなのがきてたら、strの部分はあとの行に書いてあるlabelとかをつないだものとかにする
-### env_nameはわかっているとする
 
 def func_if_begin_env(var_str):
+    global if_math_mode
     return_html = ""
     env_name = ""
     command_list = func_use_commands(var_str)
@@ -957,19 +971,16 @@ def func_if_begin_env(var_str):
     while ( var_str[i] != "}" ):
         env_name += var_str[i]
         i += 1
-    print(env_name)
     l = i + 1 ### 閉じカッコの次まできてる
     if ( env_name == "enumerate" ):
-        enumi_counter.append(True)
         return_html += "<ol>\n"
     elif ( env_name == "itemize" ):
-        enumi_counter.append(True)
         return_html += "<ul>\n"
     elif ( env_name == "proof" ):
         return_html += "<article class=\"proof-env-article\">\n"
         return_html += "<h3 class=\"proof-env-h3\">\n"
         if ( var_str[l] != "[" ):
-            return_html += "Proof" + "\n</h3>\n"
+            return_html += "Proof." + "\n</h3>\n"
         else:
             k = 1
             bracket_num = 1
@@ -983,9 +994,9 @@ def func_if_begin_env(var_str):
                 k += 1
             option_name_str = func_line_with_ref_command(option_name_str[:-1])
             if ( japanese_document_bool == True ):
-                return_html += option_name_str + "\n</h3>\n"
+                return_html += option_name_str + ". \n</h3>\n"
             else:
-                return_html += "Proof of " + option_name_str + "\n</h3>\n"
+                return_html += "Proof of " + option_name_str + ". \n</h3>\n"
     elif ( env_name in my_new_theorems_data ):
         return_html += "<article class=\"" + my_new_theorems_data[env_name][1] + "-env-article\""
         label_name = ""
@@ -1010,7 +1021,6 @@ def func_if_begin_env(var_str):
             id_list = re.split(": | ", label_name)
             id_str = "-".join(id_list)
             return_html += " id=\"" + id_str + "\""
-        print(var_str[l_1])
         return_html += ">\n" ### これで<article class="hoge" id="hoge">が完成
         return_html += "<h3 class=\"" + my_new_theorems_data[env_name][1] + "-env-h3\">\n"
         return_html += my_new_theorems_data[env_name][0]
@@ -1020,7 +1030,8 @@ def func_if_begin_env(var_str):
             return_html += " (" + func_normal_text_expand(option_name_str[:-1]) + ")"
         return_html += "\n</h3>\n"
     else:
-        return_html += "\\begin{" + var_str + "}\n"
+        if_math_mode = True
+        return_html += var_str
     return return_html
 
 
@@ -1032,21 +1043,28 @@ print(func_if_begin_env("\\begin{cor}[{Lazardの\\(A\\otimes \\Hom_B\\)定理: c
 
 
 ### \\endの中身に応じてhtmlを返す処理。beginに対応する閉じタグ
-### var_strは環境名
+### var_strは1行
 
 def func_if_end_env(var_str):
+    global if_math_mode
     return_html = ""
-    if ( if_comment_out == False ):
-        if ( var_str == enumerate ):
-            return_html += "</li>\n</ol>\n"
-        elif ( var_str == itemize ):
-            return_html += "</li>\n</ul>\n"
-        elif ( var_str == proof ):
-            return_html += "</article>\n"
-        elif ( var_str in my_new_theorems_data ):
-            return_html += "</article>\n"
-        else:
-            return_html += "\\end{" + var_str + "}\n"
+    env_name = ""
+    command_list = func_use_commands(var_str)
+    i = len("\\end{}") - 1
+    while ( var_str[i] != "}" ):
+        env_name += var_str[i]
+        i += 1
+    if ( env_name == "enumerate" ):
+        return_html += "</li>\n</ol>\n"
+    elif ( env_name == "itemize" ):
+        return_html += "</li>\n</ul>\n"
+    elif ( env_name == "proof" ):
+        return_html += "</article>\n"
+    elif ( env_name in my_new_theorems_data ):
+        return_html += "</article>\n"
+    else:
+        if_math_mode = False
+        return_html += "\\end{" + env_name + "}\n"
     return return_html
 
 
@@ -1056,13 +1074,12 @@ def func_if_end_env(var_str):
 ### itemをhtml化
 ### var_strは一文
 
+
 def func_item_expand(var_str):
-    global if_inline_math_mode
-    if_inline_math_mode = False
     return_html = ""
     option_name_str = ""
     l = 6
-    if ( enumi_counter[:-1] == True ):
+    if ( enumi_head[-1] == True ):
         return_html += "<li"
     else:
         return_html += "</li>\n<li"
@@ -1090,25 +1107,66 @@ def func_item_expand(var_str):
         return_html += " id=\"" + id_str + "\""
     return_html += ">\n"
     if ( option_name_str != "" ):
-        return_html += "[" + func_normal_text_expand(option_name_str) + "]"
+        return_html += "<h4>\n" + func_normal_text_expand(option_name_str) + "\n</h4>\n"
     left_text = ""
     for k in range(l,len(var_str)):
         left_text += var_str[k]
-    return_html += func_normal_text_expand(left_text)
+    if ( left_text != "" ):
+        return_html += "<p>\n" + func_normal_text_expand(left_text)
     return return_html
 
 
 
 
-print(func_item_expand("\\item[\\(A\\otimes_BN, \\Hom\\)についての補題] \\label{enumi: eq flat filtered cong} あ\\(\\Hom_A(B,D)\\)sgほうあrg"))
-print(func_item_expand("\\item \\label{enaefgou} aosidrfgj"))
-print(func_item_expand("\\item drgiuh  aosidrfgj"))
 
 
 
 
 
+### givenなvar_strが普通の文かどうか判定
+### beginやendは普通でない、maketitleも普通でない、改行だけも普通ではない
 
+non_normal_str_commands = ["\\begin", "\\end", "\\item", "\\section", "\\maketitle", "\\[", "\\]"]
+
+def func_normal_next_bool(var_str):
+    normal_bool = True
+    command_list = func_use_commands(var_str) ### 使用コマンド一覧を所得
+    if ( command_list != [] ) and ( command_list[0] in non_normal_str_commands ):
+        normal_bool = False
+    elif ( var_str in ["\n", "\\["] ): ### 改行オンリーの行とかカッコのみの行は普通の1行ではない
+        normal_bool = False
+    return normal_bool
+
+def func_normal_prev_bool(var_str):
+    normal_bool = True
+    command_list = func_use_commands(var_str) ### 使用コマンド一覧を所得
+    if ( command_list != [] ) and ( command_list[0] in ["\\begin", "\\end", "\\section", "\\maketitle", "\\[", "\\]"]):
+        normal_bool = False
+    elif ( command_list != [] ) and ( command_list[0] == "\\item" ):
+        l = 6
+        if ( var_str[5] == "["): ### もし\item[]みたいになってたら[]の中身をとる
+            j = 0
+            bracket_num = 1
+            while ( bracket_num != 0 ):
+                if ( var_str[6+j] == "[" ):
+                    bracket_num += 1
+                elif ( var_str[6+j] == "]" ):
+                    bracket_num -= 1
+                j += 1
+            l = 7+j
+        if ( var_str[l:l+6] == "\\label" ):
+            j = 7
+            while ( var_str[l+j] != "}" ):
+                j += 1
+            l += j+1
+        left_text = ""
+        for k in range(l,len(var_str)):
+            left_text += var_str[k]
+        if ( left_text != "" ):
+            normal_bool = False
+    elif ( var_str in ["\n", "\\]"] ): ### 改行オンリーの行とかカッコのみの行は普通の1行ではない
+        normal_bool = False
+    return normal_bool
 
 
 
@@ -1121,59 +1179,133 @@ print(func_item_expand("\\item drgiuh  aosidrfgj"))
 
 ### 本文をhtml化
 
+if_bib = False
+num_lab = 0
+
 for i in range(1, len(this_document_lines)):
     effective_str = this_document_lines[i].split("%")[0] ### コメントアウト以降は無視
-    effective_str.strip() ### 先頭と末尾から空白を削除
+    effective_str = effective_str.strip() ### 先頭と末尾から空白を削除
     effective_str += "\n" ### 末尾には改行を入れとく
     command_list = func_use_commands(effective_str) ### 使用コマンド一覧を所得
-    next_line_command = func_use_commands(this_document_lines[i+1].split("%")[0]) ### 次の行のコマンドリスト
-    num_v = 0
-    num_n_count = 0 ### 改行のみの行が連続して続いた数をカウント
-    num_p_count = 0 ### pタグを何個つけたかカウント
-    if ( len(effective_str) > len("\\begin{thebibliography}") ) and ( effective_str[:len("\\begin{thebibliography}")] == "\\begin{thebibliography}"):
-        num_v = 99999999
-    if ( i >= num_v ):
+    if ( "thebibliography" in effective_str ):
+        if_bib = True
+    if ( effective_str == "\\[" ):
+        if_display_math_mode = True
+        if_math_mode = True
+    elif ( effective_str == "\\]" ):
+        if_display_math_mode = False
+        if_math_mode = False
+    if ( i >= num_lab ) and ( if_bib == False):
         if ( command_list != [] ):
             num_n_count = 0 ### 初期化
             if ( command_list[0] == "\\begin" ):
-                if ( next_line_command != [] ) and ( next_line_command[0] == "\\label" ): ### もし次がラベルならつけ加えてnum_vを更新
-                    effective_str += this_document_lines[i+1].split("%")[0]
-                    num_v = i+2
-                this_html_file.write(func_if_begin_env(effective_str)) ### fileに書き出す
-                i = len("\\begin{")
+                next_line_command = func_use_commands(this_document_lines[i+1].split("%")[0])
+                if ( next_line_command != [] ) and ( next_line_command[0] == "\\label" ): ### もし次がラベルならつけ加えてnum_labを更新
+                    effective_str = effective_str[:-1] + this_document_lines[i+1].split("%")[0].strip()
+                    num_lab = i+2
+                j = len("\\begin{")
                 env_name = ""
-                while ( effective_str[i] != "}" ):
-                    env_name += var_str[i]
-                    i += 1
+                while ( effective_str[j] != "}" ):
+                    env_name += effective_str[j]
+                    j += 1
+                if ( env_name in ["equation", "align", "equation*", "align*"] ):
+                    this_html_file.write("<p class=\"display-math\">\n")
+                    this_html_file.write(func_if_begin_env(effective_str))
+                    if_display_math_mode = True
+                    if_math_mode = True
+                else:
+                    this_html_file.write(func_if_begin_env(effective_str)) ### fileに書き出す
                 if ( env_name in my_new_theorems_data ) and ( env_name[-1] != "*" ): ### もし定理環境や定義環境なら、定理番号を更新
                     theorem_counter += 1
+                elif ( env_name in ["enumerate", "itemize"] ):
+                    enumi_head.append(True)
             elif ( command_list[0] == "\\end" ): ### この行が\endで始まっていたら
                 this_html_file.write(func_if_end_env(effective_str))
+                j = len("\\end{")
+                env_name = ""
+                while ( effective_str[j] != "}" ):
+                    env_name += effective_str[j]
+                    j += 1
+                if ( env_name in ["enumerate", "itemize"]):
+                    enumi_head.pop()
+                elif ( env_name in ["equation", "align", "equation*", "align*"] ):
+                    this_html_file.write("\n</p>\n")
+                    if_display_math_mode = False
+                    if_math_mode = False
             elif ( command_list[0] == "\\item" ):
-                if ( next_line_command != [] ) and ( next_line_command[0] == "\\label" ): ### もし次がラベルならつけ加えてnum_vを更新
-                    effective_str = effective_str[:-1] + this_document_lines[i+1].split("%")[0]
-                    num_v = i+2
+                next_line_command = func_use_commands(this_document_lines[i+1].split("%")[0])
+                num_lab = i+1
+                if ( next_line_command == [] ): ### もし次が普通ならつけ加えてnum_labを更新
+                    effective_str = effective_str + this_document_lines[i+1].split("%")[0].strip()
+                    num_lab = i+2
+                elif ( next_line_command[0] not in non_normal_str_commands ): ### もし次が普通ならつけ加えてnum_labを更新
+                    effective_str = effective_str + this_document_lines[i+1].split("%")[0].strip()
+                    num_lab = i+2
+                print(effective_str)
                 this_html_file.write(func_item_expand(effective_str))
+                next_str = this_document_lines[num_lab].split("%")[0]
+                next_str = next_str.strip() ### 先頭と末尾から空白を削除
+                next_str += "\n" ### 末尾には改行を入れとく
+                if ( func_normal_next_bool(next_str) == False ):
+                    this_html_file.write("</p>\n")
+                print(enumi_head)
+                enumi_head[-1] = False ### 最初のitemではないのでこれをfalseにする
             elif ( command_list[0] == "\\section" ):
-                if ( next_line_command != [] ) and ( next_line_command[0] == "\\label" ): ### もし次がラベルならつけ加えてnum_vを更新
-                    effective_str += this_document_lines[i+1].split("%")[0]
-                    num_v = i+2
+                next_line_command = func_use_commands(this_document_lines[i+1].split("%")[0])
+                if ( next_line_command != [] ) and ( next_line_command[0] == "\\label" ): ### もし次がラベルならつけ加えてnum_labを更新
+                    effective_str = effective_str + this_document_lines[i+1].split("%")[0].strip()
+                    num_lab = i+2
                 if ( section_counter != 0 ): ### もし最初のsectionなら閉じない、つまり最初のsectionじゃないなら閉じる
                     this_html_file.write("</section>\n")
                 theorem_counter = 0 ### 定理数カウンターを初期化
-                section_counter += 1 ### セクション数カウンターを増やす
-                this_html_file.write(unc_section_name(effective_str))
-            elif ( command_list[0] == "\\maketitle" ):
+                section_counter += 1 ### セクション数カウンターを増やす、この段階で増やす。
+                this_html_file.write(func_section_name(effective_str))
+            elif ( command_list[0] == "\\maketitle" ): ### これは無視、今は。
                 this_html_file.write("\n")
-            else: ### この行が\begin\end\section\itemでも\maketitleでもないなら、command_listが[]でないので、コマンドのある普通の文
-                this_html_file.write(func_normal_text_expand(effective_str))
-        else: ### この行のcommand_listが[]なら、文字しかない普通の文か、改行しかないかのどちらか。
-            if ( effective_str != "\n" ):
-                num_n_count = 0 ### 初期化
+            elif ( command_list[0] == "\\[" ):
+                this_html_file.write("\\[\n")
+                if_display_math_mode = True
+                if_math_mode = True
+            elif ( command_list[0] == "\\]" ):
+                this_html_file.write("\\]\n")
+                if_display_math_mode = False
+                if_math_mode = False
+            else: ### この行が\begin\end\section\itemでも\maketitleでもないなら、command_listが[]でないので、コマンドのある普通の文か数式
+                if ( if_math_mode ):
+                    this_html_file.write(func_full_expand_Macros(effective_str))
+                else:
+                    next_str = this_document_lines[i+1].split("%")[0]
+                    next_str = next_str.strip() ### 先頭と末尾から空白を削除
+                    next_str += "\n" ### 末尾には改行を入れとく
+                    prev_str = this_document_lines[i-1].split("%")[0]
+                    prev_str = prev_str.strip() ### 先頭と末尾から空白を削除
+                    prev_str += "\n" ### 末尾には改行を入れとく
+                    print(prev_str)
+                    if ( func_normal_prev_bool(prev_str) == False ) or ( prev_str[:6] == "\\label" ):
+                        this_html_file.write("<p>\n")
+                    this_html_file.write(func_normal_text_expand(effective_str))
+                    if ( func_normal_next_bool(next_str) == False ):
+                        this_html_file.write("</p>\n")
+        else: ### この行のcommand_listが[]なら、文字しかない普通の文 (これは数式環境内かもしれない) か、改行しかないかのどちらか。
+            if ( if_math_mode ):
                 this_html_file.write(effective_str)
             else:
-                num_n_count += 1
-                
+                if ( effective_str != "\n" ):
+                    next_str = this_document_lines[i+1].split("%")[0]
+                    next_str = next_str.strip() ### 先頭と末尾から空白を削除
+                    next_str += "\n" ### 末尾には改行を入れとく
+                    prev_str = this_document_lines[i-1].split("%")[0]
+                    prev_str = prev_str.strip() ### 先頭と末尾から空白を削除
+                    prev_str += "\n" ### 末尾には改行を入れとく
+                    if ( func_normal_prev_bool(prev_str) == False ):
+                        this_html_file.write("<p>\n")
+                    this_html_file.write(func_normal_text_expand(effective_str))
+                    if ( func_normal_next_bool(next_str) == False ):
+                        this_html_file.write("</p>\n")
+                else:
+                    this_html_file.write(effective_str)
+
+
 
 
 

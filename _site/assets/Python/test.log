@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.8.3-u1.26-191112-2.6 (utf8.uptex) (TeX Live 2020) (preloaded format=uplatex 2021.2.6)  10 DEC 2021 21:31
+This is e-upTeX, Version 3.14159265-p3.8.3-u1.26-191112-2.6 (utf8.uptex) (TeX Live 2020) (preloaded format=uplatex 2021.2.6)  11 DEC 2021 13:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -690,8 +690,6 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
  [1
 
 ]
-LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 6.47278pt on input line 401.
 LaTeX Font Info:    Font shape `JT2/mc/m/it' in size <10> not available
 (Font)              Font shape `JT2/mc/m/n' tried instead on input line 441.
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
@@ -718,7 +716,7 @@ File: pencil.pdf Graphic file (type pdf)
  [6]
 File: pencil.pdf Graphic file (type pdf)
 <pencil.pdf>
-LaTeX Font Info:    Trying to load font information for U+euf on input line 908.
+LaTeX Font Info:    Trying to load font information for U+euf on input line 910.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
@@ -737,9 +735,9 @@ Package rerunfilecheck Info: File `test.out' has not changed.
 Here is how much of TeX's memory you used:
  20863 strings out of 479769
  410063 string characters out of 5879522
- 736954 words of memory out of 5000000
+ 736951 words of memory out of 5000000
  37797 multiletter control sequences out of 15000+600000
- 420198 words of font info for 113 fonts, out of 8000000 for 9000
+ 420089 words of font info for 112 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  87i,17n,88p,505b,575s stack positions out of 5000i,500n,10000p,200000b,80000s
 

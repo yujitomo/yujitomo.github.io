@@ -1,0 +1,599 @@
+I"X<p>
+このノートでは、[<a href="#bib-item-Ha">Ha</a>, 演習 I.4.9]に幾何的な解答を与え、
+いくつかの関連する結果について証明する。
+基礎体\(k\)は代数閉体であるとする。
+</p>
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+Exercise ([<a href="#bib-item-Ha">Ha</a>, 演習 I.4.9])
+</h3>
+<p>
+\(X\subset \mathbb{P}^N\)を\(r\)次元の部分多様体とし、\(N\geq r+2\)とする。
+\(P\not\in X\)と線形部分空間\(\mathbb{P}^{N-1}\subset \mathbb{P}^N\)を適当にとるとき、
+点\(P\)から\(\mathbb{P}^{N-1}\)への射影は
+\(X\)から像\(X'\subset \mathbb{P}^{N-1}\)への双有理射を引き起こすことを証明せよ。
+</p>
+</article>
+
+<section>
+<h2 class="section-name-h2">
+Section 1. 定義や記号について
+</h2>
+
+
+
+<p>
+まずこのノートで用いる記号について説明しておく。
+</p>
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+Notations
+</h3>
+<p>
+体\(k\)は代数閉体とする。
+</p>
+<ul>
+<li>
+<p>
+線形空間\(V\)や代数多様体\(X\)上の局所自由層\(E\)に対し、\(V^{\vee}\)や\(E^{\vee}\)などでその双対を表す。
+</p>
+</li>
+<li>
+<p>
+線形空間\(V\)や代数多様体\(X\)上の局所自由層\(E\)に対し、\(\mathbb{P}(V):\overset{\mathrm{\scriptsize def}}{=} \mathrm{Proj}(\mathrm{Sym}(V)) , \mathbb{P}_X(E):\overset{\mathrm{\scriptsize def}}{=} \mathrm{Proj}_X(\mathrm{Sym}(E))\)と置く。
+\(V\)の\(0\)でない元\(v\in V\)は
+全射\(V^{\vee}\to k\cdot v^{\vee}\)を定め、
+この全射が\(\mathbb{P}(V^{\vee})\)の点を一意的に定める。
+逆に\(\mathbb{P}(V^{\vee})\)の点は\(V\)の\(0\)でない元を定数倍を除いて定める。
+</p>
+</li>
+<li>
+<p>
+線形空間\(V\)に対し、\(\mathbb{G}(V,r)\)で次元\(r\)の線形空間への
+全射\(V\to W\)の同値類 (核が等しいときに同値と定める)
+を閉点とするグラスマン多様体を表す。
+特に、\(\mathbb{G}(V,2)\)は\(\mathbb{P}(V)\)内の直線を閉点とする多様体である。
+同じく、代数多様体\(X\)上の局所自由層\(E\)に対し、
+\(\mathbb{G}_X(E,r)\)でグラスマン束を表す。
+</p>
+</li>
+<li>
+<p>
+代数多様体\(X\)に対し、\(\mathrm{Hilb}^n(X)\)で\(X\)上の二点のなすHilbertスキームを表す。
+\(\mathrm{Hilb}^n(X)\)の閉点は\(X\)の長さ\(n\)の閉部分スキームと1:1に対応する。
+</p>
+</li>
+</ul>
+</article>
+
+
+
+
+</section>
+<section>
+<h2 class="section-name-h2">
+Section 2. 平面と多様体の交差について
+</h2>
+
+<p>
+この演習問題を証明するために、
+\(X\)と\(\mathbb{P}^N\)内の線形部分多様体がどれくらい・どのように交わるかについて調べておく。
+なお、以下の<a href="#lem-Grass">Lemma 2.1</a> <a href="#enumi-lem-Grass-finite">(ii)</a>は
+このノートでは用いないが、全く同じ方法でわかることなので記述しておく。
+</p>
+
+
+<article class="definition-env-article" id="lem-Grass">
+<h3 class="definition-env-h3">
+Lemma 2.0.
+</h3>
+<p>
+\(V\)を次元\(r+1\)の線形空間、
+\(0 \lt s \lt r\)を整数とする。
+</p>
+<ol>
+<li id="enumi-lem-Grass-empty">
+<p>
+
+\(X\subset \mathbb{P}(V)\)を次元\(d \lt r-s\)の閉部分多様体とする。このとき、\(X\)と交わらない\(\mathbb{P}(V)\)内の次元\(s\)の平面は
+\(\mathbb{G}(V,s+1)\)の開集合をなす。
+</p>
+</li>
+<li id="enumi-lem-Grass-finite">
+<p>
+
+\(X\subset \mathbb{P}(V)\)を次元\(d = r-s\)の閉部分多様体とする。このとき、\(X\)と高々有限個の点でのみ交わる\(\mathbb{P}(V)\)内の次元\(s\)の平面は
+\(\mathbb{G}(V,s+1)\)の開集合をなす。
+</p>
+</li>
+</ol>
+</article>
+
+<article class="proof-env-article">
+<h3 class="proof-env-h3">
+Proof.
+</h3>
+<p>
+まずはグラスマン多様体\(\mathbb{G}(V,s+1)\)によってパラメタライズされた
+\(\mathbb{P}(V)\)内の次元\(s\)の平面の族について調べる。
+\(\mathbb{G}(V,s+1)\)上のトートロジカルな全射を
+\(V_{\mathbb{G}(V,s+1)}\to \mathcal{U}\)と置く。
+ここで\(\mathcal{U}\)はランク\(s+1\)の局所自由層である。
+この全射が引き起こす閉埋め込み
+</p>
+<p class="display-math-p">
+\[
+\mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{U})\subset \mathbb{G}(V,s+1)\times \mathbb{P}(V)
+\]
+</p><p>
+を\(\mathbb{P}(V)\)側から調べる。
+各点\(p\in \mathbb{P}(V)\)上の\(\mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{U})\)のfiber
+\(\mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{U})|_p\subset \mathbb{G}(V,s+1)\)は
+点\(p\)を通る次元\(s\)の平面を閉点とする多様体である：
+<script type="text/tikz">
+\usepackage{amsmath}\begin{tikzpicture}
+\node (A) at (0,1.5) {\(\mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{U})\)};
+\node (A') at (0,0) {\(\mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{U})|_p\)};
+\node (B) at (4.5,1.5) {\(\mathbb{G}(V,s+1)\times \mathbb{P}(V)\)};
+\node (B') at (4.5,0) {\(\mathbb{G}(V,s+1)\)};
+\node (C) at (9,1.5) {\(\mathbb{P}(V)\)};
+\node (C') at (9,0) {\(*.\)};
+\draw[right hook->] (A') -- (A);
+\draw[right hook->] (B') -- (B);
+\draw[right hook->] (C') -- node {\(\scriptstyle p\)}(C);
+\draw[->] (A) -- node  {\(\scriptstyle \subset\)} (B);
+\draw[->] (B) -- node  {\(\scriptstyle \textrm{proj.}\)} (C);
+\draw[->] (A') -- node  {\(\scriptstyle \subset\)} (B');
+\draw[->] (B') -- (C');
+\end{tikzpicture}
+</script>
+点\(p\)を与える全射も同じ記号\(p:V\to k\)で表す。
+\(\mathbb{P}(V)\)内の次元\(s\)の平面は
+次元\(s+1\)の線形空間\(W\)への全射\(V\to W\)と対応し、
+その平面が点\(p\)を通ることは、
+全射\(V\to W\)の核が\(\ker(p)\)に含まれることを意味する。
+従って、点\(p\)を通る次元\(s\)の平面は、
+次元\(s\)の線形空間\(W'\)への全射
+\(\ker(p)\to W'\)と対応する：
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+0 @&gt;&gt;&gt; \ker(p) @&gt;&gt;&gt; V @&gt;p&gt;&gt; k @&gt;&gt;&gt; 0 \\
+@. @VVV @VVV @| @. \\
+0 @&gt;&gt;&gt; W' @&gt;&gt;&gt; W @&gt;&gt;&gt; k @&gt;&gt;&gt; 0
+\end{CD}
+\]
+</p><p>
+\(p:V\to k\)は\(\mathbb{P}(V)\)上のトートロジカルな全射
+\(V_{\mathbb{P}(V)}\to \mathcal{O}_{\mathbb{P}(V)}(1)\)の点\(p\)へのpull-backであり、
+従って\(\ker(p)\)は\(\Omega_{\mathbb{P}(V)}(1)\)の点\(p\)へのpull-backであることに注意する
+(cf. [<a href="#bib-item-YJ">ゆ</a>, Remark 4])。
+以上より、\(\mathbb{P}(V)\)上の多様体の同型
+</p>
+<p class="display-math-p">
+\[
+\mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{U}) \cong \mathbb{G}_{\mathbb{P}(V)}(\Omega_{\mathbb{P}(V)}(1),s)
+\]
+</p><p>
+が得られる。
+</p>
+
+<p>
+<a href="#lem-Grass">Lemma 2.1</a>の証明を完了するため、
+\(\mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{U})\subset \mathbb{G}(V,s+1)\times \mathbb{P}(V)\)と
+\(\mathbb{G}(V,s+1)\times X\)の交差を考える。
+\(Y :\overset{\mathrm{\scriptsize def}}{=} \mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{U}) \cap (\mathbb{G}(V,s+1)\times X)\)と置く
+(スキーム論的交差)。
+射影\(Y\to X\)はグラスマン束\(\mathbb{G}_{\mathbb{P}(V)}(\Omega_{\mathbb{P}(V)}(1),s)\to \mathbb{P}(V)\)の
+\(X\)への引き戻しであるから、
+\(Y\cong \mathbb{G}_X(\Omega_{\mathbb{P}(V)}(1)|_X,s)\)である。
+従って
+</p>
+<p class="display-math-p">
+\[
+となることがわかる。
+射影\(f:Y\to \mathbb{G}(V,s+1)\)の像\(\mathrm{Im}(f)\)は、
+ちょうど\(X\)と交わる\(s\)次元の平面\(H \subset \mathbb{P}(V)\)
+を閉点とする\(\mathbb{G}(V,s+1)\)の閉部分多様体であり、
+さらに各点\([H]\in \mathrm{Im} (f)\)での\(f\)のfiberは
+\(H\cap X\)と同型である。
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+Y @&gt;&gt;&gt; \mathbb{G}(V,s+1) \\
+@AAA @AAA \\
+H\cap X @&gt;&gt;&gt; [H].
+\end{CD}
+\]
+</p>
+<p>
+\(\dim (\mathbb{G}(V,s+1)) = (r-s)(s+1) = rs-s^2+r-s\)であることに注意する。
+<a href="#enumi-lem-Grass-empty">(i)</a>を示す。
+\(d\lt r-s\)なので、
+\(\dim Y \lt \dim(\mathbb{G}(V,s+1))\)であり、
+特に、射影\(f:Y\to \mathbb{G}(V,s+1)\)の像は真の閉部分集合である。
+このことは<a href="#enumi-lem-Grass-empty">(i)</a>を示している。
+<a href="#enumi-lem-Grass-finite">(ii)</a>を示す。
+\(d+s=r\)なので\(X\)と次元\(s\)の任意の平面\(\subset \mathbb{P}(V)\)が交わることから、
+射影\(f:Y\to \mathbb{G}(V,s+1)\)は全射である。
+一方、\(\dim Y = rs-s^2+d = rs-s^2+r-s = \dim(\mathbb{G}(V,s+1))\)であるから、
+\(f\)は生成点で有限である。
+すなわち、\(\mathbb{G}(V,s+1)\)のある開集合上で\(f\)のfiberは有限集合となる。
+このことは<a href="#enumi-lem-Grass-finite">(ii)</a>を示している。
+以上で<a href="#lem-Grass">Lemma 2.1</a>の証明を完了する。
+</p>
+</article>
+
+
+<p>
+<a href="#lem-Grass">Lemma 2.1</a> <a href="#enumi-lem-Grass-empty">(i)</a>をより詳しく調べる。
+</p>
+
+<article class="definition-env-article" id="lem-Grass-1pt">
+<h3 class="definition-env-h3">
+Lemma 2.1.
+</h3>
+<p>
+\(V\)を次元\(r+1\)の線形空間、
+\(0 \lt s \lt r\)を整数、
+\(X\subset \mathbb{P}(V)\)を次元\(d \lt r-s\)の閉部分多様体とする。
+このとき、\(X\)と交わる\(\mathbb{P}(V)\)内の次元\(s\)の平面のうち
+ほとんどは\(X\)と一点で交わる。
+</p>
+</article>
+
+
+<article class="proof-env-article">
+<h3 class="proof-env-h3">
+Proof.
+</h3>
+<p>
+\(2\)点以上で交わる次元\(s\)の平面の集合を調べる。
+\(\mathrm{Hilb}^2(X)\)を\(X\)上の\(2\)点のHilbertスキーム、
+\(\mathcal{U}\subset \mathrm{Hilb}^2(X)\times X\)を普遍的な閉部分スキーム、
+つまり長さ\(2\)の閉部分スキーム\(Z\subset X\)に対応する点\([Z]\in \mathrm{Hilb}^2(X)\)上で
+<script type="text/tikz">
+\usepackage{amsmath}\begin{tikzpicture}
+\node (A) at (0,1.5) {\(\mathcal{U}\)};
+\node (A') at (0,0) {\(\mcU|_{[Z]}\cong Z\)};
+\node (B) at (4.5,1.5) {\(\mathrm{Hilb}^2(X)\times X\)};
+\node (B') at (4.5,0) {\(X\)};
+\node (C) at (9,1.5) {\(\mathrm{Hilb}^2(X)\)};
+\node (C') at (9,0) {\(*\)};
+\draw[right hook->] (A') -- (A);
+\draw[right hook->] (B') -- (B);
+\draw[right hook->] (C') -- node {\(\scriptstyle [Z]\)}(C);
+\draw[->] (A) -- node  {\(\scriptstyle \subset\)} (B);
+\draw[->] (B) -- node  {\(\scriptstyle p\)} (C);
+\draw[->] (A') -- node  {\(\scriptstyle \subset\)} (B');
+\draw[->] (B') -- (C');
+\end{tikzpicture}
+</script>
+となる閉部分スキームとする。
+ただし\(p:\mathrm{Hilb}^2(X)\times X\to \mathrm{Hilb}^2(X)\)は射影である。
+特に合成\(\mathcal{U}\subset \mathrm{Hilb}^2(X)\times X\xrightarrow{p} \mathrm{Hilb}^2(X)\)は
+有限平坦射でランク\(2\)である。
+閉埋め込み\(X\subset \mathbb{P}(V)\)を与える全射\(V_X\to L\)を
+\(\mathrm{Hilb}^2(X)\times X\)上へpull-backすれば、
+射の列
+</p>
+<p class="display-math-p">
+\[
+V_{\mathrm{Hilb}^2(X)\times X} \to L_{\mathrm{Hilb}^2(X)\times X} \to L_\mathcal{U}
+\]
+</p><p>
+を得る。
+これを射影\(p\)で\(\mathrm{Hilb}^2(X)\)上へpushすれば、
+ランク\(2\)の局所自由層への射
+</p>
+<p class="display-math-p">
+\[
+\Psi: V_{\mathrm{Hilb}^2(X)}\to p_*(L_\mathcal{U})
+\]
+</p><p>
+を得る。
+\(V_X\to L\)が閉埋め込みを与えることから
+(各\(\mathrm{Hilb}^2(X)\)の閉点の上に基底変換して確かめることで)
+射\(\Psi\)が全射であることがわかる。
+</p>
+
+
+<p>
+各長さ\(2\)の閉部分スキーム\(Z\subset X\)に対し、
+全射\(\Psi_Z:V\to L_Z\)が\(\mathbb{P}(V)\)内の直線を定める。
+全射\(V\to W\)がこの直線を含む次元\(s\)の平面\(\subset \mathbb{P}(V)\)を定めるとする。
+このとき次元\(s-1\)の線形空間への全射
+\(\ker(\Psi_Z)\to W'\)が引き起こされる：
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+0 @&gt;&gt;&gt; \ker(\Psi_Z) @&gt;&gt;&gt; V @&gt;\Psi_Z &gt;&gt; L_Z @&gt;&gt;&gt; 0 \\
+@. @VVV @VVV @| @. \\
+0 @&gt;&gt;&gt; W' @&gt;&gt;&gt; W @&gt;&gt;&gt; L_Z @&gt;&gt;&gt; 0.
+\end{CD}
+\]
+</p><p>
+逆に次元\(s-1\)の線形空間への全射\(\ker(\Psi_Z)\to W'\)は
+包含射\(\ker(\Psi_Z)\subset V\)でpush-outをとることで
+次元\(s+1\)の線形空間への全射\(V\to W\)を引き起こし、
+これらは1:1に対応する。
+\(\mathrm{Hilb}^2(X)\)上の包含射
+\(\ker(\Psi)\subset V_{\mathrm{Hilb}^2(X)}\)はグラスマン束の間の閉埋め込み
+</p>
+<p class="display-math-p">
+\[
+\mathbb{G}_{\mathrm{Hilb}^2(X)}(\ker(\Psi),s-1)\subset \mathbb{G}(V,s+1)\times \mathrm{Hilb}^2(X)
+\]
+</p><p>
+を引き起こすが、
+以上の議論により、各閉点\([Z]\in \mathrm{Hilb}^2(X)\)のfiberは
+<script type="text/tikz">
+\usepackage{amsmath}\begin{tikzpicture}
+\node (A) at (0,1.5) {\(\mathbb{G}_{\mathrm{Hilb}^2(X)}(\ker(\Psi),s-1)\)};
+\node (A') at (0,0) {\(\mathbb{G}(\ker(\Psi_Z),s-1)\)};
+\node (B) at (4.5,1.5) {\(\mathbb{G}(V,s+1)\times \mathrm{Hilb}^2(X)\)};
+\node (B') at (4.5,0) {\(\mathbb{G}(V,s+1)\)};
+\node (C) at (9,1.5) {\(\mathrm{Hilb}^2(X)\)};
+\node (C') at (9,0) {\(*\)};
+\draw[right hook->] (A') -- (A);
+\draw[right hook->] (B') -- (B);
+\draw[right hook->] (C') -- node {\(\scriptstyle [Z]\)}(C);
+\draw[->] (A) -- node  {\(\scriptstyle \subset\)} (B);
+\draw[->] (B) -- node  {\(\scriptstyle p\)} (C);
+\draw[->] (A') -- node  {\(\scriptstyle \subset\)} (B');
+\draw[->] (B') -- (C');
+\end{tikzpicture}
+</script>
+となり、すなわち、
+\(\mathbb{P}(V)\)内の次元\(s\)の平面のうち
+\(Z\)の定める\(\mathbb{P}(V)\)内の直線を通るものたちをパラメタライズする多様体が現れる。
+従って、射影\(g:\mathbb{G}_{\mathrm{Hilb}^2(X)}(\ker(\Psi),s-1)\to \mathbb{G}(V,s+1)\)の像は
+ちょうど\(X\)と二点以上で交わる次元\(s\)の平面たちからなる多様体である。
+特に、射影\(f:\mathbb{G}_X(\Omega_{\mathbb{P}(V)}(1)|_X,s)\to \mathbb{G}(V,s+1)\)の像に含まれる
+(\(f\)については<a href="#lem-Grass">Lemma 2.1</a>の証明中を参照)。
+</p>
+
+<p>
+\(X\subset \mathbb{P}(V)\)を超平面で\(d\)回切ったのちできる\(0\)次元スキームの
+ある点を選び、その点を通るように異なる超平面をいくつか選ぶことで、
+\(f\)のあるfiberが\(0\)次元であることがわかる。
+従ってfiberの次元の上半連続性 (cf. [<a href="#bib-item-Ha">Ha</a>, Exercise II.3.22]) より
+\(f\)はgenerically finiteであることがわかる。
+従って\(\dim (\mathrm{Im} (f)) = \dim (\mathbb{G}_X(\Omega_{\mathbb{P}(V)}(1)|_X,s))\)である。
+また、
+</p>
+<p class="display-math-p">
+\begin{align*}
+\dim (\mathbb{G}_{\mathrm{Hilb}^2(X)}(\ker(\Psi),s-1))
+&amp;= 2d + (s-1)((r+1-2)-(s-1)) = 2d + (s-1)(r-s) \\
+&amp;\lt d + s(r-s) = \dim (\mathbb{G}_X(\Omega_{\mathbb{P}(V)}(1)|_X,s)) = \dim (\mathrm{Im} (f))
+\end{align*}
+&lt;/div&gt;
+
+</p>
+<p>
+であるから、
+\(\mathrm{Im}(g)\)は\(\mathrm{Im}(f)\)の真の閉部分集合となる。
+このことは
+\(X\)と交わる次元\(s\)の平面のうち
+ほとんどは\(X\)と\(1\)点で交わるということを示している。
+以上で<a href="#lem-Grass-1pt">Lemma 2.2</a>の証明を完了する。
+</p>
+</article>
+
+
+
+
+</section>
+<section>
+<h2 class="section-name-h2">
+Section 3. 証明
+</h2>
+
+
+
+<p>
+この節では、冒頭の問題[<a href="#bib-item-Ha">Ha</a>, 演習 I.4.9]を少し一般的な形で証明する。
+</p>
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+Proposition 3.0.
+</h3>
+<p>
+\(X\subset \mathbb{P}^N\)を\(r\)次元の部分多様体、
+\(s\)を\(N\geq r+s+2\)となる自然数とする。
+次を満たす線形部分多様体\(\mathbb{P}^s\subset \mathbb{P}^N\)を閉点に持つ
+\(\mathbb{G}(N+1,s+1)\)の部分空間はある稠密開集合を含む：
+</p>
+<ul>
+<li>
+<p>
+\(\mathbb{P}^s\subset \mathbb{P}^N\)は\(X\subset \mathbb{P}^N\)と交わらず、\(\mathbb{P}^s\)に沿った射影\(\mathbb{P}^N\dashrightarrow \mathbb{P}^{N-s}\)は
+\(X\)から像\(X'\subset \mathbb{P}^{N-s}\)への双有理射を引き起こす。
+</p>
+</li>
+</ul>
+</article>
+
+
+<article class="proof-env-article">
+<h3 class="proof-env-h3">
+Proof.
+</h3>
+<p>
+\(V=H^0(\mathbb{P}^N,\mathcal{O}_{\mathbb{P}^N}(1))\)と置き、\(\mathbb{P}^N=\mathbb{P}(V)\)と書く。
+\(\mathbb{G}(V,s+1)\)上のトートロジカルな全射を
+\(V_{\mathbb{G}(V,s+1)}\to \mathcal{U}\)と置き、その核を\(\mathcal{K}\)とする。
+閉埋め込み\(\mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{U})\subset \mathbb{G}(V,s+1)\times \mathbb{P}(V)\)
+に沿った爆発を\(B\)と置くと、
+[<a href="#bib-item-YJ">ゆ</a>, Corollary 9]より\(B\)は
+\(R:\overset{\mathrm{\scriptsize def}}{=} \mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{K})\)上の\(\mathbb{P}^{s+1}\)-束であり、
+\(R\)上の\(\mathbb{P}^{s+1}\)-束の構造は、
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+0 @&gt;&gt;&gt; \mathcal{K}_R @&gt;&gt;&gt; V_R @&gt;&gt;&gt; \mathcal{U}_R @&gt;&gt;&gt; 0 \\
+@. @VVV @VVV @| @. \\
+0 @&gt;&gt;&gt; \mathcal{O}_{R/\mathbb{G}(V,s+1)}(1) @&gt;&gt;&gt; \mathcal{E} @&gt;&gt;&gt; \mathcal{U}_R @&gt;&gt;&gt; 0
+\end{CD}
+\]
+</p><p>
+という完全列の間の射ができるようなランク\(s+2\)の\(R\)上の局所自由層\(\mathcal{E}\)により
+\(B\cong \mathbb{P}_R(\mathcal{E})\)で与えられている。
+全射\(V_R\to \mathcal{E}\)はグラスマン多様体への射
+\(q:\mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{K}) \to \mathbb{G}(V,s+2)\)を引き起こすことに注意する。
+\(\mathbb{G}(V,s+1)\times \mathbb{P}(V)\)における\(\mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{U})\)と
+\(\mathbb{G}(V,s+1)\times X\)のスキーム論的交差を\(D\)と置き、
+\(\mathbb{G}(V,s+1)\times X\)の\(D\)に沿った爆発を\(B_X\)と置く。
+以下の図式ができる (以下のように射に名前をつける)：
+<script type="text/tikz">
+\usepackage{amsmath}\begin{tikzpicture}
+\node (A) at (0,1.5) {\(B_X\)};
+\node (A') at (0,0) {\(\mathbb{G}(V,s+1)\times X\)};
+\node (B) at (4.5,1.5) {\(B\)};
+\node (B') at (4.5,0) {\(\mathbb{G}(V,s+1)\times \mathbb{P}(V)\)};
+\node (C) at (9,1.5) {\(R\)};
+\node (C') at (9,0) {\(\mathbb{G}(V,s+1)\)};
+\node (D) at (12,1.5) {\(\mathbb{G}(V,s+2)\)};
+\draw[right hook->] (A) -- (B);
+\draw[right hook->] (A') -- (B');
+\draw[->] (B) -- node {\(\scriptstyle \mathbb{P}^{s+1}\text{-束}\)} (C);
+\draw[->] (B) -- node[swap] {\(\scriptstyle \sigma\)} (C);
+\draw[->] (B') -- node {\(\scriptstyle \text{proj.}\)} (C');
+\draw[->] (A) -- (A');
+\draw[->] (B) -- node {\(\scriptstyle \pi\)} (B');
+\draw[->] (C) -- node {\(\scriptstyle p\)} (C');
+\draw[->] (C) -- node {\(\scriptstyle q\)}(D);
+\end{tikzpicture}
+</script>
+閉点\(x\in \mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{K})\)は\(p,q\)での像をとることで
+\(p(x)\in \mathbb{G}(V,s+1)\)に対応する\(\mathbb{P}(V)\)の\(s\)次元平面\(H_{p(x)}\)と
+\(q(x)\in \mathbb{G}(V,s+2)\)に対応する\(\mathbb{P}(V)\)の\(s+1\)次元平面\(H_{q(x)}\)を定め、
+\(H_{p(x)}\subset H_{q(x)}\)となる。
+さらに\(\sigma\)での\(x\)のfiber \(\sigma^{-1}(x)\)の\(\pi\)での像は、
+ちょうど\(H_{q(x)}\)となる、つまり
+\(\pi(\sigma^{-1}(x)) = H_{q(x)}\)である。
+</p>
+
+<p>
+\(Z\subset \mathbb{G}(V,s+2)\)を\(X\)と\ltb\gt交わる\lt/b\gt\(s+1\)次元平面のなす閉部分集合とする。
+各\(s\)次元平面\(H\subset \mathbb{P}(V)\)に対して、
+\(H\)に含まれない\(X\)の点が存在しないならば、\(X\subset H\)であるから、
+点\([H]\in \mathbb{G}(V,s+1)\)のfiber \(p^{-1}([H])\)と\(q^{-1}(Z)\)は明らかに交わり、
+\(H\)に含まれない\(X\)の点が存在するならば、
+その点をとることで構成される新たな\(s+1\)次元平面\(H'\)の定める\(R\)の点は
+\(q^{-1}(Z)\)と\(p^{-1}([H])\)のどちらにも含まれる。
+従って射\(p|_{q^{-1}(Z)}:q^{-1}(Z)\to \mathbb{G}(V,s+1)\)は全射である。
+\(N \geq r+s+2\)であるから、<a href="#lem-Grass-1pt">Lemma 2.2</a>より、
+\(X\)とちょうど\(1\)点で交わる\(s+1\)次元平面からなる稠密開集合\(V\subset Z\)がある。
+\(V\subset Z\)は稠密であり、
+\(p|_{q^{-1}(Z)}:q^{-1}(Z)\to \mathbb{G}(V,s+1)\)は全射であるから、
+\(p(q^{-1}(V))\subset \mathbb{G}(V,s+1)\)は稠密な構成可能集合であり、特に開である。
+</p>
+
+<p>
+\(N \geq r+s+2\)であるから、<a href="#lem-Grass">Lemma 2.1</a>より、
+\(X\)と交わらない\(s\)次元平面のなす
+空でない開集合\(U\subset \mathbb{G}(V,s+1)\)がある。
+各点\([H]\in U\)に対し、
+\(H\)を軸とする射影\(\mathbb{P}(V)\dashrightarrow \mathbb{P}(\mathcal{K}_{[H]})\cong \mathbb{P}^{N-s}\)
+を\(X\)に制限したものは
+(\(H\)が\(X\)と交わらないことから)
+\(\mathbb{G}(V,s+1)\)上の二つの射\(B_X\to B\to R\)の
+合成射\(r:B_X\to R\)の
+点\([H]\)でのfiberに他ならない。
+点\(x\in R\)について
+</p>
+<ul>
+<li>
+<h4>
+  
+</h4>
+<p>
+\(x\in \mathrm{Im} (r:B_X\to R)\)
+</p>
+</li>
+<li>
+<h4>
+\(\iff\)
+</h4>
+<p>
+\(\pi(\sigma^{-1})\cap X \neq \varnothing\)
+</p>
+</li>
+<li>
+<h4>
+\(\iff\)
+</h4>
+<p>
+\(X\)と\(q(x)\)に対応する\(\mathbb{P}(V)\)の\(s+1\)次元平面が交わる
+</p>
+</li>
+<li>
+<h4>
+\(\iff\)
+</h4>
+<p>
+\(x\in q^{-1}(Z)\)
+</p>
+</li>
+</ul>
+<p>
+であるから、\(\mathrm{Im} (r) = q^{-1}(Z)\)となる。
+点\(x\in q^{-1}(V)\)の\(r:B_X\to R\)でのfiberは
+ちょうど\(X\)と\(q(x)\)に対応する\(\mathbb{P}(V)\)の\(s+1\)次元平面のスキーム論的交差であり、
+すなわちスキーム論的に\(1\)点である。
+従って、\(r\)は空でない開集合\(r^{-1}(q^{-1}(V))\subset B_X\)上で同型射である。
+</p>
+
+<p>
+\(W:\overset{\mathrm{\scriptsize def}}{=} p(q^{-1}(V))\cap U\subset \mathbb{G}(V,s+1)\)と置く。
+各点\([H]\in W\)に対して、
+\(p^{-1}([H])\cap q^{-1}(V)\neq \varnothing\)であるから
+\(H\)を軸とする射影\(r_H:X\to \mathbb{P}(\mathcal{K}_{[H]})\cong \mathbb{P}^{N-s}\)は像への双有理射である。
+また、\(W\subset U\)であるから、\(s\)次元平面\(H\)は\(X\)とは交わらない。
+よって\(W\)は所望の開集合である。
+以上で証明を完了する。
+</p>
+</article>
+
+
+
+
+
+
+
+
+</section>
+
+<section classs="bibliography-section">
+<h2 class="bibliography-h2">
+References
+</h2>
+<ul class="bibliography-ul">
+<li id="bib-item-Ha" class="bibliography-li">
+<h3 class="bibliography-h3">
+[Ha]
+</h3>
+<p class="bibliography-p">
+R.Hartshorne, <i>Algebraic Geometry</i> Springer-Verlag, New Tork, 1977. Graduate Text in Mathematics, No. 52. 
+</p>
+</li>
+<li id="bib-item-YJ" class="bibliography-li">
+<h3 class="bibliography-h3">
+[ゆ]
+</h3>
+<p class="bibliography-p">
+ゆじノート, <i>Blowing Up along Linear Subvariety</i>
+</p>
+</li>
+</ul>
+</section>
+:ET

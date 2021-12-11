@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-11T21:34:29+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">12月10日</title><link href="/diary/2021/12/10/Nikki.html" rel="alternate" type="text/html" title="12月10日" /><published>2021-12-10T00:00:00+09:00</published><updated>2021-12-10T00:00:00+09:00</updated><id>/diary/2021/12/10/Nikki</id><content type="html" xml:base="/diary/2021/12/10/Nikki.html">&lt;h3 id=&quot;今日も遅くなってしまいました&quot;&gt;今日も遅くなってしまいました&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-11T23:24:27+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">12月11日</title><link href="/diary/2021/12/11/Nikki.html" rel="alternate" type="text/html" title="12月11日" /><published>2021-12-11T00:00:00+09:00</published><updated>2021-12-11T00:00:00+09:00</updated><id>/diary/2021/12/11/Nikki</id><content type="html" xml:base="/diary/2021/12/11/Nikki.html">&lt;h3 id=&quot;今日もずっとプログラムを書いていました&quot;&gt;今日もずっとプログラムを書いていました&lt;/h3&gt;
+
+&lt;p&gt;今日は9時ごろに起きました。
+TeXをHTMLに変換するプログラムがほとんど完成した状態になったので、
+さっそくいくつかのNoteのTeXファイルをHTMLに変換してみました。
+ある程度良い感じに表示されています (→
+&lt;a href=&quot;/assets/TeX Files/BlowingUpAlongLinearSubvariety/BlowingUpAlongLinearSubvariety.html&quot;&gt;爆発&lt;/a&gt;、
+&lt;a href=&quot;/assets/TeX Files/EquationalCriterionOfFlatness/EquationalCriterionOfFlatness.html&quot;&gt;平坦性&lt;/a&gt;、
+&lt;a href=&quot;/assets/TeX Files/Ex_I_4_9/Ex_I_4_9.html&quot;&gt;Haの演習&lt;/a&gt;)。
+CSSなどをまだいじってないので変な見た目になっている部分がいくつか存在しますが、
+たとえば\autorefなどは良い感じに飛ぶようになっているので嬉しいです。
+Tikzをうまく表示するのが難しいという問題があり、
+これはTikzJaxではこの辺りが限界っぽいので、
+何か対策できないか考えています。
+TikzJaxは、HTML内に記述されたTeXのコードのtikzに関する部分を処理することを目的に作られているはずで、
+そのためブラウザ内で完結するようにかなり頑張って作っているはずなのですが、
+私が本当に求めていることはそうではないので、
+TikzJaxに頼る必要はないのではないか、と思ってきたわけです。
+&lt;a href=&quot;https://yenru0.github.io/etc/UseMathIn/&quot;&gt;ある韓国の方のページ&lt;/a&gt;
+が参考になりそうなので、同じようなことを試してみたいと思います。&lt;/p&gt;
+
+&lt;p&gt;明日は実家に帰る日なので今日は早めに寝ます。
+日本沈没のドラマが3話くらい溜まっているので、楽しみです。
+おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日もずっとプログラムを書いていました</summary></entry><entry><title type="html">12月10日</title><link href="/diary/2021/12/10/Nikki.html" rel="alternate" type="text/html" title="12月10日" /><published>2021-12-10T00:00:00+09:00</published><updated>2021-12-10T00:00:00+09:00</updated><id>/diary/2021/12/10/Nikki</id><content type="html" xml:base="/diary/2021/12/10/Nikki.html">&lt;h3 id=&quot;今日も遅くなってしまいました&quot;&gt;今日も遅くなってしまいました&lt;/h3&gt;
 
 &lt;p&gt;今日は10時ごろに起きました。遅いです。
 朝はTeXをHTMLに変換するプログラムを書いており、
@@ -445,34 +468,4 @@ Stack Exchangeを見ながら家に帰って昨日作った晩御飯の残りを
 数学人は一般に「○○である。ここで××より、○○であることが従う。」を英語で書くことには慣れていますが、
 会話的な英語を生成することはあまり得意ではないことが多いように見えます (私だけではないですよね？)。
 しっかり練習して、滑らかに英語を生成できる人間になりたいものです
-(Stack Exchangeで解答することは、多少は英語の練習になっている気がします)。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry><entry><title type="html">12月01日</title><link href="/diary/2021/12/01/Nikki.html" rel="alternate" type="text/html" title="12月01日" /><published>2021-12-01T00:00:00+09:00</published><updated>2021-12-01T00:00:00+09:00</updated><id>/diary/2021/12/01/Nikki</id><content type="html" xml:base="/diary/2021/12/01/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
-
-&lt;p&gt;今日は朝起きてペットボトルのゴミを出し、そのまま買い物に行って食材を買うところから始まりました。
-日中は主にホームページをいじっていたのですが、
-markdownで書いたものを適切に綺麗にして表示するJavaScriptを書くタスクがだいぶ進んだため、
-かなりいい感じに綺麗になってきて嬉しいです。
-JavaScriptがぐちゃぐちゃなので、そこはもう少し綺麗に書きたいですが、まああまり気にしてません。
-それよりも、数学的なメモを記録したノートの表示方法が定まらないのが今の一番の問題点です。&lt;/p&gt;
-
-&lt;p&gt;夕方に夜ご飯を作り、そのまま学部生にアティマクを教えるバイトをやって、少しホームページをいじり、夕飯を済ませて今これを書いています。
-だいたい0時です。&lt;/p&gt;
-
-&lt;h3 id=&quot;どうやったら数学ができるようになるのか&quot;&gt;どうやったら数学ができるようになるのか&lt;/h3&gt;
-
-&lt;p&gt;一般に人間はどうすれば数学ができるようになるのでしょうか。
-演習問題をやっていればとりあえずそれが正解ルートだと思うとは以前書きましたが、
-しかし闇雲に解いていても仕方ないとも思うのです。
-代数幾何や可換環論であれば、どちらかというと、可換環論的手法に持ち込んで証明をしていく方針よりも、
-Specの幾何学的性質が何をimplyするのかを見ていく方向性で考える方が、人間の思考方法と合致するように思うのですが、
-「人間の」は言い過ぎでしょうか。
-スキームという概念を導入しなくても、
-Specの位相空間論的・幾何学的な性質と環論的な性質の密接な関係を辿ることでさまざまな可換環論的主張を証明できるわけですが、
-そういう思考方法でアティマクを書き直すようなことを一度やってみれば、かなりスキーム論が手に馴染むようになると思います。&lt;/p&gt;
-
-&lt;p&gt;演習問題を解くというのは私はかなり重要だと思います。
-数学者がやっていることの主要部分は「能動的に数学的主張を証明すること」であって、
-これは記述された証明を読むことという「受動的」な方向性とは少し違う感じがします。
-演習問題を解くという行為を行うためには、能動的に証明を作りにいく態度が必要になるので、
-この意味で、より「数学者の実務」に近いように感じます。
-いかがでしょうか。
-しかし、私も勉強不足を日々痛感している身ですので、あまり偉そうなことは言えないのですが…&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry></feed>
+(Stack Exchangeで解答することは、多少は英語の練習になっている気がします)。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry></feed>

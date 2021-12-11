@@ -36,6 +36,7 @@ if_math_mode = False ### 数式環境かどうか
 normal_previous_bool = False ### 直前の一文が通常の文かどうか
 normal_after_bool = False ### 直後の一文が通常の文かどうか
 if_tikz_mode= False
+if_env_CD = False
 
 
 documentclass_text = ""
@@ -322,7 +323,17 @@ def func_use_Macros_bool(var_list):
 ### givenなvar_strのコマンドをマクロを使わないレベルまで展開する関数
 
 def func_full_expand_Macros(var_str):
-    result_str = var_str
+    true_text = var_str
+    if ( if_env_CD == False ) and ( if_tikz_mode == False ):
+        true_text = ""
+        for i in range(0, len(var_str)):
+            if ( var_str[i] not in ["<", ">"] ):
+                true_text += var_str[i]
+            elif ( var_str[i] == "<" ):
+                true_text += "\\lt"
+            else:
+                true_text += "\\gt"
+    result_str = true_text
     this_bool = func_use_Macros_bool(func_use_commands(result_str))
     while ( this_bool == True ):
         result_str = func_expand_commands(result_str)
@@ -1242,6 +1253,8 @@ for i in range(1, len(this_document_lines)):
                     theorem_counter += 1
                 elif ( env_name in ["enumerate", "itemize"] ):
                     enumi_head.append(True)
+                elif ( env_name == "CD" ):
+                    if_env_CD = True
             elif ( command_list[0] == "\\end" ): ### この行が\endで始まっていたら
                 this_html_file.write(func_if_end_env(effective_str))
                 j = len("\\end{")
@@ -1255,6 +1268,8 @@ for i in range(1, len(this_document_lines)):
                     this_html_file.write("\n</p>\n")
                     if_display_math_mode = False
                     if_math_mode = False
+                elif ( env_name == "CD" ):
+                    if_env_CD = False
             elif ( command_list[0] == "\\item" ):
                 next_line_command = func_use_commands(this_document_lines[i+1].split("%")[0])
                 num_lab = i+1

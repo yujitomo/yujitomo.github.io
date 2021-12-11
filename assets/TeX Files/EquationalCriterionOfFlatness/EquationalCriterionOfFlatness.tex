@@ -55,6 +55,9 @@
 %%%%%%%%%%%%Plain型%%%%%%%%%%%%
 
 
+\newcommand{\myTheoremEnvironments}[1]{#1}
+
+\myTheoremEnvironments{
 %%%%%%%%%%%%definition型%%%%%%%%%%%%
 
 \theoremstyle{definition}
@@ -112,7 +115,7 @@
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
-
+}
 
 
 
@@ -171,16 +174,26 @@
 %%%%%箇条書き環境
 
 
+\newcommand{\myOriginalPackages}[1]{#1}
+
+\myOriginalPackages{
+
 
 \usepackage{mandorasymb}
 \usepackage{applekeys}
 \renewcommand{\qedsymbol}{\pencilkey}
 %\renewcommand{\qedsymbol}{\kinoposymbniko}
-
+}
 
 
 
 \usepackage{latexsym}
+
+
+\newcommand{\myMacros}[1]{#1}
+
+\myMacros{
+
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Isom}{Isom}
 \DeclareMathOperator{\ISOM}{\mathbf{Isom}}
@@ -212,7 +225,7 @@
 \newcommand{\dg}{\mathrm{dg}}
 \newcommand{\op}{\mathrm{op}}
 
-\newcommand{\dfn}{:\overset{\mbox{{\scriptsize def}}}{=}}
+\newcommand{\dfn}{:\overset{\mathrm{\scriptsize def}}{=}}
 \newcommand{\deff}{:\hspace{-3pt}\overset{\text{def}}{\iff}}
 
 \newcommand{\univ}[1]{\mathbb{#1}}
@@ -266,21 +279,41 @@
 
 \DeclareMathOperator{\OOO}{\mcO}
 
-\newcommand{\OC}{{\OOO_C}}
-\newcommand{\OD}{{\OOO_D}}
-\renewcommand{\OE}{{\OOO_E}}
-\newcommand{\OF}{{\OOO_F}}
-\newcommand{\OH}{{\OOO_H}}
-\newcommand{\OS}{{\OOO_S}}
-\newcommand{\OT}{{\OOO_T}}
-\newcommand{\OU}{{\OOO_U}}
-\newcommand{\OV}{{\OOO_V}}
-\newcommand{\OW}{{\OOO_W}}
-\newcommand{\OX}{{\OOO_X}}
-\newcommand{\OY}{{\OOO_Y}}
-\newcommand{\OZ}{{\OOO_Z}}
+\renewcommand{\OE}{\OOO_E}
+\newcommand{\OC}{\OOO_C}
+\newcommand{\OD}{\OOO_D}
+\newcommand{\OF}{\OOO_F}
+\newcommand{\OH}{\OOO_H}
+\newcommand{\OS}{\OOO_S}
+\newcommand{\OT}{\OOO_T}
+\newcommand{\OU}{\OOO_U}
+\newcommand{\OV}{\OOO_V}
+\newcommand{\OW}{\OOO_W}
+\newcommand{\OX}{\OOO_X}
+\newcommand{\OY}{\OOO_Y}
+\newcommand{\OZ}{\OOO_Z}
 
 \newcommand{\OO}[1]{\OOO_{#1}}
+
+}
+
+
+
+\newcommand{\HereBeginTikz}{}
+\newcommand{\HereEndTikz}{}
+\newcommand{\HTMLhead}[1]{}
+
+\HTMLhead{
+---
+layout: article-type
+title: "Blowing Up along Linear Subvariety"
+category: Notes
+tag: "Commtative Algebra"
+author: Yujitomo
+description: "射影空間の線形部分多様体に沿った爆発について"
+---
+}
+
 
 
 
@@ -618,7 +651,9 @@ filtered categoryのcofinalな部分圏はまたfilteredとなることが
 \begin{lem}[Equational Criterion of Flatness; cf. {\cite[定理7.6]{Mat}}]
   \label{lem: eq cri of flat}
   \(A\)を環、\(M\)を平坦\(A\)-加群とする。
-  \[F_2\xrightarrow{\varphi} F_1 \xrightarrow{p}M\]
+  \[
+  F_2\xrightarrow{\varphi} F_1 \xrightarrow{p}M
+  \]
   を圏\(\mcI_M\)の対象とする。
   このとき、以下の図式が可換となるような有限自由加群\(F'\)と射
   \(f:F_1\to F',r:F'\to M\)が存在する：

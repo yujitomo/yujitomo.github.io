@@ -55,6 +55,10 @@
 %%%%%%%%%%%%Plain型%%%%%%%%%%%%
 
 
+\newcommand{\myTheoremEnvironments}[1]{#1}
+
+\myTheoremEnvironments{
+
 %%%%%%%%%%%%definition型%%%%%%%%%%%%
 
 \theoremstyle{definition}
@@ -118,7 +122,7 @@
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
-
+}
 
 
 
@@ -190,15 +194,29 @@
 
 
 
+\newcommand{\myOriginalPackages}[1]{#1}
+
+\myOriginalPackages{
+
+
+
 \usepackage{mandorasymb}
 \usepackage{applekeys}
 \renewcommand{\qedsymbol}{\pencilkey}
 %\renewcommand{\qedsymbol}{\kinoposymbniko}
 
+}
+
+
 
 
 
 \usepackage{latexsym}
+
+\newcommand{\myMacros}[1]{#1}
+
+\myMacros{
+
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Isom}{Isom}
 \DeclareMathOperator{\ISOM}{\mathbf{Isom}}
@@ -266,23 +284,23 @@
 
 \DeclareMathOperator{\OOO}{\mcO}
 
-\newcommand{\OB}{{\OOO_B}}
-\newcommand{\OC}{{\OOO_C}}
-\newcommand{\OD}{{\OOO_D}}
-\renewcommand{\OE}{{\OOO_E}}
-\newcommand{\OF}{{\OOO_F}}
-\newcommand{\OH}{{\OOO_H}}
-\newcommand{\OP}{{\OOO_P}}
-\newcommand{\OQ}{{\OOO_Q}}
-\newcommand{\OR}{{\OOO_R}}
-\newcommand{\OS}{{\OOO_S}}
-\newcommand{\OT}{{\OOO_T}}
-\newcommand{\OU}{{\OOO_U}}
-\newcommand{\OV}{{\OOO_V}}
-\newcommand{\OW}{{\OOO_W}}
-\newcommand{\OX}{{\OOO_X}}
-\newcommand{\OY}{{\OOO_Y}}
-\newcommand{\OZ}{{\OOO_Z}}
+\renewcommand{\OE}{\OOO_E}
+\newcommand{\OB}{\OOO_B}
+\newcommand{\OC}{\OOO_C}
+\newcommand{\OD}{\OOO_D}
+\newcommand{\OF}{\OOO_F}
+\newcommand{\OH}{\OOO_H}
+\newcommand{\OP}{\OOO_P}
+\newcommand{\OQ}{\OOO_Q}
+\newcommand{\OR}{\OOO_R}
+\newcommand{\OS}{\OOO_S}
+\newcommand{\OT}{\OOO_T}
+\newcommand{\OU}{\OOO_U}
+\newcommand{\OV}{\OOO_V}
+\newcommand{\OW}{\OOO_W}
+\newcommand{\OX}{\OOO_X}
+\newcommand{\OY}{\OOO_Y}
+\newcommand{\OZ}{\OOO_Z}
 
 \newcommand{\OO}[1]{\OOO_{#1}}
 
@@ -293,13 +311,36 @@
 \newcommand{\dto}{\dashrightarrow}
 \renewcommand{\emptyset}{\varnothing}
 
-\def\dfn{:\overset{\mbox{{\scriptsize def}}}{=}}
+\newcommand{\dfn}{:\overset{\mathrm{\scriptsize def}}{=}}
+
+
+}
+
+
 
 
 
 %%%%%%%%%タイトル
 \title{Hartshorne Exercise I.4.9}
 \author{ゆじ}
+
+
+
+\newcommand{\HereBeginTikz}{}
+\newcommand{\HereEndTikz}{}
+\newcommand{\HTMLhead}[1]{}
+
+\HTMLhead{
+---
+layout: article-type
+title: "Blowing Up along Linear Subvariety"
+category: Notes
+tag: "Commtative Algebra"
+author: Yujitomo
+description: "射影空間の線形部分多様体に沿った爆発について"
+---
+}
+
 
 
 \begin{document}
@@ -386,11 +427,14 @@
   \(V_{\G(V,s+1)}\to \mcU\)と置く。
   ここで\(\mcU\)はランク\(s+1\)の局所自由層である。
   この全射が引き起こす閉埋め込み
-  \[\P_{\G(V,s+1)}(\mcU)\subset \G(V,s+1)\times \P(V)\]
+  \[
+  \P_{\G(V,s+1)}(\mcU)\subset \G(V,s+1)\times \P(V)
+  \]
   を\(\P(V)\)側から調べる。
   各点\(p\in \P(V)\)上の\(\P_{\G(V,s+1)}(\mcU)\)のfiber
   \(\P_{\G(V,s+1)}(\mcU)|_p\subset \G(V,s+1)\)は
   点\(p\)を通る次元\(s\)の平面を閉点とする多様体である：
+  \HereBeginTikz
   \[
   \begin{tikzpicture}[auto]
     \node (A) at (0,1.5) {\(\P_{\G(V,s+1)}(\mcU)\)};
@@ -408,6 +452,7 @@
     \draw[->] (B') -- (C');
   \end{tikzpicture}
   \]
+  \HereEndTikz
   点\(p\)を与える全射も同じ記号\(p:V\to k\)で表す。
   \(\P(V)\)内の次元\(s\)の平面は
   次元\(s+1\)の線形空間\(W\)への全射\(V\to W\)と対応し、
@@ -459,7 +504,7 @@
 
   \(\dim (\G(V,s+1)) = (r-s)(s+1) = rs-s^2+r-s\)であることに注意する。
   \ref{enumi: lem: Grass empty}を示す。
-  \(d<r-s\)なので、
+  \(d< r-s\)なので、
   \(\dim Y < \dim(\G(V,s+1))\)であり、
   特に、射影\(f:Y\to \G(V,s+1)\)の像は真の閉部分集合である。
   このことは\ref{enumi: lem: Grass empty}を示している。
@@ -490,6 +535,7 @@
   \(\Hilb^2(X)\)を\(X\)上の\(2\)点のHilbertスキーム、
   \(\mcU\subset \Hilb^2(X)\times X\)を普遍的な閉部分スキーム、
   つまり長さ\(2\)の閉部分スキーム\(Z\subset X\)に対応する点\([Z]\in \Hilb^2(X)\)上で
+  \HereBeginTikz
   \[
   \begin{tikzpicture}[auto]
     \node (A) at (0,1.5) {\(\mcU\)};
@@ -507,6 +553,7 @@
     \draw[->] (B') -- (C');
   \end{tikzpicture}
   \]
+  \HereEndTikz
   となる閉部分スキームとする。
   ただし\(p:\Hilb^2(X)\times X\to \Hilb^2(X)\)は射影である。
   特に合成\(\mcU\subset \Hilb^2(X)\times X\xrightarrow{p} \Hilb^2(X)\)は
@@ -547,9 +594,12 @@
   これらは1:1に対応する。
   \(\Hilb^2(X)\)上の包含射
   \(\ker(\Psi)\subset V_{\Hilb^2(X)}\)はグラスマン束の間の閉埋め込み
-  \[\G_{\Hilb^2(X)}(\ker(\Psi),s-1)\subset \G(V,s+1)\times \Hilb^2(X)\]
+  \[
+  \G_{\Hilb^2(X)}(\ker(\Psi),s-1)\subset \G(V,s+1)\times \Hilb^2(X)
+  \]
   を引き起こすが、
   以上の議論により、各閉点\([Z]\in \Hilb^2(X)\)のfiberは
+  \HereBeginTikz
   \[
   \begin{tikzpicture}[auto]
     \node (A) at (0,1.5) {\(\G_{\Hilb^2(X)}(\ker(\Psi),s-1)\)};
@@ -567,6 +617,7 @@
     \draw[->] (B') -- (C');
   \end{tikzpicture}
   \]
+  \HereEndTikz
   となり、すなわち、
   \(\P(V)\)内の次元\(s\)の平面のうち
   \(Z\)の定める\(\P(V)\)内の直線を通るものたちをパラメタライズする多様体が現れる。
@@ -642,6 +693,7 @@
   \(\G(V,s+1)\times X\)のスキーム論的交差を\(D\)と置き、
   \(\G(V,s+1)\times X\)の\(D\)に沿った爆発を\(B_X\)と置く。
   以下の図式ができる (以下のように射に名前をつける)：
+  \HereBeginTikz
   \[
   \begin{tikzpicture}[auto]
     \node (A) at (0,1.5) {\(B_X\)};
@@ -662,6 +714,7 @@
     \draw[->] (C) -- node {\(\scriptstyle q\)}(D);
   \end{tikzpicture}
   \]
+  \HereEndTikz
   閉点\(x\in \P_{\G(V,s+1)}(\mcK)\)は\(p,q\)での像をとることで
   \(p(x)\in \G(V,s+1)\)に対応する\(\P(V)\)の\(s\)次元平面\(H_{p(x)}\)と
   \(q(x)\in \G(V,s+2)\)に対応する\(\P(V)\)の\(s+1\)次元平面\(H_{q(x)}\)を定め、

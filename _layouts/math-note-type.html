@@ -14,10 +14,25 @@ layout: default-ja
 {% assign page_name_ary = page_name_ary | split: "." %}
 {% assign page_name = page_name_ary[0] %}
 
+
+
+{% assign page_path = "/assets/TeX Files/" %}
+{% assign page_path = page_path | append: page_name | append: "/" | append: page_name | append: ".html" %}
+
+
 <footer class="math-note-footer">
-  <p>
-    <a href="/assets/TeX Files/{{ page_name }}/{{ page_name }}.pdf">
-      PDFファイルはこちら.
-    </a>
-  </p>
+  <ul>
+    <li>
+      <a href="/assets/TeX Files/{{ page_name }}/{{ page_name }}.pdf">
+        PDFファイルはこちら.
+      </a>
+    </li>
+    {% if page_path %}
+    <li>
+      <a href="{{ page_path }}">
+        Webでご覧になる場合はこちら.
+      </a>
+    </li>
+    {% endif %}
+  </ul>
 </footer>

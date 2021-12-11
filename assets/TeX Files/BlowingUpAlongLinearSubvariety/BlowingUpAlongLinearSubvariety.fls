@@ -1079,7 +1079,6 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/latex-fonts/lasy7.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/latex-fonts/lasy5.tfm
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-v.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/local/texlive/texmf-local/tex/latex/local/applekeys/pencil.pdf
 INPUT /usr/local/texlive/texmf-local/tex/latex/local/applekeys/pencil.pdf
@@ -1087,6 +1086,7 @@ INPUT extractbb -B cropbox -O pencil.pdf
 OUTPUT BlowingUpAlongLinearSubvariety.dvi
 INPUT /usr/local/texlive/texmf-local/tex/latex/local/applekeys/pencil.pdf
 INPUT /usr/local/texlive/texmf-local/tex/latex/local/applekeys/pencil.pdf
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-v.tfm
 INPUT /usr/local/texlive/texmf-local/tex/latex/local/applekeys/pencil.pdf
 INPUT /usr/local/texlive/texmf-local/tex/latex/local/applekeys/pencil.pdf
 INPUT /usr/local/texlive/texmf-local/tex/latex/local/applekeys/pencil.pdf

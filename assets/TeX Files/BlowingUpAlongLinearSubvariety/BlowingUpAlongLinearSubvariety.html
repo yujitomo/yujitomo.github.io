@@ -1,0 +1,693 @@
+---
+layout: article-type
+title: "Blowing Up along Linear Subvariety"
+category: Notes
+tag: "Commtative Algebra"
+author: Yujitomo
+description: "射影空間の線形部分多様体に沿った爆発について"
+---
+
+
+<p>
+これは、
+射影空間を線形部分多様体に沿って爆発するとどんな代数多様体になるのか、
+についてのメモ書きである。
+</p>
+
+
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+Setting
+</h3>
+<p>
+このノートでは以下のセッティングで話を進める：
+</p>
+<ul>
+<li>
+<p>
+\(S\)をベースとなるスキームとする。</p>
+</li>
+<li>
+<p>
+\(\mathcal{E}\to \mathcal{F}\)を\(S\)上の局所自由層 (ベクトル束)の全射とする。</p>
+</li>
+<li>
+<p>
+\(\mathcal{K}:\overset{\mathrm{def}}{=} \ker (\mathcal{E}\to \mathcal{F})\)と置く、これも局所自由層となる。</p>
+</li>
+<li>
+<p>
+\(P:\overset{\mathrm{def}}{=} \mathbb{P}_S(\mathcal{E}), Q:\overset{\mathrm{def}}{=}\mathbb{P}_S(\mathcal{F}), R:\overset{\mathrm{def}}{=} \mathbb{P}_S(\mathcal{K})\)と置く。</p>
+</li>
+<li>
+<p>
+\(p:P\to S, q:Q\to S, r:R\to S\)を射影とする。</p>
+</li>
+<li>
+<p>
+\(i:Q\to P\)を全射\(\mathcal{E}\to \mathcal{F}\)により得られる全射\(\mathrm{Sym}(\mathcal{E})\to \mathrm{Sym}(\mathcal{F})\)が引き起こす\(S\)上の射影束の間の閉埋め込みとする。
+</p>
+</li>
+<li>
+<p>
+\(\mathcal{I}\)を\(i\)に対応するイデアル層とする。</p>
+</li>
+</ul>
+</article>
+
+
+<p>
+\(P\)上に完全列
+</p>
+<p class="display-math-p">
+<div id="eq-exact-ideal-of-Q-on-P" class="display-math-div">
+\begin{equation}
+\begin{CD}
+0 @>>> \mathcal{I} @>>> \mathcal{O}_P @>>> i_*\mathcal{O}_Q @>>> 0
+\end{CD}
+\tag{\(\dagger\)}
+\end{equation}
+</div>
+
+</p>
+<p>
+ができる。
+1回ひねって、完全列
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+0 @>>> \mathcal{I}(1) @>>> \mathcal{O}_{P/S}(1) @>>> i_*\mathcal{O}_{Q/S}(1) @>>> 0
+\end{CD}
+\]
+</p><p>
+を得る。
+ここで\(\mathcal{O}(1)\)はトートロジカル直線束である。
+\(p\)で押して、完全列
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+0 @>>> p_*\mathcal{I}(1) @>>> \mathcal{E} @>>> p_*i_*\mathcal{O}_{Q/S}(1)
+\end{CD}
+\]
+</p><p>
+を得る。
+ここで\(q=p\circ i\)であるから、
+自然に
+</p>
+<p class="display-math-p">
+\[
+p_*i_*\mathcal{O}_{Q/S}(1) \cong q_*\mathcal{O}_{Q/S}(1) \cong \mathcal{F}
+\]
+</p><p>
+となる。
+</p>
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+Lemma 0.0.
+</h3>
+<p>
+射\(\mathcal{E}\to p_*i_*\mathcal{O}_{Q/S}(1)\cong \mathcal{F}\)はもとの全射\(\mathcal{E}\to \mathcal{F}\)と等しい。
+特に\(\mathcal{E}\to p_*i_*\mathcal{O}_{Q/S}(1)\)は全射である。
+</p>
+</article>
+
+<article class="proof-env-article">
+<h3 class="proof-env-h3">
+Proof.
+</h3>
+<p>
+\(P\)上の層の可換図式
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+\mathcal{E}_P @>>> \mathcal{O}_{P/S}(1) \\
+@VVV @VVV \\
+\mathcal{F}_P @>>> i_*\mathcal{O}_{Q/S}(1)
+\end{CD}
+\]
+</p><p>
+を\(p\)でpushすればわかる。
+</p>
+</article>
+
+<p>
+従って、とくに\(p_*\mathcal{I}(1)\cong \mathcal{K}\)であることがわかる。
+</p>
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+Lemma 0.1.
+</h3>
+<p>
+自然な射\(\mathcal{K}_P \to \mathcal{I}(1)\)は全射である。
+特に、\(\mathcal{I}(1)\)は (\(S\)上) 大域切断で生成される。
+</p>
+</article>
+
+<article class="proof-env-article">
+<h3 class="proof-env-h3">
+Proof.
+</h3>
+<p>
+完全列<a href="#eq-exact-ideal-of-Q-on-P">(\(\dagger \))</a>を\(n\)回捻ってできる
+\(P\)上の完全列
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+0 @>>> \mathcal{I}(n) @>>> \mathcal{O}_{P/S}(n) @>>> i_*\mathcal{O}_{Q/S}(n) @>>> 0
+\end{CD}
+\]
+</p><p>
+を\(p\)で押せば、
+完全列
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+0 @>>> \mathcal{K} \otimes \mathrm{Sym}^{n-1}(\mathcal{E}) @>>> \mathrm{Sym}^n(\mathcal{E}) @>>> \mathrm{Sym}^n(\mathcal{F}) @>>> 0
+\end{CD}
+\]
+</p><p>
+を得る。
+\(\mathcal{O}_{P/S}(1)\)は\(S\)上豊富な直線束なので、十分大きい\(n\)に対して自然な射
+</p>
+<p class="display-math-p">
+\[
+\mathcal{K}_P \otimes \mathrm{Sym}^{n-1}(\mathcal{E}_P) \to \mathcal{I}(n)
+\]
+</p><p>
+は全射である。
+一方、この全射は、射\(\mathcal{K}_P \to \mathcal{I}(1)\)と全射
+\(\mathrm{Sym}^{n-1}(\mathcal{E}_P)\to \mathcal{O}_{P/S}(n-1)\)のテンソル積で得られる射と等しく、
+よって
+</p>
+<p class="display-math-p">
+\[
+\mathcal{K}_P \otimes \mathrm{Sym}^{n-1}(\mathcal{E}_P) \to \mathcal{K}_P (n-1) \to \mathcal{I}(n)
+\]
+</p><p>
+と分解する。
+従って\(\mathcal{K}_P (n-1) \to \mathcal{I}(n)\)は全射である。
+これを\(-n+1\)回捻ることで、\(\mathcal{K}_P\to \mathcal{I}(1)\)が全射であることがわかる。
+</p>
+</article>
+
+<p>
+全射\(\mathcal{K}_P\to \mathcal{I}(1)\)を\(Q\)へ制限することで、
+全射\(\mathcal{K}_Q \to \mathcal{I}/\mathcal{I}^2(1)\)を得るが、
+どちらも同じランクの局所自由層なので、\(\mathcal{K}_Q\cong \mathcal{I}/\mathcal{I}^2(1)\)がわかる。
+よって、次がわかる：
+</p>
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+Proposition 0.2.
+</h3>
+<p>
+\(Q\)上に完全列
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+0 @>>> \mathcal{I}/\mathcal{I}^2(1) @>>> \mathcal{E}_Q @>>> \mathcal{F}_Q @>>> 0
+\end{CD}
+\]
+</p><p>
+ができる。
+</p>
+</article>
+
+
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+Remark 0.3. (オイラー完全列：[<a href="#bib-item-Ha">Ha</a>, 命題8.13])
+</h3>
+<p>
+\(V\)を\(k\)-線形空間とする。
+\(\mathbb{P}(V)\)上の局所自由層の間の全射
+\(f:V_{\mathbb{P}(V)} \to \mathcal{O}_{\mathbb{P}(V)}(1)\)に対して上の命題を適用する。
+自然な同型
+\(\mathbb{P}_{\mathbb{P}(V)}(\mathcal{O}_{\mathbb{P}(V)}(1)) \cong \mathbb{P}(V), \mathbb{P}_{\mathbb{P}(V)}(V_{\mathbb{P}(V)}) \cong \mathbb{P}(V) \times_k \mathbb{P}(V)\)
+に注意すれば、
+全射\(f\)が引き起こす閉埋め込み
+\(i:\mathbb{P}_{\mathbb{P}(V)}(\mathcal{O}_{\mathbb{P}(V)}(1)) \to \mathbb{P}_{\mathbb{P}(V)}(V_{\mathbb{P}(V)})\)
+は、
+対角射と一致することがわかる。
+従って、\(\mathcal{I}\)を閉埋め込み\(i\)のイデアル層とすれば、
+\(\mathcal{I}/\mathcal{I}^2 \cong \Omega_{\mathbb{P}(V)}\)となる。
+よって、\(\mathbb{P}(V)\)上の完全列
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+0 @>>> \Omega_{\mathbb{P}(V)}(1) @>>> V_{\mathbb{P}(V)} @>>> \mathcal{O}_{\mathbb{P}(V)}(1) @>>> 0
+\end{CD}
+\]
+</p><p>
+を得る。
+</p>
+</article>
+
+
+<p>
+\(\mathbb{P}_S(\mathcal{E})\)上の全射\(\mathcal{E}_P\to \mathcal{O}_{P/S}(1)\)
+と\(\mathcal{K}\subset \mathcal{E}\)を合成すると、
+射\(\mathcal{K}_P\to \mathcal{O}_{P/S}(1)\)を得る。
+この射は有理写像
+</p>
+<p class="display-math-p">
+\[
+P\dashrightarrow R
+\]
+</p><p>
+を引き起こす (線形部分多様体を軸とする射影)。
+\(\mathcal{K}_P\to \mathcal{O}_{P/S}(1)\)の像はちょうど\(\mathcal{I}(1)\)であり、
+従って\(P\dashrightarrow R\)の不確定点の集合は\(Q\)である。
+</p>
+
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+Setting
+</h3>
+<p>
+\(P\)の\(Q\)に沿った爆発を
+</p>
+<p class="display-math-p">
+\[
+\sigma :B = \mathrm{Bl}_QP\to P
+\]
+</p><p>
+とおく。
+例外因子を\(E\)とおき、閉埋め込みに\(j:E\to B\)と名前をつける。
+</p>
+<p class="display-math-p">
+\[
+E\cong \mathbb{P}_Q(\mathcal{I}/\mathcal{I}^2)\cong \mathbb{P}_Q(\mathcal{K}_Q(-1)) \cong Q\times_SR
+\]
+</p><p>
+となることがわかる
+(注：\(R:\overset{\mathrm{def}}{=} \mathbb{P}_S(\mathcal{K})\))。
+図式で書くと以下のようになる：
+<script type="text/tikz">\[
+\begin{tikzpicture}
+\node (B) at (0,1.5) {\(E \cong Q\times_SR\);
+\node (A) at (0,0) \(Q\);
+\node (B') at (4,1.5) \(B = \mathrm{Bl}_QP\);
+\node (A') at (4,0) \(P. \);
+\draw[->] (B) to node\scriptsize \(\sigma|_E\) (A);
+\draw[->] (B) to node\scriptsize \(j\) (B');
+\draw[->] (B') to node\scriptsize \(\sigma\) (A');
+\draw[->] (A) to node\scriptsize \(i\) (A');
+\end{tikzpicture}
+\]
+</script>\(E\)のイデアル層 (=blow-upのトートロジカル束)
+を\(\mathcal{I}_E\)または\(\mathcal{O}_{B/P}(1)\)と書く。
+</p>
+</article>
+
+
+<p>
+自然な同型\(\mathcal{I} \cong \sigma_*(\mathcal{O}_{B/P}(1))\)から、自然に
+</p>
+<p class="display-math-p">
+\[
+\mathcal{I}(1) \cong \sigma_*(\mathcal{O}_{B/P}(1)\otimes \sigma^*(\mathcal{O}_{P/S}(1)))
+\]
+</p><p>
+となることがわかる。
+よって、\(\mathcal{K}_P\to \mathcal{O}_{P/S}(1)\)の\(B\)への基底変換
+\(\mathcal{K}_B\to \sigma^*(\mathcal{O}_{P/S}(1))\)は
+\(\mathcal{O}_{B/P}(1)\otimes \sigma^*(\mathcal{O}_{P/S}(1)) \subset \sigma^*(\mathcal{O}_{P/S}(1))\)
+を一意的に経由する。
+</p>
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+Lemma 0.4.
+</h3>
+<p>
+\(\mathcal{K}_B\to \mathcal{O}_{B/P}(1)\otimes \sigma^*(\mathcal{O}_{P/S}(1))\)は全射である。
+</p>
+</article>
+
+<article class="proof-env-article">
+<h3 class="proof-env-h3">
+Proof.
+</h3>
+<p>
+\(\mathcal{K}_P\to \mathcal{I}(1)\)が全射であることと、
+\(\sigma\)が\(E\)の外では同型射であることから、
+\(E\)の外では全射である。
+よって\(E\)上で全射であることを示せば良い。
+\(E\)へと基底変換する。
+\((\mathcal{O}_{B/P}(1) \otimes \sigma^*(\mathcal{O}_{P/S}(1)))|_E
+\cong \mathcal{O}_{E/Q}(1) \otimes \sigma|_E^*(\mathcal{O}_{Q/S}(1))\)
+であるから、
+\(\mathcal{K}_B\to \mathcal{O}_{B/P}(1)\otimes \sigma^*(\mathcal{O}_{P/S}(1))\)
+の\(E\)への制限は
+</p>
+<p class="display-math-p">
+\[
+\mathcal{K}_E\to \mathcal{O}_{E/Q}(1) \otimes \sigma|_E^*\mathcal{O}_{Q/S}(1)
+\]
+</p><p>
+となる。
+\(\mathcal{K}_E\to \mathcal{O}_{E/Q}(1) \otimes \sigma|_E^*\mathcal{O}_{Q/S}(1)\)は
+\(\mathcal{K}_P\to \mathcal{I}(1)\)という全射から自然に得られる射であるから、
+</p>
+<p class="display-math-p">
+\[
+\mathcal{K}_E \to \sigma|_E^*(\mathcal{I}/\mathcal{I}^2(1)) \to
+\mathcal{O}_{E/Q}(1) \otimes \sigma|_E^*(\mathcal{O}_{Q/S}(1))
+\]
+</p><p>
+と分解する。
+ここで\(\mathcal{K}_E \to \sigma|_E^*(\mathcal{I}/\mathcal{I}^2(1))\)は同型射の引き戻しなので同型であり、
+\(\sigma|_E^*(\mathcal{I}/\mathcal{I}^2(1)) \to
+\mathcal{O}_{E/Q}(1) \otimes \sigma|_E^*\mathcal{O}_{Q/S}(1)\)は
+\(E\cong \mathbb{P}_Q(\mathcal{I}/\mathcal{I}^2)\)であることにより得られる全射
+\(\sigma|_E^*(\mathcal{I}/\mathcal{I}^2)\to \mathcal{O}_{E/Q}(1)\)に
+直線束\(\sigma|_E^*(\mathcal{O}_{Q/S}(1))\)をテンソルしたものであるから全射である。
+以上より\(\mathcal{K}_E\to \mathcal{O}_{E/Q}(1) \otimes \sigma|_E^*(\mathcal{O}_{Q/S}(1))\)は全射であることがわかり、
+証明が完了する。
+</p>
+</article>
+
+
+<p>
+\(\mathcal{O}_{B/P}(1)\otimes \sigma^*(\mathcal{O}_{P/S}(1))\)は直線束なので、
+全射\(\mathcal{K}_B\to \mathcal{O}_{B/P}(1)\otimes \sigma^*(\mathcal{O}_{P/S}(1))\)
+は射\(\varphi:B\to R\)を引き起こす。
+\(\sigma, \varphi\)により出る射\(B\to P\times_S R\)と合わせて、
+以下の図式ができる (以下のように射に名前をつけておく)：
+<script type="text/tikz">\[
+\begin{tikzpicture}
+\node (B) at (0,1.5) {\(E \cong Q\times_SR\);
+\node (A) at (0,0) \(Q\);
+\node (B') at (5,1.5) \(B = \mathrm{Bl}_QP\);
+\node (A') at (5,0) \(P\);
+\node (B'') at (9,1.5) \(P\times_SR\);
+\node (A'') at (10,0) \(R\);
+\draw[->] (B) to node\scriptsize \(\sigma|_E\) (A);
+\draw[->] (B) to node\scriptsize \(j\) (B');
+\draw[->] (B') to node\scriptsize \(\sigma\) (A');
+\draw[->] (A) to node\scriptsize \(i\) (A');
+\draw[->] (B') to node\scriptsize \(k\) (B'');
+\draw[->] (B'') to node\scriptsize \(p_1\) (A');
+\draw[->] (B'') to node\scriptsize \(p_2\) (A'');
+\draw[->,dashed] (A') to (A'');
+\end{tikzpicture}
+\]
+</script>右下の (有理写像\(P\dashrightarrow R\)によってできる) 三角形以外は可換である。
+\(k\)は\(B\)上の全射
+\(\mathcal{K}_B\to \mathcal{O}_{B/P}(1)\otimes \sigma^*(\mathcal{O}_{P/S}(1))\)
+により得られるが、
+この全射の\(E\)への制限は
+\(\sigma|_E^*(\mathcal{I}/\mathcal{I}^2)\to \mathcal{O}_{E/Q}(1)\)
+を\(1\)回捻ったものであったから、
+\(k\circ j\)は\(i:Q\to P\)の\(p_1:P\times_SR \to P\)による基底変換そのものである。
+特に、\(k\circ j\)は閉埋め込みである。
+従って\(k\)は閉部分集合の上への同相である。
+また、\(\mathcal{O}_{P\times_SR}\to k_*\mathcal{O}_B\)は\(p_1^{-1}(Q)\)
+(つまり\(k\circ j\)の像、つまり\(E\)) の外で全射であり、
+射の列
+\(\mathcal{O}_{P\times_SR}\to k_*\mathcal{O}_B \to k_*j_*\mathcal{O}_E\)
+の合成も全射である。
+さらに\(k_*\mathcal{O}_B \to k_*j_*\mathcal{O}_E\)は全射のAffine射によるpushであるから全射である。
+以上から、\(\mathcal{O}_{P\times_SR}\to k_*\mathcal{O}_B\)の\(E\)への制限は全射である。
+よって\(k\)は閉埋め込みとなる。
+</p>
+
+<p>
+構成から、\(\varphi\)の各fiberは
+次元\(\mathrm{rank}(\mathcal{F})\)の射影空間となる。
+\(B\)が\(R\)上の射影束としてどのような構造を持つかを決定する。
+</p>
+
+
+<article class="definition-env-article" id="thm-main">
+<h3 class="definition-env-h3">
+Theorem 0.5.
+</h3>
+<p>
+\(R\)上のトートロジカルな全射\(\mathcal{K}_R\to \mathcal{O}_{R/S}(1)\)により、射
+</p>
+<p class="display-math-p">
+\[
+\mathrm{Ext}^1_{\mathcal{O}_R}(\mathcal{F}_R,\mathcal{K}_R) \to
+\mathrm{Ext}^1_{\mathcal{O}_R}(\mathcal{F}_R,\mathcal{O}_{R/S}(1))
+\]
+</p><p>
+を得る。
+与えられたはじめの完全列のうつる先を
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+0 @>>> \mathcal{O}_{R/S}(1) @>>> \mathcal{G} @>>> \mathcal{F}_R @>>> 0
+\end{CD}
+\]
+</p><p>
+とする。
+このとき、\(B\)は\(R\)上の射影束\(\mathbb{P}_R(\mathcal{G})\)と同型である。
+</p>
+</article>
+
+
+<article class="proof-env-article">
+<h3 class="proof-env-h3">
+Proof.
+</h3>
+<p>
+まず\(\mathcal{G}\)の構成は\(\mathcal{G}\cong \mathcal{E}_R/(\ker (\mathcal{K}_R\to \mathcal{O}_{R/S}(1)))\)であり、
+</p>
+<p class="display-math-p">
+<div id="eq-exace-over-R" class="display-math-div">
+\begin{equation}
+\begin{CD}
+0 @>>> \mathcal{K}_R @>>> \mathcal{E}_R @>>> \mathcal{F}_R @>>> 0 \\
+@. @VVV @VVV @| @.\\
+0 @>>> \mathcal{O}_{R/S}(1) @>>> \mathcal{G} @>>> \mathcal{F}_R @>>> 0
+\end{CD}
+\tag{\(\ddagger\)}
+\end{equation}
+</div>
+
+</p>
+<p>
+という\(R\)上の完全列の間の射が得られることに注意しておく。
+全射\(\mathcal{G}\to \mathcal{F}_R\)により、閉埋め込み
+\(E\cong Q\times_SR\to \mathbb{P}_R(\mathcal{G})\)が得られ、
+全射\(\mathcal{E}_R\to \mathcal{G}\)により、閉埋め込み
+\(h:\mathbb{P}_R(\mathcal{G})\to P\times_SR\)が得られる。
+この二つの閉埋め込みの合成は、
+全射\(\mathcal{E}_R\to \mathcal{F}_R\)により得られる閉埋め込み、
+すなわち\(k\circ j:E\to P\times_SR\)に他ならない。
+</p>
+
+<p>
+\(k:B\to P\times_SR\)が
+閉埋め込み\(\mathbb{P}_R(\mathcal{G})\to P\times_SR\)を経由することを示す。
+完全列の射<a href="#eq-exace-over-R">(\(\ddagger \))</a>を\(\varphi\)で\(B\)上へ基底変換すると、
+完全列の射
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+0 @>>> \mathcal{K}_B @>>> \mathcal{E}_B @>>> \mathcal{F}_B @>>> 0 \\
+@. @VVV @VVV @| @. \\
+0 @>>> \varphi^*(\mathcal{O}_{R/S}(1)) @>>> \varphi^*\mathcal{G} @>>> \mathcal{F}_B @>>> 0
+\end{CD}
+\]
+</p><p>
+を得る。
+\(\varphi\)は全射
+\(\mathcal{K}_B\to \mathcal{O}_{B/P}(1)\otimes \sigma^*(\mathcal{O}_{P/S}(1))\)
+により引き起こされたものであるから、自然に
+</p>
+<p class="display-math-p">
+\[
+\varphi^*(\mathcal{O}_{R/S}(1))\cong \mathcal{O}_{B/P}(1)\otimes \sigma^*(\mathcal{O}_{P/S}(1))
+\]
+</p><p>
+となる。
+また、\(B\)上の完全列の射
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+0 @>>> \mathcal{K}_B @>>> \mathcal{E}_B @>>> \mathcal{F}_B @>>> 0 \\
+@. @VVV @VVV @VVV @.\\
+0 @>>> \mathcal{O}_{B/P}(1)\otimes \sigma^*(\mathcal{O}_{P/S}(1)) @>>>
+\sigma^*(\mathcal{O}_{P/S}(1)) @>>> j_*(\mathcal{O}_{E/Q}(1)) @>>> 0
+\end{CD}
+\]
+</p><p>
+から、
+\(\ker(\mathcal{E}_B\to \varphi^*\mathcal{G})\subset
+\ker(\mathcal{E}_B\to \sigma^*(\mathcal{O}_{P/S}(1)))\)
+がわかり、全射\(\varphi^*\mathcal{G}\to \sigma^*(\mathcal{O}_{P/S}(1))\)を得る。
+全射\(\varphi^*\mathcal{G}\to \sigma^*(\mathcal{O}_{P/S}(1))\)
+が引き起こす射を\(f:B\to \mathbb{P}_R(\mathcal{G})\)と置く。
+自然な同型
+</p>
+<p class="display-math-p">
+\[
+\sigma^*(\mathcal{O}_{P/S}(1)) = k^*p_1^*(\mathcal{O}_{P/S}(1))\cong k^*(\mathcal{O}_{P\times_SR/R}(1))
+\]
+</p><p>
+と全射\(\varphi^*\mathcal{G}\to \sigma^*(\mathcal{O}_{P/S}(1))\)の構成から、図式
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+\mathcal{E}_B @>>> k^*\mathcal{O}_{P\times_SR/R}(1) \\
+@VVV @VV\cong V \\
+\varphi^*\mathcal{G} @>>> \sigma^*\mathcal{O}_{P/S}(1)
+\end{CD}
+\]
+</p><p>
+は可換であり、従って\(h\circ f = k\)となる。
+特に\(f\)は閉埋め込みである。
+</p>
+
+<p>
+\(s:\overset{\mathrm{def}}{=} f\circ j:E \to \mathbb{P}_R(\mathcal{G})\)と置く。
+\(s\)は\(R\)上の層の全射\(\mathcal{G}_R\to \mathcal{F}_R\)により引き起こされた射である。
+\(k\circ j:E\to P\times_SR\)が\(i:Q\to P\)の基底変換であることに注意すれば、
+\((p_1\circ h)^*\mathcal{I}\to \mathcal{O}_{\mathbb{P}_R(\mathcal{G})}\)の像は
+\(s\)のイデアル層と一致することがわかる。
+一方、\(\mathcal{G}_R\to \mathcal{F}_R\)の核は直線束であるから、
+\(s\)のイデアル層は直線束である。
+\(B\)は\(Q\)のイデアル層\(\mathcal{I}\)による\(P\)の爆発であるから、
+射\(g:\mathbb{P}_R(\mathcal{G})\to B\)が存在して\(\sigma\circ g = p_1\circ h\)となる。
+また、
+</p>
+<p class="display-math-p">
+\[
+g^*f^*\mathcal{O}_{\mathbb{P}_R(\mathcal{G})/R}(1)\cong g^*\sigma^*\mathcal{O}_{B/P}(1)\cong
+h^*p_1^*\mathcal{O}_{B/P}(1)\cong h^*\mathcal{O}_{P\times_SR/R}(1)\cong \mathcal{O}_{\mathbb{P}_R(\mathcal{G})/R}(1)
+\]
+</p><p>
+であるから、\(f\circ g\)は同型射であり、
+特に\(f\)は全射となる。
+\(f\)は閉埋め込みだったので、\(f\)は同型射であることがわかり、
+以上で\(B\cong \mathbb{P}_R(\mathcal{G})\)がわかる。
+</p>
+</article>
+
+
+
+
+<article class="definition-env-article" id="cor-main">
+<h3 class="definition-env-h3">
+Corollary 0.6.
+</h3>
+<p>
+\(V\to W\)を有限次元\(k\)-線形空間の全射、
+\(K\)をその核とし、
+\(\mathbb{P}(V)\)の\(\mathbb{P}(W)\)に沿った爆発を\(B\)と置くと、
+\(B\cong \mathbb{P}_{\mathbb{P}(K)}(\mathcal{O}_{\mathbb{P}(K)}(1)\oplus W_{\mathbb{P}(K)})\)となる。
+</p>
+</article>
+
+<article class="proof-env-article">
+<h3 class="proof-env-h3">
+Proof.
+</h3>
+<p>
+\(\mathrm{Ext}^1_{\mathcal{O}_{\mathbb{P}(K)}}(W_{\mathbb{P}(K)}, \mathcal{O}_{\mathbb{P}(K)}(1))
+\cong H^1(\mathbb{P}(K), \mathcal{O}_{\mathbb{P}(K)}(1))\otimes_kW^{\vee} = 0\)であるから、
+完全列
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+0 @>>> \mathcal{O}_{\mathbb{P}(K)}(1) @>>> \mathcal{G} @>>> W_{\mathbb{P}(K)} @>>> 0
+\end{CD}
+\]
+</p><p>
+は分裂する。
+</p>
+</article>
+
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+Corollary 0.7.
+</h3>
+<p>
+\(\mathbb{P}^n\)の一点爆発は
+\(\mathbb{P}_{\mathbb{P}^{n-1}}(\mathcal{O}_{\mathbb{P}^{n-1}}\oplus \mathcal{O}_{\mathbb{P}^{n-1}}(1))\)
+と同型である。
+</p>
+</article>
+
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+Corollary 0.8.
+</h3>
+<p>
+\(V\)を次元\(r+1\)の\(k\)-線形空間、
+\(0<s<r\)を自然数、
+\(\mathbb{G}(V,s+1)\)を次元\(s\)の\(\mathbb{P}(V)\)の平面をパラメタライズするグラスマン多様体、
+</p>
+<p class="display-math-p">
+\[
+p:V_{\mathbb{G}(V,s+1)}\to \mathcal{U}
+\]
+</p><p>
+をランク\(s+1\)の局所自由層へのトートロジカルな全射、
+\(\mathcal{K} :\overset{\mathrm{def}}{=} \ker(p)\)を\(p\)の核 (これはランク\(r-s\)である)、
+\(\mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{U})\subset \mathbb{G}(V,s+1)\times \mathbb{P}(V)\)を
+\(\mathbb{G}(V,s+1)\)でパラメーター付けられた
+\(\mathbb{P}(V)\)の次元\(s\)の\(\mathbb{P}(V)\)の平面の普遍的な族
+(incidence variety) とする。
+\(\mathbb{G}(V,s+1)\times \mathbb{P}(V)\)を
+\(\mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{U})\)に沿って爆発した多様体を
+\(B\)と置くと、
+\(B\)は\(\mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{K})\)上の\(\mathbb{P}^{s+1}\)-束である。
+</p>
+</article>
+
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+Corollary 0.9.
+</h3>
+<p>
+\(V\)を\(k\)-線形空間、
+\(\Delta\subset \mathbb{P}(V)\times \mathbb{P}(V)\)を対角集合、
+\(B\)を\(\mathbb{P}(V)\times \mathbb{P}(V)\)の\(\Delta\)に沿った爆発とすると、
+\(B\)は\(\mathbb{P}_{\mathbb{P}(V)}(\Omega_{\mathbb{P}(V)})\)上の\(\mathbb{P}^1\)-束である。
+</p>
+</article>
+
+
+
+
+
+<section classs="bibliography-section">
+<h2 class="bibliography-h2">
+References
+</h2>
+<ul class="bibliography-ul">
+<li id="bib-item-Ha" class="bibliography-li">
+<h3 class="bibliography-h3">
+[Ha]
+</h3>
+<p class="bibliography-p">
+R.Hartshorne, <i>Algebraic Geometry</i> Springer-Verlag, New Tork, 1977. Graduate Text in Mathematics, No. 52.
+</p>
+</li>
+</ul>
+</section>

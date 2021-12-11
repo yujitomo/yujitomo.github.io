@@ -5,16 +5,16 @@ import pprint
 
 
 the_file_name = input()
-the_file_path = "./assets/Python/" + the_file_name + ".tex"
-the_aux_file_path = "./assets/Python/" + the_file_name + ".aux"
-the_html = "./assets/Python/" + the_file_name + ".html"
+the_file_path = "./assets/TeX Files/" + the_file_name + "/" + the_file_name + ".tex"
+the_aux_file_path = "./assets/TeX Files/" + the_file_name + "/" + the_file_name + ".aux"
+the_html = "./assets/TeX Files/" + the_file_name + "/" + the_file_name + ".html"
 the_file_data = open(the_file_path, 'r', encoding='UTF-8')
 the_aux_file_data = open(the_aux_file_path, 'r', encoding='UTF-8')
 
 tex_data = the_file_data.read()
 preamble = tex_data.split('\\begin{document}')[0]
 
-special_characters = ["\\", "_", "{", "}", "[", "]", "*", " ", "\n", "^", "(", ")"]
+special_characters = ["\\", "_", "{", "}", "[", "]", "*", " ", "\n", "^", "(", ")", "/"]
 
 ### 通常のコマンド
 default_command_names = ["item", "label", "ref", "autoref", "cite", "href"]
@@ -22,6 +22,19 @@ reference_command_list = ["\\ref", "\\autoref", "\\cite"] ### \\hrefはこれら
 default_math_modes = ["\\(", "\\)", "\\[", "\\]"]
 default_accent_functions = {"\\\'":"accute", "\\\"":"uml", "\\`":"grave", "\\~":"tilde", "\\r":"ring", "\\^":"circ", "\\textit":"i", "\\textbf":"b"}
 
+
+
+section_counter = 0 ### セクション数カウンター
+theorem_counter = 0 ### 定理数カウンター
+enumi_head = [] ### itemが箇条書き環境の先頭かどうか。enumerateやitemizeを読んだらTrueをappend、itemを読んだらすぐFalseにする
+environment_data = [] ### どれだけ入れ子になった環境の中にいるかのデータ
+if_enumi_bool = False ### enumerate環境内かどうか
+if_enumii_bool = False ### enumerate環境内の中のenumerate環境内かどうか
+if_display_math_mode = False ### displayの数式環境内かどうか
+if_inline_math_mode = False ### inlineの数式環境内かどうか
+if_math_mode = False ### 数式環境かどうか
+normal_previous_bool = False ### 直前の一文が通常の文かどうか
+normal_after_bool = False ### 直後の一文が通常の文かどうか
 
 
 
@@ -502,14 +515,20 @@ pprint.pprint(bib_datas_dict)
 
 ### HTML書き出し用str
 
-html_bib_data = "</section>\n\n<section classs=\"bibliography-section\">\n"
-html_bib_data += "<h2 class=\"bibliography-h2\">\nReferences\n</h2>\n<ul class=\"bibliography-ul\">\n"
-for bib_item in bib_datas_dict.items():
-    html_bib_data += "<li "
-    html_bib_data += "id=\"bib-item-" + bib_item[0] + "\" class=\"bibliography-li\">\n"
-    html_bib_data += "<h3 class=\"bibliography-h3\">\n[" + bib_item[1][0] + "]\n</h3>\n"
-    html_bib_data += "<p class=\"bibliography-p\">\n" + bib_item[1][1] + "\n</p>\n</li>\n"
-html_bib_data += "</ul>\n</section>"
+def func_bib_html():
+    if ( section_counter == 0 ):
+        html_bib_data = "\n<section classs=\"bibliography-section\">\n"
+    else:
+        html_bib_data = "</section>\n\n<section classs=\"bibliography-section\">\n"
+    html_bib_data += "<h2 class=\"bibliography-h2\">\nReferences\n</h2>\n<ul class=\"bibliography-ul\">\n"
+    for bib_item in bib_datas_dict.items():
+        html_bib_data += "<li "
+        html_bib_data += "id=\"bib-item-" + bib_item[0] + "\" class=\"bibliography-li\">\n"
+        html_bib_data += "<h3 class=\"bibliography-h3\">\n[" + bib_item[1][0] + "]\n</h3>\n"
+        html_bib_data += "<p class=\"bibliography-p\">\n" + bib_item[1][1] + "\n</p>\n</li>\n"
+    html_bib_data += "</ul>\n</section>"
+    return html_bib_data
+
 
 
 
@@ -627,8 +646,6 @@ def func_text_command_expand(var_str):
 
 
 
-print(func_text_command_expand("\\href{https://stacks.math.columbia.edu/}{\\textit{Stacks Pr\\\"{o}ject}}."))
-
 ### 数式環境を展開する関数
 
 def func_math_mode_expand(var_str):
@@ -659,7 +676,8 @@ def func_math_mode_expand(var_str):
 
 ### マクロを展開する関数はfunc_full_expand_Macros
 
-print(func_math_mode_expand(func_full_expand_Macros("\\(A\\to \\colim_{F\\in\\mcJ_M}F\\)を\\(\\varphi\\)の核を与える射とすると、")))
+
+
 
 
 ### hrefコマンドの展開
@@ -703,7 +721,8 @@ def func_href_expand(var_str):
     return return_str_0
 
 
-print(func_href_expand("\\href{https://stacks.math.columbia.edu/}{\\textit{Stacks Pr\\\"{o}ject}}."))
+
+
 
 
 ### citeの展開
@@ -745,8 +764,6 @@ def func_cite_expand(var_str):
                     return_str_0 += func_href_expand(this_text[:-1]) + "]"
     return return_str_0
 
-print(func_cite_expand("\\cite[\\href{https://stacks.math.columbia.edu/tag/058G}{Tag 058G}]{stacks-project}"))
-
 
 
 
@@ -766,7 +783,7 @@ def func_ref_expand(var_str):
                 return_str += var_str[i]
             else:
                 count_back_slash += 1
-                if ( command_list[count_back_slash - 1] != "\\ref" ) and ( command_list[count_back_slash - 1] != "\\autoref" ):
+                if ( command_list[count_back_slash - 1] != "\\ref" ) and ( command_list[count_back_slash - 1] != "\\autoref" ) and ( command_list[count_back_slash - 1] != "\\eqref" ):
                     return_str += var_str[i]
                 else:
                     j = 0
@@ -785,13 +802,13 @@ def func_ref_expand(var_str):
                         this_str = aux_newlabel_dict[label_str][3]
                         this_str_list = this_str.split(".")
                         return_str += my_new_theorems_data[this_str_list[0]][0] + " " + aux_newlabel_dict[label_str][0]
+                    elif ( command_list[count_back_slash - 1] == "\\eqref" ):
+                        this_str = aux_newlabel_dict[label_str][0]
+                        return_str += "(" + func_normal_text_expand(this_str) + ")"
                     ### returnに展開後のものを追加
                     return_str += "</a>"
                     num_v = i+j+1
     return return_str
-
-
-print(func_ref_expand("\\autoref{lem: Lazerd lem}と\\ref{enumi: eq flat cofinal}より\\(\\Rightarrow\\varphi:\\colim_{F\\in \\mcJ_M}F\\to M\\)\\)がただちに従う。"))
 
 ### これでref系コマンドを含む文の中のref系コマンドを展開できた
 
@@ -799,19 +816,6 @@ print(func_ref_expand("\\autoref{lem: Lazerd lem}と\\ref{enumi: eq flat cofinal
 
 
 
-
-
-section_counter = 0 ### セクション数カウンター
-theorem_counter = 0 ### 定理数カウンター
-enumi_head = [] ### itemが箇条書き環境の先頭かどうか。enumerateやitemizeを読んだらTrueをappend、itemを読んだらすぐFalseにする
-environment_data = [] ### どれだけ入れ子になった環境の中にいるかのデータ
-if_enumi_bool = False ### enumerate環境内かどうか
-if_enumii_bool = False ### enumerate環境内の中のenumerate環境内かどうか
-if_display_math_mode = False ### displayの数式環境内かどうか
-if_inline_math_mode = False ### inlineの数式環境内かどうか
-if_math_mode = False ### 数式環境かどうか
-normal_previous_bool = False ### 直前の一文が通常の文かどうか
-normal_after_bool = False ### 直後の一文が通常の文かどうか
 
 
 
@@ -823,24 +827,18 @@ normal_after_bool = False ### 直後の一文が通常の文かどうか
 
 
 def func_normal_text_expand(var_str):
-    global if_inline_math_mode
-    global if_display_math_mode
     global if_math_mode
     return_str_0 = func_href_expand(func_cite_expand(func_ref_expand(func_math_mode_expand(func_full_expand_Macros(func_text_command_expand(var_str))))))
     return_str_1 = ""
     for i in range(0,len(return_str_0)):
         if ( return_str_0[i] == "\\" ):
             if ( return_str_0[i:i+2] == "\\(" ):
-                if_inline_math_mode = True
                 if_math_mode = True
             elif ( return_str_0[i:i+2] == "\\)" ):
-                if_inline_math_mode = False
                 if_math_mode = False
             elif ( return_str_0[i:i+2] == "\\[" ):
-                if_display_math_mode = True
                 if_math_mode = True
             elif ( return_str_0[i:i+2] == "\\]" ):
-                if_display_math_mode = False
                 if_math_mode = False
         if ( return_str_0[i] not in ["{","}"] ):
             if ( return_str_0[i-1:i+2] == " \\ " ):
@@ -851,8 +849,6 @@ def func_normal_text_expand(var_str):
             if ( if_math_mode ):
                 return_str_1 += return_str_0[i]
     return return_str_1
-
-print(func_normal_text_expand("\\autoref{lem: Lazerd lem}と\\cite[\\href{https://stacks.math.columbia.edu/tag/058G}{Tag 058G}]{stacks-project}\\textit{より}\\(\\Rightarrow\\varphi:\\colim_{F\\in \\mcJ_M}F\\to M\\)\\)が従\\\"{u}"))
 
 
 
@@ -874,15 +870,12 @@ print(func_normal_text_expand("\\autoref{lem: Lazerd lem}と\\cite[\\href{https:
 ### 書き出し用HTMLファイル
 
 this_html_file = open(the_html, 'w', encoding='UTF-8')
-html_head = '''---
-layout: article-type
-title: "Equational Criterion of Flatness"
-category: Notes
-tag: "Commtative Algebra"
-author: Yujitomo
-description: "平坦性の Equational Criterion について"
----
-'''
+
+html_head_text = preamble.split("\\HTMLhead{")[1]
+html_head_lines = html_head_text.splitlines()[1:9]
+html_head = "\n".join(html_head_lines)
+print(html_head)
+
 
 this_html_file.write(html_head)
 
@@ -1042,13 +1035,26 @@ def func_if_begin_env(var_str):
         if ( option_name_str != "" ):
             return_html += " (" + func_normal_text_expand(option_name_str[:-1]) + ")"
         return_html += "\n</h3>\n"
-    else:
+    elif ( env_name in ["equation", "align"] ):
         if_math_mode = True
-        return_html += var_str
+        return_html += "<div"
+        label_name = ""
+        k = 0
+        if ( var_str[l] == "\\" ): ### labelがあったらその中身を所得、beginのあとの[]のあとのコマンドはラベルしか来ない
+            k = 7
+            while ( var_str[l+k] != "}" ):
+                label_name += var_str[l+k]
+                k += 1
+            id_list = re.split(": | ", label_name)
+            id_str = "-".join(id_list)
+            return_html += " id=\"" + id_str + "\""
+        return_html += " class=\"display-math-div\">\n\\begin{" + env_name + "}\n"
+    elif ( env_name in ["equation*", "align*"] ):
+        if_math_mode = True
+        return_html += "\\begin{" + env_name + "}\n"
+    else:
+        return_html += "\\begin{" + env_name + "}\n"
     return return_html
-
-
-print(func_if_begin_env("\\begin{cor}[{Lazardの\\(A\\otimes \\Hom_B\\)定理: cf. \\cite[\\href{https://stacks.math.columbia.edu/tag/058G}{Tag 058G}]{stacks-project}}]\\label{Lazard thm}"))
 
 
 
@@ -1075,8 +1081,10 @@ def func_if_end_env(var_str):
         return_html += "</article>\n"
     elif ( env_name in my_new_theorems_data ):
         return_html += "</article>\n"
-    else:
+    elif ( env_name in ["equation", "align", "equation*", "align*"] ):
         if_math_mode = False
+        return_html += "\\end{" + env_name + "}\n</div>\n"
+    else:
         return_html += "\\end{" + env_name + "}\n"
     return return_html
 
@@ -1222,7 +1230,7 @@ for i in range(1, len(this_document_lines)):
                     env_name += effective_str[j]
                     j += 1
                 if ( env_name in ["equation", "align", "equation*", "align*"] ):
-                    this_html_file.write("<p class=\"display-math\">\n")
+                    this_html_file.write("<p class=\"display-math-p\">\n")
                     this_html_file.write(func_if_begin_env(effective_str))
                     if_display_math_mode = True
                     if_math_mode = True
@@ -1254,14 +1262,12 @@ for i in range(1, len(this_document_lines)):
                 elif ( next_line_command[0] not in non_normal_str_commands ): ### もし次が普通ならつけ加えてnum_labを更新
                     effective_str = effective_str + this_document_lines[i+1].split("%")[0].strip()
                     num_lab = i+2
-                print(effective_str)
                 this_html_file.write(func_item_expand(effective_str))
                 next_str = this_document_lines[num_lab].split("%")[0]
                 next_str = next_str.strip() ### 先頭と末尾から空白を削除
                 next_str += "\n" ### 末尾には改行を入れとく
                 if ( func_normal_next_bool(next_str) == False ):
                     this_html_file.write("</p>\n")
-                print(enumi_head)
                 enumi_head[-1] = False ### 最初のitemではないのでこれをfalseにする
             elif ( command_list[0] == "\\section" ):
                 next_line_command = func_use_commands(this_document_lines[i+1].split("%")[0])
@@ -1276,16 +1282,35 @@ for i in range(1, len(this_document_lines)):
             elif ( command_list[0] == "\\maketitle" ): ### これは無視、今は。
                 this_html_file.write("\n")
             elif ( command_list[0] == "\\[" ):
-                this_html_file.write("\\[\n")
+                prev_str = this_document_lines[i-1].split("%")[0]
+                prev_str = prev_str.strip() ### 先頭と末尾から空白を削除
+                prev_str += "\n" ### 末尾には改行を入れとく
+                if ( func_use_commands(prev_str) != [] ) and ( func_use_commands(prev_str)[0] == "\\HereBeginTikz"):
+                    this_html_file.write("\\[\n")
+                else:
+                    this_html_file.write("<p class=\"display-math-p\">\n\\[\n")
                 if_display_math_mode = True
                 if_math_mode = True
             elif ( command_list[0] == "\\]" ):
-                this_html_file.write("\\]\n")
+                next_str = this_document_lines[i+1].split("%")[0]
+                next_str = next_str.strip() ### 先頭と末尾から空白を削除
+                next_str += "\n" ### 末尾には改行を入れとく
+                if ( func_use_commands(next_str) != [] ) and ( func_use_commands(next_str)[0] == "\\HereEndTikz"):
+                    this_html_file.write("\\]\n")
+                    print("\\HereEndTikz")
+                else:
+                    this_html_file.write("\\]\n</p>")
                 if_display_math_mode = False
                 if_math_mode = False
+            elif ( command_list[0] == "\\tag" ):
+                this_html_file.write(effective_str)
+            elif ( command_list[0] == "\\HereBeginTikz" ):
+                this_html_file.write("<script type=\"text/tikz\">")
+            elif ( command_list[0] == "\\HereEndTikz" ):
+                this_html_file.write("</script>")
             else: ### この行が\begin\end\section\itemでも\maketitleでもないなら、command_listが[]でないので、コマンドのある普通の文か数式
                 if ( if_math_mode ):
-                    this_html_file.write(func_full_expand_Macros(effective_str))
+                    this_html_file.write(func_normal_text_expand(effective_str))
                 else:
                     next_str = this_document_lines[i+1].split("%")[0]
                     next_str = next_str.strip() ### 先頭と末尾から空白を削除
@@ -1297,7 +1322,8 @@ for i in range(1, len(this_document_lines)):
                         this_html_file.write("<p>\n")
                     this_html_file.write(func_normal_text_expand(effective_str))
                     if ( func_normal_next_bool(next_str) == False ):
-                        this_html_file.write("</p>\n")
+                        if ( next_str != "\\end{tikzpicture}\n" ):
+                            this_html_file.write("</p>\n")
         else: ### この行のcommand_listが[]なら、文字しかない普通の文 (これは数式環境内かもしれない) か、改行しかないかのどちらか。
             if ( if_math_mode ):
                 this_html_file.write(effective_str)
@@ -1319,6 +1345,7 @@ for i in range(1, len(this_document_lines)):
 
 
 
+this_html_file.write(func_bib_html())
 
 
 
@@ -1335,6 +1362,5 @@ for i in range(1, len(this_document_lines)):
 
 
 
-this_html_file.write(html_bib_data)
 
 this_html_file.close()

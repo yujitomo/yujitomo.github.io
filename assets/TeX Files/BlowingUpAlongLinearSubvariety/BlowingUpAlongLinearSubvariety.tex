@@ -50,10 +50,13 @@
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 
+\newcommand{\myTheoremEnvironments}[1]{#1}
+
 \usepackage{amsthm}
 
 %%%%%%%%%%%%Plain型%%%%%%%%%%%%
 
+\myTheoremEnvironments{
 
 %%%%%%%%%%%%definition型%%%%%%%%%%%%
 
@@ -113,7 +116,7 @@
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
-
+}
 
 
 
@@ -173,15 +176,24 @@
 
 
 
+\newcommand{\myOriginalPackages}[1]{#1}
+
+\myOriginalPackages{
+
 \usepackage{mandorasymb}
 \usepackage{applekeys}
 \renewcommand{\qedsymbol}{\pencilkey}
 %\renewcommand{\qedsymbol}{\kinoposymbniko}
 
+}
 
 
 
 \usepackage{latexsym}
+
+\newcommand{\myMacros}[1]{#1}
+
+\myMacros{
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Isom}{Isom}
 \DeclareMathOperator{\ISOM}{\mathbf{Isom}}
@@ -245,25 +257,25 @@
 \newcommand{\mcY}{\mathcal{Y}}
 \newcommand{\mcZ}{\mathcal{Z}}
 
-\DeclareMathOperator{\OOO}{\mcO}
+\newcommand{\OOO}{\mcO}
 
-\newcommand{\OB}{{\OOO_B}}
-\newcommand{\OC}{{\OOO_C}}
-\newcommand{\OD}{{\OOO_D}}
-\renewcommand{\OE}{{\OOO_E}}
-\newcommand{\OF}{{\OOO_F}}
-\newcommand{\OH}{{\OOO_H}}
-\newcommand{\OP}{{\OOO_P}}
-\newcommand{\OQ}{{\OOO_Q}}
-\newcommand{\OR}{{\OOO_R}}
-\newcommand{\OS}{{\OOO_S}}
-\newcommand{\OT}{{\OOO_T}}
-\newcommand{\OU}{{\OOO_U}}
-\newcommand{\OV}{{\OOO_V}}
-\newcommand{\OW}{{\OOO_W}}
-\newcommand{\OX}{{\OOO_X}}
-\newcommand{\OY}{{\OOO_Y}}
-\newcommand{\OZ}{{\OOO_Z}}
+\newcommand{\OB}{\OOO_B}
+\newcommand{\OC}{\OOO_C}
+\newcommand{\OD}{\OOO_D}
+\renewcommand{\OE}{\OOO_E}
+\newcommand{\OF}{\OOO_F}
+\newcommand{\OH}{\OOO_H}
+\newcommand{\OP}{\OOO_P}
+\newcommand{\OQ}{\OOO_Q}
+\newcommand{\OR}{\OOO_R}
+\newcommand{\OS}{\OOO_S}
+\newcommand{\OT}{\OOO_T}
+\newcommand{\OU}{\OOO_U}
+\newcommand{\OV}{\OOO_V}
+\newcommand{\OW}{\OOO_W}
+\newcommand{\OX}{\OOO_X}
+\newcommand{\OY}{\OOO_Y}
+\newcommand{\OZ}{\OOO_Z}
 
 \newcommand{\OO}[1]{\OOO_{#1}}
 
@@ -273,13 +285,31 @@
 \newcommand{\dto}{\dashrightarrow}
 \renewcommand{\emptyset}{\varnothing}
 
-\def\dfn{:\overset{\mbox{{\scriptsize def}}}{=}}
+\newcommand{\dfn}{:\overset{\mathrm{def}}{=}}
+}
 
 
-
-\title{Blow-up along Linear Subvariety}
+\title{Blowing Up along Linear Subvariety}
 
 \author{ゆじ}
+
+
+
+\newcommand{\HereBeginTikz}{}
+\newcommand{\HereEndTikz}{}
+\newcommand{\HTMLhead}[1]{}
+
+\HTMLhead{
+---
+layout: article-type
+title: "Blowing Up along Linear Subvariety"
+category: Notes
+tag: "Commtative Algebra"
+author: Yujitomo
+description: "射影空間の線形部分多様体に沿った爆発について"
+---
+}
+
 
 \begin{document}
 
@@ -338,7 +368,9 @@
 を得る。
 ここで\(q=p\circ i\)であるから、
 自然に
-\[p_*i_*\OO{Q/S}(1) \cong q_*\OO{Q/S}(1) \cong \mcF\]
+\[
+p_*i_*\OO{Q/S}(1) \cong q_*\OO{Q/S}(1) \cong \mcF
+\]
 となる。
 
 \begin{lem}
@@ -382,7 +414,9 @@
   \]
   を得る。
   \(\OO{P/S}(1)\)は\(S\)上豊富な直線束なので、十分大きい\(n\)に対して自然な射
-  \[\mcK_P \otimes \Sym^{n-1}(\mcE_P) \to \mcI(n)\]
+  \[
+  \mcK_P \otimes \Sym^{n-1}(\mcE_P) \to \mcI(n)
+  \]
   は全射である。
   一方、この全射は、射\(\mcK_P \to \mcI(1)\)と全射
   \(\Sym^{n-1}(\mcE_P)\to \OO{P/S}(n-1)\)のテンソル積で得られる射と等しく、
@@ -454,10 +488,13 @@ P\dto R
   \]
   とおく。
   例外因子を\(E\)とおき、閉埋め込みに\(j:E\to B\)と名前をつける。
-  \[E\cong \P_Q(\mcI/\mcI^2)\cong \P_Q(\mcK_Q(-1)) \cong Q\times_SR\]
+  \[
+  E\cong \P_Q(\mcI/\mcI^2)\cong \P_Q(\mcK_Q(-1)) \cong Q\times_SR
+  \]
   となることがわかる
   (注：\(R\dfn \P_S(\mcK)\))。
   図式で書くと以下のようになる：
+  \HereBeginTikz
   \[
   \begin{tikzpicture}[auto]
     \node (B) at (0,1.5) {\(E \cong Q\times_SR\)};
@@ -470,6 +507,7 @@ P\dto R
     \draw[->] (A) to node{\scriptsize \(i\)} (A');
   \end{tikzpicture}
   \]
+  \HereEndTikz
   \(E\)のイデアル層 (=blow-upのトートロジカル束)
   を\(\mcI_E\)または\(\OO{B/P}(1)\)と書く。
 \end{setting*}
@@ -495,10 +533,8 @@ P\dto R
   \(E\)の外では全射である。
   よって\(E\)上で全射であることを示せば良い。
   \(E\)へと基底変換する。
-  \(
-  (\OO{B/P}(1) \otimes \sigma^*(\OO{P/S}(1)))|_E
-  \cong \OO{E/Q}(1) \otimes \sigma|_E^*(\OO{Q/S}(1))
-  \)
+  \((\OO{B/P}(1) \otimes \sigma^*(\OO{P/S}(1)))|_E
+  \cong \OO{E/Q}(1) \otimes \sigma|_E^*(\OO{Q/S}(1))\)
   であるから、
   \(\mcK_B\to \OO{B/P}(1)\otimes \sigma^*(\OO{P/S}(1))\)
   の\(E\)への制限は
@@ -508,8 +544,10 @@ P\dto R
   となる。
   \(\mcK_E\to \OO{E/Q}(1) \otimes \sigma|_E^*\OO{Q/S}(1)\)は
   \(\mcK_P\to \mcI(1)\)という全射から自然に得られる射であるから、
-  \[\mcK_E \to \sigma|_E^*(\mcI/\mcI^2(1)) \to
-  \OO{E/Q}(1) \otimes \sigma|_E^*(\OO{Q/S}(1))\]
+  \[
+  \mcK_E \to \sigma|_E^*(\mcI/\mcI^2(1)) \to
+  \OO{E/Q}(1) \otimes \sigma|_E^*(\OO{Q/S}(1))
+  \]
   と分解する。
   ここで\(\mcK_E \to \sigma|_E^*(\mcI/\mcI^2(1))\)は同型射の引き戻しなので同型であり、
   \(\sigma|_E^*(\mcI/\mcI^2(1)) \to
@@ -527,6 +565,7 @@ P\dto R
 は射\(\varphi:B\to R\)を引き起こす。
 \(\sigma, \varphi\)により出る射\(B\to P\times_S R\)と合わせて、
 以下の図式ができる (以下のように射に名前をつけておく)：
+\HereBeginTikz
 \[
 \begin{tikzpicture}[auto]
   \node (B) at (0,1.5) {\(E \cong Q\times_SR\)};
@@ -545,6 +584,7 @@ P\dto R
   \draw[->,dashed] (A') to (A'');
 \end{tikzpicture}
 \]
+\HereEndTikz
 右下の (有理写像\(P\dto R\)によってできる) 三角形以外は可換である。
 \(k\)は\(B\)上の全射
 \(\mcK_B\to \OO{B/P}(1)\otimes \sigma^*(\OO{P/S}(1))\)
@@ -621,7 +661,9 @@ P\dto R
   \(\varphi\)は全射
   \(\mcK_B\to \OO{B/P}(1)\otimes \sigma^*(\OO{P/S}(1))\)
   により引き起こされたものであるから、自然に
-  \[\varphi^*(\OO{R/S}(1))\cong \OO{B/P}(1)\otimes \sigma^*(\OO{P/S}(1))\]
+  \[
+  \varphi^*(\OO{R/S}(1))\cong \OO{B/P}(1)\otimes \sigma^*(\OO{P/S}(1))
+  \]
   となる。
   また、\(B\)上の完全列の射
   \[
@@ -639,8 +681,9 @@ P\dto R
   全射\(\varphi^*\mcG\to \sigma^*(\OO{P/S}(1))\)
   が引き起こす射を\(f:B\to \P_R(\mcG)\)と置く。
   自然な同型
-  \[\sigma^*(\OO{P/S}(1)) = k^*p_1^*(\OO{P/S}(1))
-  \cong k^*(\OO{P\times_SR/R}(1))\]
+  \[
+  \sigma^*(\OO{P/S}(1)) = k^*p_1^*(\OO{P/S}(1))\cong k^*(\OO{P\times_SR/R}(1))
+  \]
   と全射\(\varphi^*\mcG\to \sigma^*(\OO{P/S}(1))\)の構成から、図式
   \[
   \begin{CD}

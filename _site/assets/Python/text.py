@@ -346,10 +346,19 @@ pprint.pprint(myMacro_name_dict_expanded)
 my_new_theorems_data = {}
 
 my_theorem_styles_line = myTheoremEnvironments_text.split('\\theoremstyle{')
+if ( "\\renewcommand{\\sectionautorefname}" not in my_theorem_styles_line[0]):
+    my_new_theorems_data["section"] = ["Section", ""]
+else:
+    sect_text = my_theorem_styles_line[0].split("\\renewcommand{\\sectionautorefname}{")[1]
+    this_sect = ""
+    i = 0
+    while ( sect_text[i] != "}" ):
+        this_sect += sect_text[i]
+        i += 1
+    my_new_theorems_data["section"] = [this_sect, ""]
 for i in range(1, len(my_theorem_styles_line)):
     newtheorem_list = []
     this_theorem_style = my_theorem_styles_line[i].split('}')[0]
-    print(this_theorem_style)
     for line in my_theorem_styles_line[i].splitlines():
         test_len = line.split('newtheorem')
         if len(test_len) > 1:
@@ -494,10 +503,12 @@ pprint.pprint(bib_datas_dict)
 ### HTML書き出し用str
 
 html_bib_data = "</section>\n\n<section classs=\"bibliography-section\">\n"
-html_bib_data += "<h2 class=\"bibliography-h2\">\n\tReferences\n</h2>\n<ul class=\"bibliography-ul\">\n"
+html_bib_data += "<h2 class=\"bibliography-h2\">\nReferences\n</h2>\n<ul class=\"bibliography-ul\">\n"
 for bib_item in bib_datas_dict.items():
-    html_bib_data += "\t<li class=\"bibliography-li\">\n\t\t<h3 class=\"bibliography-h3\">[" + bib_item[1][0] + "]</h3>\n"
-    html_bib_data += "\t\t<p class=\"bibliography-p\">\n\t\t\t" + bib_item[1][1] + "\n\t\t</p>\n\t</li>\n"
+    html_bib_data += "<li "
+    html_bib_data += "id=\"bib-item-" + bib_item[0] + "\" class=\"bibliography-li\">\n"
+    html_bib_data += "<h3 class=\"bibliography-h3\">\n[" + bib_item[1][0] + "]\n</h3>\n"
+    html_bib_data += "<p class=\"bibliography-p\">\n" + bib_item[1][1] + "\n</p>\n</li>\n"
 html_bib_data += "</ul>\n</section>"
 
 
@@ -729,7 +740,8 @@ def func_cite_expand(var_str):
                                 right_bracket_num += 1
                                 num_v = i+j+1
                         j += 1
-                    return_str_0 += "[" + bib_datas_dict[this_bib_label[1:-1]][0] + ", "
+                    return_str_0 += "[<a href=\"#bib-item-" + this_bib_label[1:-1] + "\">"
+                    return_str_0 += bib_datas_dict[this_bib_label[1:-1]][0] + "</a>, "
                     return_str_0 += func_href_expand(this_text[:-1]) + "]"
     return return_str_0
 
@@ -893,7 +905,7 @@ this_document_lines = this_documents.splitlines()
 ### var_strはtexファイルの1行、次がラベルならそれも含む
 
 def func_section_name(var_str):
-    return_html = "<section>\n"
+    return_html = ""
     return_str = ""
     l = len("\\section")
     if ( var_str[l] == "[" ):
@@ -916,7 +928,7 @@ def func_section_name(var_str):
             mid_bracket_num -= 1
         k += 1
     l += k
-    return_html += "<h2 class=\"section-name-h2\""
+    return_html += "<section"
     if ( len(var_str) >= l+1 ) and ( var_str[l+1:l+7] == "\\label" ):
         m = 8
         label_name = ""
@@ -926,7 +938,8 @@ def func_section_name(var_str):
         id_list = re.split(": | ", label_name)
         id_str = "-".join(id_list)
         return_html += " id=\"" + id_str + "\""
-    return_html += ">\nSection " + str(section_counter) + ". "
+    return_html += ">\n<h2 class=\"section-name-h2\">\n"
+    return_html += "Section " + str(section_counter) + ". "
     return_html += func_normal_text_expand(return_str) + "\n</h2>\n"
     return return_html
 
@@ -1280,7 +1293,6 @@ for i in range(1, len(this_document_lines)):
                     prev_str = this_document_lines[i-1].split("%")[0]
                     prev_str = prev_str.strip() ### 先頭と末尾から空白を削除
                     prev_str += "\n" ### 末尾には改行を入れとく
-                    print(prev_str)
                     if ( func_normal_prev_bool(prev_str) == False ) or ( prev_str[:6] == "\\label" ):
                         this_html_file.write("<p>\n")
                     this_html_file.write(func_normal_text_expand(effective_str))

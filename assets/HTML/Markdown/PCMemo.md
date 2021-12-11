@@ -33,6 +33,7 @@
 - pタグ内で改行するときはbrタグで、ソースを載せるときはcodeタグ。
 - spanタグなどのinline系のタグの中で改行を打つと、それをJavaScriptなどでいじったときに変な挙動をすることがあるので注意。
 - [KaTeX: Supported Functions](https://katex.org/docs/supported.html)
+- 見出しタグ (h1,h2,...) にidを付与して、aタグのhrefでそこに飛ぼうとしてもうまくいかない場合がある (なぜ？)
 
 
 ### CSS

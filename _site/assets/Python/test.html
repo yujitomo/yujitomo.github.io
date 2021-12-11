@@ -203,8 +203,8 @@ filtered categoryのcofinalな部分圏はまたfilteredとなることが
 
 
 </section>
-<section>
-<h2 class="section-name-h2" id="fp-modules-section">
+<section id="fp-modules-section">
+<h2 class="section-name-h2">
 Section 2. 有限表示加群
 </h2>
 
@@ -518,7 +518,7 @@ A^{\oplus I}\to A^{\oplus J}\to M \to 0
 
 <article class="definition-env-article" id="lem-tensor-rem">
 <h3 class="definition-env-h3">
-Lemma 3.3. (cf. [後藤渡辺, 1.106])
+Lemma 3.3. (cf. [<a href="#bib-item-GW">後藤渡辺</a>, 1.106])
 </h3>
 <p>
 \(A\)を環、\(P\)を\(A\)-加群、
@@ -617,7 +617,7 @@ Definition 4.0.
 
 <article class="definition-env-article" id="lem-eq-cri-of-flat">
 <h3 class="definition-env-h3">
-Lemma 4.1. (Equational Criterion of Flatness; cf. [松村, 定理7.6])
+Lemma 4.1. (Equational Criterion of Flatness; cf. [<a href="#bib-item-Mat">松村</a>, 定理7.6])
 </h3>
 <p>
 \(A\)を環、\(M\)を平坦\(A\)-加群とする。
@@ -832,10 +832,13 @@ Proof.
 </article>
 
 
+<p>
+<a href="#fp-modules-section">Section 2</a>にもどる
+</p>
 
 <article class="definition-env-article">
 <h3 class="definition-env-h3">
-Corollary 4.5. (Lazardの定理: cf. [Stacks, <a href="https://stacks.math.columbia.edu/tag/058G">Tag 058G</a>])
+Corollary 4.5. (Lazardの定理: cf. [<a href="#bib-item-stacks-project">Stacks</a>, <a href="https://stacks.math.columbia.edu/tag/058G">Tag 058G</a>])
 </h3>
 <p>
 \(A\)を環、\(M\)を\(A\)-加群とする。
@@ -900,7 +903,7 @@ Remark 4.7.
 </h3>
 <p>
 有限生成平坦加群は一般に射影的とはならない
-(cf. [Stacks, <a href="https://stacks.math.columbia.edu/tag/00NY">Tag 00NY</a>])。
+(cf. [<a href="#bib-item-stacks-project">Stacks</a>, <a href="https://stacks.math.columbia.edu/tag/00NY">Tag 00NY</a>])。
 </p>
 </article>
 
@@ -1138,7 +1141,7 @@ Proof.
 従って
 <a href="#lem-tor-free-tor">(i)</a> \(\Leftrightarrow\) <a href="#lem-tor-free-tor1">(iii)</a>
 より\(M\)は平坦となる
-(cf. [アティマク, 演習2.26])。
+(cf. [<a href="#bib-item-AM">アティマク</a>, 演習2.26])。
 </p>
 </article>
 
@@ -1163,13 +1166,13 @@ Proof.
 \(A\)を局所Pr&uuml;fer整域として、\(A\)が付値環であることを示せば良い。
 \(I\)を\(A\)の有限生成イデアルとする。
 \(A\)が付値環であることを示すには、\(I\)が一元生成であることを示せば良い
-(cf. [Stacks, <a href="https://stacks.math.columbia.edu/tag/090Q">Tag 090Q</a>])。
+(cf. [<a href="#bib-item-stacks-project">Stacks</a>, <a href="https://stacks.math.columbia.edu/tag/090Q">Tag 090Q</a>])。
 \(I\)はねじれなし\(A\)-加群\(A\)の部分加群なのでねじれなしである。
 従って平坦である。
 一方、\(A\)は局所環であり、\(I\)は有限生成平坦加群であるので、
 <a href="#cor-fg-flat-over-local-is-free">Corollary 4.9</a>より\(I\)は有限自由加群である。
 単射\(I\subset A\)の存在は、\(I\)が一元生成であることを示している
-(cf. [アティマク, 演習2.11])。
+(cf. [<a href="#bib-item-AM">アティマク</a>, 演習2.11])。
 </p>
 </article>
 
@@ -1180,33 +1183,41 @@ Proof.
 
 <section classs="bibliography-section">
 <h2 class="bibliography-h2">
-	References
+References
 </h2>
 <ul class="bibliography-ul">
-	<li class="bibliography-li">
-		<h3 class="bibliography-h3">[アティマク]</h3>
-		<p class="bibliography-p">
-			M. Atiyah, I. Macdonald, (新妻 弘 訳), 「可換代数入門」, 共立出版, (2006). 
-		</p>
-	</li>
-	<li class="bibliography-li">
-		<h3 class="bibliography-h3">[後藤渡辺]</h3>
-		<p class="bibliography-p">
-			後藤 四郎, 渡辺 敬一, 「可換環論」, 日本評論社, (2011). 
-		</p>
-	</li>
-	<li class="bibliography-li">
-		<h3 class="bibliography-h3">[松村]</h3>
-		<p class="bibliography-p">
-			松村 英之, 「可換環論」, 共立出版, (1980). 
-		</p>
-	</li>
-	<li class="bibliography-li">
-		<h3 class="bibliography-h3">[Stacks]</h3>
-		<p class="bibliography-p">
-			The Stacks Project Authors, <a href="https://stacks.math.columbia.edu/"><i>Stacks Project</i></a>
-		</p>
-	</li>
+<li id="bib-item-AM" class="bibliography-li">
+<h3 class="bibliography-h3">
+[アティマク]
+</h3>
+<p class="bibliography-p">
+M. Atiyah, I. Macdonald, (新妻 弘 訳), 「可換代数入門」, 共立出版, (2006). 
+</p>
+</li>
+<li id="bib-item-GW" class="bibliography-li">
+<h3 class="bibliography-h3">
+[後藤渡辺]
+</h3>
+<p class="bibliography-p">
+後藤 四郎, 渡辺 敬一, 「可換環論」, 日本評論社, (2011). 
+</p>
+</li>
+<li id="bib-item-Mat" class="bibliography-li">
+<h3 class="bibliography-h3">
+[松村]
+</h3>
+<p class="bibliography-p">
+松村 英之, 「可換環論」, 共立出版, (1980). 
+</p>
+</li>
+<li id="bib-item-stacks-project" class="bibliography-li">
+<h3 class="bibliography-h3">
+[Stacks]
+</h3>
+<p class="bibliography-p">
+The Stacks Project Authors, <a href="https://stacks.math.columbia.edu/"><i>Stacks Project</i></a>
+</p>
+</li>
 </ul>
 </section>
 

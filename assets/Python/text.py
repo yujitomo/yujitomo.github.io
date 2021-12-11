@@ -35,7 +35,7 @@ if_inline_math_mode = False ### inlineの数式環境内かどうか
 if_math_mode = False ### 数式環境かどうか
 normal_previous_bool = False ### 直前の一文が通常の文かどうか
 normal_after_bool = False ### 直後の一文が通常の文かどうか
-
+if_tikz_mode= False
 
 
 documentclass_text = ""
@@ -851,6 +851,8 @@ def func_normal_text_expand(var_str):
     return return_str_1
 
 
+def func_normal_text_expand_with_bracket(var_str):
+    return func_href_expand(func_cite_expand(func_ref_expand(func_math_mode_expand(func_full_expand_Macros(func_text_command_expand(var_str))))))
 
 
 
@@ -1282,35 +1284,41 @@ for i in range(1, len(this_document_lines)):
             elif ( command_list[0] == "\\maketitle" ): ### これは無視、今は。
                 this_html_file.write("\n")
             elif ( command_list[0] == "\\[" ):
+                if_display_math_mode = True
+                if_math_mode = True
                 prev_str = this_document_lines[i-1].split("%")[0]
                 prev_str = prev_str.strip() ### 先頭と末尾から空白を削除
                 prev_str += "\n" ### 末尾には改行を入れとく
-                if ( func_use_commands(prev_str) != [] ) and ( func_use_commands(prev_str)[0] == "\\HereBeginTikz"):
-                    this_html_file.write("\\[\n")
+                if ( func_use_commands(prev_str) != [] ) and ( if_tikz_mode == True ):
+                    print("HereBeginTikz")
+                    #this_html_file.write("\\[\n")
                 else:
                     this_html_file.write("<p class=\"display-math-p\">\n\\[\n")
-                if_display_math_mode = True
-                if_math_mode = True
             elif ( command_list[0] == "\\]" ):
+                if_display_math_mode = False
+                if_math_mode = False
                 next_str = this_document_lines[i+1].split("%")[0]
                 next_str = next_str.strip() ### 先頭と末尾から空白を削除
                 next_str += "\n" ### 末尾には改行を入れとく
-                if ( func_use_commands(next_str) != [] ) and ( func_use_commands(next_str)[0] == "\\HereEndTikz"):
-                    this_html_file.write("\\]\n")
+                if ( func_use_commands(next_str) != [] ) and ( if_tikz_mode == True ):
+                    #this_html_file.write("\\]\n")
                     print("\\HereEndTikz")
                 else:
                     this_html_file.write("\\]\n</p>")
-                if_display_math_mode = False
-                if_math_mode = False
             elif ( command_list[0] == "\\tag" ):
                 this_html_file.write(effective_str)
             elif ( command_list[0] == "\\HereBeginTikz" ):
-                this_html_file.write("<script type=\"text/tikz\">")
+                this_html_file.write("<script type=\"text/tikz\">\n")
+                if_tikz_mode = True
             elif ( command_list[0] == "\\HereEndTikz" ):
-                this_html_file.write("</script>")
+                this_html_file.write("</script>\n")
+                if_tikz_mode = False
             else: ### この行が\begin\end\section\itemでも\maketitleでもないなら、command_listが[]でないので、コマンドのある普通の文か数式
                 if ( if_math_mode ):
-                    this_html_file.write(func_normal_text_expand(effective_str))
+                    if ( if_tikz_mode ):
+                        this_html_file.write(func_normal_text_expand_with_bracket(effective_str))
+                    else:
+                        this_html_file.write(func_normal_text_expand(effective_str))
                 else:
                     next_str = this_document_lines[i+1].split("%")[0]
                     next_str = next_str.strip() ### 先頭と末尾から空白を削除
@@ -1326,7 +1334,10 @@ for i in range(1, len(this_document_lines)):
                             this_html_file.write("</p>\n")
         else: ### この行のcommand_listが[]なら、文字しかない普通の文 (これは数式環境内かもしれない) か、改行しかないかのどちらか。
             if ( if_math_mode ):
-                this_html_file.write(effective_str)
+                if ( if_tikz_mode ):
+                    this_html_file.write(func_normal_text_expand_with_bracket(effective_str))
+                else:
+                    this_html_file.write(effective_str)
             else:
                 if ( effective_str != "\n" ):
                     next_str = this_document_lines[i+1].split("%")[0]

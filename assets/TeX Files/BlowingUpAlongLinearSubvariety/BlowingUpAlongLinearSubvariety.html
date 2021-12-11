@@ -296,19 +296,19 @@ E\cong \mathbb{P}_Q(\mathcal{I}/\mathcal{I}^2)\cong \mathbb{P}_Q(\mathcal{K}_Q(-
 となることがわかる
 (注：\(R:\overset{\mathrm{def}}{=} \mathbb{P}_S(\mathcal{K})\))。
 図式で書くと以下のようになる：
-<script type="text/tikz">\[
+<script type="text/tikz">
 \begin{tikzpicture}
-\node (B) at (0,1.5) {\(E \cong Q\times_SR\);
-\node (A) at (0,0) \(Q\);
-\node (B') at (4,1.5) \(B = \mathrm{Bl}_QP\);
-\node (A') at (4,0) \(P. \);
-\draw[->] (B) to node\scriptsize \(\sigma|_E\) (A);
-\draw[->] (B) to node\scriptsize \(j\) (B');
-\draw[->] (B') to node\scriptsize \(\sigma\) (A');
-\draw[->] (A) to node\scriptsize \(i\) (A');
+\node (B) at (0,1.5) {\(E \cong Q\times_SR\)};
+\node (A) at (0,0) {\(Q\)};
+\node (B') at (4,1.5) {\(B = \mathrm{Bl}_QP\)};
+\node (A') at (4,0) {\(P. \)};
+\draw[->] (B) to node{\scriptsize \(\sigma|_E\)} (A);
+\draw[->] (B) to node{\scriptsize \(j\)} (B');
+\draw[->] (B') to node{\scriptsize \(\sigma\)} (A');
+\draw[->] (A) to node{\scriptsize \(i\)} (A');
 \end{tikzpicture}
-\]
-</script>\(E\)のイデアル層 (=blow-upのトートロジカル束)
+</script>
+\(E\)のイデアル層 (=blow-upのトートロジカル束)
 を\(\mathcal{I}_E\)または\(\mathcal{O}_{B/P}(1)\)と書く。
 </p>
 </article>
@@ -388,25 +388,25 @@ Proof.
 は射\(\varphi:B\to R\)を引き起こす。
 \(\sigma, \varphi\)により出る射\(B\to P\times_S R\)と合わせて、
 以下の図式ができる (以下のように射に名前をつけておく)：
-<script type="text/tikz">\[
+<script type="text/tikz">
 \begin{tikzpicture}
-\node (B) at (0,1.5) {\(E \cong Q\times_SR\);
-\node (A) at (0,0) \(Q\);
-\node (B') at (5,1.5) \(B = \mathrm{Bl}_QP\);
-\node (A') at (5,0) \(P\);
-\node (B'') at (9,1.5) \(P\times_SR\);
-\node (A'') at (10,0) \(R\);
-\draw[->] (B) to node\scriptsize \(\sigma|_E\) (A);
-\draw[->] (B) to node\scriptsize \(j\) (B');
-\draw[->] (B') to node\scriptsize \(\sigma\) (A');
-\draw[->] (A) to node\scriptsize \(i\) (A');
-\draw[->] (B') to node\scriptsize \(k\) (B'');
-\draw[->] (B'') to node\scriptsize \(p_1\) (A');
-\draw[->] (B'') to node\scriptsize \(p_2\) (A'');
+\node (B) at (0,1.5) {\(E \cong Q\times_SR\)};
+\node (A) at (0,0) {\(Q\)};
+\node (B') at (5,1.5) {\(B = \mathrm{Bl}_QP\)};
+\node (A') at (5,0) {\(P\)};
+\node (B'') at (9,1.5) {\(P\times_SR\)};
+\node (A'') at (10,0) {\(R\)};
+\draw[->] (B) to node{\scriptsize \(\sigma|_E\)} (A);
+\draw[->] (B) to node{\scriptsize \(j\)} (B');
+\draw[->] (B') to node{\scriptsize \(\sigma\)} (A');
+\draw[->] (A) to node{\scriptsize \(i\)} (A');
+\draw[->] (B') to node{\scriptsize \(k\)} (B'');
+\draw[->] (B'') to node{\scriptsize \(p_1\)} (A');
+\draw[->] (B'') to node{\scriptsize \(p_2\)} (A'');
 \draw[->,dashed] (A') to (A'');
 \end{tikzpicture}
-\]
-</script>右下の (有理写像\(P\dashrightarrow R\)によってできる) 三角形以外は可換である。
+</script>
+右下の (有理写像\(P\dashrightarrow R\)によってできる) 三角形以外は可換である。
 \(k\)は\(B\)上の全射
 \(\mathcal{K}_B\to \mathcal{O}_{B/P}(1)\otimes \sigma^*(\mathcal{O}_{P/S}(1))\)
 により得られるが、

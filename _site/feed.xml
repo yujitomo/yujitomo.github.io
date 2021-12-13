@@ -1,4 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-13T01:21:51+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">12月12日</title><link href="/diary/2021/12/12/Nikki.html" rel="alternate" type="text/html" title="12月12日" /><published>2021-12-12T00:00:00+09:00</published><updated>2021-12-12T00:00:00+09:00</updated><id>/diary/2021/12/12/Nikki</id><content type="html" xml:base="/diary/2021/12/12/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-14T02:59:16+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">12月13日</title><link href="/diary/2021/12/13/Nikki.html" rel="alternate" type="text/html" title="12月13日" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>/diary/2021/12/13/Nikki</id><content type="html" xml:base="/diary/2021/12/13/Nikki.html">&lt;h3 id=&quot;今日は夜ふかしをしていてまずいです&quot;&gt;今日は夜ふかしをしていてまずいです&lt;/h3&gt;
+
+&lt;p&gt;今日は10時ごろに起きて起きるのが遅すぎてダメでした。
+唐突に数学がしたくなり、局所類体論の復習をやっていたのですが、
+分岐filtrationのことが全然わかっていないことがわかって1日が溶けました
+溶けて2時半になってしまいました。
+明日こそスーツを買いに行きます。本当に買わないとまずい。
+Tateの論文の至る所に書いてある「これは局所類体論からの帰結だ」
+というのがどう帰結することなのか全然わからないので困っています。
+Local fieldsは付値が制限とcompatibleじゃない気がするので、
+そのまま見比べているとミスります。
+値群を全部\(\mathbb{Z}\)にしている気がするので、
+付値を分岐指数で割って調節しないといけない気がします。
+(Tateの論文の方では閉体の完備化まで延長した付値を一つ固定して考えている感じ)。
+その辺のずれを補正しているとなんとなく手に馴染んで来るかなと思ってますが、どうでしょう…&lt;/p&gt;
+
+&lt;p&gt;ねむいので寝ます。おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日は夜ふかしをしていてまずいです</summary></entry><entry><title type="html">12月12日</title><link href="/diary/2021/12/12/Nikki.html" rel="alternate" type="text/html" title="12月12日" /><published>2021-12-12T00:00:00+09:00</published><updated>2021-12-12T00:00:00+09:00</updated><id>/diary/2021/12/12/Nikki</id><content type="html" xml:base="/diary/2021/12/12/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
 
 &lt;p&gt;今日は8時ごろに起きてシャワーを浴び、すぐに実家へ帰りました。
 日本沈没が溜まっていたので3話みました。
@@ -449,37 +465,4 @@ Hodge指数定理の証明を、線形代数で習う「シルベスターの慣
 明日の起床時間を遅らせることで調節します。
 しかし、代数幾何学について私も非常に勉強になる談笑であったので、
 後悔はしていません。
-おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry><entry><title type="html">12月03日</title><link href="/diary/2021/12/03/Nikki.html" rel="alternate" type="text/html" title="12月03日" /><published>2021-12-03T00:00:00+09:00</published><updated>2021-12-03T00:00:00+09:00</updated><id>/diary/2021/12/03/Nikki</id><content type="html" xml:base="/diary/2021/12/03/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
-
-&lt;p&gt;今日は7時半ごろに起きました。
-昨日解答した&lt;a href=&quot;https://math.stackexchange.com/questions/4321685/recognizing-a-fiber-product-of-schemes/4321992#4321992&quot;&gt;Math Stack Exchangeの質問&lt;/a&gt;にいろいろとコメントがついていたので、
-朝はそれに答えたりしていました。
-昼はホームページをいじっていました。
-15時くらいに家を出て、21時くらいまで院生室でパソコンをいじり、
-帰ってだらだらしてご飯を食べて今これを書いています。
-だいたい23時半です。
-時間があったらMath Stack Exchangeのコメントに返事を書こうと思っていたのですが、
-今日はもう遅いので明日にします。
-(昨日の日記にも書いた通り) ただの計算問題だと思っていたのですが、
-コメントの返事を考えているうちに、
-ちょっと面白い計算結果かもなあと思ってきました。&lt;/p&gt;
-
-&lt;h3 id=&quot;ホームページについて&quot;&gt;ホームページについて&lt;/h3&gt;
-
-&lt;p&gt;以前までトップのページに「warning 工事中」と書いていたのですが、
-もうそろそろ「工事中」の看板は降ろしてもいいだろうと思ったので、それを消しました。
-もう「一日中ホームページをいじる」みたいな日々は終わりです。嬉しい。
-リンクをマウスでhoverしたときに背景色を変えるようにしたのですが、どうでしょうか。
-見た目を損なわない範囲で見やすくなっていたらいいなと思います。
-トップページの画像をどうしようかという問題があるのですが、これはまあもういいかなって思ってきてます。
-画像があった方がかっこいいような気もしますが、
-背景を設定するなら、一からちゃんと画像を作り直そうかなとも思います。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://analytics.google.com/analytics/web/&quot;&gt;Google Analytics&lt;/a&gt;
-を導入したので、閲覧者の市区町村がわかるようになりました。
-すごい。閲覧者の市区町村がわかるなんて、
-Google Analytics を見る側に立った今日まで知らなかったので、
-かなり驚きました。
-&lt;a href=&quot;https://webtan.impress.co.jp/e/2013/02/07/14614/page/2&quot;&gt;この記事&lt;/a&gt;
-によると、市区町村以上の位置情報はわからないそうなので、ご安心ください。
-IPアドレスから割り出しているそうです。すごいですね。よくわかりませんが。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry></feed>
+おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry></feed>

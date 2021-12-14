@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-14T23:26:08+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">p-adic Weierstrass Preparation Theorem</title><link href="/notes/2021/12/14/WeierstrassPreparation.html" rel="alternate" type="text/html" title="p-adic Weierstrass Preparation Theorem" /><published>2021-12-14T00:00:00+09:00</published><updated>2021-12-14T00:00:00+09:00</updated><id>/notes/2021/12/14/WeierstrassPreparation</id><content type="html" xml:base="/notes/2021/12/14/WeierstrassPreparation.html">&lt;h2 id=&quot;theorem&quot;&gt;Theorem&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-14T23:33:21+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">p-adic Weierstrass Preparation Theorem</title><link href="/notes/2021/12/14/WeierstrassPreparation.html" rel="alternate" type="text/html" title="p-adic Weierstrass Preparation Theorem" /><published>2021-12-14T00:00:00+09:00</published><updated>2021-12-14T00:00:00+09:00</updated><id>/notes/2021/12/14/WeierstrassPreparation</id><content type="html" xml:base="/notes/2021/12/14/WeierstrassPreparation.html">&lt;h2 id=&quot;theorem&quot;&gt;Theorem&lt;/h2&gt;
 
 &lt;p&gt;このノートでは、p進Weierstrassの準備定理を証明します。
 &lt;a href=&quot;https://adventar.org/calendars/6146&quot;&gt;Math Advent Calendar 2021&lt;/a&gt;
@@ -13,7 +13,15 @@
   &lt;p&gt;\(A\)を完備離散付値環、\(\pi\)を素元、\(f\in A\llbracket t\rrbracket\)を\(0\)でないべき級数とする。
 このとき、あるdistinguishedな多項式\(p\)と単元\(u\in (A\llbracket t\rrbracket)^{\times}\)とある\(n\geq 0\)が存在して、
 \(f = \pi^npu\)が成り立つ。&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Commtative Algebra" /><summary type="html">Theorem</summary></entry><entry><title type="html">12月13日</title><link href="/diary/2021/12/13/Nikki.html" rel="alternate" type="text/html" title="12月13日" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>/diary/2021/12/13/Nikki</id><content type="html" xml:base="/diary/2021/12/13/Nikki.html">&lt;h3 id=&quot;今日は夜ふかしをしていてまずいです&quot;&gt;今日は夜ふかしをしていてまずいです&lt;/h3&gt;
+&lt;/blockquote&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Commtative Algebra" /><summary type="html">Theorem</summary></entry><entry><title type="html">12月14日</title><link href="/diary/2021/12/14/Nikki.html" rel="alternate" type="text/html" title="12月14日" /><published>2021-12-14T00:00:00+09:00</published><updated>2021-12-14T00:00:00+09:00</updated><id>/diary/2021/12/14/Nikki</id><content type="html" xml:base="/diary/2021/12/14/Nikki.html">&lt;h3 id=&quot;寝なければ非常にまずいので寝ます&quot;&gt;寝なければ非常にまずいので寝ます&lt;/h3&gt;
+
+&lt;p&gt;今日はスーツを買いに行ってアティマクを教えるバイトをやって
+&lt;a href=&quot;https://adventar.org/calendars/6146&quot;&gt;Math Advent Calendar 2021&lt;/a&gt;の記事を書いていたら終わりました。
+約束は守りました (ぎりぎりになってしまいましたが)。
+今日中に書けて良かったです。
+PDFではなくWebページで見る方もあるのですが、
+なぜかうまくHTMLに変換できていないので、とりあえずこれは明日以降に考えます。
+早く寝ないとまずいので何も書いていない日記ですがもう寝ます。おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">寝なければ非常にまずいので寝ます</summary></entry><entry><title type="html">12月13日</title><link href="/diary/2021/12/13/Nikki.html" rel="alternate" type="text/html" title="12月13日" /><published>2021-12-13T00:00:00+09:00</published><updated>2021-12-13T00:00:00+09:00</updated><id>/diary/2021/12/13/Nikki</id><content type="html" xml:base="/diary/2021/12/13/Nikki.html">&lt;h3 id=&quot;今日は夜ふかしをしていてまずいです&quot;&gt;今日は夜ふかしをしていてまずいです&lt;/h3&gt;
 
 &lt;p&gt;今日は10時ごろに起きて起きるのが遅すぎてダメでした。
 唐突に数学がしたくなり、局所類体論の復習をやっていたのですが、
@@ -405,49 +413,4 @@ MarkdownですらTeXのように数式を書くのはやっぱり手間です、
 30歳や40歳になっても一緒に運動してくれる人がいる人生を目指したいですね。&lt;/p&gt;
 
 &lt;p&gt;糖尿病になるとさまざまな合併症が現れますが、そのうちの一つに「失明」があるそうです。
-本当に気をつけねばなりません。恐ろしい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry><entry><title type="html">12月05日</title><link href="/diary/2021/12/05/Nikki.html" rel="alternate" type="text/html" title="12月05日" /><published>2021-12-05T00:00:00+09:00</published><updated>2021-12-05T00:00:00+09:00</updated><id>/diary/2021/12/05/Nikki</id><content type="html" xml:base="/diary/2021/12/05/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
-
-&lt;p&gt;今日は10時ごろに起きました。
-すぐにシャワーを浴び、実家へ向かいました。
-今日は日曜日なので、猫たちと戯れながらドラマを見る日です。
-先週の日曜日は実家に帰らなかったので、
-先週分の溜まっていたドラマがたくさんありましたが、
-昨日の夜ふかしを回収するために最低限必要な睡眠時間を確保したため、
-いくつかのドラマは来週へと持ち越されることになりました。
-夜に実家から帰って、昨日の代数幾何的会話の復習をしながら
-Stack Exchange や Math Overflow の質問に解答するなどしていたら0時半になったので、
-急いでこの日記を書いているところです。&lt;/p&gt;
-
-&lt;h3 id=&quot;ドラマについて&quot;&gt;ドラマについて&lt;/h3&gt;
-
-&lt;p&gt;今日は真犯人フラグと晴天を突けとラジエーションハウスを2話ずつ見ました。&lt;/p&gt;
-
-&lt;p&gt;真犯人フラグは、もうそろそろ何かわかってもいいんじゃないかなーって感じになってきたので、楽しみですね。
-いつもハラハラしています。
-しかし、40代や50代のような大人になってもあのように仲のいい友人がいるという人生はかなり「目指したい姿」な気がします。
-いや、もちろんこれはこのドラマの感想としては意味不明なわけですが、
-純粋にそういう気持ちにさせられるのです。&lt;/p&gt;
-
-&lt;p&gt;晴天を突けは、岩崎弥太郎が亡くなった回でした。
-もしかしてもうすぐ終わるのか？って思っています。わかりませんが。
-岩崎弥太郎は三菱、渋沢栄一はみずほ、三野村利左衛門は三井、
-という対応関係を念頭に置くだけで面白く見ることができました。
-今後はどのような展開になっていくのでしょう。楽しみです。&lt;/p&gt;
-
-&lt;p&gt;ラジエーションハウスは毎回感動している気がします。
-感情というのはいとも簡単に操作されるものだと実感させられます。
-2話見たのですが、そのうちの一つは、無理なダイエットで体調を崩し、髪が白髪になってしまった高校生の話でした。
-このことを隠すためにウィッグを被って生活をしていて、家族にも隠すほどの徹底ぶりだったわけですが、
-広瀬さんに説得されてダイエットをやめ、このことを公表してこの話は終わりです。
-高校生なのにそのような精神的に負荷の大きい公表をするなんて、めちゃくちゃ心強いなと思いました。
-私が高校生のときはそんなこと全然できませんでしたから。
-私の場合、結局トランスのカミングアウトは22歳でしたし、
-その際の精神的負荷は思い出したくないほどでした。
-そんな感じでいろいろと重ね合わせてしまいます。
-もう一つの話は、田中さんの話でした。
-40歳になっても全く新しいことに挑戦しようとする田中さんを見ていると、
-私も20年30年というスパンで人生を見た時にどう生きるべきか考えさせられます。
-40歳の私はそのようにアクティブな精神状態を持つことができているでしょうか。
-心配です。同じことを続けている人生かいろいろなことに手を出す人生か、どっちになっているかわかりませんが、
-田中さんのようなアクティブさを保持し続けているかどうかが一番心配です。
-ラジエーションハウスを見ていると、いつも人生について考えさせられる気がします。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry></feed>
+本当に気をつけねばなりません。恐ろしい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry></feed>

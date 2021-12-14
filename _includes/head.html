@@ -26,6 +26,37 @@
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 </script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var TEXDEFS = MathJax.InputJax.TeX.Definitions;
+  TEXDEFS.delimiter["\\llbracket"] = "27E6";
+  TEXDEFS.delimiter["\\rrbracket"] = "27E7";
+});
+
+MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
+  var HTMLCSS = MathJax.OutputJax["HTML-CSS"],
+      DELIMITERS = HTMLCSS.FONTDATA.DELIMITERS;
+
+  var GENERAL = "STIXGeneral",
+      SIZE1   = "STIXSizeOneSym",
+      SIZE2   = "STIXSizeTwoSym",
+      SIZE3   = "STIXSizeThreeSym",
+      SIZE4   = "STIXSizeFourSym";
+
+  if (HTMLCSS.fontInUse === "STIX") {
+    // left white square bracket
+    DELIMITERS[0x27E6] = {
+      dir: "V", HW: [[.93,GENERAL],[1.23,SIZE1],[1.845,SIZE2],[2.46,SIZE3],[3.075,SIZE4]],
+      stretch: {top:[0x2553,GENERAL], ext:[0x2551,GENERAL], bot:[0x2559,GENERAL]}
+    };
+    // right white square bracket
+    DELIMITERS[0x27E7] = {
+      dir: "V", HW: [[.93,GENERAL],[1.23,SIZE1],[1.845,SIZE2],[2.46,SIZE3],[3.075,SIZE4]],
+      stretch: {top:[0x2556,GENERAL], ext:[0x2551,GENERAL], bot:[0x255C,GENERAL]}
+    };
+  }
+});
+</script>
 
 <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
 <script src="https://tikzjax.com/v1/tikzjax.js"></script>

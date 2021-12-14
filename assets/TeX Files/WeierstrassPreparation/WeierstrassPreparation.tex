@@ -1,0 +1,503 @@
+\documentclass[uplatex]{jsarticle}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{stmaryrd}%%%%%べき級数のカッコ
+
+\usepackage{xcolor}
+\usepackage[dvipdfmx]{graphicx}
+
+
+
+\newcommand{\myOriginalPackages}[1]{#1}
+
+\myOriginalPackages{
+\usepackage{applekeys}
+\usepackage{mandorasymb}
+}
+\usepackage{ulem}
+\usepackage{braket}
+\usepackage{framed}
+
+
+%%%%%ハイパーリンク
+\usepackage[setpagesize=false,dvipdfmx]{hyperref}
+\usepackage{aliascnt}
+\hypersetup{
+    colorlinks=true,
+    citecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue,
+}
+%%%%%ハイパーリンク
+
+
+
+
+%%%%%図式
+\usepackage{tikz}%%%図
+\usetikzlibrary{arrows}
+\usepackage{amscd}%%%簡単な図式
+%%%%%図式
+
+
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+
+\usepackage{amsthm}
+
+
+\newcommand{\myTheoremEnvironments}[1]{#1}
+
+\myTheoremEnvironments{
+\theoremstyle{definition}
+\newtheorem{thm}{定理}[section]
+\newcommand{\thmautorefname}{定理}
+
+\newaliascnt{prop}{thm}%%%カウンター「prop」の定義（thmと同じ）
+\newtheorem{prop}[prop]{命題}
+\aliascntresetthe{prop}
+\newcommand{\propautorefname}{命題}%%%カウンター名propは「命題」で参照する
+
+\newaliascnt{cor}{thm}
+\newtheorem{cor}[cor]{系}
+\aliascntresetthe{cor}
+\newcommand{\corautorefname}{系}
+
+\newaliascnt{lem}{thm}
+\newtheorem{lem}[lem]{補題}
+\aliascntresetthe{lem}
+\newcommand{\lemautorefname}{補題}
+
+\newaliascnt{defi}{thm}
+\newtheorem{defi}[defi]{定義}
+\aliascntresetthe{defi}
+\newcommand{\defiautorefname}{定義}
+
+\newaliascnt{prob}{thm}
+\newtheorem{prob}[prob]{練習問題}
+\aliascntresetthe{prob}
+\newcommand{\probautorefname}{練習問題}
+
+
+%%%%%%%番号づけない定理環境
+\newtheorem*{exam*}{例}
+\newtheorem*{rem*}{ノート}
+\newtheorem*{question*}{疑問}
+\newtheorem*{defi*}{定義}
+
+\newtheorem*{nikki*}{日記}
+\newtheorem*{thm*}{定理}
+
+}
+
+%%%証明環境を「proof」から「証明.」に変えるやつ
+\renewcommand\proofname{\bf 解答.}
+\renewcommand{\qedsymbol}{\kinoposymbniko}
+
+
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+
+
+
+
+%%%%%箇条書き環境
+\usepackage[]{enumitem}
+
+\makeatletter
+\AddEnumerateCounter{\fnsymbol}{\c@fnsymbol}{9}%%%%fnsymbolという文字をenumerate環境のパラメーターで使えるようにする。
+\makeatother
+
+\renewcommand{\theenumi}{(\arabic{enumi})}%%%%%itemは(1),(2),(3)で番号付ける。
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\theenumii}{(\alph{enumii})}
+\renewcommand{\labelenumii}{\theenumii}
+%%%%%箇条書き環境
+
+
+\usepackage{latexsym}
+
+\newcommand{\myMacros}[1]{#1}
+
+\myMacros{
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\ISOM}{\mathbf{Isom}}
+\DeclareMathOperator{\id}{\mathrm{id}}
+\DeclareMathOperator{\im}{\mathrm{Im}}
+\DeclareMathOperator{\Spec}{\mathrm{Spec}}
+\newcommand{\Supp}{\mathrm{Supp}}
+\DeclareMathOperator{\Aut}{\mathrm{Aut}}
+
+\newcommand{\coker}{\mathrm{coker}}
+\newcommand{\rad}{\mathrm{rad}}
+
+\DeclareMathOperator{\Tor}{\mathrm{Tor}}
+\DeclareMathOperator{\Ext}{\mathrm{Ext}}
+
+\DeclareMathOperator{\colim}{\mathrm{colim}}
+\DeclareMathOperator{\plim}{\mathrm{lim}}
+\newcommand{\Ob}{\mathrm{Ob}}
+
+\newcommand{\rsa}{\rightsquigarrow}
+\renewcommand{\coprod}{\amalg}
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\ep}{\varepsilon}
+
+\newcommand{\dfn}{:\overset{\mathrm{\scriptsize def}}{=}}
+\newcommand{\deff}{:\hspace{-3pt}\overset{\text{def}}{\iff}}
+\newcommand{\lb}[1]{\llbracket #1\rrbracket}
+\newcommand{\dl}{\partial}
+\DeclareMathOperator{\tr}{\mathrm{tr}}
+
+\newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\Mod}{\mathsf{Mod}}
+\newcommand{\Ab}{\mathsf{Ab}}
+
+
+\renewcommand{\ae}{\text{a.e.}}
+\newcommand{\as}{P\text{-a.s.}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Dom}{\mathcal{D}om}
+%\DeclareMathOperator{\liminf}{\textrm{lim inf}}
+
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Z}{\mathbb{Z}}
+
+
+\newcommand{\I}{\mathbf{1}}
+
+
+
+\newcommand{\mcA}{\mathcal{A}}
+\newcommand{\mcB}{\mathcal{B}}
+\newcommand{\mcC}{\mathcal{C}}
+\newcommand{\mcD}{\mathcal{D}}
+\newcommand{\mcE}{\mathcal{E}}
+\newcommand{\mcF}{\mathcal{F}}
+\newcommand{\mcG}{\mathcal{G}}
+\newcommand{\mcH}{\mathcal{H}}
+\newcommand{\mcI}{\mathcal{I}}
+\newcommand{\mcJ}{\mathcal{J}}
+\newcommand{\mcK}{\mathcal{K}}
+\newcommand{\mcL}{\mathcal{L}}
+\newcommand{\mcM}{\mathcal{M}}
+\newcommand{\mcN}{\mathcal{N}}
+\newcommand{\mcO}{\mathcal{O}}
+\newcommand{\mcP}{\mathcal{P}}
+\newcommand{\mcQ}{\mathcal{Q}}
+\newcommand{\mcR}{\mathcal{R}}
+\newcommand{\mcS}{\mathcal{S}}
+\newcommand{\mcT}{\mathcal{T}}
+\newcommand{\mcU}{\mathcal{U}}
+\newcommand{\mcV}{\mathcal{V}}
+\newcommand{\mcW}{\mathcal{W}}
+\newcommand{\mcX}{\mathcal{X}}
+\newcommand{\mcY}{\mathcal{Y}}
+\newcommand{\mcZ}{\mathcal{Z}}
+
+
+
+\newcommand{\mfa}{\mathfrak{a}}
+\newcommand{\mfb}{\mathfrak{b}}
+\newcommand{\mfc}{\mathfrak{c}}
+\newcommand{\mfd}{\mathfrak{d}}
+\newcommand{\mfe}{\mathfrak{e}}
+\newcommand{\mff}{\mathfrak{f}}
+\newcommand{\mfg}{\mathfrak{g}}
+\newcommand{\mfh}{\mathfrak{h}}
+\newcommand{\mfi}{\mathfrak{i}}
+\newcommand{\mfj}{\mathfrak{j}}
+\newcommand{\mfk}{\mathfrak{k}}
+\newcommand{\mfl}{\mathfrak{l}}
+\newcommand{\mfm}{\mathfrak{m}}
+\newcommand{\mfn}{\mathfrak{n}}
+\newcommand{\mfo}{\mathfrak{o}}
+\newcommand{\mfp}{\mathfrak{p}}
+\newcommand{\mfq}{\mathfrak{q}}
+\newcommand{\mfr}{\mathfrak{r}}
+\newcommand{\mfs}{\mathfrak{s}}
+\newcommand{\mft}{\mathfrak{t}}
+\newcommand{\mfu}{\mathfrak{u}}
+\newcommand{\mfv}{\mathfrak{v}}
+\newcommand{\mfw}{\mathfrak{w}}
+\newcommand{\mfx}{\mathfrak{x}}
+\newcommand{\mfy}{\mathfrak{y}}
+\newcommand{\mfz}{\mathfrak{z}}
+
+\DeclareMathOperator{\OOO}{\mcO}
+
+\newcommand{\OC}{\OOO_C}
+\newcommand{\OD}{\OOO_D}
+\renewcommand{\OE}{\OOO_E}
+\newcommand{\OF}{\OOO_F}
+\newcommand{\OH}{\OOO_H}
+\newcommand{\OS}{\OOO_S}
+\newcommand{\OT}{\OOO_T}
+\newcommand{\OU}{\OOO_U}
+\newcommand{\OV}{\OOO_V}
+\newcommand{\OW}{\OOO_W}
+\newcommand{\OX}{\OOO_X}
+\newcommand{\OY}{\OOO_Y}
+\newcommand{\OZ}{\OOO_Z}
+
+\newcommand{\OO}[1]{\OOO_{#1}}
+}
+
+
+
+\allowdisplaybreaks[1]
+
+
+
+
+\newcommand{\HereBeginTikz}{}
+\newcommand{\HereEndTikz}{}
+\newcommand{\HTMLhead}[1]{}
+
+\HTMLhead{
+---
+layout: article-type
+title: "p-adic Weierstrass Preparation Theorem"
+category: Notes
+tag: "Commtative Algebra"
+author: Yujitomo
+description: "p進Weierstrassの準備定理に関するノート"
+---
+}
+
+
+
+\title{\(p\)-進Weiestrassの準備定理}
+\date{\today}
+\author{ゆじとも}
+
+\begin{document}
+
+\maketitle
+
+
+
+
+
+このノートでは、p進Weierstrassの準備定理を証明します。
+\href{https://adventar.org/calendars/6146}{Math Advent Calendar 2021}
+用のノートです。
+あまり難しい話題ばかりなのも良くないかなと思うので、やさしめな話題を選びました。
+作業 (=苦労) をすれば証明できる定理ですが、
+そのような苦労が可換環論の常識に帰着されることが嬉しい、という話です。
+
+
+\begin{thm*}[p進Weierstrassの準備定理]
+  \(A\)を完備離散付値環、\(\pi\)を素元、\(f\in A\lb{t}\)を\(0\)でないべき級数とする。
+  このとき、あるdistinguishedな多項式\(p\)と単元\(u\in (A\lb{t})^{\times}\)とある\(n\geq 0\)が存在して、
+  \(f = \pi^npu\)が成り立つ。
+\end{thm*}
+
+このノートでは上の定理を証明します。
+
+
+
+\section{定義など}
+
+
+\begin{defi}
+  このノートでは、最高次係数が単元であるような多項式のことを\textbf{モニック}と言います。
+  さらに、局所環係数のモニック\(f\)に対して、\(f\)の最高次以外の係数が極大イデアルの元であるとき、
+  \(f\)は\textbf{distinguished}であると言います。
+\end{defi}
+
+
+
+
+\section{本題}
+
+
+まず完備離散付値環に関する以下の定理を思い出します：
+
+\begin{thm}[{cf. \cite[II. Proposition 3]{Serre}}]\label{loc flds thm}
+  \(A\)を完備離散付値環、\(K\)を\(A\)の商体、\(L\)を\(K\)の有限次拡大とする。
+  このとき、\(A\)の\(L\)での整閉包\(B\)は\(A\)上有限な完備離散付値環である。
+\end{thm}
+
+\begin{proof}
+  簡単に説明を加えておく。
+  \(A\)の完備性より、\(L\)の位相は\([L:K]\)個の\(K\)の直積位相と一致し、
+  \(A\)の位相と両立的な\(L\)の付値が一意的であることがわかる。
+  これから\(B\)が完備離散付値環であることが従う。
+  \(B\)が\(A\)上有限であることが残っている。
+  \(L/K\)が分離拡大であれば簡単 (cf. \cite[命題5.17]{AM}) なので、純非分離拡大の場合が問題となる。
+  この場合は、\(\pi\in A\)を素元として、
+  \(B/\pi B\)の\(A/(\pi)\)-線形空間としての基底の\(B\)上へ持ち上げが\(A\)上一次独立となる。
+  それらで生成された部分\(A\)-加群\(E\subset B\)を考えると、
+  任意の\(b\in B\)が\(b_0\in E\)と\(b_1\in B\)によって\(b=b_0+\pi b_1\)と表されるので、
+  これを繰り返すと\(A\)の完備性によって\(E=B\)が従う。
+\end{proof}
+
+
+\begin{rem*}
+  完備ネーター局所環はJapanese環であるという一般論もある。
+  \cite[定理8.2.1]{Nag}参照。もしくは、
+  \cite[\href{https://stacks.math.columbia.edu/tag/032W}{Tag 032W}]{stacks-project}と
+  \cite[\href{https://stacks.math.columbia.edu/tag/0334}{Tag 0334}]{stacks-project}を組み合わせても良い。
+\end{rem*}
+
+
+
+\begin{cor}\label{monic 1}
+  \(A\)を完備離散付値環、\(\pi\)を素元、\(K\)を\(A\)の商体、\(k=A/(\pi)\)を剰余体、\(L\)を\(K\)の有限次拡大、
+  \(A\subset B\subset L\)を\(A\)上一元生成整域で、\(B\cong A[t]/(f)\)であるとする。
+  このとき\(f\)はモニックである。
+\end{cor}
+
+\begin{proof}
+  \(B\)は一次元なので、\(A\)の\(L\)での整閉包に含まれる。
+  従って\(t\in B\)は\(A\)上整であり、その最小多項式\(f\)の最高次係数は単元である。
+\end{proof}
+
+系として以下が従います：
+
+\begin{cor}\label{prime element is monic}
+  \(A\)を完備離散付値環、\(f\in A[t]\)を素元とする。\(K\)を\(A\)の商体とする。
+  \begin{enumerate}
+    \item \label{prime 1}
+    \(f\)はモニックである。
+    \item \label{prime 2}
+    \(f\in (\pi,t)\)であれば、\(f\)はdistinguishedである。
+  \end{enumerate}
+\end{cor}
+
+\begin{proof}
+  \ref{prime 1}は\autoref{monic 1}の直接の帰結である。
+  \ref{prime 2}を示す。
+  \(k \dfn A/(\pi)\)とおき、
+  \(\bar{f}\)を\(k[t]\)での\(f\)の像とすると、
+  \autoref{loc flds thm}より\(\Spec(k[t]/(\bar{f}))\)は一点集合である。
+  \(f\in (\pi,t)\)であるから、\(\bar{f}\in (t)\)であり、
+  よって\(f\)の最高次以外の係数は\(\pi\)で割り切れる。
+\end{proof}
+
+
+\begin{rem*}
+  \(A[t]/(f)\)が\(A\)上完全分岐していれば、
+  \(f\)はEisenstein多項式になります (cf. \cite[I. Proposition 18]{Serre})。
+\end{rem*}
+
+
+
+
+次に、\(A\)を完備ネーター局所環、\(\mfm\)をその極大イデアルとします。
+\(t\)を不定元として、
+べき級数環\(A\lb{t}\)について考えます。
+\(\mfm\)と\(f\)で生成される多項式環\(A[t]\)のイデアルを\((\mfm,t)\)で表すと、
+局所化\(A[t]_{(\mfm,t)}\)から自然な射\(A[t]_{(\mfm,t)}\to A\lb{t}\)が出ます。
+この射は、ネーター局所環\(A[t]_{(\mfm,t)}\)をその極大イデアル\((\mfm,t)\)で完備化するという射ですから、
+忠実平坦になっています (cf. \cite[命題10.14, 演習問題3.16, 演習問題3.18]{AM})。
+
+
+\begin{lem}\label{lem: cplt f}
+  \((A,\mfm)\)を完備ネーター局所環、\(f\in A[t]\)を多項式とする。
+  \begin{enumerate}
+    \item \label{lem: cplt f 1}
+    \(A[t]/(f) \to A[t]_{(\mfm,t)}/(f)\)から完備化により引き起こされる射
+    \[
+    A\lb{t}/(f)\to \hat{A[t]_{(\mfm,t)}/(f)}
+    \]
+    は同型射である。
+    \item \label{lem: cplt f 2}
+    \(f\)がモニックであれば、
+    \(A[t]/(f)\to A\lb{t}/(f)\)から局所化により引き起こされる射
+    \[
+    A[t]_{(\mfm,t)}/(f) \to A\lb{t}/(f)
+    \]
+    は同型射である。
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+  \ref{lem: cplt f 1}は、
+  \(A[t]_{(\mfm,t)}/(f)\)が有限生成\(A[t]_{(\mfm,t)}\)-加群であることから従う
+  (cf. \cite[命題10.13]{AM})。
+  \ref{lem: cplt f 2}の状況では、
+  \(A[t]_{(\mfm,t)}/(f)\)は有限\(A\)-加群なので、\(A\)の完備性より、
+  \(A[t]_{(\mfm,t)}/(f)\)は\((\mfm,t)\)-進完備であることが従う。
+  よって自然な射\(A[t]_{(\mfm,t)}/(f) \to \hat{A[t]_{(\mfm,t)}/(f)}\)
+  は同型射である。あとは\ref{lem: cplt f 1}より従う。
+\end{proof}
+
+
+\begin{question*}
+  ネーターじゃない場合はどうなんでしょうね？
+\end{question*}
+
+
+
+\begin{cor}\label{cor div thm poly}
+  \(A\)を完備離散付値環とする。
+  このとき、\(A[t]\)の素元は\(A\lb{t}\)の素元でもあり、
+  逆に\(A\lb{t}\)の素元はすべて\(A[t]\)の素元と単元の積で表すことができる。
+\end{cor}
+
+\begin{proof}
+  \autoref{prime element is monic}と\autoref{lem: cplt f} \ref{lem: cplt f 2}より、
+  \(\Spec(A\lb{t}) \to \Spec(A[t]_{(\pi,t)})\)は全単射となる。
+  これは\autoref{cor div thm poly}を示している。
+\end{proof}
+
+
+\begin{thm}[p進Weierstrassの準備定理]
+  \(A\)を完備離散付値環、\(\pi\)を素元、\(f\in A\lb{t}\)を\(0\)でないべき級数とする。
+  このとき、あるdistinguishedな多項式\(p\)と単元\(u\in (A\lb{t})^{\times}\)とある\(n\geq 0\)が存在して、
+  \(f = \pi^npu\)が成り立つ。
+\end{thm}
+
+\begin{proof}
+  まず、\(A\lb{t}\)は二次元正則局所環\(A[t]_{(\pi,t)}\)の完備化なので正則局所環であり、とくにUFDである。
+  よって、\(f\)は\(\pi^n\)と、いくつかの素元の積\(q = q_1,\cdots,q_r\)を用いて、
+  \(f=\pi^nq_1\cdots q_r\)と表すことができる。
+  さらに\autoref{prime element is monic}と\autoref{cor div thm poly}より、
+  \(A\lb{t}\)の素元\(q_i\)は、
+  distinguishedな既約多項式\(q_i'\in A[t]\)と
+  単元\(u_i'\in (A\lb{t})^{\times}\)の積として\(q_i = q_i'u_i\)と表すことができる。
+  \(q_1'\cdots q_r' = p\)とおくと、\(p\in A[t]\)はdistinguishedな多項式であり、
+  \(u = u_1\cdots u_r\)とおくと、\(u\in (A\lb{t})^{\times}\)は単元である。
+  代入すると\(f=\pi^npu\)となる。
+  これは所望の結果である。
+\end{proof}
+
+
+
+
+
+
+\begin{thebibliography}{9}
+  \bibitem[アティマク]{AM}
+  \href{https://www.kyoritsu-pub.co.jp/bookdetail/9784320017917}{アティマク}.
+  \bibitem[永田]{Nag}
+  \href{https://www.kinokuniya.co.jp/f/dsg-08-EK-0257022}{永田可換環論}.
+  \bibitem[Serre]{Serre}
+  \href{https://link.springer.com/book/10.1007/978-1-4757-5673-9}{Local Fields}.
+  \bibitem[Stacks]{stacks-project}
+  \href{https://stacks.math.columbia.edu/}{\textit{Stacks Project}}.
+\end{thebibliography}
+
+\end{document}

@@ -52,6 +52,9 @@
 
 \usepackage{amsthm}
 
+\newcommand{\myTheoremEnvironments}[1]{#1}
+
+\myTheoremEnvironments{
 %%%%%%%%%%%%Plain型%%%%%%%%%%%%
 
 
@@ -115,8 +118,7 @@
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
-
-
+}
 
 
 
@@ -184,6 +186,10 @@
 
 
 \usepackage{latexsym}
+
+\newcommand{\myMacros}[1]{#1}
+
+\myMacros{
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Isom}{Isom}
 \DeclareMathOperator{\ISOM}{\mathbf{Isom}}
@@ -249,23 +255,23 @@
 
 \DeclareMathOperator{\OOO}{\mcO}
 
-\newcommand{\OB}{{\OOO_B}}
-\newcommand{\OC}{{\OOO_C}}
-\newcommand{\OD}{{\OOO_D}}
-\renewcommand{\OE}{{\OOO_E}}
-\newcommand{\OF}{{\OOO_F}}
-\newcommand{\OH}{{\OOO_H}}
-\newcommand{\OP}{{\OOO_P}}
-\newcommand{\OQ}{{\OOO_Q}}
-\newcommand{\OR}{{\OOO_R}}
-\newcommand{\OS}{{\OOO_S}}
-\newcommand{\OT}{{\OOO_T}}
-\newcommand{\OU}{{\OOO_U}}
-\newcommand{\OV}{{\OOO_V}}
-\newcommand{\OW}{{\OOO_W}}
-\newcommand{\OX}{{\OOO_X}}
-\newcommand{\OY}{{\OOO_Y}}
-\newcommand{\OZ}{{\OOO_Z}}
+\newcommand{\OB}{\OOO_B}
+\newcommand{\OC}{\OOO_C}
+\newcommand{\OD}{\OOO_D}
+\renewcommand{\OE}{\OOO_E}
+\newcommand{\OF}{\OOO_F}
+\newcommand{\OH}{\OOO_H}
+\newcommand{\OP}{\OOO_P}
+\newcommand{\OQ}{\OOO_Q}
+\newcommand{\OR}{\OOO_R}
+\newcommand{\OS}{\OOO_S}
+\newcommand{\OT}{\OOO_T}
+\newcommand{\OU}{\OOO_U}
+\newcommand{\OV}{\OOO_V}
+\newcommand{\OW}{\OOO_W}
+\newcommand{\OX}{\OOO_X}
+\newcommand{\OY}{\OOO_Y}
+\newcommand{\OZ}{\OOO_Z}
 
 \newcommand{\OO}[1]{\OOO_{#1}}
 
@@ -275,9 +281,32 @@
 \newcommand{\dto}{\dashrightarrow}
 \renewcommand{\emptyset}{\varnothing}
 
-\def\dfn{:\overset{\mbox{{\scriptsize def}}}{=}}
+\newcommand{\dfn}{:\overset{\mathrm{\scriptsize def}}{=}}
+}
 
 
+\newcommand{\lt}{<}
+\renewcommand{\gt}{>}
+
+
+
+\newcommand{\HTMLSkip}[1]{#1}
+
+
+\newcommand{\HereBeginTikz}{}
+\newcommand{\HereEndTikz}{}
+\newcommand{\HTMLhead}[1]{}
+
+\HTMLhead{
+---
+layout: article-type
+title: "Strange Curves"
+category: Notes
+tag: "Commtative Algebra"
+author: Yujitomo
+description: "Strangeな曲線に関するノートです"
+---
+}
 
 
 %%%%%%%%%タイトル
@@ -300,7 +329,7 @@
 
 
 \begin{notation*}
-  \
+  \HTMLSkip{ \ }
   \begin{itemize}
     \item
     スキームの射\(f:T\to S\)と\(S\)上の対象\(F\)
@@ -330,7 +359,7 @@
 \end{notation*}
 
 \begin{rem}
-   \
+  \HTMLSkip{ \ }
   \begin{itemize}
     \item
     代数多様体\(X\)上の準連接層\(\mcF\)に対し、
@@ -382,7 +411,9 @@
   \(C\)のすべての接線が通る点を\(p\)とし、
   点\(p\in \P(V)\)を与える全射も同じ記号\(p:V\to k\)で表す。
   \(C\)のすべての接線が点\(p\)を通ることは、
-  \[\ker(V_C\to \mcP^1(L)) \subset \ker(V_C\xrightarrow{p_C} k_C)\]
+  \[
+  \ker(V_C\to \mcP^1(L)) \subset \ker(V_C\xrightarrow{p_C} k_C)
+  \]
   を意味し、
   従って全射\(p_C : V_C\to k_C\)は\(V_C\to \mcP^1(L)\)を経由して分解する。
   こうして全射\(\mcP^1(L)\to k_C\)を得る。

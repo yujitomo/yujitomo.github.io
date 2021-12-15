@@ -13,11 +13,11 @@
 -->
 <link rel="stylesheet" href="/assets/css/styles.css">
 
+
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 
-
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 <script>
   MathJax = {
@@ -25,39 +25,6 @@
       matchFontHeight: false
     }
   };
-</script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
-  var TEXDEFS = MathJax.InputJax.TeX.Definitions;
-  TEXDEFS.delimiter["\\llbracket"] = "27E6";
-  TEXDEFS.delimiter["\\rrbracket"] = "27E7";
-});
-
-MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
-  var HTMLCSS = MathJax.OutputJax["HTML-CSS"],
-      DELIMITERS = HTMLCSS.FONTDATA.DELIMITERS;
-
-  var GENERAL = "STIXGeneral",
-      SIZE1   = "STIXSizeOneSym",
-      SIZE2   = "STIXSizeTwoSym",
-      SIZE3   = "STIXSizeThreeSym",
-      SIZE4   = "STIXSizeFourSym";
-
-  if (HTMLCSS.fontInUse === "STIX") {
-    // left white square bracket
-    DELIMITERS[0x27E6] = {
-      dir: "V", HW: [[.93,GENERAL],[1.23,SIZE1],[1.845,SIZE2],[2.46,SIZE3],[3.075,SIZE4]],
-      stretch: {top:[0x2553,GENERAL], ext:[0x2551,GENERAL], bot:[0x2559,GENERAL]}
-    };
-    // right white square bracket
-    DELIMITERS[0x27E7] = {
-      dir: "V", HW: [[.93,GENERAL],[1.23,SIZE1],[1.845,SIZE2],[2.46,SIZE3],[3.075,SIZE4]],
-      stretch: {top:[0x2556,GENERAL], ext:[0x2551,GENERAL], bot:[0x255C,GENERAL]}
-    };
-  }
-});
 </script>
 
 <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
@@ -130,12 +97,12 @@ MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
   <h1>
     
       
-    <span class="nequals"> Blowing Up along Linear Subvariety </span>
+    <span class="nequals"> Hartshorne Exercise I.4.9. </span>
     
     
   </h1>
   <p>
-    射影空間の線形部分多様体に沿った爆発について
+    Hartshorne Exercise I.4.9.の解答
   </p>
 </header>
 
@@ -151,7 +118,7 @@ MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
 
 <article class="definition-env-article">
 <h3 class="definition-env-h3">
-Exercise ([<a href="#bib-item-Ha">Ha</a>, 演習 I.4.9])
+<span>Exercise ([<a href="#bib-item-Ha">Ha</a>, 演習 I.4.9])</span>
 </h3>
 <p>
 \(X\subset \mathbb{P}^N\)を\(r\)次元の部分多様体とし、\(N\geq r+2\)とする。
@@ -162,8 +129,7 @@ Exercise ([<a href="#bib-item-Ha">Ha</a>, 演習 I.4.9])
 </article>
 
 <section>
-<h2 class="section-name-h2">
-Section 1. 定義や記号について
+<h2 class="section-name-h2">Section 1. 定義や記号について
 </h2>
 
 
@@ -174,7 +140,7 @@ Section 1. 定義や記号について
 
 <article class="definition-env-article">
 <h3 class="definition-env-h3">
-Notations
+<span>Notations</span>
 </h3>
 <p>
 体\(k\)は代数閉体とする。
@@ -218,8 +184,7 @@ Notations
 
 </section>
 <section>
-<h2 class="section-name-h2">
-Section 2. 平面と多様体の交差について
+<h2 class="section-name-h2">Section 2. 平面と多様体の交差について
 </h2>
 
 <p>
@@ -232,7 +197,7 @@ Section 2. 平面と多様体の交差について
 
 <article class="definition-env-article" id="lem-Grass">
 <h3 class="definition-env-h3">
-Lemma 2.0.
+<span>Lemma 2.0.</span>
 </h3>
 <p>
 \(V\)を次元\(r+1\)の線形空間、
@@ -258,7 +223,7 @@ Lemma 2.0.
 
 <article class="proof-env-article">
 <h3 class="proof-env-h3">
-Proof.
+<span>Proof.</span>
 </h3>
 <p>
 まずはグラスマン多様体\(\mathbb{G}(V,s+1)\)によってパラメタライズされた
@@ -278,7 +243,7 @@ Proof.
 \(\mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{U})|_p\subset \mathbb{G}(V,s+1)\)は
 点\(p\)を通る次元\(s\)の平面を閉点とする多様体である：
 <script type="text/tikz">
-\usepackage{amsmath}\begin{tikzpicture}
+\begin{tikzpicture}
 \node (A) at (0,1.5) {\(\mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{U})\)};
 \node (A') at (0,0) {\(\mathbb{P}_{\mathbb{G}(V,s+1)}(\mathcal{U})|_p\)};
 \node (B) at (4.5,1.5) {\(\mathbb{G}(V,s+1)\times \mathbb{P}(V)\)};
@@ -380,7 +345,7 @@ H\cap X @&gt;&gt;&gt; [H].
 
 <article class="definition-env-article" id="lem-Grass-1pt">
 <h3 class="definition-env-h3">
-Lemma 2.1.
+<span>Lemma 2.1.</span>
 </h3>
 <p>
 \(V\)を次元\(r+1\)の線形空間、
@@ -394,7 +359,7 @@ Lemma 2.1.
 
 <article class="proof-env-article">
 <h3 class="proof-env-h3">
-Proof.
+<span>Proof.</span>
 </h3>
 <p>
 \(2\)点以上で交わる次元\(s\)の平面の集合を調べる。
@@ -402,7 +367,7 @@ Proof.
 \(\mathcal{U}\subset \mathrm{Hilb}^2(X)\times X\)を普遍的な閉部分スキーム、
 つまり長さ\(2\)の閉部分スキーム\(Z\subset X\)に対応する点\([Z]\in \mathrm{Hilb}^2(X)\)上で
 <script type="text/tikz">
-\usepackage{amsmath}\begin{tikzpicture}
+\begin{tikzpicture}
 \node (A) at (0,1.5) {\(\mathcal{U}\)};
 \node (A') at (0,0) {\(\mcU|_{[Z]}\cong Z\)};
 \node (B) at (4.5,1.5) {\(\mathrm{Hilb}^2(X)\times X\)};
@@ -478,7 +443,7 @@ V_{\mathrm{Hilb}^2(X)\times X} \to L_{\mathrm{Hilb}^2(X)\times X} \to L_\mathcal
 を引き起こすが、
 以上の議論により、各閉点\([Z]\in \mathrm{Hilb}^2(X)\)のfiberは
 <script type="text/tikz">
-\usepackage{amsmath}\begin{tikzpicture}
+\begin{tikzpicture}
 \node (A) at (0,1.5) {\(\mathbb{G}_{\mathrm{Hilb}^2(X)}(\ker(\Psi),s-1)\)};
 \node (A') at (0,0) {\(\mathbb{G}(\ker(\Psi_Z),s-1)\)};
 \node (B) at (4.5,1.5) {\(\mathbb{G}(V,s+1)\times \mathrm{Hilb}^2(X)\)};
@@ -536,8 +501,7 @@ V_{\mathrm{Hilb}^2(X)\times X} \to L_{\mathrm{Hilb}^2(X)\times X} \to L_\mathcal
 
 </section>
 <section>
-<h2 class="section-name-h2">
-Section 3. 証明
+<h2 class="section-name-h2">Section 3. 証明
 </h2>
 
 
@@ -548,7 +512,7 @@ Section 3. 証明
 
 <article class="definition-env-article">
 <h3 class="definition-env-h3">
-Proposition 3.0.
+<span>Proposition 3.0.</span>
 </h3>
 <p>
 \(X\subset \mathbb{P}^N\)を\(r\)次元の部分多様体、
@@ -569,7 +533,7 @@ Proposition 3.0.
 
 <article class="proof-env-article">
 <h3 class="proof-env-h3">
-Proof.
+<span>Proof.</span>
 </h3>
 <p>
 \(V=H^0(\mathbb{P}^N,\mathcal{O}_{\mathbb{P}^N}(1))\)と置き、\(\mathbb{P}^N=\mathbb{P}(V)\)と書く。
@@ -599,7 +563,7 @@ Proof.
 \(\mathbb{G}(V,s+1)\times X\)の\(D\)に沿った爆発を\(B_X\)と置く。
 以下の図式ができる (以下のように射に名前をつける)：
 <script type="text/tikz">
-\usepackage{amsmath}\begin{tikzpicture}
+\begin{tikzpicture}
 \node (A) at (0,1.5) {\(B_X\)};
 \node (A') at (0,0) {\(\mathbb{G}(V,s+1)\times X\)};
 \node (B) at (4.5,1.5) {\(B\)};
@@ -628,7 +592,7 @@ Proof.
 </p>
 
 <p>
-\(Z\subset \mathbb{G}(V,s+2)\)を\(X\)と\ltb\gt交わる\lt/b\gt\(s+1\)次元平面のなす閉部分集合とする。
+\(Z\subset \mathbb{G}(V,s+2)\)を\(X\)と<b>交わる</b>\(s+1\)次元平面のなす閉部分集合とする。
 各\(s\)次元平面\(H\subset \mathbb{P}(V)\)に対して、
 \(H\)に含まれない\(X\)の点が存在しないならば、\(X\subset H\)であるから、
 点\([H]\in \mathbb{G}(V,s+1)\)のfiber \(p^{-1}([H])\)と\(q^{-1}(Z)\)は明らかに交わり、
@@ -719,25 +683,20 @@ Proof.
 </section>
 
 <section classs="bibliography-section">
-<h2 class="bibliography-h2">
-References
+<h2 class="bibliography-h2">References
 </h2>
 <ul class="bibliography-ul">
 <li id="bib-item-Ha" class="bibliography-li">
 <h3 class="bibliography-h3">
 [Ha]
 </h3>
-<p class="bibliography-p">
-R.Hartshorne, <i>Algebraic Geometry</i> Springer-Verlag, New Tork, 1977. Graduate Text in Mathematics, No. 52. 
-</p>
+R.Hartshorne, <i>Algebraic Geometry</i>. Springer-Verlag, New Tork, 1977. Graduate Text in Mathematics, No. 52. 
 </li>
 <li id="bib-item-YJ" class="bibliography-li">
 <h3 class="bibliography-h3">
 [ゆ]
 </h3>
-<p class="bibliography-p">
-ゆじノート, <i>Blowing Up along Linear Subvariety</i>
-</p>
+ゆじノート, <i>Blowing Up along Linear Subvariety</i>.
 </li>
 </ul>
 </section>

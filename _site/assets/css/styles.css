@@ -219,4 +219,58 @@ p.first-loading-text:after { content: "Tomoki Yuji"; position: absolute; color: 
   75% { clip: rect(0, 1000px, 70px, 0); }
   100% { clip: rect(0, 1000px, 70px, 0); } }
 
+@font-face { font-family: 'Cinzel'; src: url(/assets/MyFonts/Cinzel-Regular.ttf) format("truetype"); }
+
+@font-face { font-family: 'Cormorant Garamond'; src: url(/assets/MyFonts/CormorantGaramond-Light.ttf) format("truetype"); }
+
+@font-face { font-family: 'Noto Serif JP'; src: url(/assets/MyFonts/NotoSerifJP-ExtraLight.otf) format("Opentype"); }
+
+@font-face { font-family: 'Cinzel'; src: url(/assets/MyFonts/Cinzel-Regular.ttf) format("truetype"); }
+
+@font-face { font-family: 'Cormorant Garamond'; src: url(/assets/MyFonts/CormorantGaramond-Light.ttf) format("truetype"); }
+
+@font-face { font-family: 'Noto Serif JP'; src: url(/assets/MyFonts/NotoSerifJP-ExtraLight.otf) format("Opentype"); }
+
+article.definition-env-article { margin: 0px 5% 0px 5%; border-left: 3px solid #dadada; border-right: 3px solid #dadada; }
+
+article.definition-env-article h3.definition-env-h3 { display: inline; font-size: 16px; /*これはh4の大きさと同じ*/ font-weight: 600; }
+
+article.definition-env-article h3.definition-env-h3 span { padding: 0px 10px 0px 10px; /*text-decoration-color: $border_color;*/ /*border-bottom: 3px solid $border_color;*/ background: linear-gradient(to top, #dadada 2px, #ffffff 2px 100%); }
+
+article.definition-env-article ul li { margin: 0.8em 0px 1em 0px; }
+
+article.definition-env-article ul li:before { display: inline; content: '•'; color: #b0b0b0; padding: 0px 10px 0px 0px; }
+
+article.definition-env-article ul li p { display: inline; text-indent: 0em; padding: 0; }
+
+article.definition-env-article ol li { margin: 0.8em 0px 1em 0px; }
+
+article.definition-env-article ol li:before { display: inline; }
+
+article.definition-env-article ol li p { display: inline; }
+
+article.proof-env-article h3.proof-env-h3 { display: inline; font-size: 16px; /*これはh4の大きさと同じ*/ font-weight: 600; }
+
+article.proof-env-article h3.proof-env-h3 span { padding: 0px 10px 0px 10px; /*text-decoration-color: $border_color;*/ /*border-bottom: 3px solid $border_color;*/ background: linear-gradient(to top, #dadada 2px, #ffffff 2px 100%); }
+
+article.proof-env-article ul li { margin: 0.8em 0px 1em 0px; }
+
+article.proof-env-article ul li:before { display: inline; content: '•'; color: #b0b0b0; padding: 0px 10px 0px 0px; }
+
+article.proof-env-article ul li p { display: inline; text-indent: 0em; padding: 0; }
+
+article.proof-env-article ol li { margin: 0.8em 0px 1em 0px; }
+
+article.proof-env-article ol li:before { display: inline; }
+
+article.proof-env-article ol li p { display: inline; }
+
+h2.section-name-h2 { font-family: 'Noto Serif JP'; }
+
+h2.section-name-h2 span { font-family: 'Noto Serif JP'; }
+
+.bibliography-h3 { padding: 0em 1em 0em 0em; display: inline; font-size: 16px; /*これはh4の大きさと同じ*/ }
+
+.bibliography-h3 span { padding: 0px 10px 0px 10px; /*text-decoration-color: $border_color;*/ /*border-bottom: 3px solid $border_color;*/ background: linear-gradient(to top, #dadada 2px, #ffffff 2px 100%); }
+
 /*# sourceMappingURL=styles.css.map */

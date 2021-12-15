@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="discription" content="湯地のホームページ">
+<meta name="keywords" content="湯地智紀">
+<meta name="author" content="湯地ともき">
+<!--
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+-->
+<link rel="stylesheet" href="/assets/css/styles.css">
+
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script>
+  MathJax = {
+    chtml: {
+      matchFontHeight: false
+    }
+  };
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+
+<title>湯地ともき@RIMS</title>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9LTS7CCPPD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-9LTS7CCPPD');
+</script>
+  
+</head>
+
+<body>
+  
+<header class="top-header">
+
+  
+
+    <h1><a href="/Yujitomo_Top.html">Tomoki Yuji</a></h1>
+    <nav>
+      <ul>
+        
+        <li>
+          <a href="/Profile.html" >
+            About
+          </a>
+        </li>
+        
+        <li>
+          <a href="/Research.html" >
+            Research
+          </a>
+        </li>
+        
+        <li>
+          <a href="/Notes.html"  class="top-current-navigation" >
+            Notes
+          </a>
+        </li>
+        
+        <li>
+          <a href="/Diary.html" >
+            Diary
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  
+  <main>
+    
+
+      
+
+
+<header class="main-header">
+  <h1>
+    
+      
+    <span class="nequals"> Hartshorne Exercise II.8.2. </span>
+    
+    
+  </h1>
+  <p>
+    Hartshorne Exercise II.8.2.の解答
+  </p>
+</header>
+
+
+
+
+
+      <p>
+このノートでは、[<a href="#bib-item-Ha">Ha</a>, 演習 II.8.2]に解答を与える。
+\(k\)を基礎体とする。
+</p>
+
+<article class="definition-env-article" id="ex">
+<h3 class="definition-env-h3">
+<span>Exercise</span>
+</h3>
+<p>
+\(X\)を\(k\)上\(n\)次元の代数多様体、
+\(\mathcal{E}\)を\(X\)上のランク\(r &gt; n\)の局所自由層、
+\(V\subset H^0(X,\mathcal{E})\)を\(\mathcal{E}\)を生成する大域切断のなす部分空間とする。
+このとき、大域切断\(0\neq s\in V\)であって、
+対応する射\(s:\mathcal{O}_X\to \mathcal{E}\)の余核が局所自由となるものが存在することを示せ。
+</p>
+</article>
+
+<p>
+\(V\)を有限次元と仮定しても良いことに注意しておく：
+\(f:V_X\to \mathcal{E}\)を\(V\subset H^0(X,\mathcal{E})\)に対応する射とする。
+仮定から\(f\)は全射である。
+\(V = \bigcup_{i\in I}V_i\)と有限次元部分空間の和として表す。
+\(f_i:V_{i,X}\to \mathcal{E}\)を
+\(V_i\subset V\)の\(X\to \mathrm{Spec}(k)\)に沿った基底変換と\(f\)の合成とする。
+このとき\(\bigcup_{i\in I}\mathrm{Im}(f_i) = \mathcal{E}\)であるが、
+\(X=\bigcup_{j\in J}U_j\)と有限個のアフィンスキームで覆えば、
+各\(j\)に対して\(i_j\)が存在して\(\mathrm{Im}(f_{i_j}|_{U_j})=\mcE|_{U_j}\)となることがわかり、
+これらの\(i_j\)より大きな\(i\)をとることで、
+十分大きな\(i\)に対して\(\mathrm{Im}(f_i)=\mathcal{E}\)となることがわかる。
+すなわち、ある有限次元部分空間\(V_0\subset V\)が存在して、
+\(\mathcal{E}\)は\(V_0\)に属する大域切断で生成される。
+</p>
+
+<p>
+\(V\)を有限次元として話を進める。
+</p>
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+<span>Notations</span>
+</h3>
+<p>
+\
+</p>
+<ul>
+<li>
+<p>
+基礎体を\(k\)と置く。</p>
+</li>
+<li>
+<p>
+スキームの射\(f:T\to S\)と\(S\)上の対象\(F\)(\(S\)-スキームや、\(S\)上のスキームの射や、\(S\)上の準連接層など)
+に対し、\(F_T\)や\(F|_T\)や\(f^*F\)で\(F\)の射\(T\to S\)による基底変換を表す。
+</p>
+</li>
+</ul>
+</article>
+
+<section id="section-S1">
+<h2 class="section-name-h2">Section 1. 大域切断の零点集合
+</h2>
+
+<p>
+\(n\)次元代数多様体\(X\)上の
+ランク\(r\)の局所自由層\(\mathcal{E}\)と
+\(\mathcal{E}\)を生成する大域切断のなす\(d\)-次元部分線形空間\(V\subset H^0(X,\mathcal{E})\)を与える。
+元\(s\in V\)を取り、
+\(s\)の零点集合を調べる。
+</p>
+
+<p>
+まず、\(s=0\)で定まる\(X\)の閉部分スキームがどのように構成されるか見る。
+</p>
+<p class="display-math-p">
+\[
+\mathcal{O}_X \xrightarrow{s_X} V_X\to \mathcal{E}
+\]
+</p><p>
+を点\(p\in X\)に基底変換すると、
+</p>
+<p class="display-math-p">
+\[
+k(p) \xrightarrow{s} V \to \mathcal{E}_p
+\]
+</p><p>
+を得る。
+\(s(p)=0\)の意味は、この射の列の合成が\(0\)射だということである。
+双対をとることで、
+\(s(p)=0\)は
+</p>
+<p class="display-math-p">
+\[
+\mathcal{E}_p^{\vee}\to V^{\vee}\xrightarrow{s^{\vee}} k(p)
+\]
+</p><p>
+の合成が\(0\)射であることと同値である。
+従って、\(s=0\)という閉部分スキームは
+</p>
+<p class="display-math-p">
+\[
+(s=0) :\overset{\mathrm{\scriptsize def}}{=} \mathrm{coker}(\mathcal{E}^{\vee} \to V_X^{\vee} \xrightarrow{s^{\vee}_X} \mathcal{O}_X)
+\]
+</p><p>
+と定義される。
+</p>
+
+<p>
+閉部分スキーム\((s=0)\)は、\(s\)を\(0\)でない定数倍で置き換えても変わらない注意する。
+すると、各\(\mathbb{P}(V^{\vee})\)の元に対して\(X\)の閉部分スキームが定まることになり、
+\(\mathbb{P}(V^{\vee})\)でパラメーター付けられた\(X\)の閉部分スキームの族
+</p>
+<p class="display-math-p">
+\[
+H\subset \mathbb{P}(V^{\vee})\times_kX
+\]
+</p><p>
+で、各\(s\in V\)に対して、対応する\(\mathbb{P}(V^{\vee})\)のfiberが
+\(s=0\)となるもの、
+の存在を期待したくなる。
+この\(H\)を構成する。
+</p>
+
+<p>
+\(\mathcal{K}:\overset{\mathrm{\scriptsize def}}{=} \ker(V_X^{\vee}\to \mathcal{E})\)と置くと、双対をとることで全射
+</p>
+<p class="display-math-p">
+\[
+V_X^{\vee}\to \mathcal{K}
+\]
+</p><p>
+を得る。
+この全射は\(X\)上の射影束の閉埋め込み
+</p>
+<p class="display-math-p">
+\[
+j:\mathbb{P}_X(\mathcal{K}^{\vee})\to \mathbb{P}(V^{\vee})\times_kX
+\]
+</p><p>
+を定める。
+\(j\)が求める\(H\subset \mathbb{P}(V^{\vee})\times_kX\)を定めることを示す。
+元\(0\neq s\in V\)を取れば、一点からの射
+\(\mathrm{Spec}(k)\xrightarrow{s} \mathbb{P}(V^{\vee})\)が定まり、
+基底変換することで閉埋め込み\(i_s:X\to \mathbb{P}(V)^{\vee}\times_kX\)を得る。
+\(j\)を\(i_s\)に沿って基底変換すると、
+\(X\)の閉部分スキーム\(s_0:Y\subset X\)が定まる：
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+Y @&gt;s_0&gt;&gt; X \\
+@VVV @Vi_sVV \\
+\mathbb{P}_X(\mathcal{K}^{\vee}) @&gt;j&gt;&gt; \mathbb{P}(V^{\vee})\times_kX.
+\end{CD}
+\]
+</p><p>
+この\(X\)上の図式を点\(p\in X\)まで基底変換すれば、
+図式
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+Y_p @&gt;&gt;&gt; p \\
+@VVV @VsVV \\
+\mathbb{P}(\mathcal{K}^{\vee}|_p) @&gt;j_p&gt;&gt; \mathbb{P}(V^{\vee}).
+\end{CD}
+\]
+</p><p>
+を得る。
+ここで\(Y_p\)は\(p\)または\(\varnothing\)である。
+</p>
+<p class="display-math-p">
+\[
+Y_p\cong p  \iff  s\in \mathrm{Im}(j_p)  \iff s\in \mathrm{Im} (\mcK|_p\to V) \
+\iff  s\in \ker(V\to \mathcal{E}_p)
+\]
+</p><p>
+であるから、
+\(Y\)は\(s=0\)で定まる閉部分スキームである。
+\(Y\)は\(j\)と射影\(\mathbb{P}(V^{\vee})\times_kX\to \mathbb{P}(V^{\vee})\)の合成の
+\(s\)が定める\(\mathbb{P}(V^{\vee})\)の点でのfiberであるから、
+よって閉埋め込み\(j:\mathbb{P}_X(\mathcal{K}^{\vee})\to \mathbb{P}(V^{\vee})\times_kX\)は、
+各\(s\in V\)に対して、対応する\(\mathbb{P}(V^{\vee})\)のfiberが
+\(s=0\)となるような、
+\(\mathbb{P}(V^{\vee})\)でパラメーターづけられた\(X\)の閉部分スキームの族を定める。
+</p>
+
+
+
+
+
+
+
+</section>
+<section>
+<h2 class="section-name-h2">Section 2. 問題の解答
+</h2>
+
+
+<p>
+この節では、<a href="#section-S1">Section 1</a>の議論を念頭において、問題に解答を与える。
+</p>
+
+
+<article class="proof-env-article">
+<h3 class="proof-env-h3">
+<span>Proof.</span>
+</h3>
+<p>
+\(\mathcal{E}\)は自由層でないとして良い。
+</p>
+
+<p>
+\(d=\dim V\)と置くと、全射\(V_X\to \mathcal{E}\)の存在から\(d &gt; r &gt; n\)である。
+\(\mathcal{K}:\overset{\mathrm{\scriptsize def}}{=} \ker (V_X\to \mathcal{E})\)と置くと、\(\mathcal{K}\)のランクは\(d-r &gt; 0\)である。
+双対をとることで全射\(V|_X^{\vee} \to \mathcal{K}^{\vee}\)を得る。
+この全射が引き起こす\(X\)上の射影束の閉埋め込み
+</p>
+<p class="display-math-p">
+\[
+j:\mathbb{P}_X(\mathcal{K}^{\vee})\to \mathbb{P}(V^{\vee})\times_k X
+\]
+</p><p>
+と射影\(\mathbb{P}(V^{\vee})\times_k X\to \mathbb{P}(V^{\vee})\)を合成すると、
+射
+</p>
+<p class="display-math-p">
+\[
+f:\mathbb{P}_X(\mathcal{K}^{\vee})\to \mathbb{P}(V^{\vee})
+\]
+</p><p>
+を得る。
+\(\dim (\mathbb{P}_X(\mathcal{K}^{\vee})) = d-r+n-1 &lt; d-1 = \dim \mathbb{P}(V^{\vee})\)
+なので\(f\)は全射ではない。
+この\(f\)の像に入らない点\(\bar{s}\in \mathbb{P}(V^{\vee})\)
+を与える元\(0\neq s\in V\)を取れば、
+\(\bar{s}\)のfiberは\(\varnothing\)であるから、
+\((s=0)=\varnothing\)となる。
+ここで、元\(s\in V\)の定める射\(\mathcal{O}_X\xrightarrow{s_X}V_X \to \mathcal{E}\)
+の双対
+</p>
+<p class="display-math-p">
+\[
+\mathcal{E}^{\vee}\to V^{\vee}_X \xrightarrow{s_X^{\vee}} \mathcal{O}_X
+\]
+</p><p>
+の余核がちょうど\(s=0\)で定まる閉部分スキームの構造層であることに注意すると、
+今、\((s=0)=\varnothing\)であるから、
+\(\mathcal{E}^{\vee}\to V^{\vee}_X \xrightarrow{s_X^{\vee}} \mathcal{O}_X\)
+の合成が全射であることがわかる。
+従って\(s\)が所望の大域切断である。
+</p>
+</article>
+
+
+
+
+
+
+
+
+</section>
+
+<section classs="bibliography-section">
+<h2 class="bibliography-h2">References
+</h2>
+<ul class="bibliography-ul">
+<li id="bib-item-Ha" class="bibliography-li">
+<h3 class="bibliography-h3">
+[Ha]
+</h3>
+R.Hartshorne, <i>Algebraic Geometry</i>. Springer-Verlag, New Tork, 1977. Graduate Text in Mathematics, No. 52.
+</li>
+</ul>
+</section>
+
+    </main>
+    
+<footer class="bottom-footer">
+
+  
+    <ul>
+      <li>
+        <h2><a href="/Yujitomo_Top.html"><span class="first-color-change">Tomoki Yuji</span></a></h2>
+        <a href="https://www.kurims.kyoto-u.ac.jp/ja/">@RIMS</a>
+        <nav>
+          <ul class="footer-left">
+            
+            <li><a href="/Profile.html">About</a></li>
+            
+            <li><a href="/Research.html">Research</a></li>
+            
+            <li><a href="/Notes.html">Notes</a></li>
+            
+            <li><a href="/Diary.html">Diary</a></li>
+            
+          </ul>
+        </nav>
+      </li>
+      <li>
+        <ul class="footer-right">
+          <li><a href="mailto:yujitomo@kurims.kyoto-u.ac.jp"><svg height="24" class="octicon octicon-mail" viewBox="0 0 24 24" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M1.75 3A1.75 1.75 0 000 4.75v14c0 .966.784 1.75 1.75 1.75h20.5A1.75 1.75 0 0024 18.75v-14A1.75 1.75 0 0022.25 3H1.75zM1.5 4.75a.25.25 0 01.25-.25h20.5a.25.25 0 01.25.25v.852l-10.36 7a.25.25 0 01-.28 0l-10.36-7V4.75zm0 2.662V18.75c0 .138.112.25.25.25h20.5a.25.25 0 00.25-.25V7.412l-9.52 6.433c-.592.4-1.368.4-1.96 0L1.5 7.412z"></path></svg></a></li>
+          <li><a href="https://github.com/yujitomo/yujitomo.github.io"><svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></li>
+        </ul>
+      </li>
+    </ul>
+  </footer>
+
+
+  <script type="text/javascript" src="/assets/js/MyJavaScript.js"></script>
+</body>
+
+</html>

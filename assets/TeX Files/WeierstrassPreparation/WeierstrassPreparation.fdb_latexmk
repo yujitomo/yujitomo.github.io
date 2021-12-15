@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1639491679 "WeierstrassPreparation.dvi" "WeierstrassPreparation.pdf" "WeierstrassPreparation" 1639491680
-  "WeierstrassPreparation.dvi" 1639491679 19840 f904796a072fa33b663aae8ee2f646f7 "latex"
+["dvipdf"] 1639543056 "WeierstrassPreparation.dvi" "WeierstrassPreparation.pdf" "WeierstrassPreparation" 1639543056
+  "WeierstrassPreparation.dvi" 1639543055 19840 a280794ebf545e44da34d3894f8a7814 "latex"
   (generated)
   "WeierstrassPreparation.pdf"
-["latex"] 1639491677 "WeierstrassPreparation.tex" "WeierstrassPreparation.dvi" "WeierstrassPreparation" 1639491680
+["latex"] 1639543054 "WeierstrassPreparation.tex" "WeierstrassPreparation.dvi" "WeierstrassPreparation" 1639543056
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -185,11 +185,11 @@
   "/usr/local/texlive/texmf-local/tex/latex/local/applekeys/applekeys.sty" 1124886972 2457 24db601311c9f25dce7e373fe4c6b984 ""
   "/usr/local/texlive/texmf-local/tex/latex/local/mandorasymb/mandorasymb.sty" 1607639133 561 597758ea36a1a82430c55f99e0d1ef63 ""
   "/usr/local/texlive/texmf-local/tex/latex/local/mandorasymb/nikokinopo.pdf" 1579938581 3213 98e9a3cfe258d652b9b290c63b9b1b0c ""
-  "WeierstrassPreparation.aux" 1639491679 1570 0660fa33c4a8d45ea48993bf361631bb "latex"
-  "WeierstrassPreparation.out" 1639491679 88 1339f464adeab466960384aca2f492f9 "latex"
-  "WeierstrassPreparation.tex" 1639491677 15420 7fd7b6976710abb66b8ba3498d268452 ""
+  "WeierstrassPreparation.aux" 1639543055 1570 0660fa33c4a8d45ea48993bf361631bb "latex"
+  "WeierstrassPreparation.out" 1639543055 88 1339f464adeab466960384aca2f492f9 "latex"
+  "WeierstrassPreparation.tex" 1639543054 15464 574bd0e0d2bd9dc99264ee0e02c5a318 ""
   (generated)
   "WeierstrassPreparation.dvi"
-  "WeierstrassPreparation.aux"
-  "WeierstrassPreparation.log"
   "WeierstrassPreparation.out"
+  "WeierstrassPreparation.log"
+  "WeierstrassPreparation.aux"

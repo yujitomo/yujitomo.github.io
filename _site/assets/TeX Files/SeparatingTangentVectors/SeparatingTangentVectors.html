@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="discription" content="湯地のホームページ">
+<meta name="keywords" content="湯地智紀">
+<meta name="author" content="湯地ともき">
+<!--
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+-->
+<link rel="stylesheet" href="/assets/css/styles.css">
+
+
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script>
+  MathJax = {
+    chtml: {
+      matchFontHeight: false
+    }
+  };
+</script>
+
+<link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+<script src="https://tikzjax.com/v1/tikzjax.js"></script>
+
+
+<title>湯地ともき@RIMS</title>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9LTS7CCPPD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag('js', new Date());
+
+  gtag('config', 'G-9LTS7CCPPD');
+</script>
+  
+</head>
+
+<body>
+  
+<header class="top-header">
+
+  
+
+    <h1><a href="/Yujitomo_Top.html">Tomoki Yuji</a></h1>
+    <nav>
+      <ul>
+        
+        <li>
+          <a href="/Profile.html" >
+            About
+          </a>
+        </li>
+        
+        <li>
+          <a href="/Research.html" >
+            Research
+          </a>
+        </li>
+        
+        <li>
+          <a href="/Notes.html"  class="top-current-navigation" >
+            Notes
+          </a>
+        </li>
+        
+        <li>
+          <a href="/Diary.html" >
+            Diary
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  
+  <main>
+    
+
+      
+
+
+<header class="main-header">
+  <h1>
+    
+      
+    <span class="nequals"> Separating Tangent Vectors </span>
+    
+    
+  </h1>
+  <p>
+    接ベクトルを分離する線形系について
+  </p>
+</header>
+
+
+
+
+
+      <p>
+このノートは、接ベクトルを分離することやそれと関連した線形系の性質に関するノートである。
+</p>
+
+<section>
+<h2 class="section-name-h2">Section 1. 接ベクトルを分離する線形系
+</h2>
+
+
+<p>
+まずは接ベクトルを分離する線形系の性質を調べる。
+</p>
+
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+<span>Definition 1.0. ([<a href="#bib-item-Ha">Ha</a>, Remark II.7.8.2])</span>
+</h3>
+<p>
+\(k\)を代数閉体、\(X\)を代数多様体、\(L\)を\(X\)上の直線束とする。
+\(V\subset H^0(X,L)\)を線形部分空間とする (線形系)。
+\(V\)が\(L\)の<b>接ベクトルを分離する</b> (separating tangent vectors)
+とは、
+任意の点\(p\in X\)と点\(p\)での\(0\)でない任意の接ベクトル
+\(0\neq v\in T_p(X):\overset{\mathrm{\scriptsize def}}{=} \mathfrak{m}_p/\mathfrak{m}_p^2\)に対し、
+\(V\)に属するある大域切断\(s\in V\)が存在して、以下を満たすことを言う：
+</p>
+<ul>
+<li>
+<p>
+\(s(p)=0\)である。すなわち、
+点\(p\)は\(s\)の定める\(X\)の有効因子\(D_s\)の台に含まれる。
+</p>
+</li>
+<li>
+<p>
+接ベクトル\(v\)は\(D_s\)の定める部分空間\(T_p(D_s)\subset T_p(X)\)に属さない。</p>
+</li>
+</ul>
+</article>
+
+
+<p>
+まず、\(D_s\)は次のように構成される：
+\(s\in V\subset H^0(X,L)\)の定める射も同じ記号
+\(s:\mathcal{O}_X\to L\)で書く。
+双対\(s^{\vee}:L^{\vee}\to \mathcal{O}_X\)の余核が定める閉部分スキームが\(D_s\)である。
+\(D_s\)の台は\(\mathrm{coker}(s:\mathcal{O}_X\to L)\)の台と等しい。
+よって、
+任意の点\(p\)に対して
+\(s(p)=0\)となる\(s\in V\)が存在すること、
+すなわち線形系\(V\)に基点がないことは、
+\(V\subset H^0(X,L)\)により得られる射\(V|_X\to L\)が全射であることと同値である。
+ここで\(V|_X\)は\(V\)の\(X\to \mathrm{Spec} (k)\)による基底変換である。
+</p>
+
+<article class="definition-env-article" id="prop-BPF-surj">
+<h3 class="definition-env-h3">
+<span>Proposition 1.1.</span>
+</h3>
+<p>
+線形系\(V\subset H^0(X,L)\)が基点なしであることは、
+対応する射\(V|_X\to L\)が全射であることと同値である。
+</p>
+</article>
+
+
+
+<p>
+閉埋め込み\(D_s\subset X\)から
+全射\(\Omega_X|_{D_s}\to \Omega_{D_s}\)を得る。
+点\(p\in D_s\)まで基底変換すれば全射
+</p>
+<p class="display-math-p">
+\[
+\mathfrak{m}_{X,p}/\mathfrak{m}_{X,p}^2\to
+\mathfrak{m}_{D_s,p}/\mathfrak{m}_{D_s,p}^2
+\]
+</p><p>
+を得る。
+双対をとることで包含\(T_p(D_s)\subset T_p(X)\)が定まる。
+点\(p\)でのstalkを取れば、
+\(s_p\in \mathfrak{m}_pL_p\cong \mathfrak{m}_p\)を得る。
+この元は全射\(\mathfrak{m}_{X,p}/\mathfrak{m}_{X,p}^2\to
+\mathfrak{m}_{D_s,p}/\mathfrak{m}_{D_s,p}^2\)
+の核となる\(1\)-次元部分空間を生成する。
+従って、どんな\(v\in T_p(X)\)に対しても\(T_p(D_s)\)\(v\)を含まないように\(s\)が取れることは、
+\(p\)で\(0\)になる大域切断たちが
+\(\mathfrak{m}_{X,p}L_p/\mathfrak{m}_{X,p}^2L_p\)を生成することと同値である
+(cf. [<a href="#bib-item-Ha">Ha</a>, Theorem 7.3.(2)])。
+</p>
+
+
+<p>
+\(L_p\otimes \mathcal{O}_{X,p}/\mathfrak{m}_{X,p}^2
+\cong k(p) \oplus \mathfrak{m}_{X,p}L_p/\mathfrak{m}_{X,p}^2L_p\)
+に注意すれば、
+全射
+</p>
+<p class="display-math-p">
+\[
+L_p\to k(p) \oplus \mathfrak{m}_{X,p}L_p/\mathfrak{m}_{X,p}^2L_p
+\]
+</p><p>
+を得る。
+従って、線形系\(V\)が接ベクトルを分離することは、
+任意の点\(p\)に対して合成
+</p>
+<p class="display-math-p">
+\[
+V\to L_p \to k(p) \oplus \mathfrak{m}_{X,p}L_p/\mathfrak{m}_{X,p}^2L_p
+\]
+</p><p>
+が\(k\)-線形空間の全射であることと同値である。
+ここで\(V\to L_p\)は点\(p\)でのstalkをとることで得られる\(k\)-線形空間の射である。
+この全射を点\(p\)に依存しない形で大域的に記述する。
+</p>
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+<span>Setting</span>
+</h3>
+<p>
+\(\Delta:X\to X\times_k X\)を対角射、
+\(I\)をそのイデアル層とする。
+\(I/I^2\cong \Omega_X\)である。
+\(X^{(1)}\)を\(I^2\)で定まる\(X\times_kX\)の閉部分スキームとし、
+\(p_1,p_2:X^{(1)}\to X\)を閉埋め込み\(i:X^{(1)}\to X\times_kX\)と
+射影\(\mathrm{pr}_1,\mathrm{pr}_2: X\times_kX\rightrightarrows X\)
+の合成とする。
+</p>
+</article>
+
+
+<p>
+\(X\)上の連接層\(F\)に対し、
+\(X\times_kX\)上で全射の列
+\(\mathrm{pr}_2^*F\to i_*p_2^*F\to \Delta_*F\)を得る。
+これを\(\mathrm{pr}_1\)でpushすることで、
+射の列
+</p>
+<p class="display-math-p">
+\[
+\mathrm{pr}_{1,*}\mathrm{pr}_2^*F\to p_{1,*}p_2^*F\to F
+\]
+</p><p>
+を得る。
+\(p_{1,*}p_2^*F\to F\)は全射であり、
+\(F\)が局所自由であれば、その核は\(\Omega_X\otimes_{\mathcal{O}_X}(F)\)と自然に同型である。
+</p>
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+<span>Definition 1.2.</span>
+</h3>
+<p>
+\(\mathcal{P}^1(F):\overset{\mathrm{\scriptsize def}}{=} p_{1,*}p_2^*F\)と置く。
+\(F\)が局所自由であれば、完全列
+</p>
+<p class="display-math-p">
+<div id="eq-exact-1-st-principal" class="display-math-div">
+\begin{equation}
+\begin{CD}
+0 @&gt;&gt;&gt; \Omega_X\otimes_{\mathcal{O}_X}F @&gt;&gt;&gt; \mathcal{P}^1(F) @&gt;&gt;&gt; F @&gt;&gt;&gt; 0
+\end{CD}
+\tag{\(\dagger\)}
+\end{equation}
+</div>
+
+</p>
+<p>
+がある。
+</p>
+</article>
+
+<p>
+また、平坦基底変換により自然に
+\(\mathrm{pr}_{1,*}\mathrm{pr}_2^*F\cong H^0(X,F)|_X\)
+である。
+従って、\(F\)が大域切断で生成されることと、射の列
+</p>
+<p class="display-math-p">
+\[
+\mathrm{pr}_{1,*}\mathrm{pr}_2^*F\cong H^0(X,F)|_X \to \mathcal{P}^1(F)\to F
+\]
+</p><p>
+の合成が全射となることは同値である。
+\(L\)を直線束とする。
+点\(p\in X\)に射\(H^0(X,L)|_X\to \mathcal{P}^1(L)\)を基底変換すると、
+射
+</p>
+<p class="display-math-p">
+\[
+H^0(X,L)\to \mathcal{P}^1(L)|_p
+\]
+</p><p>
+を得る。
+完全列<a href="#eq-exact-1-st-principal">(\(\dagger \))</a>と\(L\)が直線束であることから、
+</p>
+<p class="display-math-p">
+\[
+\mathcal{P}^1(F)|_p\cong k(p)\oplus \mathfrak{m}_{X,p}/\mathfrak{m}_{X,p}^2
+\]
+</p><p>
+であり、従って射\(H^0(X,L)\to \mathcal{P}^1(L)|_p\)は
+stalkをとったのちに商をとる射
+</p>
+<p class="display-math-p">
+\[
+H^0(X,L)\to L_p \to k(p) \oplus \mathfrak{m}_{X,p}L_p/\mathfrak{m}_{X,p}^2L_p
+\]
+</p><p>
+とみなせる。
+以上の議論により次がわかる：
+</p>
+
+<article class="definition-env-article" id="prop-tan-vec-sheaf">
+<h3 class="definition-env-h3">
+<span>Proposition 1.3.</span>
+</h3>
+<p>
+線形系\(V\subset H^0(X,L)\)が接ベクトルを分離することは、
+合成\(V|_X\subset H^0(X,L)|_X\to \mathcal{P}^1(L)\)が全射であることと同値である。
+</p>
+</article>
+
+<p>
+特別な場合に\(\mathcal{P}^1(L)\)を調べる。
+\(X=\mathbb{P}(V), F=\mathcal{O}_{\mathbb{P}(V)}(1)\)とする。
+この場合、オイラー完全列 (cf. [<a href="#bib-item-Ha">Ha</a>, 定理 8.13], [<a href="#bib-item-YJ">ゆ</a>, Proposition 3])から、
+完全列の射
+</p>
+<p class="display-math-p">
+<div id="eq-Eular-and-principal" class="display-math-div">
+\begin{equation}
+\begin{CD}
+0 @&gt;&gt;&gt; \Omega_{\mathbb{P}(V)}(1) @&gt;&gt;&gt; V|_{\mathbb{P}(V)} @&gt;&gt;&gt; \mathcal{O}_{\mathbb{P}(V)}(1) @&gt;&gt;&gt; 0 \\
+@. @| @VVV @| @. \\
+0 @&gt;&gt;&gt; \Omega_{\mathbb{P}(V)}(1) @&gt;&gt;&gt; \mathcal{P}^1(\mathcal{O}_{\mathbb{P}(V)}(1)) @&gt;&gt;&gt; \mathcal{O}_{\mathbb{P}(V)}(1) @&gt;&gt;&gt; 0
+\end{CD}
+\tag{\(\ddagger\)}
+\end{equation}
+</div>
+
+</p>
+<p>
+ができ、蛇の補題より次を得る：
+</p>
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+<span>Proposition 1.4.</span>
+</h3>
+<p>
+\(\mathcal{P}^1(\mathcal{O}_{\mathbb{P}(V)}(1))\cong V|_{\mathbb{P}(V)}\)である。
+</p>
+</article>
+
+
+<p>
+\(L\)を\(X\)上の直線束、
+\(V\subset H^0(X,L)\)を基点のない線形系とすると、
+全射\(V|_X\to L\)により射影空間への射
+\(f:X\to \mathbb{P}(V)\)を得る。
+\(f\)によりEular完全列を引き戻したものは
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+0 @&gt;&gt;&gt; f^*\Omega_{\mathbb{P}(V)} @&gt;&gt;&gt; V|_X @&gt;&gt;&gt; L @&gt;&gt;&gt; 0
+\end{CD}
+\]
+</p><p>
+であるから、
+完全列<a href="#eq-exact-1-st-principal">(\(\dagger \))</a>との間に射
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+0 @&gt;&gt;&gt; (f^*\Omega_{\mathbb{P}(V)})\otimes_{\mathcal{O}_X}L @&gt;&gt;&gt; V|_X @&gt;&gt;&gt; L @&gt;&gt;&gt; 0 \\
+@. @VVV @VVV @| @. \\
+0 @&gt;&gt;&gt; \Omega_X\otimes_{\mathcal{O}_X}L @&gt;&gt;&gt; \mathcal{P}^1(L) @&gt;&gt;&gt; L @&gt;&gt;&gt; 0
+\end{CD}
+\]
+</p><p>
+ができる。
+ここで第一完全系列 (cf. [<a href="#bib-item-Ha">Ha</a>, 命題 II.8.11])
+より\(\mathrm{coker}(f^*\Omega_{\mathbb{P}(V)}\to \Omega_X)\cong \Omega_{X/\mathbb{P}(V)}\)であるから、
+次がわかる：
+</p>
+
+<article class="definition-env-article" id="prop-sep-tan-unramified">
+<h3 class="definition-env-h3">
+<span>Proposition 1.5.</span>
+</h3>
+<p>
+基点のない線形系\(V\)が接ベクトルを分離することは、
+\(V\)により引き起こされる射\(X\to \mathbb{P}(V)\)が不分岐であることと同値である。
+</p>
+</article>
+
+<p>
+また、\(f\)が埋め込みであれば、そのイデアル層を\(J\)とすることで、
+第二完全系列 (cf. [<a href="#bib-item-Ha">Ha</a>, 命題 II.8.12]) より
+\(\ker(f^*\Omega_{\mathbb{P}(V)}\to \Omega_X)\cong J/J^2\)となる。
+従って蛇の補題より次がわかる：
+</p>
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+<span>Proposition 1.6.</span>
+</h3>
+<p>
+\(f:X\to \mathbb{P}(V)\)が埋め込みであるとき、
+\(J\)をそのイデアル層、\(L=f^*\mathcal{O}_{\mathbb{P}(V)}(1)\)とすれば、
+\(X\)上に完全系列
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+J/J^2 @&gt;&gt;&gt; V|_X @&gt;&gt;&gt; \mathcal{P}^1(L) @&gt;&gt;&gt; 0
+\end{CD}
+\]
+</p><p>
+が存在する。
+また\(X\)が局所完全交差であれば、左側も完全である。
+</p>
+</article>
+
+
+
+
+</section>
+<section>
+<h2 class="section-name-h2">Section 2. 点を分離する線形系
+</h2>
+
+
+<p>
+次に、線形系が点を分離することについて考察する。
+</p>
+
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+<span>Definition 2.0.</span>
+</h3>
+<p>
+線形系\(V\subset H^0(X,L)\)が<b>点を分離する</b>とは、
+異なる任意の二点\(p,q\in X , p\neq q\)に対して、ある\(s\in V\)が存在し、
+\(s(p)=0\)であり、かつ\(s(q)\neq 0\)となることを言う。
+</p>
+</article>
+
+<p>
+定義より、与えられた線形系が点を分離するならば、それは大域切断で生成される。
+線形系が点を分離するということに
+<a href="#prop-BPF-surj">Proposition 1.2</a>や<a href="#prop-tan-vec-sheaf">Proposition 1.4</a>のような
+加群論的意味づけを与える。
+</p>
+
+<p>
+\(X\)上の射\(V|_X\to L\)を二つの射影
+\(\mathrm{pr}_1,\mathrm{pr}_2:X\times_kX\to X\)で引き戻すことで、
+二つの射
+\(V|_{X\times_kX}\to \mathrm{pr}_1^*L ,
+V|_{X\times_kX}\to \mathrm{pr}_2^*L\)
+を得る。
+これらを並べることにより、射
+</p>
+<p class="display-math-p">
+\[
+r:V|_{X\times_kX} \to \mathrm{pr}_1^*L\oplus \mathrm{pr}_2^*L
+\]
+</p><p>
+を得る。
+点\((p,q)\in X\times_kX\)へ\(r\)を基底変換すると、
+射
+</p>
+<p class="display-math-p">
+\[
+r|_{(p,q)}: V\to L|_p\oplus L|_q
+\]
+</p><p>
+を得るが、これは二つの射
+</p>
+<p class="display-math-p">
+\[
+V\to L|_p, v\mapsto v(p),      V\to L|_q, v\mapsto v(q)
+\]
+</p><p>
+を並べたものに他ならない。
+従って、点を分離することは以下のように言い換えられる：
+</p>
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+<span>Proposition 2.1.</span>
+</h3>
+<p>
+線形系\(V\subset H^0(X,L)\)が点を分離することは、
+射\(V|_{X\times_kX}\to \mathrm{pr}_1^*L\oplus \mathrm{pr}_2^*L\)
+が対角集合\(\Delta\)の外\(X\times_kX\setminus \Delta\)で全射であることと同値である。
+</p>
+</article>
+
+<p>
+次に、<a href="#prop-sep-tan-unramified">Proposition 1.6</a>のような幾何的意味づけを与える。
+</p>
+
+<p>
+線形系\(V\subset H^0(X,L)\)が与えられれば、
+\(X\)上で射\(h:V|_X\to L\)ができる。
+この射を点\(p\in X\)へ基底変換すれば、
+線形空間の射\(h_p:V\to L|_x\)ができる。
+\(h_p\)が全射であれば、それは射影空間の点\(f(p)\in \mathbb{P}(X)\)を与え、
+こうして有理写像
+</p>
+<p class="display-math-p">
+\begin{align*}
+f:X &amp;\dashrightarrow \mathbb{P}(V) \\
+p &amp;\mapsto f(p)
+\end{align*}
+&lt;/div&gt;
+
+</p>
+<p>
+ができる。
+\(V\)が基点なしであるというのは、
+射\(V|_X\to L\)が全射であるということと同値であったが、
+これは有理写像\(f\)が射であることと同値である。
+さらに、\(V\)が点を分離することは、
+異なる二点\(p,q\)に対して
+\(h_p+h_q:V\to L|_p\oplus L|_q\)が全射であることと同値であったから、
+すなわち\(p\neq q \Rightarrow \ker(h_p)\neq \ker(h_q)\)と同値であり、
+つまり射\(f\)が単射であることと同値である。
+</p>
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+<span>Proposition 2.2.</span>
+</h3>
+<p>
+線形系\(V\subset H^0(X,L)\)が基点なしであることは、
+対応する有理写像\(f:X\dashrightarrow \mathbb{P}(V)\)が射であることと同値であり、
+基点のない線形系が点を分離することは、射\(f:X\to \mathbb{P}(V)\)が単射であることと同値である。
+</p>
+</article>
+
+<p>
+このノートで述べた、線形系に対する3つの性質の加群論的・幾何的な言い換えを、以下にまとめておく：
+</p>
+
+<article class="definition-env-article" id="thm">
+<h3 class="definition-env-h3">
+<span>Theorem 2.3.</span>
+</h3>
+<p>
+\(X\)を代数多様体、\(L\)を\(X\)上の直線束、
+\(V\subset H^0(X,L)\)を線形系、
+\(f:X\dashrightarrow \mathbb{P}(V)\)を対応する有理写像とする。
+</p>
+<ol>
+<li>
+<p>
+以下は同値：</p>
+<ul>
+<li>
+<p>
+\(V\)は基点がない。</p>
+</li>
+<li>
+<p>
+\(V\subset H^0(X,L)\)に対応する射\(V|_X\to L\)は全射である。</p>
+</li>
+<li>
+<p>
+有理写像\(f:X\dashrightarrow\mathbb{P}(V)\)は射である。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>
+以下は同値：</p>
+<ul>
+<li>
+<p>
+\(V\)は点を分離する。</p>
+</li>
+<li>
+<p>
+\(X\times_kX\)上の射\(\mathrm{pr}_1^*p+\mathrm{pr}_2^*p:V|_{X\times_kX}\to
+\mathrm{pr}_1^*L\oplus \mathrm{pr}_2^*L\)は
+対角集合\(\Delta\)の外\(X\times_kX\setminus \Delta\)で全射である。
+</p>
+</li>
+<li>
+<p>
+有理写像\(f:X\dashrightarrow\mathbb{P}(V)\)は射であり、さらに単射である。</p>
+</li>
+</ul>
+</li>
+<li>
+<p>
+以下は同値：</p>
+<ul>
+<li>
+<p>
+\(V\)は接ベクトルを分離する。</p>
+</li>
+<li>
+<p>
+\(V\subset H^0(X,L)\)から得られる射\(V|_X\to \mathcal{P}^1(L)\)は全射である。</p>
+</li>
+<li>
+<p>
+有理写像\(f:X\dashrightarrow\mathbb{P}(V)\)は射であり、さらに不分岐である。</p>
+</li>
+</ul>
+</li>
+</ol>
+</article>
+
+
+
+
+
+
+</section>
+<section>
+<h2 class="section-name-h2">Section 3. 点と接ベクトルを分離する線形系が定める射は埋め込みである
+</h2>
+
+
+<p>
+最後に、点と接ベクトルを分離する線形系\(V\subset H^0(X,L)\)が
+埋め込み\(X\to \mathbb{P}(V)\)を与えることを証明する。
+</p>
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+<span>Remark 3.0.</span>
+</h3>
+<p>
+書いてみたら意外と長くなってしまったので、
+スキームのモノ射や普遍的に単射な射に関するノートを別に作成して、
+線形系とは関係のないスキーム論的な主張はそっちに移行するかもしれない。
+</p>
+</article>
+
+
+
+
+<article class="definition-env-article" id="lem-mono-var">
+<h3 class="definition-env-h3">
+<span>Lemma 3.1.</span>
+</h3>
+<p>
+代数多様体の間のモノ射\(f:X\to Y\)は埋め込みである。
+</p>
+</article>
+
+
+<article class="proof-env-article">
+<h3 class="proof-env-h3">
+<span>Proof.</span>
+</h3>
+<p>
+\(f\)はモノ射なので、生成点の像のfiberを見ることで像への双有理射であることがわかる。
+また\(f\)は単射なので局所閉部分集合の上への同相である。
+よって、\(f\)が埋め込みであることを示すには、
+\(f\)が閉部分集合の上への同相であると仮定しても良い。
+properなモノ射は閉埋め込みであるから、
+\(f\)がproperであることを証明すれば良い。
+</p>
+
+<p>
+\(f\)がproperであることを付値判定法により示す。
+\(R\)をDVR、\(K\)をその商体として、可換図式
+</p>
+<p class="display-math-p">
+<div id="eq-comm" class="display-math-div">
+\begin{equation}
+\begin{CD}
+\mathrm{Spec}(K) @&gt;&gt;&gt; X \\
+@VVV @VVfV \\
+\mathrm{Spec}(R) @&gt;i&gt;&gt; Y
+\end{CD}
+\tag{\(\star\)}
+\end{equation}
+</div>
+
+</p>
+<p>
+を任意にとる。
+\(i\)で基底変換することで、モノ射
+\(f_R:X_R\to \mathrm{Spec}(R)\)を得る。
+ただしここで\(X_R:\overset{\mathrm{\scriptsize def}}{=} X\times_Y\mathrm{Spec}(R)\)である。
+\(f\)は閉部分集合の上への同相なので、
+\(i\)による閉点の像は\(f\)の像に含まれる。
+よって\(f_R\)がモノ射であることから\(X_R\)は二点で連結、
+特にアフィンである。
+\(A=\Gamma(X_R,\mathcal{O}_{X_R})\)と置くと、
+射の列\(\mathrm{Spec}(K)\to X_R\to \mathrm{Spec}(R)\)から環の射の列
+\(R\to A\to K\)を得る。
+ここで\(A\)は局所環で、\(R\to A\)は単射な局所準同型、
+また\(R\)はDVRなので、\(R\subset \mathrm{Im}(A\to K)\subset K\)より
+\(\mathrm{Im}(A\to K)\cong R\)がわかる。
+よって\(X_R\to \mathrm{Spec}(R)\)のsectionができ、
+図式<a href="#eq-comm">(\(\star \))</a>のリフト\(\mathrm{Spec}(R)\to X\)がとれる。
+以上で\(f\)はproper射である。
+</p>
+</article>
+
+
+
+
+<article class="definition-env-article" id="lem-univ-inj-lem">
+<h3 class="definition-env-h3">
+<span>Lemma 3.2.</span>
+</h3>
+<p>
+\(K\)を体、\(X\)を\(\varnothing\)でない\(K\)-スキームで、
+対角射\(X\to X\times_KX\)は全射であるとする。
+このとき\(X\)の下部位相空間は一点である。
+</p>
+</article>
+
+<article class="proof-env-article">
+<h3 class="proof-env-h3">
+<span>Proof.</span>
+</h3>
+<p>
+対角射\(X\to X\times_KX\)が全射であることから、
+射影\(X\times_KX\to X\)は全単射、とくに単射である。
+\(X\to \mathrm{Spec}(K)\)は忠実平坦であるから、
+\(X\to\mathrm{Spec}(K)\)は忠実平坦基底変換のあと単射となる射であり、
+従って単射である。
+\(X\neq \varnothing\)であるから、\(X\)の下部位相空間は一点である。
+</p>
+</article>
+
+
+<article class="definition-env-article" id="lem-univ-inj">
+<h3 class="definition-env-h3">
+<span>Lemma 3.3.</span>
+</h3>
+<p>
+\(f:X\to Y\)をスキームの射とする。
+\(f\)が普遍的に単射であることは、
+対角射\(\Delta_f:X\to X\times_YX\)が全射であることと同値である。
+ただし、\(f\)が<b>普遍的に単射</b> (universally injective) であるとは、
+任意の射\(Y'\to Y\)に対する基底変換
+\(f':X':\overset{\mathrm{\scriptsize def}}{=} X\times_YY'\to Y'\)が単射であることを言う。
+</p>
+</article>
+
+<article class="proof-env-article">
+<h3 class="proof-env-h3">
+<span>Proof.</span>
+</h3>
+<p>
+\(p_1,p_2:X\times_YX\rightrightarrows X\)をそれぞれ射影とする。
+</p>
+
+<p>
+まず\(f\)が普遍的に単射であると仮定する。
+\(p_1\circ \Delta_f=\mathrm{id}_X\)であるから、
+\(\Delta_f\)が全射であるためには各\(x\in X\)に対して
+\(p_1^{-1}(x)\)が一点集合であることが十分である。
+ここで
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+p_1^{-1}(x) @&gt;&gt;&gt; X\times_YX @&gt;p_2&gt;&gt; X \\
+@VVV @Vp_1VV @VVfV \\
+\mathrm{Spec}(k(x)) @&gt;&gt;&gt; X @&gt;f&gt;&gt; Y
+\end{CD}
+\]
+</p><p>
+という基底変換の図式と\(f\)が普遍的に単射であることから、
+\(p_1^{-1}(x)\)は一点集合である
+(ここで\(k(x)\)は点\(x\)での剰余体を表す)。
+以上より\(\Delta_f\)は全射である。
+</p>
+
+<p>
+次に\(\Delta_f:X\to X\times_YX\)が全射であると仮定する。
+任意に射\(Y'\to Y\)をとり、\(f\)の\(Y'\to Y\)に沿った基底変換を
+\(f':X':\overset{\mathrm{\scriptsize def}}{=} X\times_YY'\to Y'\)を書く。
+点\(y'\in Y'\)を任意にとる。
+\(f'^{-1}(y')\)が一点集合または\(\varnothing\)であることを示せば良い。
+\(K:\overset{\mathrm{\scriptsize def}}{=} k(y') , X_K:\overset{\mathrm{\scriptsize def}}{=} X\times_Y\mathrm{Spec}(K)\)と置けば、
+基底変換の図式
+</p>
+<p class="display-math-p">
+\[
+\begin{CD}
+X_K @&gt;&gt;&gt; X' @&gt;&gt;&gt; X \\
+@Vf_KVV @VVV @VVfV \\
+\mathrm{Spec}(K) @&gt;&gt;&gt; Y' @&gt;&gt;&gt; Y
+\end{CD}
+\]
+</p><p>
+ができる。
+ここで\(f_K\)の対角射
+\(\Delta_{f_K}:X_K\to X_K\times_{\mathrm{Spec}(K)}X_K\)
+は\(Y\)上の全射\(\Delta_f\)の\(\mathrm{Spec}(K)\to Y\)に沿った基底変換であり、
+特に全射である。
+従って<a href="#lem-univ-inj-lem">Lemma 3.3</a>より\(X_K\)の下部位相空間は一点である。
+以上で示された。
+</p>
+</article>
+
+
+
+<article class="definition-env-article" id="lem-mono">
+<h3 class="definition-env-h3">
+<span>Lemma 3.4.</span>
+</h3>
+<p>
+スキームの間の不分岐射\(f:X\to Y\)が普遍的に単射であれば、
+\(f\)はモノ射である。
+</p>
+</article>
+
+<article class="proof-env-article">
+<h3 class="proof-env-h3">
+<span>Proof.</span>
+</h3>
+<p>
+不分岐射\(f\)の対角射\(\Delta_f\)は開埋め込みであるが、
+\(f\)がさらに普遍的に単射であれば、
+<a href="#lem-univ-inj">Lemma 3.4</a>より\(\Delta_f\)は同型射となる。
+</p>
+</article>
+
+
+
+<article class="definition-env-article" id="lem-var-inj-univ-inj">
+<h3 class="definition-env-h3">
+<span>Lemma 3.5.</span>
+</h3>
+<p>
+\(k\)を代数閉体、\(X,Y\)を\(k\)上の代数多様体、
+\(f:X\to Y\)を\(k\)上の代数多様体の単射とする。
+このとき\(f\)は普遍的に単射である。
+</p>
+</article>
+
+<article class="proof-env-article">
+<h3 class="proof-env-h3">
+<span>Proof.</span>
+</h3>
+<p>
+<a href="#lem-univ-inj">Lemma 3.4</a>より、
+対角射\(\Delta_f:X\to X\times_Y X\)が全射であることを示せば良い。
+\(X\times_YX\subset X\times_kX\)は体\(k\)上有限型なのでJacobsonであり、
+従って、\(\Delta_f\)が全射であるためには
+任意の閉点\((x_1,x_2)\in X\times_YX\)が\(\Delta_f\)の像に属することを示せば良い。
+点\((x_1,x_2)\in X\times_kX\)が\(f(x_1)=f(x_2)\)を満たすとすると、
+\(f\)が単射であることから\(x_1=x_2\)である。
+従って\((x_1,x_2)\in \Delta\)である。
+よって\(\Delta_f\)は全射である。
+</p>
+</article>
+
+
+
+<article class="definition-env-article">
+<h3 class="definition-env-h3">
+<span>Theorem 3.6.</span>
+</h3>
+<p>
+\(X\)を代数閉体上の代数多様体、\(L\)を\(X\)上の直線束、
+\(V\subset H^0(X,L)\)を線形系、
+\(f:X\dashrightarrow \mathbb{P}(V)\)を対応する有理写像とする。
+このとき、\(V\)が点と接ベクトルを分離することは、
+\(f\)が射であり、さらに埋め込みであることと同値である。
+</p>
+</article>
+
+<article class="proof-env-article">
+<h3 class="proof-env-h3">
+<span>Proof.</span>
+</h3>
+<p>
+\(f\)が埋め込みであれば不分岐かつ単射なので、
+<a href="#thm">Theorem 2.4</a>より\(V\)は点と接ベクトルを分離する。
+</p>
+
+<p>
+\(V\)が点と接ベクトルを分離すると仮定する。
+<a href="#thm">Theorem 2.4</a>より
+\(f\)は代数多様体の間の不分岐な単射であり、
+<a href="#lem-mono">Lemma 3.5</a>と<a href="#lem-var-inj-univ-inj">Lemma 3.6</a>より
+\(f\)はモノ射である。
+よって<a href="#lem-mono-var">Lemma 3.2</a>より\(f\)は埋め込みである。
+</p>
+</article>
+
+
+
+
+
+</section>
+
+<section classs="bibliography-section">
+<h2 class="bibliography-h2">References
+</h2>
+<ul class="bibliography-ul">
+<li id="bib-item-Ha" class="bibliography-li">
+<h3 class="bibliography-h3">
+[Ha]
+</h3>
+R.Hartshorne, <i>Algebraic Geometry</i>. Springer-Verlag, New Tork, 1977. Graduate Text in Mathematics, No. 52. 
+</li>
+<li id="bib-item-YJ" class="bibliography-li">
+<h3 class="bibliography-h3">
+[ゆ]
+</h3>
+ゆじノート, <i>Blowing Up along Linear Subvarieties</i>.
+</li>
+</ul>
+</section>
+
+    </main>
+    
+<footer class="bottom-footer">
+
+  
+    <ul>
+      <li>
+        <h2><a href="/Yujitomo_Top.html"><span class="first-color-change">Tomoki Yuji</span></a></h2>
+        <a href="https://www.kurims.kyoto-u.ac.jp/ja/">@RIMS</a>
+        <nav>
+          <ul class="footer-left">
+            
+            <li><a href="/Profile.html">About</a></li>
+            
+            <li><a href="/Research.html">Research</a></li>
+            
+            <li><a href="/Notes.html">Notes</a></li>
+            
+            <li><a href="/Diary.html">Diary</a></li>
+            
+          </ul>
+        </nav>
+      </li>
+      <li>
+        <ul class="footer-right">
+          <li><a href="mailto:yujitomo@kurims.kyoto-u.ac.jp"><svg height="24" class="octicon octicon-mail" viewBox="0 0 24 24" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M1.75 3A1.75 1.75 0 000 4.75v14c0 .966.784 1.75 1.75 1.75h20.5A1.75 1.75 0 0024 18.75v-14A1.75 1.75 0 0022.25 3H1.75zM1.5 4.75a.25.25 0 01.25-.25h20.5a.25.25 0 01.25.25v.852l-10.36 7a.25.25 0 01-.28 0l-10.36-7V4.75zm0 2.662V18.75c0 .138.112.25.25.25h20.5a.25.25 0 00.25-.25V7.412l-9.52 6.433c-.592.4-1.368.4-1.96 0L1.5 7.412z"></path></svg></a></li>
+          <li><a href="https://github.com/yujitomo/yujitomo.github.io"><svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></li>
+        </ul>
+      </li>
+    </ul>
+  </footer>
+
+
+  <script type="text/javascript" src="/assets/js/MyJavaScript.js"></script>
+</body>
+
+</html>

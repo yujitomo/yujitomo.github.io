@@ -52,6 +52,10 @@
 
 \usepackage{amsthm}
 
+\newcommand{\myTheoremEnvironments}[1]{#1}
+
+\myTheoremEnvironments{
+
 %%%%%%%%%%%%Plain型%%%%%%%%%%%%
 
 
@@ -116,6 +120,7 @@
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
+}
 
 
 
@@ -176,15 +181,22 @@
 
 
 
+\newcommand{\myOriginalPackages}[1]{#1}
+
+\myOriginalPackages{
 \usepackage{mandorasymb}
 \usepackage{applekeys}
 \renewcommand{\qedsymbol}{\pencilkey}
 %\renewcommand{\qedsymbol}{\kinoposymbniko}
 
-
+}
 
 
 \usepackage{latexsym}
+
+\newcommand{\myMacros}[1]{#1}
+
+\myMacros{
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Isom}{Isom}
 \DeclareMathOperator{\ISOM}{\mathbf{Isom}}
@@ -250,23 +262,23 @@
 
 \DeclareMathOperator{\OOO}{\mcO}
 
-\newcommand{\OB}{{\OOO_B}}
-\newcommand{\OC}{{\OOO_C}}
-\newcommand{\OD}{{\OOO_D}}
-\renewcommand{\OE}{{\OOO_E}}
-\newcommand{\OF}{{\OOO_F}}
-\newcommand{\OH}{{\OOO_H}}
-\newcommand{\OP}{{\OOO_P}}
-\newcommand{\OQ}{{\OOO_Q}}
-\newcommand{\OR}{{\OOO_R}}
-\newcommand{\OS}{{\OOO_S}}
-\newcommand{\OT}{{\OOO_T}}
-\newcommand{\OU}{{\OOO_U}}
-\newcommand{\OV}{{\OOO_V}}
-\newcommand{\OW}{{\OOO_W}}
-\newcommand{\OX}{{\OOO_X}}
-\newcommand{\OY}{{\OOO_Y}}
-\newcommand{\OZ}{{\OOO_Z}}
+\newcommand{\OB}{\OOO_B}
+\newcommand{\OC}{\OOO_C}
+\newcommand{\OD}{\OOO_D}
+\renewcommand{\OE}{\OOO_E}
+\newcommand{\OF}{\OOO_F}
+\newcommand{\OH}{\OOO_H}
+\newcommand{\OP}{\OOO_P}
+\newcommand{\OQ}{\OOO_Q}
+\newcommand{\OR}{\OOO_R}
+\newcommand{\OS}{\OOO_S}
+\newcommand{\OT}{\OOO_T}
+\newcommand{\OU}{\OOO_U}
+\newcommand{\OV}{\OOO_V}
+\newcommand{\OW}{\OOO_W}
+\newcommand{\OX}{\OOO_X}
+\newcommand{\OY}{\OOO_Y}
+\newcommand{\OZ}{\OOO_Z}
 
 \newcommand{\OO}[1]{\OOO_{#1}}
 
@@ -276,13 +288,40 @@
 \newcommand{\dto}{\dashrightarrow}
 \renewcommand{\emptyset}{\varnothing}
 
-\def\dfn{:\overset{\mbox{{\scriptsize def}}}{=}}
-
+\newcommand{\dfn}{:\overset{\mathrm{\scriptsize def}}{=}}
+}
 
 
 %%%%%%%%%タイトル
 \title{Hartshorne Exercise II.8.2}
 \author{ゆじ}
+
+
+
+\newcommand{\lt}{<}
+\renewcommand{\gt}{>}
+
+
+
+\allowdisplaybreaks[1]
+
+
+
+
+\newcommand{\HereBeginTikz}{}
+\newcommand{\HereEndTikz}{}
+\newcommand{\HTMLhead}[1]{}
+
+\HTMLhead{
+---
+layout: article-type
+title: "Hartshorne Exercise II.8.2."
+category: Notes
+tag: "Commtative Algebra"
+author: Yujitomo
+description: "Hartshorne Exercise II.8.2.の解答"
+---
+}
 
 
 \begin{document}
@@ -342,9 +381,13 @@
 \(s\)の零点集合を調べる。
 
 まず、\(s=0\)で定まる\(X\)の閉部分スキームがどのように構成されるか見る。
-\[\OX \xrightarrow{s_X} V_X\to \mcE\]
+\[
+\OX \xrightarrow{s_X} V_X\to \mcE
+\]
 を点\(p\in X\)に基底変換すると、
-\[k(p) \xrightarrow{s} V \to \mcE_p\]
+\[
+k(p) \xrightarrow{s} V \to \mcE_p
+\]
 を得る。
 \(s(p)=0\)の意味は、この射の列の合成が\(0\)射だということである。
 双対をとることで、
@@ -362,7 +405,9 @@
 閉部分スキーム\((s=0)\)は、\(s\)を\(0\)でない定数倍で置き換えても変わらない注意する。
 すると、各\(\P(V^{\vee})\)の元に対して\(X\)の閉部分スキームが定まることになり、
 \(\P(V^{\vee})\)でパラメーター付けられた\(X\)の閉部分スキームの族
-\[H\subset \P(V^{\vee})\times_kX\]
+\[
+H\subset \P(V^{\vee})\times_kX
+\]
 で、各\(s\in V\)に対して、対応する\(\P(V^{\vee})\)のfiberが
 \(s=0\)となるもの、
 の存在を期待したくなる。
@@ -434,7 +479,9 @@ Y_p\cong p \ \iff \ s\in \im(j_p) \ \iff s\in \im (\mcK|_p\to V) \
   \(\mcK\dfn \ker (V_X\to \mcE)\)と置くと、\(\mcK\)のランクは\(d-r > 0\)である。
   双対をとることで全射\(V|_X^{\vee} \to \mcK^{\vee}\)を得る。
   この全射が引き起こす\(X\)上の射影束の閉埋め込み
-  \[j:\P_X(\mcK^{\vee})\to \P(V^{\vee})\times_k X\]
+  \[
+  j:\P_X(\mcK^{\vee})\to \P(V^{\vee})\times_k X
+  \]
   と射影\(\P(V^{\vee})\times_k X\to \P(V^{\vee})\)を合成すると、
   射
   \[
@@ -449,7 +496,9 @@ Y_p\cong p \ \iff \ s\in \im(j_p) \ \iff s\in \im (\mcK|_p\to V) \
   \((s=0)=\emptyset\)となる。
   ここで、元\(s\in V\)の定める射\(\OX\xrightarrow{s_X}V_X \to \mcE\)
   の双対
-  \[\mcE^{\vee}\to V^{\vee}_X \xrightarrow{s_X^{\vee}} \OX\]
+  \[
+  \mcE^{\vee}\to V^{\vee}_X \xrightarrow{s_X^{\vee}} \OX
+  \]
   の余核がちょうど\(s=0\)で定まる閉部分スキームの構造層であることに注意すると、
   今、\((s=0)=\emptyset\)であるから、
   \(\mcE^{\vee}\to V^{\vee}_X \xrightarrow{s_X^{\vee}} \OX\)

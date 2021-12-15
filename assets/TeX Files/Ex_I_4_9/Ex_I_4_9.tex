@@ -318,6 +318,12 @@
 
 
 
+\newcommand{\lt}{<}
+\renewcommand{\gt}{>}
+
+
+
+
 
 
 %%%%%%%%%タイトル
@@ -333,11 +339,11 @@
 \HTMLhead{
 ---
 layout: article-type
-title: "Blowing Up along Linear Subvariety"
+title: "Hartshorne Exercise I.4.9."
 category: Notes
 tag: "Commtative Algebra"
 author: Yujitomo
-description: "射影空間の線形部分多様体に沿った爆発について"
+description: "Hartshorne Exercise I.4.9.の解答"
 ---
 }
 
@@ -407,10 +413,10 @@ description: "射影空間の線形部分多様体に沿った爆発について
 
 \begin{lem}\label{lem: Grass}
   \(V\)を次元\(r+1\)の線形空間、
-  \(0 < s < r\)を整数とする。
+  \(0 \lt s \lt r\)を整数とする。
   \begin{enumerate}
     \item \label{enumi: lem: Grass empty}
-    \(X\subset \P(V)\)を次元\(d < r-s\)の閉部分多様体とする。
+    \(X\subset \P(V)\)を次元\(d \lt r-s\)の閉部分多様体とする。
     このとき、\(X\)と交わらない\(\P(V)\)内の次元\(s\)の平面は
     \(\G(V,s+1)\)の開集合をなす。
     \item \label{enumi: lem: Grass finite}
@@ -504,8 +510,8 @@ description: "射影空間の線形部分多様体に沿った爆発について
 
   \(\dim (\G(V,s+1)) = (r-s)(s+1) = rs-s^2+r-s\)であることに注意する。
   \ref{enumi: lem: Grass empty}を示す。
-  \(d< r-s\)なので、
-  \(\dim Y < \dim(\G(V,s+1))\)であり、
+  \(d\lt r-s\)なので、
+  \(\dim Y \lt \dim(\G(V,s+1))\)であり、
   特に、射影\(f:Y\to \G(V,s+1)\)の像は真の閉部分集合である。
   このことは\ref{enumi: lem: Grass empty}を示している。
   \ref{enumi: lem: Grass finite}を示す。
@@ -523,8 +529,8 @@ description: "射影空間の線形部分多様体に沿った爆発について
 
 \begin{lem}\label{lem: Grass 1pt}
   \(V\)を次元\(r+1\)の線形空間、
-  \(0 < s < r\)を整数、
-  \(X\subset \P(V)\)を次元\(d < r-s\)の閉部分多様体とする。
+  \(0 \lt s \lt r\)を整数、
+  \(X\subset \P(V)\)を次元\(d \lt r-s\)の閉部分多様体とする。
   このとき、\(X\)と交わる\(\P(V)\)内の次元\(s\)の平面のうち
   ほとんどは\(X\)と一点で交わる。
 \end{lem}
@@ -636,7 +642,7 @@ description: "射影空間の線形部分多様体に沿った爆発について
   \begin{align*}
     \dim (\G_{\Hilb^2(X)}(\ker(\Psi),s-1))
     &= 2d + (s-1)((r+1-2)-(s-1)) = 2d + (s-1)(r-s) \\
-    &< d + s(r-s) = \dim (\G_X(\Omega_{\P(V)}(1)|_X,s)) = \dim (\im (f))
+    &\lt d + s(r-s) = \dim (\G_X(\Omega_{\P(V)}(1)|_X,s)) = \dim (\im (f))
   \end{align*}
   であるから、
   \(\im(g)\)は\(\im(f)\)の真の閉部分集合となる。

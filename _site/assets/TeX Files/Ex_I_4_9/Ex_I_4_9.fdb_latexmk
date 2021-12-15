@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1639229709 "Ex_I_4_9.dvi" "Ex_I_4_9.pdf" "Ex_I_4_9" 1639229709
-  "Ex_I_4_9.dvi" 1639229709 63552 ecbc246d903b7682b97471411fba81c5 "latex"
+["dvipdf"] 1639556086 "Ex_I_4_9.dvi" "Ex_I_4_9.pdf" "Ex_I_4_9" 1639556086
+  "Ex_I_4_9.dvi" 1639556085 63552 398c982e4f46033daab8dd41b85eacac "latex"
   (generated)
   "Ex_I_4_9.pdf"
-["latex"] 1639229707 "Ex_I_4_9.tex" "Ex_I_4_9.dvi" "Ex_I_4_9" 1639229709
+["latex"] 1639556084 "Ex_I_4_9.tex" "Ex_I_4_9.dvi" "Ex_I_4_9" 1639556086
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -195,11 +195,11 @@
   "/usr/local/texlive/texmf-local/tex/latex/local/applekeys/applekeys.sty" 1124886972 2457 24db601311c9f25dce7e373fe4c6b984 ""
   "/usr/local/texlive/texmf-local/tex/latex/local/applekeys/pencil.pdf" 1068332390 1640 d049c7f6f76c05259999d52b6d7db251 ""
   "/usr/local/texlive/texmf-local/tex/latex/local/mandorasymb/mandorasymb.sty" 1607639133 561 597758ea36a1a82430c55f99e0d1ef63 ""
-  "Ex_I_4_9.aux" 1639229709 1344 af9e336c9f285643a6a454571556fe05 "latex"
-  "Ex_I_4_9.out" 1639229709 177 cb1b150c0a6b412ff57a00d4accb21f7 "latex"
-  "Ex_I_4_9.tex" 1639229706 27512 89d3fb778103f94de385487afce2ff7c ""
+  "Ex_I_4_9.aux" 1639556085 1344 af9e336c9f285643a6a454571556fe05 "latex"
+  "Ex_I_4_9.out" 1639556085 177 cb1b150c0a6b412ff57a00d4accb21f7 "latex"
+  "Ex_I_4_9.tex" 1639556083 27537 a254535a7e50879e77ffba82ff43bd7f ""
   (generated)
-  "Ex_I_4_9.dvi"
   "Ex_I_4_9.log"
-  "Ex_I_4_9.out"
+  "Ex_I_4_9.dvi"
   "Ex_I_4_9.aux"
+  "Ex_I_4_9.out"

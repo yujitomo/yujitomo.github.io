@@ -57,6 +57,9 @@
 
 %%%%%%%%%%%%definition型%%%%%%%%%%%%
 
+\newcommand{\myTheoremEnvironments}[1]{#1}
+
+\myTheoremEnvironments{
 \theoremstyle{definition}
 
 \renewcommand{\sectionautorefname}{Section}
@@ -115,7 +118,7 @@
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
 %%%%%%%%%%%%定理環境%%%%%%%%%%%%
-
+}
 
 
 
@@ -175,15 +178,23 @@
 
 
 
+
+\newcommand{\myOriginalPackages}[1]{#1}
+
+\myOriginalPackages{
 \usepackage{mandorasymb}
 \usepackage{applekeys}
 \renewcommand{\qedsymbol}{\pencilkey}
 %\renewcommand{\qedsymbol}{\kinoposymbniko}
-
+}
 
 
 
 \usepackage{latexsym}
+
+\newcommand{\myMacros}[1]{#1}
+
+\myMacros{
 \DeclareMathOperator{\Hom}{Hom}
 \DeclareMathOperator{\Isom}{Isom}
 \DeclareMathOperator{\ISOM}{\mathbf{Isom}}
@@ -249,23 +260,23 @@
 
 \DeclareMathOperator{\OOO}{\mcO}
 
-\newcommand{\OB}{{\OOO_B}}
-\newcommand{\OC}{{\OOO_C}}
-\newcommand{\OD}{{\OOO_D}}
-\renewcommand{\OE}{{\OOO_E}}
-\newcommand{\OF}{{\OOO_F}}
-\newcommand{\OH}{{\OOO_H}}
-\newcommand{\OP}{{\OOO_P}}
-\newcommand{\OQ}{{\OOO_Q}}
-\newcommand{\OR}{{\OOO_R}}
-\newcommand{\OS}{{\OOO_S}}
-\newcommand{\OT}{{\OOO_T}}
-\newcommand{\OU}{{\OOO_U}}
-\newcommand{\OV}{{\OOO_V}}
-\newcommand{\OW}{{\OOO_W}}
-\newcommand{\OX}{{\OOO_X}}
-\newcommand{\OY}{{\OOO_Y}}
-\newcommand{\OZ}{{\OOO_Z}}
+\newcommand{\OB}{\OOO_B}
+\newcommand{\OC}{\OOO_C}
+\newcommand{\OD}{\OOO_D}
+\renewcommand{\OE}{\OOO_E}
+\newcommand{\OF}{\OOO_F}
+\newcommand{\OH}{\OOO_H}
+\newcommand{\OP}{\OOO_P}
+\newcommand{\OQ}{\OOO_Q}
+\newcommand{\OR}{\OOO_R}
+\newcommand{\OS}{\OOO_S}
+\newcommand{\OT}{\OOO_T}
+\newcommand{\OU}{\OOO_U}
+\newcommand{\OV}{\OOO_V}
+\newcommand{\OW}{\OOO_W}
+\newcommand{\OX}{\OOO_X}
+\newcommand{\OY}{\OOO_Y}
+\newcommand{\OZ}{\OOO_Z}
 
 \newcommand{\OO}[1]{\OOO_{#1}}
 
@@ -275,8 +286,8 @@
 \newcommand{\dto}{\dashrightarrow}
 \renewcommand{\emptyset}{\varnothing}
 
-\def\dfn{:\overset{\mbox{{\scriptsize def}}}{=}}
-
+\newcommand{\dfn}{:\overset{\mathrm{\scriptsize def}}{=}}
+}
 
 
 
@@ -284,6 +295,33 @@
 \title{Separating Tangent Vectors}
 \author{ゆじ}
 \date{\today}
+
+
+\newcommand{\lt}{<}
+\renewcommand{\gt}{>}
+
+
+
+\allowdisplaybreaks[1]
+
+
+
+
+\newcommand{\HereBeginTikz}{}
+\newcommand{\HereEndTikz}{}
+\newcommand{\HTMLhead}[1]{}
+
+\HTMLhead{
+---
+layout: article-type
+title: "Separating Tangent Vectors"
+category: Notes
+tag: "Commtative Algebra"
+author: Yujitomo
+description: "接ベクトルを分離する線形系について"
+---
+}
+
 
 \begin{document}
 \maketitle
@@ -338,8 +376,10 @@
 閉埋め込み\(D_s\subset X\)から
 全射\(\Omega_X|_{D_s}\to \Omega_{D_s}\)を得る。
 点\(p\in D_s\)まで基底変換すれば全射
-\[\mathfrak{m}_{X,p}/\mathfrak{m}_{X,p}^2\to
-\mathfrak{m}_{D_s,p}/\mathfrak{m}_{D_s,p}^2\]
+\[
+\mathfrak{m}_{X,p}/\mathfrak{m}_{X,p}^2\to
+\mathfrak{m}_{D_s,p}/\mathfrak{m}_{D_s,p}^2
+\]
 を得る。
 双対をとることで包含\(T_p(D_s)\subset T_p(X)\)が定まる。
 点\(p\)でのstalkを取れば、
@@ -357,7 +397,9 @@
 \cong k(p) \oplus \mathfrak{m}_{X,p}L_p/\mathfrak{m}_{X,p}^2L_p\)
 に注意すれば、
 全射
-\[L_p\to k(p) \oplus \mathfrak{m}_{X,p}L_p/\mathfrak{m}_{X,p}^2L_p\]
+\[
+L_p\to k(p) \oplus \mathfrak{m}_{X,p}L_p/\mathfrak{m}_{X,p}^2L_p
+\]
 を得る。
 従って、線形系\(V\)が接ベクトルを分離することは、
 任意の点\(p\)に対して合成
@@ -384,7 +426,9 @@ V\to L_p \to k(p) \oplus \mathfrak{m}_{X,p}L_p/\mathfrak{m}_{X,p}^2L_p
 \(\mathrm{pr}_2^*F\to i_*p_2^*F\to \Delta_*F\)を得る。
 これを\(\mathrm{pr}_1\)でpushすることで、
 射の列
-\[\mathrm{pr}_{1,*}\mathrm{pr}_2^*F\to p_{1,*}p_2^*F\to F\]
+\[
+\mathrm{pr}_{1,*}\mathrm{pr}_2^*F\to p_{1,*}p_2^*F\to F
+\]
 を得る。
 \(p_{1,*}p_2^*F\to F\)は全射であり、
 \(F\)が局所自由であれば、その核は\(\Omega_X\otimes_{\OX}(F)\)と自然に同型である。
@@ -405,15 +449,21 @@ V\to L_p \to k(p) \oplus \mathfrak{m}_{X,p}L_p/\mathfrak{m}_{X,p}^2L_p
 \(\mathrm{pr}_{1,*}\mathrm{pr}_2^*F\cong H^0(X,F)|_X\)
 である。
 従って、\(F\)が大域切断で生成されることと、射の列
-\[\mathrm{pr}_{1,*}\mathrm{pr}_2^*F\cong H^0(X,F)|_X \to \mcP^1(F)\to F\]
+\[
+\mathrm{pr}_{1,*}\mathrm{pr}_2^*F\cong H^0(X,F)|_X \to \mcP^1(F)\to F
+\]
 の合成が全射となることは同値である。
 \(L\)を直線束とする。
 点\(p\in X\)に射\(H^0(X,L)|_X\to \mcP^1(L)\)を基底変換すると、
 射
-\[H^0(X,L)\to \mcP^1(L)|_p\]
+\[
+H^0(X,L)\to \mcP^1(L)|_p
+\]
 を得る。
 完全列\eqref{eq: exact 1-st principal}と\(L\)が直線束であることから、
-\[\mcP^1(F)|_p\cong k(p)\oplus \mathfrak{m}_{X,p}/\mathfrak{m}_{X,p}^2\]
+\[
+\mcP^1(F)|_p\cong k(p)\oplus \mathfrak{m}_{X,p}/\mathfrak{m}_{X,p}^2
+\]
 であり、従って射\(H^0(X,L)\to \mcP^1(L)|_p\)は
 stalkをとったのちに商をとる射
 \[
@@ -530,7 +580,9 @@ r:V|_{X\times_kX} \to \mathrm{pr}_1^*L\oplus \mathrm{pr}_2^*L
 r|_{(p,q)}: V\to L|_p\oplus L|_q
 \]
 を得るが、これは二つの射
-\[V\to L|_p, v\mapsto v(p), \ \ \ \ \ V\to L|_q, v\mapsto v(q)\]
+\[
+V\to L|_p, v\mapsto v(p), \ \ \ \ \ V\to L|_q, v\mapsto v(q)
+\]
 を並べたものに他ならない。
 従って、点を分離することは以下のように言い換えられる：
 

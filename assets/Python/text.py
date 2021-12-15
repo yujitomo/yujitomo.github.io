@@ -14,7 +14,7 @@ the_aux_file_data = open(the_aux_file_path, 'r', encoding='UTF-8')
 tex_data = the_file_data.read()
 preamble = tex_data.split('\\begin{document}')[0]
 
-special_characters = ["\\", "_", "{", "}", "[", "]", "*", " ", "\n", "^", "(", ")", "/"]
+special_characters = ["\\", "_", "{", "}", "[", "]", "*", " ", "\n", "^", "(", ")", "/", ","]
 
 ### 通常のコマンド
 default_command_names = ["item", "label", "ref", "autoref", "cite", "href"]
@@ -321,24 +321,45 @@ def func_use_Macros_bool(var_list):
     return this_bool
 
 ### givenなvar_strのコマンドをマクロを使わないレベルまで展開する関数
+### ついでにllbracketなども展開する
+### ついでにHTMLSkipをスキップする。
 
 def func_full_expand_Macros(var_str):
     true_text = var_str
-    if ( if_env_CD == False ) and ( if_tikz_mode == False ):
-        true_text = ""
-        for i in range(0, len(var_str)):
-            if ( var_str[i] not in ["<", ">"] ):
-                true_text += var_str[i]
-            elif ( var_str[i] == "<" ):
-                true_text += "\\lt"
-            else:
-                true_text += "\\gt"
     result_str = true_text
+    return_str_0 = ""
+    count_back_slash_0 = 0
     this_bool = func_use_Macros_bool(func_use_commands(result_str))
     while ( this_bool == True ):
         result_str = func_expand_commands(result_str)
         this_bool = func_use_Macros_bool(func_use_commands(result_str))
-    return result_str
+    command_list_0 = func_use_commands(result_str)
+    num_v = 0
+    for i in range(0, len(result_str)):
+        if ( i >= num_v ):
+            if ( result_str[i] != "\\" ):
+                return_str_0 += result_str[i]
+            else:
+                count_back_slash_0 += 1
+                if ( command_list_0[count_back_slash_0-1] not in ["\\llbracket", "\\rrbracket", "\\HTMLSkip"] ):
+                    return_str_0 += result_str[i]
+                elif ( command_list_0[count_back_slash_0-1] == "\\llbracket" ):
+                    return_str_0 += "\\left[\\!\\left["
+                    num_v = i + len("\\llbracket")
+                elif ( command_list_0[count_back_slash_0-1] == "\\rrbracket" ):
+                    return_str_0 += "\\right]\\!\\right]"
+                    num_v = i + len("\\rrbracket")
+                elif ( command_list_0[count_back_slash_0-1] == "\\HTMLSkip" ):
+                    j = len("\\HTMLSkip{")
+                    bracket_num = 1
+                    while ( bracket_num != 0 ):
+                        if ( result_str[i+j] == "{" ):
+                            bracket_num += 1
+                        elif ( result_str[i+j] == "}" ):
+                            bracket_num -= 1
+                        j += 1
+                    num_v = i+j+1
+    return return_str_0
 
 
 ### myMacroの辞書のそれぞれをマクロを使わないレベルまで展開して格納
@@ -355,246 +376,6 @@ pprint.pprint(myMacro_name_dict_expanded)
 
 
 ### マクロ関係はいい感じになった
-
-
-
-
-
-
-
-
-
-### my_new_theorems_dataはnewtheoremの辞書。
-### 1つ目がthmとかremとか。二つ目が「定理」とか「注意」とか。三つ目はtheorem style。
-
-my_new_theorems_data = {}
-
-my_theorem_styles_line = myTheoremEnvironments_text.split('\\theoremstyle{')
-if ( "\\renewcommand{\\sectionautorefname}" not in my_theorem_styles_line[0]):
-    my_new_theorems_data["section"] = ["Section", ""]
-else:
-    sect_text = my_theorem_styles_line[0].split("\\renewcommand{\\sectionautorefname}{")[1]
-    this_sect = ""
-    i = 0
-    while ( sect_text[i] != "}" ):
-        this_sect += sect_text[i]
-        i += 1
-    my_new_theorems_data["section"] = [this_sect, ""]
-for i in range(1, len(my_theorem_styles_line)):
-    newtheorem_list = []
-    this_theorem_style = my_theorem_styles_line[i].split('}')[0]
-    for line in my_theorem_styles_line[i].splitlines():
-        test_len = line.split('newtheorem')
-        if len(test_len) > 1:
-            line_text = re.split(r'[{}]', test_len[1])
-            line_text.pop(0)
-            this_line_text = []
-            my_new_theorems_data[line_text[0]] = [line_text[2], this_theorem_style]
-
-
-pprint.pprint(my_new_theorems_data)
-
-
-
-
-
-### 参考文献リストを格納
-
-this_documents = tex_data.split('\\begin{thebibliography}')[1]
-
-bib_datas_dict = {}  ### 参考文献データを格納する辞書
-bibitem_counter = 0  ### 参考文献の数をカウントするカウンター
-
-
-def func_text_bfandit(var_str):
-    return_str = ""
-    num_v = 0
-    for i in range(0, len(var_str)):
-        if ( var_str[i] != "\\" ):
-            if ( i <= num_v ):
-                return_str += ""
-            else:
-                return_str += var_str[i]
-        else:
-            j = 0
-            this_command_name = ""
-            while ( var_str[i+j] != "{" ):
-                this_command_name += var_str[i+j]
-                j += 1
-            j += 1
-            if ( this_command_name == "\\textit" ):
-                return_str += "<i>"
-                while ( var_str[i+j] != "}" ):
-                    return_str += var_str[i+j]
-                    j += 1
-                j += 1
-                return_str += "</i>"
-            elif ( this_command_name == "\\textbf" ):
-                return_str += "<b>"
-                while ( var_str[i+j] != "}" ):
-                    return_str += var_str[i+j]
-                    j += 1
-                j += 1
-                return_str += "</b>"
-            num_v = i+j
-    return return_str
-
-
-this_documents_split = this_documents.split("\\bibitem")
-for i in range(1, len(this_documents_split)):
-    this_documents_split[i] = this_documents_split[i].split("\\end")[0]
-    this_bibitem_list = this_documents_split[i].splitlines()
-    this_bibitem_list_a = []
-    for i in range(0, len(this_bibitem_list)):
-        this_bibitem_list_a.append(this_bibitem_list[i].strip())
-    this_bibitem_all_text = " ".join(this_bibitem_list_a) ### bibitemから次のbibitemまでの内容から改行と余計な空白を削除
-    bib_item_data_list = [] ### 参考文献データを格納するリスト、表示名と表示内容のペア
-    print_text_bibitem = "" ### 表示名を所得
-    num = 1
-    while ( this_bibitem_all_text[num] != "]" ):
-        print_text_bibitem += this_bibitem_all_text[num]
-        num += 1
-    bib_item_data_list.append(print_text_bibitem)
-    num += 2
-    label_bibitem = "" ### ラベルを所得
-    while ( this_bibitem_all_text[num] != "}" ):
-        label_bibitem += this_bibitem_all_text[num]
-        num += 1
-    num += 2
-    this_bibitem_text = "" ### 表示内容を所得
-    num_v = 0
-    for num_1 in range(num, len(this_bibitem_all_text)):
-        if ( this_bibitem_all_text[num_1] != "\\" ) :
-            if ( num_1 <= num_v ):
-                this_bibitem_text += ""
-            else:
-                this_bibitem_text += this_bibitem_all_text[num_1]
-        else :
-            this_command_name = ""
-            left_text = ""
-            j = 0
-            while ( this_bibitem_all_text[num_1+j] != "{" ):
-                this_command_name += this_bibitem_all_text[num_1+j]
-                j += 1
-            j += 1
-            if ( this_command_name == "\\href" ):
-                link_url = "" ### URLを所得
-                while ( this_bibitem_all_text[num_1+j] != "}" ):
-                    link_url += this_bibitem_all_text[num_1+j]
-                    j += 1
-                this_bibitem_text += "<a href=\"" + link_url + "\">"
-                j += 2
-                mid_bracket_number = 1
-                link_print = "" ### aタグの中身を所得
-                while ( mid_bracket_number != 0 ):
-                    link_print += this_bibitem_all_text[num_1+j]
-                    if ( this_bibitem_all_text[num_1+j] == "{" ):
-                        mid_bracket_number += 1
-                    elif ( this_bibitem_all_text[num_1+j] == "}" ):
-                        mid_bracket_number += -1
-                    j += 1
-                this_bibitem_text += func_text_bfandit(link_print)
-                this_bibitem_text += "</a>"
-                num_v = num_1 + j
-            elif ( this_command_name == "\\textit" ):
-                if ( num_1 <= num_v ):
-                    this_bibitem_text += ""
-                else:
-                    this_bibitem_text += "<i>"
-                    while ( this_bibitem_all_text[num_1+j] != "}" ):
-                        this_bibitem_text += this_bibitem_all_text[num_1+j]
-                        j += 1
-                    j += 1
-                    this_bibitem_text += "</i>"
-                    num_v = num_1 + j
-            elif ( this_command_name == "\\textbf" ):
-                if ( num_1 <= num_v ):
-                    this_bibitem_text += ""
-                else:
-                    this_bibitem_text += "<b>"
-                    while ( this_bibitem_all_text[num_1+j] != "}" ):
-                        this_bibitem_text += this_bibitem_all_text[num_1+j]
-                        j += 1
-                    j += 1
-                    this_bibitem_text += "</b>"
-                    num_v = num_1 + j
-    bib_item_data_list.append(this_bibitem_text)
-    bib_datas_dict[label_bibitem] = bib_item_data_list
-
-pprint.pprint(bib_datas_dict)
-
-
-### HTML書き出し用str
-
-def func_bib_html():
-    if ( section_counter == 0 ):
-        html_bib_data = "\n<section classs=\"bibliography-section\">\n"
-    else:
-        html_bib_data = "</section>\n\n<section classs=\"bibliography-section\">\n"
-    html_bib_data += "<h2 class=\"bibliography-h2\">\nReferences\n</h2>\n<ul class=\"bibliography-ul\">\n"
-    for bib_item in bib_datas_dict.items():
-        html_bib_data += "<li "
-        html_bib_data += "id=\"bib-item-" + bib_item[0] + "\" class=\"bibliography-li\">\n"
-        html_bib_data += "<h3 class=\"bibliography-h3\">\n[" + bib_item[1][0] + "]\n</h3>\n"
-        html_bib_data += "<p class=\"bibliography-p\">\n" + bib_item[1][1] + "\n</p>\n</li>\n"
-    html_bib_data += "</ul>\n</section>"
-    return html_bib_data
-
-
-
-
-
-
-
-
-
-### ref系のコマンド処理
-
-### ref系コマンドの処理、ラベルに応じてhtmlを返す
-### auxファイルを掃除
-
-aux_data = the_aux_file_data.read()
-aux_line_list_all = aux_data.splitlines()
-aux_newlabel_dict = {}
-for line in aux_line_list_all:
-    command_list = func_use_commands(line)
-    if ( command_list[0] == "\\newlabel" ):
-        l = len("\\newlabel") + 1
-        label_name = "" ### labelの名前を格納
-        while ( line[l] != "}" ):
-            label_name += line[l]
-            l += 1
-        ### labelの名前格納終了
-        ### 今の時点でline[l]は"}"
-        l += 2
-        this_newlabel_list = [] ### labelに対応するデータを格納
-        bracket_num = 0
-        bracket_right_num = 0
-        var_str = ""
-        while ( bracket_right_num < 5 ):
-            var_str += line[l]
-            if ( line[l] == "{"):
-                bracket_num += 1
-            elif ( line[l] == "}"):
-                bracket_num -= 1
-            if ( bracket_num == 0 ):
-                bracket_right_num += 1
-                this_newlabel_list.append(var_str[1:-1])
-                var_str = ""
-            l += 1
-        aux_newlabel_dict[label_name] = this_newlabel_list
-
-pprint.pprint(aux_newlabel_dict)
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -736,6 +517,192 @@ def func_href_expand(var_str):
 
 
 
+
+
+
+
+
+### my_new_theorems_dataはnewtheoremの辞書。
+### 1つ目がthmとかremとか。二つ目が「定理」とか「注意」とか。三つ目はtheorem style。
+
+my_new_theorems_data = {}
+
+my_theorem_styles_line = myTheoremEnvironments_text.split('\\theoremstyle{')
+if ( "\\renewcommand{\\sectionautorefname}" not in my_theorem_styles_line[0]):
+    my_new_theorems_data["section"] = ["Section", ""]
+else:
+    sect_text = my_theorem_styles_line[0].split("\\renewcommand{\\sectionautorefname}{")[1]
+    this_sect = ""
+    i = 0
+    while ( sect_text[i] != "}" ):
+        this_sect += sect_text[i]
+        i += 1
+    my_new_theorems_data["section"] = [this_sect, ""]
+for i in range(1, len(my_theorem_styles_line)):
+    newtheorem_list = []
+    this_theorem_style = my_theorem_styles_line[i].split('}')[0]
+    for line in my_theorem_styles_line[i].splitlines():
+        test_len = line.split('newtheorem')
+        if len(test_len) > 1:
+            line_text = re.split(r'[{}]', test_len[1])
+            line_text.pop(0)
+            this_line_text = []
+            my_new_theorems_data[line_text[0]] = [line_text[2], this_theorem_style]
+
+
+pprint.pprint(my_new_theorems_data)
+
+
+
+
+
+### 参考文献リストを格納
+
+this_documents = tex_data.split('\\begin{thebibliography}')[1]
+
+bib_datas_dict = {}  ### 参考文献データを格納する辞書
+bibitem_counter = 0  ### 参考文献の数をカウントするカウンター
+
+
+def func_text_bfandit(var_str):
+    return_str = ""
+    num_v = 0
+    for i in range(0, len(var_str)):
+        if ( var_str[i] != "\\" ):
+            if ( i <= num_v ):
+                return_str += ""
+            else:
+                return_str += var_str[i]
+        else:
+            j = 0
+            this_command_name = ""
+            while ( var_str[i+j] != "{" ):
+                this_command_name += var_str[i+j]
+                j += 1
+            j += 1
+            if ( this_command_name == "\\textit" ):
+                return_str += "<i>"
+                while ( var_str[i+j] != "}" ):
+                    return_str += var_str[i+j]
+                    j += 1
+                j += 1
+                return_str += "</i>"
+            elif ( this_command_name == "\\textbf" ):
+                return_str += "<b>"
+                while ( var_str[i+j] != "}" ):
+                    return_str += var_str[i+j]
+                    j += 1
+                j += 1
+                return_str += "</b>"
+            num_v = i+j
+    return return_str
+
+
+this_documents_split = this_documents.split("\\bibitem")
+for i in range(1, len(this_documents_split)):
+    this_documents_split[i] = this_documents_split[i].split("\\end")[0]
+    this_bibitem_list = this_documents_split[i].splitlines()
+    this_bibitem_list_a = []
+    for i in range(0, len(this_bibitem_list)):
+        this_bibitem_list_a.append(this_bibitem_list[i].strip())
+    this_bibitem_all_text = " ".join(this_bibitem_list_a) ### bibitemから次のbibitemまでの内容から改行と余計な空白を削除
+    bib_item_data_list = [] ### 参考文献データを格納するリスト、表示名と表示内容のペア
+    print_text_bibitem = "" ### 表示名を所得
+    num = 1
+    while ( this_bibitem_all_text[num] != "]" ):
+        print_text_bibitem += this_bibitem_all_text[num]
+        num += 1
+    bib_item_data_list.append(print_text_bibitem)
+    num += 2
+    label_bibitem = "" ### ラベルを所得
+    while ( this_bibitem_all_text[num] != "}" ):
+        label_bibitem += this_bibitem_all_text[num]
+        num += 1
+    num += 2
+    this_bibitem_text = func_href_expand(func_text_command_expand(func_math_mode_expand(this_bibitem_all_text[num:])))
+    bib_item_data_list.append(this_bibitem_text)
+    bib_datas_dict[label_bibitem] = bib_item_data_list
+
+pprint.pprint(bib_datas_dict)
+
+
+### HTML書き出し用str
+
+def func_bib_html():
+    if ( section_counter == 0 ):
+        html_bib_data = "\n<section classs=\"bibliography-section\">\n"
+    else:
+        html_bib_data = "</section>\n\n<section classs=\"bibliography-section\">\n"
+    html_bib_data += "<h2 class=\"bibliography-h2\">References\n</h2>\n<ul class=\"bibliography-ul\">\n"
+    for bib_item in bib_datas_dict.items():
+        html_bib_data += "<li "
+        html_bib_data += "id=\"bib-item-" + bib_item[0] + "\" class=\"bibliography-li\">\n"
+        html_bib_data += "<h3 class=\"bibliography-h3\">\n[" + bib_item[1][0] + "]\n</h3>\n"
+        html_bib_data += bib_item[1][1] + "\n</li>\n"
+    html_bib_data += "</ul>\n</section>"
+    return html_bib_data
+
+
+
+
+
+
+
+
+
+### ref系のコマンド処理
+
+### ref系コマンドの処理、ラベルに応じてhtmlを返す
+### auxファイルを掃除
+
+aux_data = the_aux_file_data.read()
+aux_line_list_all = aux_data.splitlines()
+aux_newlabel_dict = {}
+for line in aux_line_list_all:
+    command_list = func_use_commands(line)
+    if ( command_list[0] == "\\newlabel" ):
+        l = len("\\newlabel") + 1
+        label_name = "" ### labelの名前を格納
+        while ( line[l] != "}" ):
+            label_name += line[l]
+            l += 1
+        ### labelの名前格納終了
+        ### 今の時点でline[l]は"}"
+        l += 2
+        this_newlabel_list = [] ### labelに対応するデータを格納
+        bracket_num = 0
+        bracket_right_num = 0
+        var_str = ""
+        while ( bracket_right_num < 5 ):
+            var_str += line[l]
+            if ( line[l] == "{"):
+                bracket_num += 1
+            elif ( line[l] == "}"):
+                bracket_num -= 1
+            if ( bracket_num == 0 ):
+                bracket_right_num += 1
+                this_newlabel_list.append(var_str[1:-1])
+                var_str = ""
+            l += 1
+        aux_newlabel_dict[label_name] = this_newlabel_list
+
+pprint.pprint(aux_newlabel_dict)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### citeの展開
 
 def func_cite_expand(var_str):
@@ -752,27 +719,41 @@ def func_cite_expand(var_str):
                 if ( command_list_0[count_back_slash_0-1] != "\\cite" ):
                     return_str_0 += var_str[i]
                 else:
-                    j = 6
-                    bracket_num = 1
+                    j = len("\\cite")
+                    bracket_num = 0
                     right_bracket_num = 0
                     this_text = ""
                     this_bib_label = ""
-                    while ( right_bracket_num < 2 ):
-                        if ( right_bracket_num == 0 ):
-                            this_text += var_str[i+j]
-                        elif( right_bracket_num == 1 ):
+                    if ( var_str[i+j] == "["):
+                        while ( right_bracket_num < 2 ):
+                            if ( right_bracket_num == 0 ):
+                                this_text += var_str[i+j]
+                            elif( right_bracket_num == 1 ):
+                                this_bib_label += var_str[i+j]
+                            if ( var_str[i+j] in ["[","{"] ):
+                                bracket_num += 1
+                            elif ( var_str[i+j] in ["]","}"] ):
+                                bracket_num -= 1
+                                if ( bracket_num == 0 ):
+                                    right_bracket_num += 1
+                                    num_v = i+j+1
+                            j += 1
+                        return_str_0 += "[<a href=\"#bib-item-" + this_bib_label[1:-1] + "\">"
+                        return_str_0 += bib_datas_dict[this_bib_label[1:-1]][0] + "</a>, "
+                        return_str_0 += func_href_expand(this_text[1:-1]) + "]"
+                    elif ( var_str[i+j] == "{" ):
+                        while ( right_bracket_num < 1 ):
                             this_bib_label += var_str[i+j]
-                        if ( var_str[i+j] in ["[","{"] ):
-                            bracket_num += 1
-                        elif ( var_str[i+j] in ["]","}"] ):
-                            bracket_num -= 1
-                            if ( bracket_num == 0 ):
-                                right_bracket_num += 1
-                                num_v = i+j+1
-                        j += 1
-                    return_str_0 += "[<a href=\"#bib-item-" + this_bib_label[1:-1] + "\">"
-                    return_str_0 += bib_datas_dict[this_bib_label[1:-1]][0] + "</a>, "
-                    return_str_0 += func_href_expand(this_text[:-1]) + "]"
+                            if ( var_str[i+j] in ["[","{"] ):
+                                bracket_num += 1
+                            elif ( var_str[i+j] in ["]","}"] ):
+                                bracket_num -= 1
+                                if ( bracket_num == 0 ):
+                                    right_bracket_num += 1
+                                    num_v = i+j+1
+                            j += 1
+                        return_str_0 += "[<a href=\"#bib-item-" + this_bib_label[1:-1] + "\">"
+                        return_str_0 += bib_datas_dict[this_bib_label[1:-1]][0] + "</a>]"
     return return_str_0
 
 
@@ -944,7 +925,7 @@ def func_section_name(var_str):
         id_list = re.split(": | ", label_name)
         id_str = "-".join(id_list)
         return_html += " id=\"" + id_str + "\""
-    return_html += ">\n<h2 class=\"section-name-h2\">\n"
+    return_html += ">\n<h2 class=\"section-name-h2\">"
     return_html += "Section " + str(section_counter) + ". "
     return_html += func_normal_text_expand(return_str) + "\n</h2>\n"
     return return_html
@@ -997,9 +978,9 @@ def func_if_begin_env(var_str):
         return_html += "<ul>\n"
     elif ( env_name == "proof" ):
         return_html += "<article class=\"proof-env-article\">\n"
-        return_html += "<h3 class=\"proof-env-h3\">\n"
+        return_html += "<h3 class=\"proof-env-h3\">\n<span>"
         if ( var_str[l] != "[" ):
-            return_html += "Proof." + "\n</h3>\n"
+            return_html += "Proof." + "</span>\n</h3>\n"
         else:
             k = 1
             bracket_num = 1
@@ -1013,9 +994,9 @@ def func_if_begin_env(var_str):
                 k += 1
             option_name_str = func_line_with_ref_command(option_name_str[:-1])
             if ( japanese_document_bool == True ):
-                return_html += option_name_str + ". \n</h3>\n"
+                return_html += option_name_str + ". </span>\n</h3>\n"
             else:
-                return_html += "Proof of " + option_name_str + ". \n</h3>\n"
+                return_html += "Proof of " + option_name_str + ". </span>\n</h3>\n"
     elif ( env_name in my_new_theorems_data ):
         return_html += "<article class=\"" + my_new_theorems_data[env_name][1] + "-env-article\""
         label_name = ""
@@ -1041,13 +1022,13 @@ def func_if_begin_env(var_str):
             id_str = "-".join(id_list)
             return_html += " id=\"" + id_str + "\""
         return_html += ">\n" ### これで<article class="hoge" id="hoge">が完成
-        return_html += "<h3 class=\"" + my_new_theorems_data[env_name][1] + "-env-h3\">\n"
+        return_html += "<h3 class=\"" + my_new_theorems_data[env_name][1] + "-env-h3\">\n<span>"
         return_html += my_new_theorems_data[env_name][0]
         if ( env_name[-1] != "*" ):
             return_html += " " + str(section_counter) + "." + str(theorem_counter) + "."
         if ( option_name_str != "" ):
             return_html += " (" + func_normal_text_expand(option_name_str[:-1]) + ")"
-        return_html += "\n</h3>\n"
+        return_html += "</span>\n</h3>\n"
     elif ( env_name in ["equation", "align"] ):
         if_math_mode = True
         return_html += "<div"

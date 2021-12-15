@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1638790611 "StrangeCurves.dvi" "StrangeCurves.pdf" "StrangeCurves" 1638790612
-  "StrangeCurves.dvi" 1638790611 17120 31b83d4e630208e30ec46a2dc12b3d0b "latex"
+["dvipdf"] 1639554779 "StrangeCurves.dvi" "StrangeCurves.pdf" "StrangeCurves" 1639554779
+  "StrangeCurves.dvi" 1639554779 17116 30db92b06b4e4890699b40fd96cf1b9e "latex"
   (generated)
   "StrangeCurves.pdf"
-["latex"] 1638790609 "StrangeCurves.tex" "StrangeCurves.dvi" "StrangeCurves" 1638790612
+["latex"] 1639554777 "StrangeCurves.tex" "StrangeCurves.dvi" "StrangeCurves" 1639554779
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -199,11 +199,11 @@
   "/usr/local/texlive/texmf-local/tex/latex/local/applekeys/applekeys.sty" 1124886972 2457 24db601311c9f25dce7e373fe4c6b984 ""
   "/usr/local/texlive/texmf-local/tex/latex/local/applekeys/pencil.pdf" 1068332390 1640 d049c7f6f76c05259999d52b6d7db251 ""
   "/usr/local/texlive/texmf-local/tex/latex/local/mandorasymb/mandorasymb.sty" 1607639133 561 597758ea36a1a82430c55f99e0d1ef63 ""
-  "StrangeCurves.aux" 1638790611 799 d5ae350bca5e1e04c37cdb12406bcafe "latex"
-  "StrangeCurves.out" 1638790611 0 d41d8cd98f00b204e9800998ecf8427e "latex"
-  "StrangeCurves.tex" 1638790607 15591 4e7337b93e9df8bdd6ddfcc6ea1ad885 ""
+  "StrangeCurves.aux" 1639554779 799 d5ae350bca5e1e04c37cdb12406bcafe "latex"
+  "StrangeCurves.out" 1639554779 0 d41d8cd98f00b204e9800998ecf8427e "latex"
+  "StrangeCurves.tex" 1639554777 16058 c9c1df506af4c2293b7daed15b137d14 ""
   (generated)
   "StrangeCurves.out"
+  "StrangeCurves.log"
   "StrangeCurves.dvi"
   "StrangeCurves.aux"
-  "StrangeCurves.log"

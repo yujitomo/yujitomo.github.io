@@ -13,11 +13,11 @@
 -->
 <link rel="stylesheet" href="/assets/css/styles.css">
 
+
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 
-
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 <script>
   MathJax = {
@@ -25,39 +25,6 @@
       matchFontHeight: false
     }
   };
-</script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
-  var TEXDEFS = MathJax.InputJax.TeX.Definitions;
-  TEXDEFS.delimiter["\\llbracket"] = "27E6";
-  TEXDEFS.delimiter["\\rrbracket"] = "27E7";
-});
-
-MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
-  var HTMLCSS = MathJax.OutputJax["HTML-CSS"],
-      DELIMITERS = HTMLCSS.FONTDATA.DELIMITERS;
-
-  var GENERAL = "STIXGeneral",
-      SIZE1   = "STIXSizeOneSym",
-      SIZE2   = "STIXSizeTwoSym",
-      SIZE3   = "STIXSizeThreeSym",
-      SIZE4   = "STIXSizeFourSym";
-
-  if (HTMLCSS.fontInUse === "STIX") {
-    // left white square bracket
-    DELIMITERS[0x27E6] = {
-      dir: "V", HW: [[.93,GENERAL],[1.23,SIZE1],[1.845,SIZE2],[2.46,SIZE3],[3.075,SIZE4]],
-      stretch: {top:[0x2553,GENERAL], ext:[0x2551,GENERAL], bot:[0x2559,GENERAL]}
-    };
-    // right white square bracket
-    DELIMITERS[0x27E7] = {
-      dir: "V", HW: [[.93,GENERAL],[1.23,SIZE1],[1.845,SIZE2],[2.46,SIZE3],[3.075,SIZE4]],
-      stretch: {top:[0x2556,GENERAL], ext:[0x2551,GENERAL], bot:[0x255C,GENERAL]}
-    };
-  }
-});
 </script>
 
 <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
@@ -154,11 +121,11 @@ MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
 
 <article class="definition-env-article">
 <h3 class="definition-env-h3">
-定理 (p進Weierstrassの準備定理)
+<span>定理 (p進Weierstrassの準備定理)</span>
 </h3>
 <p>
-\(A\)を完備離散付値環、\(\pi\)を素元、\(f\in A\llbracket t\rrbracket\)を\(0\)でないべき級数とする。
-このとき、あるdistinguishedな多項式\(p\)と単元\(u\in (A\llbracket t\rrbracket)^{\times}\)とある\(n\geq 0\)が存在して、
+\(A\)を完備離散付値環、\(\pi\)を素元、\(f\in A\left[\!\left[ t\right]\!\right]\)を\(0\)でないべき級数とする。
+このとき、あるdistinguishedな多項式\(p\)と単元\(u\in (A\left[\!\left[ t\right]\!\right])^{\times}\)とある\(n\geq 0\)が存在して、
 \(f = \pi^npu\)が成り立つ。
 </p>
 </article>
@@ -168,19 +135,18 @@ MathJax.Hub.Register.StartupHook("HTML-CSS Jax Ready",function () {
 </p>
 
 <section>
-<h2 class="section-name-h2">
-Section 1. 定義など
+<h2 class="section-name-h2">Section 1. 定義など
 </h2>
 
 
 <article class="definition-env-article">
 <h3 class="definition-env-h3">
-定義 1.0.
+<span>定義 1.0.</span>
 </h3>
 <p>
-このノートでは、最高次係数が単元であるような多項式のことを\ltb\gtモニック\lt/b\gtと言います。
+このノートでは、最高次係数が単元であるような多項式のことを<b>モニック</b>と言います。
 さらに、局所環係数のモニック\(f\)に対して、\(f\)の最高次以外の係数が極大イデアルの元であるとき、
-\(f\)は\ltb\gtdistinguished\lt/b\gtであると言います。
+\(f\)は<b>distinguished</b>であると言います。
 </p>
 </article>
 
@@ -189,8 +155,7 @@ Section 1. 定義など
 
 </section>
 <section>
-<h2 class="section-name-h2">
-Section 2. 本題
+<h2 class="section-name-h2">Section 2. 本題
 </h2>
 
 
@@ -200,7 +165,7 @@ Section 2. 本題
 
 <article class="definition-env-article" id="loc-flds-thm">
 <h3 class="definition-env-h3">
-定理 2.0. (cf. [<a href="#bib-item-Serre">Serre</a>, II. Proposition 3])
+<span>定理 2.0. (cf. [<a href="#bib-item-Serre">Serre</a>, II. Proposition 3])</span>
 </h3>
 <p>
 \(A\)を完備離散付値環、\(K\)を\(A\)の商体、\(L\)を\(K\)の有限次拡大とする。
@@ -210,7 +175,7 @@ Section 2. 本題
 
 <article class="proof-env-article">
 <h3 class="proof-env-h3">
-Proof.
+<span>Proof.</span>
 </h3>
 <p>
 簡単に説明を加えておく。
@@ -230,7 +195,7 @@ Proof.
 
 <article class="definition-env-article">
 <h3 class="definition-env-h3">
-ノート
+<span>ノート</span>
 </h3>
 <p>
 完備ネーター局所環はJapanese環であるという一般論もある。
@@ -244,7 +209,7 @@ Proof.
 
 <article class="definition-env-article" id="monic-1">
 <h3 class="definition-env-h3">
-系 2.1.
+<span>系 2.1.</span>
 </h3>
 <p>
 \(A\)を完備離散付値環、\(\pi\)を素元、\(K\)を\(A\)の商体、\(k=A/(\pi)\)を剰余体、\(L\)を\(K\)の有限次拡大、
@@ -255,7 +220,7 @@ Proof.
 
 <article class="proof-env-article">
 <h3 class="proof-env-h3">
-Proof.
+<span>Proof.</span>
 </h3>
 <p>
 \(B\)は一次元なので、\(A\)の\(L\)での整閉包に含まれる。
@@ -269,7 +234,7 @@ Proof.
 
 <article class="definition-env-article" id="prime-element-is-monic">
 <h3 class="definition-env-h3">
-系 2.2.
+<span>系 2.2.</span>
 </h3>
 <p>
 \(A\)を完備離散付値環、\(f\in A[t]\)を素元とする。\(K\)を\(A\)の商体とする。
@@ -290,7 +255,7 @@ Proof.
 
 <article class="proof-env-article">
 <h3 class="proof-env-h3">
-Proof.
+<span>Proof.</span>
 </h3>
 <p>
 <a href="#prime-1">(1)</a>は<a href="#monic-1">系 2.2</a>の直接の帰結である。
@@ -306,7 +271,7 @@ Proof.
 
 <article class="definition-env-article">
 <h3 class="definition-env-h3">
-ノート
+<span>ノート</span>
 </h3>
 <p>
 \(A[t]/(f)\)が\(A\)上完全分岐していれば、
@@ -320,17 +285,17 @@ Proof.
 <p>
 次に、\(A\)を完備ネーター局所環、\(\mathfrak{m}\)をその極大イデアルとします。
 \(t\)を不定元として、
-べき級数環\(A\llbracket t\rrbracket\)について考えます。
-\(\mathfrak{m}\)と\(f\)で生成される多項式環\(A[t]\)のイデアルを\((\mfm,t)\)で表すと、
-局所化\(A[t]_{(\mfm,t)}\)から自然な射\(A[t]_{(\mfm,t)}\to A\llbracket t\rrbracket\)が出ます。
-この射は、ネーター局所環\(A[t]_{(\mfm,t)}\)をその極大イデアル\((\mfm,t)\)で完備化するという射ですから、
+べき級数環\(A\left[\!\left[ t\right]\!\right]\)について考えます。
+\(\mathfrak{m}\)と\(f\)で生成される多項式環\(A[t]\)のイデアルを\((\mathfrak{m},t)\)で表すと、
+局所化\(A[t]_{(\mathfrak{m},t)}\)から自然な射\(A[t]_{(\mathfrak{m},t)}\to A\left[\!\left[ t\right]\!\right]\)が出ます。
+この射は、ネーター局所環\(A[t]_{(\mathfrak{m},t)}\)をその極大イデアル\((\mathfrak{m},t)\)で完備化するという射ですから、
 忠実平坦になっています (cf. [<a href="#bib-item-AM">アティマク</a>, 命題10.14, 演習問題3.16, 演習問題3.18])。
 </p>
 
 
 <article class="definition-env-article" id="lem-cplt-f">
 <h3 class="definition-env-h3">
-補題 2.3.
+<span>補題 2.3.</span>
 </h3>
 <p>
 \((A,\mathfrak{m})\)を完備ネーター局所環、\(f\in A[t]\)を多項式とする。
@@ -339,10 +304,10 @@ Proof.
 <li id="lem-cplt-f-1">
 <p>
 
-\(A[t]/(f) \to A[t]_{(\mfm,t)}/(f)\)から完備化により引き起こされる射</p>
+\(A[t]/(f) \to A[t]_{(\mathfrak{m},t)}/(f)\)から完備化により引き起こされる射</p>
 <p class="display-math-p">
 \[
-A\llbracket t\rrbracket/(f)\to \hat{A[t]_{(\mfm,t)}/(f)}
+A\left[\!\left[ t\right]\!\right]/(f)\to \hat{A[t]_{(\mathfrak{m},t)}/(f)}
 \]
 </p><p>
 は同型射である。
@@ -351,11 +316,11 @@ A\llbracket t\rrbracket/(f)\to \hat{A[t]_{(\mfm,t)}/(f)}
 <li id="lem-cplt-f-2">
 <p>
 
-\(f\)がモニックであれば、\(A[t]/(f)\to A\llbracket t\rrbracket/(f)\)から局所化により引き起こされる射
+\(f\)がモニックであれば、\(A[t]/(f)\to A\left[\!\left[ t\right]\!\right]/(f)\)から局所化により引き起こされる射
 </p>
 <p class="display-math-p">
 \[
-A[t]_{(\mfm,t)}/(f) \to A\llbracket t\rrbracket/(f)
+A[t]_{(\mathfrak{m},t)}/(f) \to A\left[\!\left[ t\right]\!\right]/(f)
 \]
 </p><p>
 は同型射である。
@@ -366,16 +331,16 @@ A[t]_{(\mfm,t)}/(f) \to A\llbracket t\rrbracket/(f)
 
 <article class="proof-env-article">
 <h3 class="proof-env-h3">
-Proof.
+<span>Proof.</span>
 </h3>
 <p>
 <a href="#lem-cplt-f-1">(1)</a>は、
-\(A[t]_{(\mfm,t)}/(f)\)が有限生成\(A[t]_{(\mfm,t)}\)-加群であることから従う
+\(A[t]_{(\mathfrak{m},t)}/(f)\)が有限生成\(A[t]_{(\mathfrak{m},t)}\)-加群であることから従う
 (cf. [<a href="#bib-item-AM">アティマク</a>, 命題10.13])。
 <a href="#lem-cplt-f-2">(2)</a>の状況では、
-\(A[t]_{(\mfm,t)}/(f)\)は有限\(A\)-加群なので、\(A\)の完備性より、
-\(A[t]_{(\mfm,t)}/(f)\)は\((\mfm,t)\)-進完備であることが従う。
-よって自然な射\(A[t]_{(\mfm,t)}/(f) \to \hat{A[t]_{(\mfm,t)}/(f)}\)
+\(A[t]_{(\mathfrak{m},t)}/(f)\)は有限\(A\)-加群なので、\(A\)の完備性より、
+\(A[t]_{(\mathfrak{m},t)}/(f)\)は\((\mathfrak{m},t)\)-進完備であることが従う。
+よって自然な射\(A[t]_{(\mathfrak{m},t)}/(f) \to \hat{A[t]_{(\mathfrak{m},t)}/(f)}\)
 は同型射である。あとは<a href="#lem-cplt-f-1">(1)</a>より従う。
 </p>
 </article>
@@ -383,7 +348,7 @@ Proof.
 
 <article class="definition-env-article">
 <h3 class="definition-env-h3">
-疑問
+<span>疑問</span>
 </h3>
 <p>
 ネーターじゃない場合はどうなんでしょうね？
@@ -394,22 +359,22 @@ Proof.
 
 <article class="definition-env-article" id="cor-div-thm-poly">
 <h3 class="definition-env-h3">
-系 2.4.
+<span>系 2.4.</span>
 </h3>
 <p>
 \(A\)を完備離散付値環とする。
-このとき、\(A[t]\)の素元は\(A\llbracket t\rrbracket\)の素元でもあり、
-逆に\(A\llbracket t\rrbracket\)の素元はすべて\(A[t]\)の素元と単元の積で表すことができる。
+このとき、\(A[t]\)の素元は\(A\left[\!\left[ t\right]\!\right]\)の素元でもあり、
+逆に\(A\left[\!\left[ t\right]\!\right]\)の素元はすべて\(A[t]\)の素元と単元の積で表すことができる。
 </p>
 </article>
 
 <article class="proof-env-article">
 <h3 class="proof-env-h3">
-Proof.
+<span>Proof.</span>
 </h3>
 <p>
 <a href="#prime-element-is-monic">系 2.3</a>と<a href="#lem-cplt-f">補題 2.4</a> <a href="#lem-cplt-f-2">(2)</a>より、
-\(\mathrm{Spec}(A\llbracket t\rrbracket) \to \mathrm{Spec}(A[t]_{(\pi,t)})\)は全単射となる。
+\(\mathrm{Spec}(A\left[\!\left[ t\right]\!\right]) \to \mathrm{Spec}(A[t]_{(\pi,t)})\)は全単射となる。
 これは<a href="#cor-div-thm-poly">系 2.5</a>を示している。
 </p>
 </article>
@@ -417,29 +382,29 @@ Proof.
 
 <article class="definition-env-article">
 <h3 class="definition-env-h3">
-定理 2.5. (p進Weierstrassの準備定理)
+<span>定理 2.5. (p進Weierstrassの準備定理)</span>
 </h3>
 <p>
-\(A\)を完備離散付値環、\(\pi\)を素元、\(f\in A\llbracket t\rrbracket\)を\(0\)でないべき級数とする。
-このとき、あるdistinguishedな多項式\(p\)と単元\(u\in (A\llbracket t\rrbracket)^{\times}\)とある\(n\geq 0\)が存在して、
+\(A\)を完備離散付値環、\(\pi\)を素元、\(f\in A\left[\!\left[ t\right]\!\right]\)を\(0\)でないべき級数とする。
+このとき、あるdistinguishedな多項式\(p\)と単元\(u\in (A\left[\!\left[ t\right]\!\right])^{\times}\)とある\(n\geq 0\)が存在して、
 \(f = \pi^npu\)が成り立つ。
 </p>
 </article>
 
 <article class="proof-env-article">
 <h3 class="proof-env-h3">
-Proof.
+<span>Proof.</span>
 </h3>
 <p>
-まず、\(A\llbracket t\rrbracket\)は二次元正則局所環\(A[t]_{(\pi,t)}\)の完備化なので正則局所環であり、とくにUFDである。
+まず、\(A\left[\!\left[ t\right]\!\right]\)は二次元正則局所環\(A[t]_{(\pi,t)}\)の完備化なので正則局所環であり、とくにUFDである。
 よって、\(f\)は\(\pi^n\)と、いくつかの素元の積\(q = q_1,\cdots,q_r\)を用いて、
 \(f=\pi^nq_1\cdots q_r\)と表すことができる。
 さらに<a href="#prime-element-is-monic">系 2.3</a>と<a href="#cor-div-thm-poly">系 2.5</a>より、
-\(A\llbracket t\rrbracket\)の素元\(q_i\)は、
+\(A\left[\!\left[ t\right]\!\right]\)の素元\(q_i\)は、
 distinguishedな既約多項式\(q_i'\in A[t]\)と
-単元\(u_i'\in (A\llbracket t\rrbracket)^{\times}\)の積として\(q_i = q_i'u_i\)と表すことができる。
+単元\(u_i'\in (A\left[\!\left[ t\right]\!\right])^{\times}\)の積として\(q_i = q_i'u_i\)と表すことができる。
 \(q_1'\cdots q_r' = p\)とおくと、\(p\in A[t]\)はdistinguishedな多項式であり、
-\(u = u_1\cdots u_r\)とおくと、\(u\in (A\llbracket t\rrbracket)^{\times}\)は単元である。
+\(u = u_1\cdots u_r\)とおくと、\(u\in (A\left[\!\left[ t\right]\!\right])^{\times}\)は単元である。
 代入すると\(f=\pi^npu\)となる。
 これは所望の結果である。
 </p>
@@ -453,41 +418,32 @@ distinguishedな既約多項式\(q_i'\in A[t]\)と
 </section>
 
 <section classs="bibliography-section">
-<h2 class="bibliography-h2">
-References
+<h2 class="bibliography-h2">References
 </h2>
 <ul class="bibliography-ul">
 <li id="bib-item-AM" class="bibliography-li">
 <h3 class="bibliography-h3">
 [アティマク]
 </h3>
-<p class="bibliography-p">
-<a href="https://www.kyoritsu-pub.co.jp/bookdetail/9784320017917">ティマク}</a> 
-</p>
+<a href="https://www.kyoritsu-pub.co.jp/bookdetail/9784320017917">アティマク</a>. 
 </li>
 <li id="bib-item-Nag" class="bibliography-li">
 <h3 class="bibliography-h3">
 [永田]
 </h3>
-<p class="bibliography-p">
-<a href="https://www.kinokuniya.co.jp/f/dsg-08-EK-0257022">田可換環論}</a> 
-</p>
+<a href="https://www.kinokuniya.co.jp/f/dsg-08-EK-0257022">永田可換環論</a>. 
 </li>
 <li id="bib-item-Serre" class="bibliography-li">
 <h3 class="bibliography-h3">
 [Serre]
 </h3>
-<p class="bibliography-p">
-<a href="https://link.springer.com/book/10.1007/978-1-4757-5673-9">ocal Fields}</a> 
-</p>
+<a href="https://link.springer.com/book/10.1007/978-1-4757-5673-9">Local Fields</a>. 
 </li>
 <li id="bib-item-stacks-project" class="bibliography-li">
 <h3 class="bibliography-h3">
 [Stacks]
 </h3>
-<p class="bibliography-p">
-<a href="https://stacks.math.columbia.edu/"><i>Stacks Project</i></a>
-</p>
+<a href="https://stacks.math.columbia.edu/"><i>Stacks Project</i></a>.
 </li>
 </ul>
 </section>

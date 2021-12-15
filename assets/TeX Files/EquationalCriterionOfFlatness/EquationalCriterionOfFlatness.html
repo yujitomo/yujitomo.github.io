@@ -1,10 +1,10 @@
 ---
 layout: article-type
-title: "Blowing Up along Linear Subvariety"
+title: "Equational Criterion of Flatness"
 category: Notes
 tag: "Commtative Algebra"
 author: Yujitomo
-description: "射影空間の線形部分多様体に沿った爆発について"
+description: "平坦性のEquational Criterionについて"
 ---
 
 
@@ -141,8 +141,8 @@ F_2\xrightarrow{\varphi} F_1\xrightarrow{p_{\varphi}} M
 二つの対象\(\varphi:F_2\to F_1, \varphi':F_2'\to F_1'\)の間の射の集合は、</p>
 <p class="display-math-p">
 \[
-Hom_{\mathcal{I}_M}(\varphi,\varphi') :\overset{\mathrm{\scriptsize def}}{=}
-Hom_{(\mathsf{Mod}_A)_{/M}}(\mathrm{coker}(\varphi),\mathrm{coker}(\varphi'))
+\mathrm{Hom}_{\mathcal{I}_M}(\varphi,\varphi') :\overset{\mathrm{\scriptsize def}}{=}
+\mathrm{Hom}_{(\mathsf{Mod}_A)_{/M}}(\mathrm{coker}(\varphi),\mathrm{coker}(\varphi'))
 \]
 </p><p>
 と定める。
@@ -251,7 +251,7 @@ M\cong \mathrm{colim}_{N\in \mathsf{FP}_{/M}} N
 </p>
 <p class="display-math-p">
 \[
-\mathrm{colim}_{i\in I}Hom_A(F,N_i) \xrightarrow{\sim} Hom_A(F,\mathrm{colim}_{i\in I}N_i)
+\mathrm{colim}_{i\in I}\mathrm{Hom}_A(F,N_i) \xrightarrow{\sim} \mathrm{Hom}_A(F,\mathrm{colim}_{i\in I}N_i)
 \]
 </p><p>
 は同型射である。
@@ -280,7 +280,7 @@ M\cong \mathrm{colim}_{N\in \mathsf{FP}_{/M}} N
 </p>
 <p class="display-math-p">
 \[
-\mathrm{colim}_{i\in I}Hom_A(M,N_i)\to Hom_A(M,\mathrm{colim}_{i\in I}N_i)
+\mathrm{colim}_{i\in I}\mathrm{Hom}_A(M,N_i)\to \mathrm{Hom}_A(M,\mathrm{colim}_{i\in I}N_i)
 \]
 </p><p>
 は全射である。
@@ -299,7 +299,7 @@ M\cong \mathrm{colim}_{N\in \mathsf{FP}_{/M}} N
 </p>
 <p class="display-math-p">
 \[
-\varphi:\mathrm{colim}_{i\in I}Hom_A(M,N_i)\to Hom_A(M,\mathrm{colim}_{i\in I}N_i)
+\varphi:\mathrm{colim}_{i\in I}\mathrm{Hom}_A(M,N_i)\to \mathrm{Hom}_A(M,\mathrm{colim}_{i\in I}N_i)
 \]
 </p><p>
 が全射であるとする。
@@ -323,7 +323,7 @@ M\cong \mathrm{colim}_{N\in \mathsf{FP}_{/M}} N
 任意の\(A\)-加群のfilteredな族\(N_i,i\in I\)に対して自然な射</p>
 <p class="display-math-p">
 \[
-\varphi:\mathrm{colim}_{i\in I}Hom_A(M,N_i)\to Hom_A(M,\mathrm{colim}_{i\in I}N_i)
+\varphi:\mathrm{colim}_{i\in I}\mathrm{Hom}_A(M,N_i)\to \mathrm{Hom}_A(M,\mathrm{colim}_{i\in I}N_i)
 \]
 </p><p>
 は全射である。
@@ -356,7 +356,7 @@ M\cong \mathrm{colim}_{N\in \mathsf{FP}_{/M}} N
 </p>
 <p class="display-math-p">
 \[
-Hom_A(M\otimes_AN,L)\cong Hom_A(M,Hom_A(N,L))
+\mathrm{Hom}_A(M\otimes_AN,L)\cong \mathrm{Hom}_A(M,\mathrm{Hom}_A(N,L))
 \]
 </p><p>
 となる。
@@ -369,7 +369,7 @@ Hom_A(M\otimes_AN,L)\cong Hom_A(M,Hom_A(N,L))
 <span>Remark 3.1.</span>
 </h3>
 <p>
-\(Hom_A(M,Hom_A(N,L))\cong Hom_A(N,Hom_A(M,L))\)であるから
+\(\mathrm{Hom}_A(M,\mathrm{Hom}_A(N,L))\cong \mathrm{Hom}_A(N,\mathrm{Hom}_A(M,L))\)であるから
 \(M\otimes_AN\cong N\otimes_AM\)である。
 </p>
 </article>
@@ -382,11 +382,11 @@ Hom_A(M\otimes_AN,L)\cong Hom_A(M,Hom_A(N,L))
 <p>
 テンソル積の存在は次のように示される：
 まず\(M,N\)の一方が自由加群である場合、\(M\cong A^{\oplus I}\)とすれば、
-\(Hom_A(M,-)\cong (-)^{\prod I}\)となるので
+\(\mathrm{Hom}_A(M,-)\cong (-)^{\prod I}\)となるので
 </p>
 <p class="display-math-p">
 \[
-Hom_A(M,Hom_A(N,L))\cong Hom_A(N,L)^{\prod I}\cong Hom_A(N^{\oplus I},L)
+\mathrm{Hom}_A(M,\mathrm{Hom}_A(N,L))\cong \mathrm{Hom}_A(N,L)^{\prod I}\cong \mathrm{Hom}_A(N^{\oplus I},L)
 \]
 </p><p>
 となる。
@@ -402,15 +402,19 @@ A^{\oplus I}\to A^{\oplus J}\to M \to 0
 \]
 </p><p>
 という完全列をひとつとる。
-\(Hom_A(-,Hom_A(N,L))\)は左完全であるから、
+\(\mathrm{Hom}_A(-,\mathrm{Hom}_A(N,L))\)は左完全であるから、
 </p>
 <p class="display-math-p">
-\[
-Hom_A(M,Hom_A(N,L)) \cong
-\ker(Hom_A(N^{\prod J},L)\to Hom_A(N^{\prod I},L))
-\cong Hom_A(\mathrm{coker} (N^{\oplus I}\to N^{\oplus J}), L)
-\]
-</p><p>
+<div class="display-math-div">
+\begin{align*}
+\mathrm{Hom}_A(M,\mathrm{Hom}_A(N,L)) &\cong
+\ker(\mathrm{Hom}_A(N^{\prod J},L)\to \mathrm{Hom}_A(N^{\prod I},L)) \\
+&\cong \mathrm{Hom}_A(\mathrm{coker} (N^{\oplus I}\to N^{\oplus J}), L)
+\end{align*}
+</div>
+
+</p>
+<p>
 となることがわかる。
 特にテンソル積\(M\otimes_AN\)は存在する。
 </p>
@@ -552,7 +556,7 @@ F_2 @>\varphi >> F_1 @>p>> M \\
 </h3>
 <p>
 有限自由加群\(F\)と\(A\)-加群\(M\)に対して、
-自然な同型\(M\otimes_A F^*\cong Hom_A(F,M)\)により両辺を同一視する。
+自然な同型\(M\otimes_A F^*\cong \mathrm{Hom}_A(F,M)\)により両辺を同一視する。
 </p>
 
 <p>
@@ -571,7 +575,7 @@ F_2 @>\varphi >> F_1 @>p>> M \\
 ある有限ランク自由加群\(F'\)と射\(g:F'^*\to \ker(\varphi^*)\)が
 \(q\in \mathrm{Im}(\mathrm{id}_M\otimes g)\)となるようにとれる。
 すると、ある元\(r\in M\otimes_AF'^*\)が存在して\(q = (\mathrm{id}_M\otimes g)(r)\)となる。
-自然な同型\(M\otimes_AF'^*\cong Hom_A(F',M)\)のもとで
+自然な同型\(M\otimes_AF'^*\cong \mathrm{Hom}_A(F',M)\)のもとで
 \(r:F'\to M\)と考える。
 \(f:F_1\to F'\)を合成
 \(F'^*\xrightarrow{g}\ker(\varphi^*)\subset F_1^*\)

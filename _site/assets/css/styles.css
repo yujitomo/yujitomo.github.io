@@ -249,6 +249,8 @@ article.definition-env-article ol li:before { display: inline; }
 
 article.definition-env-article ol li p { display: inline; }
 
+article.proof-env-article:after { display: block; text-align: right; content: '◻︎'; margin: 0 5% 0 0; }
+
 article.proof-env-article h3.proof-env-h3 { display: inline; font-size: 16px; /*これはh4の大きさと同じ*/ font-weight: 600; }
 
 article.proof-env-article h3.proof-env-h3 span { padding: 0px 10px 0px 10px; /*text-decoration-color: $border_color;*/ /*border-bottom: 3px solid $border_color;*/ background: linear-gradient(to top, #dadada 2px, #ffffff 2px 100%); }

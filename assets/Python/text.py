@@ -1045,6 +1045,7 @@ def func_if_begin_env(var_str):
         return_html += " class=\"display-math-div\">\n\\begin{" + env_name + "}\n"
     elif ( env_name in ["equation*", "align*"] ):
         if_math_mode = True
+        return_html += "<div class=\"display-math-div\">\n"
         return_html += "\\begin{" + env_name + "}\n"
     else:
         return_html += "\\begin{" + env_name + "}\n"

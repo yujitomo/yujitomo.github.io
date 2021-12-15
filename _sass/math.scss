@@ -46,6 +46,12 @@ article.definition-env-article {
 }
 
 article.proof-env-article {
+  &:after {
+		display: block;
+    text-align: right;
+    content: '◻︎';
+    margin: 0 5% 0 0;
+  }
   h3.proof-env-h3 {
 		display: inline;
     font-size: 16px; /*これはh4の大きさと同じ*/

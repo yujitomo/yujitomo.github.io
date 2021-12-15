@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1639555074 "SeparatingTangentVectors.dvi" "SeparatingTangentVectors.pdf" "SeparatingTangentVectors" 1639555075
-  "SeparatingTangentVectors.dvi" 1639555074 42848 eb795caa85bbe0c6c3853b9c193e6da1 "latex"
+["dvipdf"] 1639557707 "SeparatingTangentVectors.dvi" "SeparatingTangentVectors.pdf" "SeparatingTangentVectors" 1639557708
+  "SeparatingTangentVectors.dvi" 1639557707 42848 dc934c385e67754021c415706f95ff1e "latex"
   (generated)
   "SeparatingTangentVectors.pdf"
-["latex"] 1639555073 "SeparatingTangentVectors.tex" "SeparatingTangentVectors.dvi" "SeparatingTangentVectors" 1639555075
+["latex"] 1639557705 "SeparatingTangentVectors.tex" "SeparatingTangentVectors.dvi" "SeparatingTangentVectors" 1639557708
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -199,11 +199,11 @@
   "/usr/local/texlive/texmf-local/tex/latex/local/applekeys/applekeys.sty" 1124886972 2457 24db601311c9f25dce7e373fe4c6b984 ""
   "/usr/local/texlive/texmf-local/tex/latex/local/applekeys/pencil.pdf" 1068332390 1640 d049c7f6f76c05259999d52b6d7db251 ""
   "/usr/local/texlive/texmf-local/tex/latex/local/mandorasymb/mandorasymb.sty" 1607639133 561 597758ea36a1a82430c55f99e0d1ef63 ""
-  "SeparatingTangentVectors.aux" 1639555074 1972 047982f54e709b7add246ab0939f9612 "latex"
-  "SeparatingTangentVectors.out" 1639555074 255 d3b5efe7a0c23fcd9dc5d4943e624443 "latex"
-  "SeparatingTangentVectors.tex" 1639555072 27663 206a62ff820c1bdffa3b3f8b24d56b68 ""
+  "SeparatingTangentVectors.aux" 1639557707 1972 047982f54e709b7add246ab0939f9612 "latex"
+  "SeparatingTangentVectors.out" 1639557707 255 d3b5efe7a0c23fcd9dc5d4943e624443 "latex"
+  "SeparatingTangentVectors.tex" 1639557705 27663 bc7847c8fc801ada516115d34ba43792 ""
   (generated)
-  "SeparatingTangentVectors.out"
-  "SeparatingTangentVectors.dvi"
   "SeparatingTangentVectors.log"
   "SeparatingTangentVectors.aux"
+  "SeparatingTangentVectors.dvi"
+  "SeparatingTangentVectors.out"

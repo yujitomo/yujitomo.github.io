@@ -194,8 +194,8 @@
 
 \myMacros{
 
-\DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\Hom}{\mathrm{Hom}}
+\DeclareMathOperator{\Isom}{\mathrm{Isom}}
 \DeclareMathOperator{\ISOM}{\mathbf{Isom}}
 \DeclareMathOperator{\id}{\mathrm{id}}
 \DeclareMathOperator{\im}{\mathrm{Im}}
@@ -306,11 +306,11 @@
 \HTMLhead{
 ---
 layout: article-type
-title: "Blowing Up along Linear Subvariety"
+title: "Equational Criterion of Flatness"
 category: Notes
 tag: "Commtative Algebra"
 author: Yujitomo
-description: "射影空間の線形部分多様体に沿った爆発について"
+description: "平坦性のEquational Criterionについて"
 ---
 }
 
@@ -570,11 +570,11 @@ filtered categoryのcofinalな部分圏はまたfilteredとなることが
   \]
   という完全列をひとつとる。
   \(\Hom_A(-,\Hom_A(N,L))\)は左完全であるから、
-  \[
-  \Hom_A(M,\Hom_A(N,L)) \cong
-  \ker(\Hom_A(N^{\prod J},L)\to \Hom_A(N^{\prod I},L))
-  \cong \Hom_A(\coker (N^{\oplus I}\to N^{\oplus J}), L)
-  \]
+  \begin{align*}
+    \Hom_A(M,\Hom_A(N,L)) &\cong
+    \ker(\Hom_A(N^{\prod J},L)\to \Hom_A(N^{\prod I},L)) \\
+    &\cong \Hom_A(\coker (N^{\oplus I}\to N^{\oplus J}), L)
+  \end{align*}
   となることがわかる。
   特にテンソル積\(M\otimes_AN\)は存在する。
 \end{rem}

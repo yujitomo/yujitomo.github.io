@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.8.3-u1.26-191112-2.6 (utf8.uptex) (TeX Live 2020) (preloaded format=uplatex 2021.2.6)  11 DEC 2021 22:13
+This is e-upTeX, Version 3.14159265-p3.8.3-u1.26-191112-2.6 (utf8.uptex) (TeX Live 2020) (preloaded format=uplatex 2021.2.6)  15 DEC 2021 17:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -738,10 +738,10 @@ Package rerunfilecheck Info: File `EquationalCriterionOfFlatness.out' has not ch
 Here is how much of TeX's memory you used:
  20861 strings out of 479769
  410406 string characters out of 5879522
- 736979 words of memory out of 5000000
+ 736985 words of memory out of 5000000
  37795 multiletter control sequences out of 15000+600000
  420198 words of font info for 113 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  87i,17n,88p,530b,652s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on EquationalCriterionOfFlatness.dvi (8 pages, 55080 bytes).
+Output written on EquationalCriterionOfFlatness.dvi (8 pages, 55208 bytes).

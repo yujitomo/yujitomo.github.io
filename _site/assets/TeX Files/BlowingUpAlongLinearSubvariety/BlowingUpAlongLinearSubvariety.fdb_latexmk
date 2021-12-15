@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1639221289 "BlowingUpAlongLinearSubvariety.dvi" "BlowingUpAlongLinearSubvariety.pdf" "BlowingUpAlongLinearSubvariety" 1639221289
-  "BlowingUpAlongLinearSubvariety.dvi" 1639221288 45828 5056ffd13327f856dde04267d2752a01 "latex"
+["dvipdf"] 1639557670 "BlowingUpAlongLinearSubvariety.dvi" "BlowingUpAlongLinearSubvariety.pdf" "BlowingUpAlongLinearSubvariety" 1639557671
+  "BlowingUpAlongLinearSubvariety.dvi" 1639557670 45828 2b95443761e1d8eaeaab525d3b3e6272 "latex"
   (generated)
   "BlowingUpAlongLinearSubvariety.pdf"
-["latex"] 1639221287 "BlowingUpAlongLinearSubvariety.tex" "BlowingUpAlongLinearSubvariety.dvi" "BlowingUpAlongLinearSubvariety" 1639221289
+["latex"] 1639557668 "BlowingUpAlongLinearSubvariety.tex" "BlowingUpAlongLinearSubvariety.dvi" "BlowingUpAlongLinearSubvariety" 1639557671
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -195,11 +195,11 @@
   "/usr/local/texlive/texmf-local/tex/latex/local/applekeys/applekeys.sty" 1124886972 2457 24db601311c9f25dce7e373fe4c6b984 ""
   "/usr/local/texlive/texmf-local/tex/latex/local/applekeys/pencil.pdf" 1068332390 1640 d049c7f6f76c05259999d52b6d7db251 ""
   "/usr/local/texlive/texmf-local/tex/latex/local/mandorasymb/mandorasymb.sty" 1607639133 561 597758ea36a1a82430c55f99e0d1ef63 ""
-  "BlowingUpAlongLinearSubvariety.aux" 1639221288 893 f9a6681550eff76afecc6e59e2b4c624 "latex"
-  "BlowingUpAlongLinearSubvariety.out" 1639221288 0 d41d8cd98f00b204e9800998ecf8427e "latex"
-  "BlowingUpAlongLinearSubvariety.tex" 1639221287 23689 5b8bdad4bf9a868eb6569df733172cef ""
+  "BlowingUpAlongLinearSubvariety.aux" 1639557670 893 f9a6681550eff76afecc6e59e2b4c624 "latex"
+  "BlowingUpAlongLinearSubvariety.out" 1639557670 0 d41d8cd98f00b204e9800998ecf8427e "latex"
+  "BlowingUpAlongLinearSubvariety.tex" 1639557668 23689 8323151e604e7c3f8b7e02e876544393 ""
   (generated)
-  "BlowingUpAlongLinearSubvariety.log"
-  "BlowingUpAlongLinearSubvariety.dvi"
   "BlowingUpAlongLinearSubvariety.aux"
+  "BlowingUpAlongLinearSubvariety.dvi"
+  "BlowingUpAlongLinearSubvariety.log"
   "BlowingUpAlongLinearSubvariety.out"

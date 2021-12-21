@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-21T00:41:54+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">12月20日</title><link href="/diary/2021/12/20/Nikki.html" rel="alternate" type="text/html" title="12月20日" /><published>2021-12-20T00:00:00+09:00</published><updated>2021-12-20T00:00:00+09:00</updated><id>/diary/2021/12/20/Nikki</id><content type="html" xml:base="/diary/2021/12/20/Nikki.html">&lt;h3 id=&quot;太った&quot;&gt;太った&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-21T21:38:34+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">12月21日</title><link href="/diary/2021/12/21/Nikki.html" rel="alternate" type="text/html" title="12月21日" /><published>2021-12-21T00:00:00+09:00</published><updated>2021-12-21T00:00:00+09:00</updated><id>/diary/2021/12/21/Nikki</id><content type="html" xml:base="/diary/2021/12/21/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
+
+&lt;p&gt;今日は9時半に起きました。
+1時間おきに目が覚めてしまって全然熟睡できなかったです。
+電気を消して寝てもなぜか起きた時には電気がついているのです。
+困りました。&lt;/p&gt;
+
+&lt;p&gt;今日はセミナーの日でした。
+お昼から16時半までセミナーをやって、
+友人と縄跳びをしながら将来の話をして、
+家に帰ってご飯を食べ、
+その後日記を書いています。今は21時半くらいです。
+久しぶりに自炊をしました。
+15穀なんちゃらみたいなやつを玄米に混ぜて炊いて、
+ミネストローネのような何らかのトマトのスープを作りました。
+最近は朝起きるのが遅くなっており、これはあまりよろしくないと思っているので、
+今日は早く寝ようと思います。
+おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry><entry><title type="html">12月20日</title><link href="/diary/2021/12/20/Nikki.html" rel="alternate" type="text/html" title="12月20日" /><published>2021-12-20T00:00:00+09:00</published><updated>2021-12-20T00:00:00+09:00</updated><id>/diary/2021/12/20/Nikki</id><content type="html" xml:base="/diary/2021/12/20/Nikki.html">&lt;h3 id=&quot;太った&quot;&gt;太った&lt;/h3&gt;
 
 &lt;p&gt;ふと気がついたのですが、
 12月に入ってからめちゃくちゃ太りました。
@@ -286,27 +303,4 @@ Local fieldsは付値が制限とcompatibleじゃない気がするので、
 そのためにも、海外良いよな、などと思っています (ここにいるとそもそも英語に触れる機会が皆無なので…)。
 幻想を抱きすぎかもしれません。隣の芝生はなんちゃらって言いますし。&lt;/p&gt;
 
-&lt;p&gt;ねむいので寝ます。おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry><entry><title type="html">12月11日</title><link href="/diary/2021/12/11/Nikki.html" rel="alternate" type="text/html" title="12月11日" /><published>2021-12-11T00:00:00+09:00</published><updated>2021-12-11T00:00:00+09:00</updated><id>/diary/2021/12/11/Nikki</id><content type="html" xml:base="/diary/2021/12/11/Nikki.html">&lt;h3 id=&quot;今日もずっとプログラムを書いていました&quot;&gt;今日もずっとプログラムを書いていました&lt;/h3&gt;
-
-&lt;p&gt;今日は9時ごろに起きました。
-TeXをHTMLに変換するプログラムがほとんど完成した状態になったので、
-さっそくいくつかのNoteのTeXファイルをHTMLに変換してみました。
-ある程度良い感じに表示されています (→
-&lt;a href=&quot;/assets/TeX Files/BlowingUpAlongLinearSubvariety/BlowingUpAlongLinearSubvariety.html&quot;&gt;爆発&lt;/a&gt;、
-&lt;a href=&quot;/assets/TeX Files/EquationalCriterionOfFlatness/EquationalCriterionOfFlatness.html&quot;&gt;平坦性&lt;/a&gt;、
-&lt;a href=&quot;/assets/TeX Files/Ex_I_4_9/Ex_I_4_9.html&quot;&gt;Haの演習&lt;/a&gt;)。
-CSSなどをまだいじってないので変な見た目になっている部分がいくつか存在しますが、
-たとえば\autorefなどは良い感じに飛ぶようになっているので嬉しいです。
-Tikzをうまく表示するのが難しいという問題があり、
-これはTikzJaxではこの辺りが限界っぽいので、
-何か対策できないか考えています。
-TikzJaxは、HTML内に記述されたTeXのコードのtikzに関する部分を処理することを目的に作られているはずで、
-そのためブラウザ内で完結するようにかなり頑張って作っているはずなのですが、
-私が本当に求めていることはそうではないので、
-TikzJaxに頼る必要はないのではないか、と思ってきたわけです。
-&lt;a href=&quot;https://yenru0.github.io/etc/UseMathIn/&quot;&gt;ある韓国の方のページ&lt;/a&gt;
-が参考になりそうなので、同じようなことを試してみたいと思います。&lt;/p&gt;
-
-&lt;p&gt;明日は実家に帰る日なので今日は早めに寝ます。
-日本沈没のドラマが3話くらい溜まっているので、楽しみです。
-おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日もずっとプログラムを書いていました</summary></entry></feed>
+&lt;p&gt;ねむいので寝ます。おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry></feed>

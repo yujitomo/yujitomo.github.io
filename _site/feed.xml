@@ -1,4 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-21T21:38:34+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">12月21日</title><link href="/diary/2021/12/21/Nikki.html" rel="alternate" type="text/html" title="12月21日" /><published>2021-12-21T00:00:00+09:00</published><updated>2021-12-21T00:00:00+09:00</updated><id>/diary/2021/12/21/Nikki</id><content type="html" xml:base="/diary/2021/12/21/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-22T23:12:09+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">12月22日</title><link href="/diary/2021/12/22/Nikki.html" rel="alternate" type="text/html" title="12月22日" /><published>2021-12-22T00:00:00+09:00</published><updated>2021-12-22T00:00:00+09:00</updated><id>/diary/2021/12/22/Nikki</id><content type="html" xml:base="/diary/2021/12/22/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
+
+&lt;p&gt;今日は7時半に起きました。
+昨日早く寝たので、朝は少し早めでした。
+軽く論文の直しをしてからシャワーを浴び、買い物に行ったりしてから大学に行きました。
+大学に行くと、友人が手袋を紛失して凹んでいました。
+見つかってほしいです。
+とくに差し迫った用事もなかったので、
+のんびりC++でオプションの価格を計算したりして遊んでいました。
+モンテカルロ的に算出する方法とBlack-Sholes方程式の解析解に値を代入した理論価格との差がどうしても埋まらくて困っているところです。
+夕方からは学部生にアティマクを教えるセミナーがあったので、それをやりました。
+夜ご飯は、昨日作った「ミネストローネに全てを突っ込んだ何か」を食べました。
+特に変哲のない1日だったように思います。
+この日記を書いている今はだいたい23時です。&lt;/p&gt;
+
+&lt;p&gt;アティマクを教えるセミナーで、
+同じグループとして組んでいる修士の後輩 (超優秀) と少しだけ数論の話になって、
+&lt;a href=&quot;https://link.springer.com/book/10.1007/978-1-4757-5673-9&quot;&gt;Local Fields&lt;/a&gt;
+の最初の方に書いてあるCDVRの話はヘンゼル環論だと教えてもらい、
+大変勉強になりました。
+これで、&lt;a href=&quot;https://link.springer.com/book/10.1007/978-1-4757-5673-9&quot;&gt;Local Fields&lt;/a&gt;
+の前半 (コホモロジー論が始まるまで) の中で私が腑に落ちない部分は
+「高次分岐群のジャンプがどのような場合に起きるのか」という部分
+(つまりHasse-Arf的な話) のみになりました。
+嬉しい。ありがとう。ここで感謝の意を表明しておきます。&lt;/p&gt;
+
+&lt;p&gt;明日はピアニストの友人と会うため、朝から奈良県に行きます。
+早起きしなければいけないため、もうそろそろ寝ます。おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry><entry><title type="html">12月21日</title><link href="/diary/2021/12/21/Nikki.html" rel="alternate" type="text/html" title="12月21日" /><published>2021-12-21T00:00:00+09:00</published><updated>2021-12-21T00:00:00+09:00</updated><id>/diary/2021/12/21/Nikki</id><content type="html" xml:base="/diary/2021/12/21/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
 
 &lt;p&gt;今日は9時半に起きました。
 1時間おきに目が覚めてしまって全然熟睡できなかったです。
@@ -261,46 +288,4 @@ Local fieldsは付値が制限とcompatibleじゃない気がするので、
 (Tateの論文の方では閉体の完備化まで延長した付値を一つ固定して考えている感じ)。
 その辺のずれを補正しているとなんとなく手に馴染んで来るかなと思ってますが、どうでしょう…&lt;/p&gt;
 
-&lt;p&gt;ねむいので寝ます。おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日は夜ふかしをしていてまずいです</summary></entry><entry><title type="html">12月12日</title><link href="/diary/2021/12/12/Nikki.html" rel="alternate" type="text/html" title="12月12日" /><published>2021-12-12T00:00:00+09:00</published><updated>2021-12-12T00:00:00+09:00</updated><id>/diary/2021/12/12/Nikki</id><content type="html" xml:base="/diary/2021/12/12/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
-
-&lt;p&gt;今日は8時ごろに起きてシャワーを浴び、すぐに実家へ帰りました。
-日本沈没が溜まっていたので3話みました。
-今日私が実家から京都へ戻って来ている間に最終回？だそうなので、来週が楽しみです。
-里城先生が現実を受け止めて中国と交渉したり、
-田所先生と世良先生（← 私はアカデミックの人間ですので、えらい先生方の敬称を「博士」や「教授」にすることに対して少々躊躇いがあります）
-が互いを認め合って働く姿はかっこいいなと思いました。
-仕事人はかっこいいです。
-そのあと真犯人フラグをみました。
-住宅販売の人が突然怪しくなった回でした。
-怪しい人がコロコロ変わって忙しいドラマです。
-そのあとはラジエーションハウスをみました。
-年を取ってからも技術習得のために躊躇いなくアメリカまで学びにいける精神状態を見習いたいです。
-そのあとは、先週の土曜日に後輩からすすめられた、吉高由里子主演のドラマ「最愛」を見ました。
-セレブ吉高由里子が美しくて私もセレブ吉高由里子になりたい以外の感情がなくなりました。
-最後に晴天を突けを見ました。
-栄一死ぬのか？と思ったら元気になったのでよかったです。
-その後は京都へ帰りました。
-帰りの電車の中でTateの(p)-可除群の論文をペラペラ読み、
-私には局所類体論の復習が必要だなということを再確認（←何回目？）しました。
-家に帰ってからはSBIが新生銀行を子会社化した買収劇の詳細を調べていたら夜中になってしまい、
-眠いなと思いながらこの日記を書いています。今01時です。
-ドラマの感想が淡白なのは眠いからです。&lt;/p&gt;
-
-&lt;p&gt;明日はスーツを買いに行きます。
-ある企業のインターンに行くので、それ用です。
-絶対明日は買いに行かなければ！
-隠しているつもりはないので言いますが、
-私は、アカデミックに居続けることが私の人生にとって最適な選択であるとは思っていないです。
-いろいろありましたし (詳細については話せませんが)。
-なので、きちんと就職活動をした上で、
-それでもアカデミックが良いと思った場合にのみアカデミックに残るつもりです。
-数学はかなり好きなので、働きながら数学の研究を続けていく人生の可能性を開くことができれば良いなと思っています
-(これは、私が大学院で学んできた数学を仕事で直接的に応用したい、ということを意味しているわけではありません)。
-もしアカデミックに残ることになるなら、関西からは離れたいです。
-大阪も京都もいい街ですが、単純に少し飽きたので、居住地を変えたいです。
-海外も良いなと思っています。
-英語は苦手なのですが、話せるとかっこいいよなという気持ちはあり、
-そのためにも、海外良いよな、などと思っています (ここにいるとそもそも英語に触れる機会が皆無なので…)。
-幻想を抱きすぎかもしれません。隣の芝生はなんちゃらって言いますし。&lt;/p&gt;
-
-&lt;p&gt;ねむいので寝ます。おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry></feed>
+&lt;p&gt;ねむいので寝ます。おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日は夜ふかしをしていてまずいです</summary></entry></feed>

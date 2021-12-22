@@ -133,6 +133,16 @@ alg-dさんに教えていただきました. ありがとうございます. ~~
 
 
 
+## C++
+
+- [正規分布の累積密度関数はerfという関数を使って表せる](https://cpprefjp.github.io/reference/cmath/erf.html)
+
+### Finance
+
+- [国内の株式指標](https://www.nikkei.com/markets/kabu/japanidx/) ← 日経平均の平均配当利回りとかが見れる。計算する上でのrの値とかに突っ込むと良いのかも？
+- Black-SholesモデルとかをいじるときのTはT=1で1年を表すと考えれば良いと思う。1ヶ月は0.0833年
+- [日経平均のボラティリティ](https://indexes.nikkei.co.jp/nkave/index/profile?idx=nk225vi)と[日経平均オプションの価格](https://svc.qri.jp/jpx/nkopm/)
+
 
 ## Ruby
 

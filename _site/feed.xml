@@ -1,4 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-23T22:35:22+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">12月22日</title><link href="/diary/2021/12/23/Nikki.html" rel="alternate" type="text/html" title="12月22日" /><published>2021-12-23T00:00:00+09:00</published><updated>2021-12-23T00:00:00+09:00</updated><id>/diary/2021/12/23/Nikki</id><content type="html" xml:base="/diary/2021/12/23/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-12-25T00:12:48+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">12月24日</title><link href="/diary/2021/12/24/Nikki.html" rel="alternate" type="text/html" title="12月24日" /><published>2021-12-24T00:00:00+09:00</published><updated>2021-12-24T00:00:00+09:00</updated><id>/diary/2021/12/24/Nikki</id><content type="html" xml:base="/diary/2021/12/24/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
+
+&lt;p&gt;今日は9時に起きました。寝不足です。
+結局昨日は遅くまで起きてしまったので今日は普通に寝不足でした。
+お昼にある企業のwebテストを受けて全く解けず、
+めちゃくちゃ凹みながら大学に行きました。
+結局私は純粋数学と水泳以外の何事においても全く無能な人間なのだということを思い知らされます。
+院生室に行き、C++でオプションの価格を計算するプログラムをいじっていて、
+モンテカルロ的に計算した方法が理論価格と45円くらいずれてしまう問題とずっと向き合っていました。
+結局何が起きてるのか全然わかりません。
+無意味に時間が過ぎて行き、19時に家に帰りました。
+Webテストが解けなかったことがあまりにもショックだったので、
+たくさんのアイスを買ってしまいました。
+太ってしまう…厳しい…
+夜ご飯はほうれん草祭りでした。
+おいしかったです。健康になった気がします。
+日記を書いている今は21時半ごろです。
+こうやって日記を書くと、
+Webテストが解けなかった以外特に何もない1日だったことがよくわかりますね。&lt;/p&gt;
+
+&lt;p&gt;明日は大学時代の同級生で、軽音部だった、
+数学で修士号を取ったあと芸大に入り直したロックな友人と遊びます。
+発散してこようと思います。&lt;/p&gt;
+
+&lt;p&gt;そういえば、9月か10月あたりに右手の指の皮が突然剥がれだして、
+指紋が消えてなくなっていた (めちゃくちゃ痛くてつらかった…) のですが、
+洗い物をする際やチョークを持つ際に手袋をするなどして気をつけるということを2ヶ月ほどやっていると、
+指紋がかなり回復しました。
+Macの指紋認証がまた使えるようになり、
+この複雑な模様の通りにきちんと回復するなんてすごいなと感心しています
+(余計な注釈かもしれませんが、私がすごいと思っているのは、私の回復機能ではなく、
+このように精密な回復機能を有している「生物」全般です)。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry><entry><title type="html">12月23日</title><link href="/diary/2021/12/23/Nikki.html" rel="alternate" type="text/html" title="12月23日" /><published>2021-12-23T00:00:00+09:00</published><updated>2021-12-23T00:00:00+09:00</updated><id>/diary/2021/12/23/Nikki</id><content type="html" xml:base="/diary/2021/12/23/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
 
 &lt;p&gt;今日は7時に起きました。寝不足です。
 シャワーを浴びて家を出て、ピアニストの友人に会うため、奈良へ向かいました。
@@ -298,12 +329,4 @@ A社はそういう場所だと確信しました。
   &lt;p&gt;\(A\)を完備離散付値環、\(\pi\)を素元、\(f\in A\llbracket t\rrbracket\)を\(0\)でないべき級数とする。
 このとき、あるdistinguishedな多項式\(p\)と単元\(u\in (A\llbracket t\rrbracket)^{\times}\)とある\(n\geq 0\)が存在して、
 \(f = \pi^npu\)が成り立つ。&lt;/p&gt;
-&lt;/blockquote&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Commtative Algebra" /><summary type="html">Theorem</summary></entry><entry><title type="html">12月14日</title><link href="/diary/2021/12/14/Nikki.html" rel="alternate" type="text/html" title="12月14日" /><published>2021-12-14T00:00:00+09:00</published><updated>2021-12-14T00:00:00+09:00</updated><id>/diary/2021/12/14/Nikki</id><content type="html" xml:base="/diary/2021/12/14/Nikki.html">&lt;h3 id=&quot;寝なければ非常にまずいので寝ます&quot;&gt;寝なければ非常にまずいので寝ます&lt;/h3&gt;
-
-&lt;p&gt;今日はスーツを買いに行ってアティマクを教えるバイトをやって
-&lt;a href=&quot;https://adventar.org/calendars/6146&quot;&gt;Math Advent Calendar 2021&lt;/a&gt;の記事を書いていたら終わりました。
-約束は守りました (ぎりぎりになってしまいましたが)。
-今日中に書けて良かったです。
-PDFではなくWebページで見る方もあるのですが、
-なぜかうまくHTMLに変換できていないので、とりあえずこれは明日以降に考えます。
-早く寝ないとまずいので何も書いていない日記ですがもう寝ます。おやすみなさい。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">寝なければ非常にまずいので寝ます</summary></entry></feed>
+&lt;/blockquote&gt;</content><author><name>Yujitomo</name></author><category term="Notes" /><category term="Commtative Algebra" /><summary type="html">Theorem</summary></entry></feed>

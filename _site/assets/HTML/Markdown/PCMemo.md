@@ -139,9 +139,13 @@ alg-dさんに教えていただきました. ありがとうございます. ~~
 
 ### Finance
 
-- [国内の株式指標](https://www.nikkei.com/markets/kabu/japanidx/) ← 日経平均の平均配当利回りとかが見れる。計算する上でのrの値とかに突っ込むと良いのかも？
-- Black-SholesモデルとかをいじるときのTはT=1で1年を表すと考えれば良いと思う。1ヶ月は0.0833年
-- [日経平均のボラティリティ](https://indexes.nikkei.co.jp/nkave/index/profile?idx=nk225vi)と[日経平均オプションの価格](https://svc.qri.jp/jpx/nkopm/)
+時間パラメータtの単位は「年」。金利rはTIBORなどの指標金利を12ヶ月で参照すると良さそう。
+
+- [国内の株式指標](https://www.nikkei.com/markets/kabu/japanidx/) ← 日経平均の平均配当利回りとかが見れる。配当込みBSモデルで計算する上で配当利回りの値にこれを突っ込めば良い。
+- [全銀協TIBORレート](https://www.jbatibor.or.jp/rate/) ← 円金利
+- [日経平均のボラティリティ](https://indexes.nikkei.co.jp/nkave/index/profile?idx=nk225vi)
+- [日経平均先物・オプションについて](https://www.jpx.co.jp/markets/derivatives/index.html)
+- [先物・オプション取引を知る・学ぶ](https://www.jpx.co.jp/learning/derivatives/index.html) ← オプションの理論価格について説明している部分を読むと、BSモデルの時間を表すパラメーターtの単位は「1年」であることがわかる。
 
 
 ## Ruby

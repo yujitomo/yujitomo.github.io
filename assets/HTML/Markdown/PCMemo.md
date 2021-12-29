@@ -159,3 +159,4 @@ Gemfileの書き方　/　 WEBrickを使うためのメモ
 
 - YAMLのコメントアウトはシャープ
 - [GitHubっぽいアイコン](https://primer.style/octicons/)
+- [公開買付銘柄一覧 (マネックス証券) ](https://mst.monex.co.jp/mst/servlet/ITS/info/Tob)

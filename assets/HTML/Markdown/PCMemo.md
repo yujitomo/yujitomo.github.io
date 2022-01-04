@@ -55,14 +55,24 @@
 - JavaScriptのコメントアウトはCSSのコメントアウトとおなじ
 - 対象にしているオブジェクトのid名は.attr("id")で所得できる.
 - 装飾が効かないとき, 改行が変に変換されてemptyに対して装飾を施している可能性がある.
+- Node.jsについては次の節を参照
+
+
+### Node.js
+
+簡単に言えば「サーバーサイドで動くJavaScript」、
+正確に言えば「パソコン上でJavaScriptを動かすための実行環境」。
+
+
+
 
 
 
 ### SCSS
 
-- SCSSというのがある. コンパイルしてCSSファイルを作成する何らからしい
-  - → 解説：[SCSS（SASS）とCSSの違いについて](https://blog.maromaro.co.jp/archives/8010)
-  - → 解説：[【これからScssを使う人へ】Scssの使い方と便利さをさらっと紹介するぞ](https://qiita.com/mame_hashbill/items/e5f01d0f2523de6a13e5).
+SCSSというのがある. コンパイルしてCSSファイルを作成する何らからしい.
+- 解説1：[SCSS（SASS）とCSSの違いについて](https://blog.maromaro.co.jp/archives/8010)
+- 解説2：[【これからScssを使う人へ】Scssの使い方と便利さをさらっと紹介するぞ](https://qiita.com/mame_hashbill/items/e5f01d0f2523de6a13e5).
 - 拡張子は「.scss」だが, HTMLファイル内に読み込む時はコンパイル後のCSSファイルなので, HTMLファイル内では「.css」と書かなければエラーが出る.
 - SCSSでは自分でclearfixのclassを書かなくてもincludeできる.
   - → [ここ参照](https://qiita.com/naoyeah/items/e03b01a98a762b78d265)
@@ -101,6 +111,13 @@ alg-dさんに教えていただきました. ありがとうございます. ~~
 
 - Reactというものがある。
 - [Reactで静的サイトを作る話](https://nulab.com/ja/blog/typetalk/how-to-make-website-with-react-static/)
+
+
+### Server Side
+
+- [カゴヤのサーバー研究室](https://www.kagoya.jp/howto/)
+
+
 
 
 ### その他
@@ -154,6 +171,14 @@ alg-dさんに教えていただきました. ありがとうございます. ~~
   - → hogeがインストールされてないかもしれないから 「sudo bundle add hoge」をやる
 
 Gemfileの書き方　/　 WEBrickを使うためのメモ
+
+
+## Firebase
+
+- [Firebase initをしたときの項目選択の仕方、スペースで選んでreturnで決定](https://qiita.com/mh4gf/items/4785b7fce4f7c78159fe)
+- [Firebaseの始め方](https://qiita.com/kohashi/items/43ea22f61ade45972881)
+
+
 
 ## Others
 

@@ -29,12 +29,6 @@
 
 
 
-### 面白いまとめノート：
-
-- [Memotaro, Haltaro's technical memorandum - Categories](https://haltaro.github.io/categories/)
-
-
-
 ## Math Links
 
 ### 一般：
@@ -266,3 +260,30 @@
 
 [List of Mathematics Awards (Wikipedia)](https://en.wikipedia.org/wiki/List_of_mathematics_awards)
 \: SponsorやFoundationを辿ると, お金の出所がわかって面白いです.
+
+
+
+
+
+
+## Likes
+
+自分の好きなものたちを忘れないように...
+
+
+### 好きな曲
+
+
+
+
+### ゲーム
+
+- [デレステ](https://cinderella.idolmaster.jp/sl-stage/)：B2の頃ずっとやってたスマホの音ゲー
+- [ゼルダの伝説 Breath of the Wild](https://www.nintendo.co.jp/zelda/index.html)：B3とかM1の頃ハマってずっとやってた
+- [ドラクエ7](https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88VII_%E3%82%A8%E3%83%87%E3%83%B3%E3%81%AE%E6%88%A6%E5%A3%AB%E3%81%9F%E3%81%A1)：昔好きだったゲーム、大学に入ってから何度もやりなおした
+- [ログレス物語](https://www.4gamer.net/games/460/G046065/)：M2の頃ずっとやってたスマホのゲーム、もう終了してしまったけど楽しかった
+
+
+### その他
+
+- [転生したらスライムだった件](https://ncode.syosetu.com/n6316bn/) D2の正月、ずっと読んでた

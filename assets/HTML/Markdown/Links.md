@@ -283,7 +283,26 @@
 - [ドラクエ7](https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88VII_%E3%82%A8%E3%83%87%E3%83%B3%E3%81%AE%E6%88%A6%E5%A3%AB%E3%81%9F%E3%81%A1)：昔好きだったゲーム、大学に入ってから何度もやりなおした
 - [ログレス物語](https://www.4gamer.net/games/460/G046065/)：M2の頃ずっとやってたスマホのゲーム、もう終了してしまったけど楽しかった
 
-
-### その他
+### Novels
 
 - [転生したらスライムだった件](https://ncode.syosetu.com/n6316bn/) D2の正月、ずっと読んでた
+
+
+
+## Others
+
+- [人生の壁が多すぎる問題](https://honeshabri.hatenablog.com/entry/wall_and_crisis)
+- [Memotaro, Haltaro's technical memorandum - Categories](https://haltaro.github.io/categories/)
+- [放置演算子](http://kikei.github.io/)
+
+
+### Finance
+
+時間パラメータtの単位は「年」。金利rはTIBORなどの指標金利を12ヶ月で参照すると良さそう。
+
+- [公開買付銘柄一覧 (マネックス証券) ](https://mst.monex.co.jp/mst/servlet/ITS/info/Tob)
+- [国内の株式指標](https://www.nikkei.com/markets/kabu/japanidx/) ← 日経平均の平均配当利回りとかが見れる。配当込みBSモデルで計算する上で配当利回りの値にこれを突っ込めば良い。
+- [全銀協TIBORレート](https://www.jbatibor.or.jp/rate/) ← 円金利
+- [日経平均のボラティリティ](https://indexes.nikkei.co.jp/nkave/index/profile?idx=nk225vi)
+- [日経平均先物・オプションについて](https://www.jpx.co.jp/markets/derivatives/index.html)
+- [先物・オプション取引を知る・学ぶ](https://www.jpx.co.jp/learning/derivatives/index.html) ← オプションの理論価格について説明している部分を読むと、BSモデルの時間を表すパラメーターtの単位は「1年」であることがわかる。

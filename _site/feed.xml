@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-01-20T22:59:24+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">01月20日</title><link href="/diary/2022/01/20/Nikki.html" rel="alternate" type="text/html" title="01月20日" /><published>2022-01-20T00:00:00+09:00</published><updated>2022-01-20T00:00:00+09:00</updated><id>/diary/2022/01/20/Nikki</id><content type="html" xml:base="/diary/2022/01/20/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2022-01-21T22:57:45+09:00</updated><id>/feed.xml</id><title type="html">Yujitomo no Website</title><author><name>Yuji Tomoki</name></author><entry><title type="html">01月21日</title><link href="/diary/2022/01/21/Nikki.html" rel="alternate" type="text/html" title="01月21日" /><published>2022-01-21T00:00:00+09:00</published><updated>2022-01-21T00:00:00+09:00</updated><id>/diary/2022/01/21/Nikki</id><content type="html" xml:base="/diary/2022/01/21/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
+
+&lt;p&gt;今日は6時半前くらいに起きました。
+昨日も結構飲んでしまったので普通に何度も途中で目が覚めて睡眠浅かったです。
+普通にインターンに行って普通に楽しくお喋りをしてたら夜になったのは昨日と同じです。
+今日は機械学習的な研究部っぽいところでガシガシ論文書いてる人のお話を聞いて、
+ガシガシやってるなーって思いました。
+インターン後はなんもなかったので近くのスタバで来週のセミナーの準備をしました。
+射影多様体の圏の適当な充満部分圏から基礎体の復元をする話を適当に準備してました。
+その後スタバが閉まって晩御飯を買ってホテルに戻り、適当にダラダラしてからこの日記を書いてます。
+今だいたい22時半です。&lt;/p&gt;
+
+&lt;p&gt;なんかインターンに来てる学生の話聞いてみると、
+留学二回してたりワインの資格持ってたりピアノくそ上手だったりとか、
+普通に一芸二芸持ってる人ばかりで、みんなすごいです。
+社員からはヘッジファンドの話を聞いたりして、
+雑談ばっかりしてますが普通に勉強になっておもろいです。
+課題なんてどーでもいいやwって感じでずっとお喋りしてます。
+発表の日が怖いですが、どうでもいいです。楽しければなんでもいいんです。&lt;/p&gt;
+
+&lt;p&gt;生活習慣崩さないためにもそろそろ寝ます。&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry><entry><title type="html">01月20日</title><link href="/diary/2022/01/20/Nikki.html" rel="alternate" type="text/html" title="01月20日" /><published>2022-01-20T00:00:00+09:00</published><updated>2022-01-20T00:00:00+09:00</updated><id>/diary/2022/01/20/Nikki</id><content type="html" xml:base="/diary/2022/01/20/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
 
 &lt;p&gt;今日は6時に起きました。
 昨日は結構飲んでしまって、普通に寝落ちしてたので、アラームをかけてなくて、
@@ -242,38 +262,4 @@ M_0\otimes A^{\oplus I} \xrightarrow{f|_{M_0}\otimes 1} M_0\otimes A^{\oplus J} 
 \(x\in M_0\otimes A^{\oplus I}\)から来ていることから、
 \(=0\)であることが従います。&lt;/p&gt;
 
-&lt;p&gt;同じことを\(M,N\)の役割を逆にすることで定理の主張が従います。◻︎&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry><entry><title type="html">01月11日</title><link href="/diary/2022/01/11/Nikki.html" rel="alternate" type="text/html" title="01月11日" /><published>2022-01-11T00:00:00+09:00</published><updated>2022-01-11T00:00:00+09:00</updated><id>/diary/2022/01/11/Nikki</id><content type="html" xml:base="/diary/2022/01/11/Nikki.html">&lt;h3 id=&quot;今日1日の振り返り&quot;&gt;今日1日の振り返り&lt;/h3&gt;
-
-&lt;p&gt;今日は8時半に起きました。
-12時に梅田の皮膚科に行って、
-その後はサンマルクで勉強をしました。
-しばらく勉強をしたあと、サンマルクに飽きて、
-17時くらいに院生室までもどって来ました。
-そこからもう少し勉強をし、19時くらいに友人と中華を食べに行きました。
-京大の近傍には中華のお店がたくさんありますが、
-その中でも私は「方園美味」の麻婆豆腐が好きです。
-かなりおいしいです。
-その後家に帰って、しばらくだらだらとしてからこの日記を書いてます。今だいたい22時半です。
-中華を食べ過ぎましたが、スクワットを120回やったのでチャラになりました。
-チャラになったのです(迫真)。
-さすがに太ったので食事制限をします…
-節約も兼ねて…&lt;/p&gt;
-
-&lt;p&gt;場の量子論の研究をしなければならなくなったのでここ数日は物理漬けですが、
-だんだん物理のノリがわかってきたように思います (気のせいかもしれません)。
-たとえば、壁みたいな形のポテンシャルにぶつかる粒子がある確率で壁をすり抜けるやつ (トンネル効果) で、
-シュレディンガー方程式をぺろぺろっと解いて確率流束の比を見れば、
-まあ確かにそれっぽいなーって気分になります。
-わかれば面白いですね、物理。
-ところで、もう26歳なのにこんなことを言うのもあれですが、
-私はセンター物理60点くらいしかありませんでした
-(60より低かったかもしれません、細かいことは忘れました)。
-こんな人間でも教科書と睨めっこしながら演習問題を解けばちゃんと物理がわかってくるというのは純粋に嬉しいですね。
-どうして高校時代にこれを少しでもやらなかったんだろう…
-いや、あの頃は鬱病 (たぶん) だったからしょうがないか…
-結局、物理も数学も面白いです。
-もし学部時代の自分に会えたら、スパルタで演習問題解かせまくりたいですね。
-もっとやっておけばよかった。
-ていうか、2月までにある程度場の量子論の雰囲気を掴んでおかなければいけないのですが、
-これ、間に合う気がしませんね。
-どうなることやら…&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry></feed>
+&lt;p&gt;同じことを\(M,N\)の役割を逆にすることで定理の主張が従います。◻︎&lt;/p&gt;</content><author><name>Yujitomo</name></author><category term="Diary" /><summary type="html">今日1日の振り返り</summary></entry></feed>

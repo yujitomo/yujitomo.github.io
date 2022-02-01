@@ -306,3 +306,8 @@
 - [日経平均のボラティリティ](https://indexes.nikkei.co.jp/nkave/index/profile?idx=nk225vi)
 - [日経平均先物・オプションについて](https://www.jpx.co.jp/markets/derivatives/index.html)
 - [先物・オプション取引を知る・学ぶ](https://www.jpx.co.jp/learning/derivatives/index.html) ← オプションの理論価格について説明している部分を読むと、BSモデルの時間を表すパラメーターtの単位は「1年」であることがわかる。
+
+
+### Memotaro
+
+- [戸籍謄本をコンビニで発行するときのサイトが文字化けしていて読めなかったけど説明書的なpdfファイルがあるのでそれを見ながらやれば意外といけそう](https://ks.lg-waps.go.jp/ksgu/download/readme1st.pdf)

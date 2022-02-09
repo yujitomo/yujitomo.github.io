@@ -78,6 +78,8 @@ ul.ul-profile li ol li:before { content: '•'; color: #b0b0b0; padding: 0px 10p
 
 ul.ul-profile li ol li h4 { display: inline; padding: 0; text-decoration-line: underline; text-decoration-color: #dadada; }
 
+ul.ul-profile li img { width: 120px; height: 90px; }
+
 ul.ul-top { margin: 0px; padding: 0px 5% 0px 5%; }
 
 ul.ul-top li { margin: 0.8em 0px 1em 0px; }

@@ -157,10 +157,20 @@ alg-dさんに教えていただきました. ありがとうございます. ~~
 
 ## Ruby
 
+まずはbundle install
 - 「`require': cannot load such file -- hoge」に遭遇したら
   - → hogeがインストールされてないかもしれないから 「sudo bundle add hoge」をやる
 
 Gemfileの書き方　/　 WEBrickを使うためのメモ
+
+
+## Git
+
+パソコンを新しくしたら
+- [SSH的なやつをやる](https://qiita.com/tetsu-upstr/items/e72147250701cf30ee72)
+- [git push origin hoge(masterなど) で求められるパスワードは personal access token](https://docs.github.com/ja/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+- Atomとかの設定はそのあとでやる
+
 
 
 ## Firebase

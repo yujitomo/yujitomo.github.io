@@ -1,0 +1,476 @@
+\documentclass[uplatex]{jsarticle}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+
+\usepackage{xcolor}
+\usepackage[dvipdfmx]{graphicx}
+
+
+
+\usepackage{ulem}
+
+\usepackage{braket}
+
+%%%%%ハイパーリンク
+%\usepackage[colorlinks=true,urlcolor=blue!70!black,citecolor=blue!60!black,linkcolor=blue!60!black]{hyperref}
+%\usepackage{aliascnt} %for creating different biblatex references for different theoremstyles
+\usepackage[setpagesize=false,dvipdfmx]{hyperref}
+\usepackage{aliascnt}
+\hypersetup{
+    colorlinks=true,
+    citecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue,
+}
+
+\renewcommand{\eqref}[1]{\textcolor{blue}{(\ref{#1})}}
+
+%%%%%%ハイパーリンク
+
+
+%%%%%図式
+%\usepackage{tikz}%%%図
+\usepackage{amscd}%%%簡単な図式
+
+\usepackage{tikz}
+\usepackage{tikz-cd} %commutative diagrams in TikZ
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{decorations.markings}
+
+%%%%%図式
+
+
+
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+
+\usepackage{amsthm}
+
+%%%%%%%%%%%%Plain型%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%definition型%%%%%%%%%%%%
+
+\theoremstyle{definition}
+
+\renewcommand{\sectionautorefname}{Section}
+
+\newtheorem{thm}{Theorem}[section]
+\newcommand{\thmautorefname}{Theorem}
+
+
+\newaliascnt{prop}{thm}%%%カウンター「prop」の定義（thmと同じ）
+\newtheorem{prop}[prop]{Proposition}
+\aliascntresetthe{prop}
+\newcommand{\propautorefname}{Proposition}%%%カウンター名propは「命題」で参照する
+
+\newaliascnt{cor}{thm}
+\newtheorem{cor}[cor]{Corollary}
+\aliascntresetthe{cor}
+\newcommand{\corautorefname}{Corollary}
+
+\newaliascnt{lem}{thm}
+\newtheorem{lem}[lem]{Lemma}
+\aliascntresetthe{lem}
+\newcommand{\lemautorefname}{Lemma}
+
+%%%%%%%アルファベットで番号づける定理環境
+\newtheorem{thmA}{Theorem}[section]
+\newcommand{\thmAautorefname}{Theorem}
+\renewcommand\thethmA{\Alph{thmA}}
+
+\newtheorem{corA}{Theorem}[section]
+\newcommand{\corAautorefname}{Corollary}
+\renewcommand\thecorA{\Alph{corA}}
+
+\newaliascnt{defi}{thm}
+\newtheorem{defi}[defi]{Definition}
+\aliascntresetthe{defi}
+\newcommand{\defiautorefname}{Definition}
+
+\newaliascnt{rem}{thm}
+\newtheorem{rem}[rem]{Remark}
+\aliascntresetthe{rem}
+\newcommand{\remautorefname}{Remark}
+
+\newaliascnt{reconstruction}{thm}
+\newtheorem{reconstruction}[reconstruction]{Reconstruction}
+\aliascntresetthe{reconstruction}
+\newcommand{\reconstructionautorefname}{Reconstruction}
+
+%%%%%%%番号づけない定理環境
+\newtheorem*{exam*}{Example}
+\newtheorem*{rrem*}{Remark}
+\newtheorem*{defi*}{Definition}
+\newtheorem*{setting*}{Setting}
+\newtheorem*{notation*}{Notations}
+\newtheorem*{Ex*}{Exercise}
+
+
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+
+
+
+
+
+%%%%%箇条書き環境
+\usepackage[]{enumitem}
+
+\makeatletter
+\AddEnumerateCounter{\fnsymbol}{\c@fnsymbol}{9}%%%%fnsymbolという文字をenumerate環境のパラメーターで使えるようにする。
+\makeatother
+
+\makeatletter
+\renewcommand{\p@enumii}{}
+\makeatother
+
+\renewcommand{\theenumi}{(\roman{enumi})}%%%%%itemは(1),(2),(3)で番号付ける。
+\renewcommand{\labelenumi}{\theenumi}
+
+\renewcommand{\theenumii}{(\alph{enumii})}%%%%%itemは(1),(2),(3)で番号付ける。
+\renewcommand{\labelenumii}{\theenumii}
+
+\usepackage{moreenum}
+
+
+\makeatletter
+\newcommand*{\@yuyuspadecount}[1]{\ensuremath{
+\ifcase #1\or\spadesuit\or\spadesuit_2\or\spadesuit_3
+\or\spadesuit_4\or\spadesuit_5\or\spadesuit_6
+\or\spadesuit_7\or\spadesuit_8\or\spadesuit_9
+\else\@ctrerr\fi\relax}}
+\newcommand*{\yuyuspadecount}[1]{%
+\expandafter\@yuyuspadecount\csname c@#1\endcsname
+}
+\AddEnumerateCounter{\yuyuspadecount}{\@yuyuspadecount}{9}
+
+\newcommand*{\@yuyuclubcount}[1]{\ensuremath{
+\ifcase #1\or\clubsuit_1\or\clubsuit_2\or\clubsuit_3
+\or\clubsuit_4\or\clubsuit_5\or\clubsuit_6
+\or\clubsuit_7\or\clubsuit_8\or\clubsuit_9
+\else\@ctrerr\fi\relax}}
+\newcommand*{\yuyuclubcount}[1]{%
+\expandafter\@yuyuclubcount\csname c@#1\endcsname
+}
+\AddEnumerateCounter{\yuyuclubcount}{\@yuyuclubcount}{9}
+
+\newcommand*{\@yuyustarcount}[1]{\ensuremath{
+\ifcase #1\or\star_1\or\star_2\or\star_3
+\or\star_4\or\star_5\or\star_6
+\or\star_7\or\star_8\or\star_9
+\else \@ctrerr \fi\relax}}
+\newcommand*{\yuyustarcount}[1]{%
+\expandafter\@yuyustarcount\csname c@#1\endcsname
+}
+\AddEnumerateCounter{\yuyustarcount}{\@yuyustarcount}{9}
+\makeatother
+%%%%%箇条書き環境
+
+
+
+% \usepackage{mandorasymb}
+% \usepackage{applekeys}
+% \renewcommand{\qedsymbol}{\pencilkey}
+%\renewcommand{\qedsymbol}{\kinoposymbniko}
+
+
+
+
+\usepackage{latexsym}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\ISOM}{\mathbf{Isom}}
+\DeclareMathOperator{\id}{\mathrm{id}}
+\DeclareMathOperator{\im}{\mathrm{Im}}
+
+\DeclareMathOperator{\coker}{\mathrm{coker}}
+\DeclareMathOperator{\colim}{\mathrm{colim}}
+\DeclareMathOperator{\plim}{\mathrm{lim}}
+\DeclareMathOperator{\rank}{\mathrm{rank}}
+\DeclareMathOperator{\codim}{\mathrm{codim}}
+
+\DeclareMathOperator{\Spec}{\mathrm{Spec}}
+\DeclareMathOperator{\Proj}{\mathrm{Proj}}
+\DeclareMathOperator{\Sym}{\mathrm{Sym}}
+\DeclareMathOperator{\Ext}{\mathrm{Ext}}
+\DeclareMathOperator{\Bs}{\mathrm{Bs}}
+\DeclareMathOperator{\Bl}{\mathrm{Bl}}
+\DeclareMathOperator{\Sing}{\mathrm{Sing}}
+\DeclareMathOperator{\red}{\mathrm{red}}
+\DeclareMathOperator{\Reg}{\mathrm{Reg}}
+\DeclareMathOperator{\Ridge}{\mathrm{Ridge}}
+\DeclareMathOperator{\Hilb}{\mathrm{Hilb}}
+\DeclareMathOperator{\Grass}{\mathrm{Grass}}
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+
+
+\newcommand{\mcA}{\mathcal{A}}
+\newcommand{\mcB}{\mathcal{B}}
+\newcommand{\mcC}{\mathcal{C}}
+\newcommand{\mcD}{\mathcal{D}}
+\newcommand{\mcE}{\mathcal{E}}
+\newcommand{\mcF}{\mathcal{F}}
+\newcommand{\mcG}{\mathcal{G}}
+\newcommand{\mcH}{\mathcal{H}}
+\newcommand{\mcI}{\mathcal{I}}
+\newcommand{\mcJ}{\mathcal{J}}
+\newcommand{\mcK}{\mathcal{K}}
+\newcommand{\mcL}{\mathcal{L}}
+\newcommand{\mcM}{\mathcal{M}}
+\newcommand{\mcN}{\mathcal{N}}
+\newcommand{\mcO}{\mathcal{O}}
+\newcommand{\mcP}{\mathcal{P}}
+\newcommand{\mcQ}{\mathcal{Q}}
+\newcommand{\mcR}{\mathcal{R}}
+\newcommand{\mcS}{\mathcal{S}}
+\newcommand{\mcT}{\mathcal{T}}
+\newcommand{\mcU}{\mathcal{U}}
+\newcommand{\mcV}{\mathcal{V}}
+\newcommand{\mcW}{\mathcal{W}}
+\newcommand{\mcX}{\mathcal{X}}
+\newcommand{\mcY}{\mathcal{Y}}
+\newcommand{\mcZ}{\mathcal{Z}}
+
+\DeclareMathOperator{\OOO}{\mcO}
+
+\newcommand{\OB}{{\OOO_B}}
+\newcommand{\OC}{{\OOO_C}}
+\newcommand{\OD}{{\OOO_D}}
+\renewcommand{\OE}{{\OOO_E}}
+\newcommand{\OF}{{\OOO_F}}
+\newcommand{\OH}{{\OOO_H}}
+\newcommand{\OP}{{\OOO_P}}
+\newcommand{\OQ}{{\OOO_Q}}
+\newcommand{\OR}{{\OOO_R}}
+\newcommand{\OS}{{\OOO_S}}
+\newcommand{\OT}{{\OOO_T}}
+\newcommand{\OU}{{\OOO_U}}
+\newcommand{\OV}{{\OOO_V}}
+\newcommand{\OW}{{\OOO_W}}
+\newcommand{\OX}{{\OOO_X}}
+\newcommand{\OY}{{\OOO_Y}}
+\newcommand{\OZ}{{\OOO_Z}}
+
+\newcommand{\OO}[1]{\OOO_{#1}}
+
+\newcommand{\loc}{\mathrm{loc}}
+
+\newcommand{\rsa}{\rightsquigarrow}
+\newcommand{\dto}{\dashrightarrow}
+\renewcommand{\emptyset}{\varnothing}
+
+\def\dfn{:\overset{\mbox{{\scriptsize def}}}{=}}
+
+
+
+%%%%%%%%%タイトル
+\title{Hartshorne Exercise II.8.2}
+\author{ゆじ}
+
+
+\begin{document}
+\maketitle
+
+
+
+このノートでは、\cite[演習 II.8.2]{Ha}に解答を与える。
+\(k\)を基礎体とする。
+
+
+\begin{Ex*}\label{ex}
+  \(X\)を\(k\)上\(n\)次元の代数多様体、
+  \(\mcE\)を\(X\)上のランク\(r > n\)の局所自由層、
+  \(V\subset H^0(X,\mcE)\)を\(\mcE\)を生成する大域切断のなす部分空間とする。
+  このとき、大域切断\(0\neq s\in V\)であって、
+  対応する射\(s:\OX\to \mcE\)の余核が局所自由となるものが存在することを示せ。
+\end{Ex*}
+
+\(V\)を有限次元と仮定しても良いことに注意しておく：
+\(f:V_X\to \mcE\)を\(V\subset H^0(X,\mcE)\)に対応する射とする。
+仮定から\(f\)は全射である。
+\(V = \bigcup_{i\in I}V_i\)と有限次元部分空間の和として表す。
+\(f_i:V_{i,X}\to \mcE\)を
+\(V_i\subset V\)の\(X\to \Spec(k)\)に沿った基底変換と\(f\)の合成とする。
+このとき\(\bigcup_{i\in I}\im(f_i) = \mcE\)であるが、
+\(X=\bigcup_{j\in J}U_j\)と有限個のアフィンスキームで覆えば、
+各\(j\)に対して\(i_j\)が存在して\(\im(f_{i_j}|_{U_j})=\mcE|_{U_j}\)となることがわかり、
+これらの\(i_j\)より大きな\(i\)をとることで、
+十分大きな\(i\)に対して\(\im(f_i)=\mcE\)となることがわかる。
+すなわち、ある有限次元部分空間\(V_0\subset V\)が存在して、
+\(\mcE\)は\(V_0\)に属する大域切断で生成される。
+
+\(V\)を有限次元として話を進める。
+
+\begin{notation*}
+  \
+  \begin{itemize}
+    \item
+    基礎体を\(k\)と置く。
+    \item
+    スキームの射\(f:T\to S\)と\(S\)上の対象\(F\)
+    (\(S\)-スキームや、\(S\)上のスキームの射や、\(S\)上の準連接層など)
+    に対し、\(F_T\)や\(F|_T\)や\(f^*F\)で\(F\)の射\(T\to S\)による基底変換を表す。
+  \end{itemize}
+\end{notation*}
+
+
+
+\section{大域切断の零点集合}
+\label{section: S1}
+
+\(n\)次元代数多様体\(X\)上の
+ランク\(r\)の局所自由層\(\mcE\)と
+\(\mcE\)を生成する大域切断のなす\(d\)-次元部分線形空間\(V\subset H^0(X,\mcE)\)を与える。
+元\(s\in V\)を取り、
+\(s\)の零点集合を調べる。
+
+まず、\(s=0\)で定まる\(X\)の閉部分スキームがどのように構成されるか見る。
+\[\OX \xrightarrow{s_X} V_X\to \mcE\]
+を点\(p\in X\)に基底変換すると、
+\[k(p) \xrightarrow{s} V \to \mcE_p\]
+を得る。
+\(s(p)=0\)の意味は、この射の列の合成が\(0\)射だということである。
+双対をとることで、
+\(s(p)=0\)は
+\[
+\mcE_p^{\vee}\to V^{\vee}\xrightarrow{s^{\vee}} k(p)
+\]
+の合成が\(0\)射であることと同値である。
+従って、\(s=0\)という閉部分スキームは
+\[
+(s=0) \dfn \coker(\mcE^{\vee} \to V_X^{\vee} \xrightarrow{s^{\vee}_X} \OX)
+\]
+と定義される。
+
+閉部分スキーム\((s=0)\)は、\(s\)を\(0\)でない定数倍で置き換えても変わらない注意する。
+すると、各\(\P(V^{\vee})\)の元に対して\(X\)の閉部分スキームが定まることになり、
+\(\P(V^{\vee})\)でパラメーター付けられた\(X\)の閉部分スキームの族
+\[H\subset \P(V^{\vee})\times_kX\]
+で、各\(s\in V\)に対して、対応する\(\P(V^{\vee})\)のfiberが
+\(s=0\)となるもの、
+の存在を期待したくなる。
+この\(H\)を構成する。
+
+\(\mcK\dfn \ker(V_X^{\vee}\to \mcE)\)と置くと、双対をとることで全射
+\[
+V_X^{\vee}\to \mcK
+\]
+を得る。
+この全射は\(X\)上の射影束の閉埋め込み
+\[
+j:\P_X(\mcK^{\vee})\to \P(V^{\vee})\times_kX
+\]
+を定める。
+\(j\)が求める\(H\subset \P(V^{\vee})\times_kX\)を定めることを示す。
+元\(0\neq s\in V\)を取れば、一点からの射
+\(\Spec(k)\xrightarrow{s} \P(V^{\vee})\)が定まり、
+基底変換することで閉埋め込み\(i_s:X\to \P(V)^{\vee}\times_kX\)を得る。
+\(j\)を\(i_s\)に沿って基底変換すると、
+\(X\)の閉部分スキーム\(s_0:Y\subset X\)が定まる：
+\[
+\begin{CD}
+  Y @>s_0>> X \\
+  @VVV @Vi_sVV \\
+\P_X(\mcK^{\vee}) @>j>> \P(V^{\vee})\times_kX.
+\end{CD}
+\]
+この\(X\)上の図式を点\(p\in X\)まで基底変換すれば、
+図式
+\[
+\begin{CD}
+  Y_p @>>> p \\
+  @VVV @VsVV \\
+  \P(\mcK^{\vee}|_p) @>j_p>> \P(V^{\vee}).
+\end{CD}
+\]
+を得る。
+ここで\(Y_p\)は\(p\)または\(\emptyset\)である。
+\[
+Y_p\cong p \ \iff \ s\in \im(j_p) \ \iff s\in \im (\mcK|_p\to V) \
+\iff \ s\in \ker(V\to \mcE_p)
+\]
+であるから、
+\(Y\)は\(s=0\)で定まる閉部分スキームである。
+\(Y\)は\(j\)と射影\(\P(V^{\vee})\times_kX\to \P(V^{\vee})\)の合成の
+\(s\)が定める\(\P(V^{\vee})\)の点でのfiberであるから、
+よって閉埋め込み\(j:\P_X(\mcK^{\vee})\to \P(V^{\vee})\times_kX\)は、
+各\(s\in V\)に対して、対応する\(\P(V^{\vee})\)のfiberが
+\(s=0\)となるような、
+\(\P(V^{\vee})\)でパラメーターづけられた\(X\)の閉部分スキームの族を定める。
+
+
+
+
+
+
+
+\section{問題の解答}
+
+
+この節では、\autoref{section: S1}の議論を念頭において、問題に解答を与える。
+
+
+\begin{proof}
+  \(\mcE\)は自由層でないとして良い。
+
+  \(d=\dim V\)と置くと、全射\(V_X\to \mcE\)の存在から\(d > r > n\)である。
+  \(\mcK\dfn \ker (V_X\to \mcE)\)と置くと、\(\mcK\)のランクは\(d-r > 0\)である。
+  双対をとることで全射\(V|_X^{\vee} \to \mcK^{\vee}\)を得る。
+  この全射が引き起こす\(X\)上の射影束の閉埋め込み
+  \[j:\P_X(\mcK^{\vee})\to \P(V^{\vee})\times_k X\]
+  と射影\(\P(V^{\vee})\times_k X\to \P(V^{\vee})\)を合成すると、
+  射
+  \[
+  f:\P_X(\mcK^{\vee})\to \P(V^{\vee})
+  \]
+  を得る。
+  \(\dim (\P_X(\mcK^{\vee})) = d-r+n-1 < d-1 = \dim \P(V^{\vee})\)
+  なので\(f\)は全射ではない。
+  この\(f\)の像に入らない点\(\bar{s}\in \P(V^{\vee})\)
+  を与える元\(0\neq s\in V\)を取れば、
+  \(\bar{s}\)のfiberは\(\emptyset\)であるから、
+  \((s=0)=\emptyset\)となる。
+  ここで、元\(s\in V\)の定める射\(\OX\xrightarrow{s_X}V_X \to \mcE\)
+  の双対
+  \[\mcE^{\vee}\to V^{\vee}_X \xrightarrow{s_X^{\vee}} \OX\]
+  の余核がちょうど\(s=0\)で定まる閉部分スキームの構造層であることに注意すると、
+  今、\((s=0)=\emptyset\)であるから、
+  \(\mcE^{\vee}\to V^{\vee}_X \xrightarrow{s_X^{\vee}} \OX\)
+  の合成が全射であることがわかる。
+  従って\(s\)が所望の大域切断である。
+\end{proof}
+
+
+
+
+
+
+
+
+\begin{thebibliography}{9}
+  \bibitem[Ha]{Ha}
+  R.Hartshorne,
+  \textit{Algebraic Geometry}.
+  Springer-Verlag, New Tork, 1977. Graduate Text in Mathematics, No. 52.
+\end{thebibliography}
+
+
+
+\end{document}

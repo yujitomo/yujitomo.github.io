@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="jp">
+  <head>
+    <title>{{page_title}}</title>
+  </head>
+  <body>
+    <h1>{{page_title}}</h1>
+    <article>
+      <ul id="all">
+        {% for item in my_assets -%}
+        <li><a href="{{ item.href }}">{{ item.view_name }}</a></li>
+        {% endfor -%}
+      </ul>
+    </article>
+  </body>
+</html>

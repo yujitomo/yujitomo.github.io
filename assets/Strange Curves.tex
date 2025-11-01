@@ -1,0 +1,484 @@
+\documentclass[uplatex]{jsarticle}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+
+\usepackage{xcolor}
+\usepackage[dvipdfmx]{graphicx}
+
+
+
+\usepackage{ulem}
+
+\usepackage{braket}
+
+%%%%%ハイパーリンク
+%\usepackage[colorlinks=true,urlcolor=blue!70!black,citecolor=blue!60!black,linkcolor=blue!60!black]{hyperref}
+%\usepackage{aliascnt} %for creating different biblatex references for different theoremstyles
+\usepackage[setpagesize=false,dvipdfmx]{hyperref}
+\usepackage{aliascnt}
+\hypersetup{
+    colorlinks=true,
+    citecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue,
+}
+
+\renewcommand{\eqref}[1]{\textcolor{blue}{(\ref{#1})}}
+
+%%%%%%ハイパーリンク
+
+
+%%%%%図式
+%\usepackage{tikz}%%%図
+\usepackage{amscd}%%%簡単な図式
+
+\usepackage{tikz}
+\usepackage{tikz-cd} %commutative diagrams in TikZ
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{decorations.markings}
+
+%%%%%図式
+
+
+
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+
+\usepackage{amsthm}
+
+%%%%%%%%%%%%Plain型%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%definition型%%%%%%%%%%%%
+
+\theoremstyle{definition}
+
+\renewcommand{\sectionautorefname}{Section}
+
+\newtheorem{thm}{Theorem}%[section]
+\newcommand{\thmautorefname}{Theorem}
+
+
+\newaliascnt{prop}{thm}%%%カウンター「prop」の定義（thmと同じ）
+\newtheorem{prop}[prop]{Proposition}
+\aliascntresetthe{prop}
+\newcommand{\propautorefname}{Proposition}%%%カウンター名propは「命題」で参照する
+
+\newaliascnt{cor}{thm}
+\newtheorem{cor}[cor]{Corollary}
+\aliascntresetthe{cor}
+\newcommand{\corautorefname}{Corollary}
+
+\newaliascnt{lem}{thm}
+\newtheorem{lem}[lem]{Lemma}
+\aliascntresetthe{lem}
+\newcommand{\lemautorefname}{Lemma}
+
+%%%%%%%アルファベットで番号づける定理環境
+\newtheorem{thmA}{Theorem}[section]
+\newcommand{\thmAautorefname}{Theorem}
+\renewcommand\thethmA{\Alph{thmA}}
+
+\newtheorem{corA}{Theorem}[section]
+\newcommand{\corAautorefname}{Corollary}
+\renewcommand\thecorA{\Alph{corA}}
+
+\newaliascnt{defi}{thm}
+\newtheorem{defi}[defi]{Definition}
+\aliascntresetthe{defi}
+\newcommand{\defiautorefname}{Definition}
+
+\newaliascnt{rem}{thm}
+\newtheorem{rem}[rem]{Remark}
+\aliascntresetthe{rem}
+\newcommand{\remautorefname}{Remark}
+
+\newaliascnt{reconstruction}{thm}
+\newtheorem{reconstruction}[reconstruction]{Reconstruction}
+\aliascntresetthe{reconstruction}
+\newcommand{\reconstructionautorefname}{Reconstruction}
+
+%%%%%%%番号づけない定理環境
+\newtheorem*{exam*}{Example}
+\newtheorem*{rrem*}{Remark}
+\newtheorem*{defi*}{Definition}
+\newtheorem*{setting*}{Setting}
+\newtheorem*{notation*}{Notations}
+
+
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+
+
+
+
+
+%%%%%箇条書き環境
+\usepackage[]{enumitem}
+
+\makeatletter
+\AddEnumerateCounter{\fnsymbol}{\c@fnsymbol}{9}%%%%fnsymbolという文字をenumerate環境のパラメーターで使えるようにする。
+\makeatother
+
+\makeatletter
+\renewcommand{\p@enumii}{}
+\makeatother
+
+\renewcommand{\theenumi}{(\roman{enumi})}%%%%%itemは(1),(2),(3)で番号付ける。
+\renewcommand{\labelenumi}{\theenumi}
+
+\renewcommand{\theenumii}{(\alph{enumii})}%%%%%itemは(1),(2),(3)で番号付ける。
+\renewcommand{\labelenumii}{\theenumii}
+
+\usepackage{moreenum}
+
+
+\makeatletter
+\newcommand*{\@yuyuspadecount}[1]{\ensuremath{
+\ifcase #1\or\spadesuit\or\spadesuit_2\or\spadesuit_3
+\or\spadesuit_4\or\spadesuit_5\or\spadesuit_6
+\or\spadesuit_7\or\spadesuit_8\or\spadesuit_9
+\else\@ctrerr\fi\relax}}
+\newcommand*{\yuyuspadecount}[1]{%
+\expandafter\@yuyuspadecount\csname c@#1\endcsname
+}
+\AddEnumerateCounter{\yuyuspadecount}{\@yuyuspadecount}{9}
+
+\newcommand*{\@yuyuclubcount}[1]{\ensuremath{
+\ifcase #1\or\clubsuit_1\or\clubsuit_2\or\clubsuit_3
+\or\clubsuit_4\or\clubsuit_5\or\clubsuit_6
+\or\clubsuit_7\or\clubsuit_8\or\clubsuit_9
+\else\@ctrerr\fi\relax}}
+\newcommand*{\yuyuclubcount}[1]{%
+\expandafter\@yuyuclubcount\csname c@#1\endcsname
+}
+\AddEnumerateCounter{\yuyuclubcount}{\@yuyuclubcount}{9}
+
+\newcommand*{\@yuyustarcount}[1]{\ensuremath{
+\ifcase #1\or\star_1\or\star_2\or\star_3
+\or\star_4\or\star_5\or\star_6
+\or\star_7\or\star_8\or\star_9
+\else \@ctrerr \fi\relax}}
+\newcommand*{\yuyustarcount}[1]{%
+\expandafter\@yuyustarcount\csname c@#1\endcsname
+}
+\AddEnumerateCounter{\yuyustarcount}{\@yuyustarcount}{9}
+\makeatother
+%%%%%箇条書き環境
+
+
+
+% \usepackage{mandorasymb}
+% \usepackage{applekeys}
+% \renewcommand{\qedsymbol}{\pencilkey}
+%\renewcommand{\qedsymbol}{\kinoposymbniko}
+
+
+
+
+\usepackage{latexsym}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\ISOM}{\mathbf{Isom}}
+\DeclareMathOperator{\id}{\mathrm{id}}
+\DeclareMathOperator{\im}{\mathrm{Im}}
+
+\DeclareMathOperator{\coker}{\mathrm{coker}}
+\DeclareMathOperator{\colim}{\mathrm{colim}}
+\DeclareMathOperator{\plim}{\mathrm{lim}}
+\DeclareMathOperator{\rank}{\mathrm{rank}}
+\DeclareMathOperator{\codim}{\mathrm{codim}}
+
+\DeclareMathOperator{\Spec}{\mathrm{Spec}}
+\DeclareMathOperator{\Proj}{\mathrm{Proj}}
+\DeclareMathOperator{\Sym}{\mathrm{Sym}}
+\DeclareMathOperator{\Ext}{\mathrm{Ext}}
+\DeclareMathOperator{\Bs}{\mathrm{Bs}}
+\DeclareMathOperator{\Bl}{\mathrm{Bl}}
+\DeclareMathOperator{\Sing}{\mathrm{Sing}}
+\DeclareMathOperator{\red}{\mathrm{red}}
+\DeclareMathOperator{\Reg}{\mathrm{Reg}}
+\DeclareMathOperator{\Ridge}{\mathrm{Ridge}}
+\DeclareMathOperator{\Hilb}{\mathrm{Hilb}}
+\DeclareMathOperator{\Grass}{\mathrm{Grass}}
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+
+
+\newcommand{\mcA}{\mathcal{A}}
+\newcommand{\mcB}{\mathcal{B}}
+\newcommand{\mcC}{\mathcal{C}}
+\newcommand{\mcD}{\mathcal{D}}
+\newcommand{\mcE}{\mathcal{E}}
+\newcommand{\mcF}{\mathcal{F}}
+\newcommand{\mcG}{\mathcal{G}}
+\newcommand{\mcH}{\mathcal{H}}
+\newcommand{\mcI}{\mathcal{I}}
+\newcommand{\mcJ}{\mathcal{J}}
+\newcommand{\mcK}{\mathcal{K}}
+\newcommand{\mcL}{\mathcal{L}}
+\newcommand{\mcM}{\mathcal{M}}
+\newcommand{\mcN}{\mathcal{N}}
+\newcommand{\mcO}{\mathcal{O}}
+\newcommand{\mcP}{\mathcal{P}}
+\newcommand{\mcQ}{\mathcal{Q}}
+\newcommand{\mcR}{\mathcal{R}}
+\newcommand{\mcS}{\mathcal{S}}
+\newcommand{\mcT}{\mathcal{T}}
+\newcommand{\mcU}{\mathcal{U}}
+\newcommand{\mcV}{\mathcal{V}}
+\newcommand{\mcW}{\mathcal{W}}
+\newcommand{\mcX}{\mathcal{X}}
+\newcommand{\mcY}{\mathcal{Y}}
+\newcommand{\mcZ}{\mathcal{Z}}
+
+\DeclareMathOperator{\OOO}{\mcO}
+
+\newcommand{\OB}{{\OOO_B}}
+\newcommand{\OC}{{\OOO_C}}
+\newcommand{\OD}{{\OOO_D}}
+\renewcommand{\OE}{{\OOO_E}}
+\newcommand{\OF}{{\OOO_F}}
+\newcommand{\OH}{{\OOO_H}}
+\newcommand{\OP}{{\OOO_P}}
+\newcommand{\OQ}{{\OOO_Q}}
+\newcommand{\OR}{{\OOO_R}}
+\newcommand{\OS}{{\OOO_S}}
+\newcommand{\OT}{{\OOO_T}}
+\newcommand{\OU}{{\OOO_U}}
+\newcommand{\OV}{{\OOO_V}}
+\newcommand{\OW}{{\OOO_W}}
+\newcommand{\OX}{{\OOO_X}}
+\newcommand{\OY}{{\OOO_Y}}
+\newcommand{\OZ}{{\OOO_Z}}
+
+\newcommand{\OO}[1]{\OOO_{#1}}
+
+\newcommand{\loc}{\mathrm{loc}}
+
+\newcommand{\rsa}{\rightsquigarrow}
+\newcommand{\dto}{\dashrightarrow}
+\renewcommand{\emptyset}{\varnothing}
+
+\def\dfn{:\overset{\mbox{{\scriptsize def}}}{=}}
+
+
+
+
+%%%%%%%%%タイトル
+\title{Strange Curves}
+\author{ゆじ}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+このノートでは、Strangeな非特異射影曲線の構造に関するSamuelの定理
+\cite[定理 IV.3.9]{Ha}に、Hartshorneによるものとは別の証明を与える。
+
+\begin{defi}
+  \(k\)を代数閉体、\(C\subset \P^n\)を射影的な曲線とする。
+  \(C\)のすべての正則な点での接線が同じ点\(p\in \P^n\)を通るとき、
+  \(C\)を (埋め込みのもと、\(\P^n\)内で、) \textbf{Strange}であるという。
+\end{defi}
+
+
+\begin{notation*}
+  \
+  \begin{itemize}
+    \item
+    スキームの射\(f:T\to S\)と\(S\)上の対象\(F\)
+    (\(S\)-スキームや、\(S\)上のスキームの射や、\(S\)上の準連接層など)
+    に対し、\(F_T\)で\(F\)の射\(T\to S\)による基底変換を表す。
+    \item
+    \(k\)を代数閉体とする。
+    \item
+    \(k\)-線形空間\(V\)に対し、
+    \(\P(V) \dfn \Proj(\Sym(V))\)と書く。
+    \(\OO{\P(V)}(1)\)を\(\P(V)\)上のトートロジカル直線束とする。
+    \item
+    \(\P^n\)と\(\P(H^0(\P^n,\OO{\P^n}(1)))\)は自然に同型なので、
+    このノートではこれらを同一視する。
+    \item
+    \(k\)上の代数多様体\(X\)に対し、
+    \(\Delta_{(1)}\)で対角射\(X\to X\times_kX\)の一次無限小近傍、
+    つまりイデアル層\(\mcI_{\Delta}^2\)に対応する\(X\times_kX\)の閉部分スキームとする。
+    第一、第二射影を
+    \(\mathrm{pr}_1,\mathrm{pr}_2:X\times_kX\rightrightarrows X\)と書き、
+    \(p_1,p_2:\Delta_{(1)}\rightrightarrows X\)をそれぞれ
+    \(\mathrm{pr}_1,\mathrm{pr}_2\)と
+    閉埋め込み\(\Delta_{(1)}\to X\times_kX\)の合成とする。
+    代数多様体\(X\)上の準連接層\(\mcF\)に対し、
+    \(\mcP^1(\mcF)\dfn p_{2,*}p_1^*\mcF\)と置く。
+  \end{itemize}
+\end{notation*}
+
+\begin{rem}
+   \
+  \begin{itemize}
+    \item
+    代数多様体\(X\)上の準連接層\(\mcF\)に対し、
+    平坦基底変換により
+    \(\mathrm{pr}_{2,*}\mathrm{pr}_1^*\mcF\cong H^0(X,\mcF)\otimes_k \OX\)であるから、
+    射の列\(H^0(X,\mcF)\otimes_k \OX\to p_{2,*}p_1^*\mcF\to \mcF\)ができる。
+    \item
+    \(V\)を有限次元\(k\)-線形空間とする。
+    代数多様体\(X\)から\(\P(V)\)への射は、
+    \(X\)上の直線束\(L\)への全射\(V_X\to L\)と対応する
+    (cf. \cite[Theorem II.7.12]{Ha})。
+    射\(V_X\to L\)は\(k\)-線形空間の射\(V\to H^0(X,L)\)と対応し、
+    これにより\(V_X\to \mcP^1(L)\)を引き起こす。
+    \(X\to \P(V)\)が閉埋め込みであれば
+    射\(V_X\to \mcP^1(L)\)は全射となる
+    (cf. \cite{YJ})。
+    \item
+    \(V\)を有限次元\(k\)-線形空間とする。
+    \(X\subset \P(V)\)を射影代数多様体とすると、
+    \(X\)上で直線束\(L=\OO{\P(V)}(1)|_X\)と全射\(V_X\to \mcP^1(L)\)を得る。
+    閉点\(x\in X\)を正則点とする。
+    全射\(V_X\to \mcP^1(L)\)を点\(x\)へ基底変換すると、
+    全射\(V\to k(x)\oplus \mathfrak{m}_x/\mathfrak{m}_x^2\)を得る。
+    この全射が定める線形部分多様体
+    \(\P(k(x)\oplus \mathfrak{m}_x/\mathfrak{m}_x^2)\subset \P(V)\)は、
+    \(X\)の点\(x\in X\)での接平面 (embedded tangent plane) である。
+  \end{itemize}
+\end{rem}
+
+
+
+
+\begin{thm}[{\cite[定理 IV.3.9]{Ha}}]
+  \(k\)を代数閉体、\(C\subset \P^n\)を非特異射影曲線とする。
+  このとき\(C\cong \P^1\)であり、
+  さらに\(C\)は\(\P^n\)内の直線か、または、
+  ある平面\(\P^2\subset \P^n\)に含まれる次数\(2\)の曲線のいずれかとなる。
+\end{thm}
+
+
+\begin{proof}
+  \(g\)を\(C\)の種数、\(d\)を\(C\)の次数とする。
+  \(g = 0,d\leq 2\)を示せば良い。
+  \(V\dfn H^0(\P^n,\OO{\P^n}(1))\)と置き、\(\P^n=\P(V)\)と書く。
+  \(L = \OO{\P(V)}(1)|_C\)と置く。
+  全射の列\(V_C\to \mcP^1(L) \to L\)ができ、
+  埋め込み\(C\subset \P(V)\)は全射\(V_C\to L\)により引き起こされている。
+
+  \(C\)のすべての接線が通る点を\(p\)とし、
+  点\(p\in \P(V)\)を与える全射も同じ記号\(p:V\to k\)で表す。
+  \(C\)のすべての接線が点\(p\)を通ることは、
+  \[\ker(V_C\to \mcP^1(L)) \subset \ker(V_C\xrightarrow{p_C} k_C)\]
+  を意味し、
+  従って全射\(p_C : V_C\to k_C\)は\(V_C\to \mcP^1(L)\)を経由して分解する。
+  こうして全射\(\mcP^1(L)\to k_C\)を得る。
+  一方で、自然な全射\(\mcP^1(L)\to L\)もあるが、
+  \(L\not\cong k_C\)であることから、
+  二つの射\(\mcP^1(L)\to k_C\)と\(\mcP^1(L)\to L\)の核はたがいに他を含まない。
+  従って、これらの射を並べて得られる射\(\mcP^1(L) \to L\oplus k_C\)は単射となる。
+  \(\det\)を取れば直線束の単射\(\det(\mcP^1(L)) \to \det(L\oplus k_C) \cong L\)を得る。
+  完全列
+  \[
+  \begin{CD}
+    0 @>>> \Omega_X\otimes L @>>> \mcP^1(L) @>>> L @>>> 0
+  \end{CD}
+  \]
+  より\(\det(\mcP^1(L)) \cong \Omega_X \otimes L^{\otimes 2}\)であり
+  \(\deg(\det(\mcP^1(L))) = 2g - 2 + 2d\)となる。
+  従って不等式
+  \[
+  \deg(\det(\mcP^1(L))) \ = \ 2g - 2 + 2d \ \leq \ \deg(L) \ = \ d
+  \]
+  を得る。
+  これを実現する整数\(g\geq 0, d\geq 1\)の組は
+  \[
+  (g,d) \ = \ (0,1) \ , \ (0,2)
+  \]
+  しかありえない。
+\end{proof}
+
+
+\begin{rem}
+  ある平面\(\P^2\subset \P^n\)に含まれる次数\(2\)の
+  非特異射影曲線\(C\)がstrangeであるとする。
+  点\(p\in \P^2\)を、\(C\)のすべての接線が通る点とする。
+  \(C\)は次数\(2\)であるから、\(p\)を通る直線は\(C\)と必ず接する。
+  よって、点\(p\)から\(\P^1\)へ射影すると、
+  次数\(2\)の単射\(f:C\to \P^1\)を得る。
+  このとき\(f\)は純非分離であり、次数が\(2\)であることから、
+  標数\(2\)でなければならないことがわかる。
+  特に、標数\(p\neq 2\)のstrangeな非特異射影曲線\(C\subset \P^n\)は直線しかあり得ない。
+\end{rem}
+
+
+
+曲線が特異点を持つ場合には、標数正であれば、strangeな曲線はたくさんあり得る。
+例は\cite[演習 IV.3.8.(a)]{Ha}に載っている通りである。
+一方、その次の演習問題\cite[演習 IV.3.8.(b)]{Ha}にある通り、
+標数\(0\)ではstrangeな曲線は直線しかあり得ない。
+
+
+\begin{thm}[{\cite[演習 IV.3.8.(b)]{Ha}}]
+  \(k\)を標数\(0\)の代数閉体、
+  \(C\subset \P^n\)を (非特異とは限らない) 射影的でstrangeな曲線とする。
+  このとき\(C\)は直線である。
+\end{thm}
+
+\begin{proof}
+  strangeな (非特異とは限らない射影的な) 曲線\(C\subset \P^n\)は、
+  点からの射影を繰り返すことにより、
+  低い次元の射影空間内のstrangeな曲線と双有理である
+  (cf. \cite[演習 I.4.9.]{Ha})。
+  よって、射\(f:C\to \P^2\)であって以下を満たすものが存在する：
+  \begin{itemize}
+    \item
+    \(f\)は像への双有理射である。
+    \item
+    \(f\)の像は\(\P^2\)内でstrangeである。
+  \end{itemize}
+  よって、\(\P^2\)内のstrangeな (非特異とは限らない射影的な) 曲線\(C\subset \P^2\)が
+  直線に限ることを示せば良い。
+
+  \(\im(f)\)のすべての正則点での接線が通る点を\(p\in \P^2\)と置き、
+  \(C\)の正規化を\(\sigma:\tilde{C}\to C\)と置く。
+  点\(p\)からの射影\(\P^2\dto \P^1\)と\(f\circ \sigma\)を合成することで、
+  射\(g:\tilde{C}\to \P^1\)を得る。
+  もし\(g\)が一点に潰れるならば、
+  \(C\)はその点のfiber、つまりある\(\P^2\)内の直線に含まれるので、
+  \(C\)は直線となることがわかる。
+  そうでない場合、
+  \(g\)は\(C\)の正則点に対応する
+  \(\tilde{C}\)の点 (これは無限個ある) の上で分岐する。
+  標数\(0\)であるので分岐点は有限個でなければならず、これは矛盾である。
+  以上で示された。
+\end{proof}
+
+
+
+
+
+
+\begin{thebibliography}{9}
+  \bibitem[Ha]{Ha}
+  R.Hartshorne,
+  \textit{Algebraic Geometry}.
+  Springer-Verlag, New Tork, 1977. Graduate Text in Mathematics, No. 52.
+  \bibitem[ゆ]{YJ}
+  ゆじノート,
+  \textit{Separating Tangent Vectors}.
+\end{thebibliography}
+\end{document}

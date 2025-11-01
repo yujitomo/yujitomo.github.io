@@ -1,0 +1,465 @@
+\documentclass[uplatex]{jsarticle}
+
+
+\usepackage{amssymb, amsmath, amsfonts, amsthm, amscd, mathrsfs, mathtools,
+  stmaryrd, ulem, braket, latexsym, xparse
+}
+\usepackage[left=25mm,right=25mm]{geometry}
+
+\usepackage{xcolor}
+\definecolor{Mygray}{RGB}{230,230,230}
+\definecolor{Mybblue}{RGB}{0,100,250}
+\definecolor{Myred}{RGB}{255,80,100}
+\definecolor{Myorange}{RGB}{200,100,0}
+
+%%%%% hyperlink
+\usepackage{hyperref,aliascnt}
+\hypersetup{colorlinks=true, citecolor=Myorange, linkcolor=Myorange, urlcolor=Myorange}
+\renewcommand{\eqref}[1]{\textcolor{blue}{(\ref{#1})}}
+
+%%%%%% font
+\usepackage[T1]{fontenc}  
+\usepackage{roboto}
+
+%%%%% diagram
+\usepackage{tikz, tikz-cd}
+\usetikzlibrary{calc, matrix, arrows, decorations.markings}
+
+%%%%% enumerate
+\usepackage{enumitem, moreenum}
+\makeatletter
+\newcommand*{\@TrumpCount}[1]{\ensuremath{
+  \ifcase #1\or\spadesuit\or\clubsuit\else \@ctrerr \fi\relax}}
+\newcommand*{\TrumpCount}[1]{%
+  \expandafter\@TrumpCount\csname c@#1\endcsname}
+\AddEnumerateCounter{\TrumpCount}{\@TrumpCount}{2}
+\renewcommand{\theenumi}{(\roman{enumi})}
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\theenumii}{(\alph{enumii})}
+\renewcommand{\labelenumii}{\theenumii}
+\makeatother
+
+
+%%%%%%%%%%%% theorem env %%%%%%%%%%%%
+\makeatletter
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\proofname}{\bf Proof.}
+\newcommand{\Mytheorem}[2]{
+  \newaliascnt{#1}{thm}\newtheorem{#1}[#1]{#2}\aliascntresetthe{#1}
+  \expandafter\def\csname #1autorefname\endcsname{#2}
+}
+\NewDocumentCommand{\MyThm}{ >{\SplitList{,}} m }{\ProcessList{#1}{\MyThmEach}}
+\def\MyThmEach#1{
+  \def\@@MyThmEach{\relax #1\relax}
+  \expandafter\ifx\@@MyThmEach\else
+  \expandafter\@MyThmEach\@@MyThmEach\relax\fi
+}
+\def\@MyThmEach\relax#1=#2\relax{\Mytheorem{#1}{#2}}
+
+\theoremstyle{definition}
+
+\newtheorem{thm}{定理}
+\newcommand{\thmautorefname}{定理}
+\MyThm{prop=命題, cor=系, lem=補題, defi=定義, rem=注意, notation=記号}
+
+%%%%%%% non-numbering
+\newtheorem*{exam*}{Example}
+\newtheorem*{comment*}{Comment}
+\newtheorem*{rrem*}{Remark}
+\newtheorem*{defi*}{Definition}
+
+%%%%%%% alphabtical numbering
+\newtheorem{thmA}{Theorem}[section]
+\newcommand{\thmAautorefname}{Theorem}
+\renewcommand{\thethmA}{\Alph{thmA}}
+
+\newaliascnt{corA}{thmA}
+\newtheorem{corA}[corA]{Corollary}
+\aliascntresetthe{corA}
+\newcommand{\corAautorefname}{Corollary}
+
+\newtheorem{situation}{Situation}[section]
+\newcommand{\situationautorefname}{Situation}
+\renewcommand{\thesituation}{\TrumpCount{situation}}
+
+\makeatother
+%%%%%%%%%%%% theorem env %%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%% my definitions %%%%%%%%%%%%
+\makeatletter
+
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\dfn}{:\overset{\mbox{{\rm\scriptsize def}}}{=}}
+\newcommand{\deff}{:\hspace{-3pt}\overset{\text{def}}{\iff}}
+\renewcommand{\amalg}{\sqcup}
+\newcommand{\red}{\mathrm{red}}
+\newcommand{\smsq}{\mathrel{\rule[1.5pt]{0.3em}{0.3em}}}
+\newcommand{\rsa}{\rightsquigarrow}
+
+% math operators
+\NewDocumentCommand{\MyMathOpCommands}{ >{\SplitList{,}} m }{
+  \ProcessList{#1}{\MyMathOpEach}
+}
+\def\MyMathOpEach#1{
+  \def\@@MyMathOpEach{#1==\relax}
+  \expandafter\ifx\@@MyMathOpEach\else
+  \expandafter\@MyMathOpEach\@@MyMathOpEach\relax\fi
+}
+\def\@MyMathOpEach#1=#2=\relax{
+  \ifx\relax#2\relax
+  \expandafter\DeclareMathOperator\csname #1\endcsname{#1}\else
+  \expandafter\DeclareMathOperator\csname #1\endcsname{\@@@MyMathOpEach #2}\fi
+}
+\def\@@@MyMathOpEach#1={#1}
+\MyMathOpCommands{Hom, Isom, ISOM=\mathbf{Isom}, im=\mathrm{Im}, id, dom, codom, et=\mathrm{\acute{e}t}, pr,
+coker, Spec, Aut, End, rk=\mathrm{Rank}, trdeg=\mathrm{tr.deg}}
+\DeclareMathOperator*{\colim}{\mathrm{colim}}
+\DeclareMathOperator*{\plim}{\mathrm{lim}}
+
+% group and monoids 
+\NewDocumentCommand{\MyMathRmCommands}{ >{\SplitList{,}} m }{
+  \ProcessList{#1}{\MyMathRmEach}
+}
+\def\MyMathRmEach#1{
+  \def\@@MyMathRmEach{#1==\relax}
+  \expandafter\ifx\@@MyMathRmEach\else
+  \expandafter\@MyMathRmEach\@@MyMathRmEach\relax\fi
+}
+\def\@MyMathRmEach#1=#2=\relax{
+  \ifx\relax#2\relax
+  \expandafter\newcommand\csname #1\endcsname{\mathrm{#1}}\else
+  \expandafter\newcommand\csname #1\endcsname{\@@@MyMathRmEach #2}\fi
+}
+\def\@@@MyMathRmEach#1={#1}
+\MyMathRmCommands{sh, gp, inte=\mathrm{int}, sat, tor, free, triv=\mathrm{triv}, op}
+
+% universes
+\newcommand{\univ}[1]{\mathbf{#1}}
+\newcommand{\usm}{{\(\univ{U}\)-small}}
+\newcommand{\vsm}{{\(\univ{V}\)-small}}
+\newcommand{\wsm}{{\(\univ{W}\)-small}}
+
+% Categories
+\newcommand{\MyCatDef}[2][]{
+  \ifx\relax#1\relax\expandafter\newcommand\csname #2\endcsname{\mathsf{#2}}
+  \else\expandafter\newcommand\csname #2\endcsname{#1}\fi
+  \expandafter\newcommand\csname #2U\endcsname{\csname#2\endcsname_{\univ{U}}}
+  \expandafter\newcommand\csname #2V\endcsname{\csname#2\endcsname_{\univ{V}}}
+  \expandafter\newcommand\csname #2W\endcsname{\csname#2\endcsname_{\univ{W}}}
+  \expandafter\newcommand\csname #2Class\endcsname{\text{\robotolight #2}}
+}
+\NewDocumentCommand{\MyCategories}{ >{\SplitList{,}} m }{
+  \ProcessList{#1}{\MyCatDef}}
+\MyCategories{Alg,Ab,Ring,Grp,Mon,Top,Cat,Grpd,Site,Sch,Mor,Sh}
+% \MyCatDef[\Sch^{\log}]{LSch}
+\newcommand{\sfSet}{\mathsf{Set}}
+\newcommand{\SetU}{\sfSet_{\univ{U}}}
+\newcommand{\SetV}{\sfSet_{\univ{V}}}
+\newcommand{\SetW}{\sfSet_{\univ{W}}}
+\newcommand{\SetClass}{\text{\robotolight Set}}
+\newcommand{\LSch}{\Sch^{\log}}
+\newcommand{\LSchU}{\LSch_{\univ{U}}}
+\newcommand{\LSchV}{\LSch_{\univ{V}}}
+\newcommand{\LSchW}{\LSch_{\univ{W}}}
+\newcommand{\LSchClass}{\textrm{\robotolight Sch}^{\log}}
+
+% mathcal, mathbb, scr, bb, bf
+\makeatletter
+\newcommand{\MyMathcal}[1]{\@tfor\Ch@r:=#1\do{%
+  \expandafter\edef\csname mc\Ch@r\endcsname{\noexpand\mathcal{\Ch@r}}%
+  \expandafter\edef\csname scr\Ch@r\endcsname{\noexpand\mathscr{\Ch@r}}%
+  \expandafter\edef\csname bf\Ch@r\endcsname{\noexpand\mathbf{\Ch@r}}%
+  \expandafter\edef\csname mf\Ch@r\endcsname{\noexpand\mathfrak{m}_{\Ch@r}}%
+  \expandafter\edef\csname bb\Ch@r\endcsname{\noexpand\mathbb{\Ch@r}}%
+  \expandafter\edef\csname O\Ch@r\endcsname{\noexpand\mathcal{O}_{\Ch@r}}%
+  \expandafter\edef\csname M\Ch@r\endcsname{\noexpand\mathcal{M}_{\Ch@r}}%
+  \expandafter\edef\csname oM\Ch@r\endcsname{\noexpand\overline{\noexpand\mathcal{M}}_{\Ch@r}}
+}}
+\makeatother
+\MyMathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+\newcommand{\mfm}{\mathfrak{m}}
+\newcommand{\A}{\bbA}
+\newcommand{\C}{\bbC}
+\newcommand{\F}{\bbF}
+\newcommand{\G}{\bbG}
+\newcommand{\N}{\bbN}
+\let\oldbackslashP\P
+\renewcommand{\P}{\bbP}
+\newcommand{\Q}{\bbQ}
+\newcommand{\R}{\bbR}
+\newcommand{\Z}{\bbZ}
+
+\renewcommand{\OO}[1]{\mathcal{O}_{#1}}
+\renewcommand{\MM}[1]{\mathcal{M}_{#1}}
+\renewcommand{\oMM}[1]{\overline{\mathcal{M}}_{#1}}
+
+\makeatother
+%%%%%%%%%%%% my definitions %%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\title{MonoidsのPush-outのQuasi-Integral性}
+\author{ゆじ}
+
+\begin{document}
+
+\maketitle
+
+モノイドは可換で単位元を持つとする。
+演算は加法で表し、単位元は\(0\)と表記する。
+
+\begin{defi}
+  \(M\)をモノイドとする。
+  \begin{itemize}
+    \item 自明なモノイドを (軽微な記号の濫用により) \(0\)と表す。
+    \item \(M^{\times} \dfn \{m\in M | \exists m'\in M, m'+m=0\}\). 
+    \item \(M\)が\textbf{sharp}であるとは、\(M^{\times} = 0\)となることを言う。
+    \item \(M^{\gp}\dfn (M\times M)/\sim\), ただし
+    \[(m_1,m_2)\sim (m_1',m_2') \ \deff  \ \exists m\in M,  m_1+m_2'+m = m_1'+m_2+m.\]
+    \item 
+    \(\eta_M:M\to M^{\gp}\)を\(\eta_M(m) = \overline{(m,0)}\)で定める。
+    これは\(M\)に関して函手的である。
+    \item 
+    モノイド\(M\)が\textbf{integral}であるとは、\(\eta_M\)が単射であることを言う。
+    \item 
+    \(M^{\inte}\dfn \im(\eta_M)\)と書く。
+    これはどんなモノイド\(M\)に対してもintegralなモノイドとなり、さらに\(M\)に関して函手的である。
+    \item 
+    モノイド\(M\)が\textbf{pre-integral}であるとは、
+    \(\eta_M|_{M^{\times}}: M^{\times} \to M^{\gp}\)が単射であることを言う。
+    \item \(\Mon\)ですべてのモノイドのなす圏、\(\Ab\)ですべてのアーベル群のなす圏を表し、
+    \(\amalg\)は\(\Mon\)の中でのpush-outを表す。
+  \end{itemize}
+\end{defi}
+
+
+\begin{rem}\label{rem: Mon to Ab}
+  \(\Ab\subset \Mon\)は\((-)^{\gp}\)を右随伴に持つ包含函手であるので、特に余極限と交換する。
+\end{rem}
+
+
+
+\begin{lem}\label{po in Mon surj}
+  \(M\xleftarrow{f}N\xrightarrow{g}L\)をモノイドの図式とする。
+  \(P\dfn M\amalg_NL\)と置く (ただしこれは\(\Mon\)におけるpush-outである)。
+  このとき、自然な射\(q: M\amalg L \to M\amalg_NL\)は全射である。
+\end{lem}
+
+\begin{proof}
+  \(Q \dfn \im(q)\)と置き、\(i:Q\hookrightarrow P\)を包含射、
+  \(q':M\amalg L \to Q\)を\(q = i\circ q'\)となる射とする。
+  もし\(q\)が全射ではないとすると、push-outの普遍性より、
+  ある\(r:P\to Q\)が存在して\(q' = r\circ q\)が成り立つ。
+  \(q'\)は全射であるから、\(r\)も全射である。
+  また、\(i\circ r \circ q = i\circ q' = q\)であるから、
+  push-outの普遍性より\(i\circ r = \id_P\)が成り立つ。
+  よって\(r\)は単射でもある。
+  従って\(r\)は同型射となり、\(P=Q\)が従う。
+  以上で\autoref{po in Mon surj}の証明を完了する。
+\end{proof}
+
+
+
+
+\begin{lem}\label{lem: str of gp}
+  \(M\)をモノイドとする。
+  \begin{enumerate}
+    \item \label{enumi: mm is 0}
+    任意の\(m\in M\)に対し、\((m,m)\in M\times M\)の定める同値類\([(m,m)]\in M^{\gp}\)は\(0\)である。
+    \item \label{enumi: elements of gp}
+    任意の\(m\in M^{\gp}\)に対し、
+    ある\(a,b\in M\)が存在し、\(m + \eta_M(a) = \eta_M(b)\)となる。
+    \item \label{enumi: if eq in gp}
+    任意の\(a,b\in M\)に対し、
+    \(\eta_M(a) = \eta_M(b)\)であるならば、
+    ある\(c\in M\)が存在して\(a+c=b+c\)が成り立つ。
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+  \ref{enumi: mm is 0}は、
+  \(m+0 = 0+m\)であることと同値関係の定義より従う。
+  \ref{enumi: elements of gp}は、
+  \(m=[(b,a)]\)と表すことによって\(m = \eta_M(b) - \eta_M(a)\)となるので、これから帰結する
+  (\ref{enumi: mm is 0}より\(-\eta_M(a) = [(0,a)]\)となることに注意)。
+  \ref{enumi: if eq in gp}は、
+  同値関係の定義より、\([(a,0)] = [(b,0)]\)であるとすると、ある\(c\in M\)が存在して
+  \(a+c=a+0+c=0+b+c=b+c\)となるので、このことから帰結する。
+  以上で\autoref{lem: str of gp}の証明を完了する。
+\end{proof}
+
+
+
+
+\begin{defi}[Quasi-integral]
+  モノイド\(M\)が\textbf{quasi-integral}であるとは、
+  任意の\(a,b\in M\)に対して、以下が成り立つことを言う: 
+  \[a+b=a \ \ \Rightarrow \ \ b = 0.\]
+\end{defi}
+
+
+\begin{lem}\label{lem: basic props *-ints}
+  \(M\)をモノイドとする。
+  \begin{enumerate}
+    \item \label{enumi: q-int iff triv ker}
+    \(M\)がquasi-integralであるための必要十分条件は、
+    \(\eta_M^{-1}(0) = 0\)となることである。
+    \item \label{enumi: int implies q-int implies pre-int}
+    integral \ \(\Rightarrow\) \ quasi-integral \ \(\Rightarrow\) \ pre-integral. 
+    \item \label{enumi: q-int intgralification is sharp}
+    \(M\)がquasi-integralであれば、\(M\to M^{\inte}\)による\((M^{\inte})^{\times}\)の逆像はちょうど\(M^{\times}\)である。
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+  \ref{enumi: q-int iff triv ker}を示す。
+  まず必要性を示す。
+  \(M\)がquasi-integralであるとして、\(a\in M\)が\(\eta_M(a) = 0\)を満たすとする。
+  このとき、\(\eta_M(a) = 0 = \eta_M(0)\)であるから、
+  \autoref{lem: str of gp} \ref{enumi: if eq in gp}より
+  ある\(c\in M\)が存在して\(a+c = c\)となる。
+  \(M\)はquasi-integralなので、\(a=0\)が従う。以上で必要性の証明を完了する。
+  次に十分性を証明する。
+  \(\eta_M^{-1}(0) = 0\)であると仮定して、
+  \(a,b\in M\)が\(a+b=a\)を満たすとする。
+  このとき、\(\eta_M(a) + \eta_M(b) = \eta_M(a)\)が成り立つので、
+  \(\eta_M(b) = 0\)である。
+  従って\(b\in \eta_M^{-1}(0) = 0\)となり\(b=0\)である。
+  以上で\ref{enumi: q-int iff triv ker}の証明を完了する。
+
+  \ref{enumi: int implies q-int implies pre-int}を示す。
+  \(\eta_M\)が単射であれば\(\eta_M^{-1}(0)=0\)であるから、
+  \ref{enumi: q-int iff triv ker}より「integral\(\Rightarrow\)quasi-integral」が従う。
+  \(\ker(\eta_M|_{M^{\times}}) \subset \eta_M^{-1}(0)\)であるから、
+  \ref{enumi: q-int iff triv ker}より「quasi-integral\(\Rightarrow\)pre-integral」が従う。
+  以上で\ref{enumi: int implies q-int implies pre-int}の証明を完了する。
+
+  \ref{enumi: q-int intgralification is sharp}を示す。
+  \(m\in M\)が\(\eta_M(m)\in (M^{\inte})^{\times}\)を満たしているとする。
+  すると\(\exists(-\eta_M(m))\in M^{\inte} = \im(\eta_M)\)であるから、ある\(m'\in M\)が存在して\(\eta_M(m') = -\eta_M(m)\)が成り立つ。
+  両辺に\(\eta_M(m)\)を足すと\(\eta_M(m+m') = 0\)が成り立ち、\(M\)のquasi-integral性と\ref{enumi: q-int iff triv ker}より\(m+m'=0\)が成り立つ。
+  これは\(m'\in M^{\times}\)を示している。
+  \(M^{\times}\)の元が\((M^{\inte})^{\time}\)へ写されることは明らかである。
+  以上で\autoref{lem: basic props *-ints}の証明を完了する。
+\end{proof}
+
+
+\begin{lem}\label{lem: int to q-int, sharpness pb}
+  \(f:M\to P\)をモノイドの射とする。
+  このとき、以下が成り立つ: 
+  \begin{enumerate}
+    \item \label{enumi: preint inj}
+    \(P\)がpre-integralであれば、自然な射\(P^{\times}\times_P M \to P^{\times}\times_{P^{\gp}}M\to M\)は単射である。
+    \item \label{enumi: preint and qint sharp}
+    \(P\)がpre-integralであり、さらに\(M\)がquasi-integralであれば、自然な射\(P^{\times}\times_{P^{\gp}}M\to M\)の像は\(M^{\times}\)の部分群である。
+    とくに、さらに\(M\)がsharpであれば、\(P^{\times}_PM\)は
+    \item \label{enumi: qint isom}
+    \(P\)がquasi-integralであれば、
+    自然な射\(P^{\times}\times_P M \to P^{\times}\times_{P^{\gp}}M\)は同型射である。
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+  \ref{enumi: preint inj}は\(P^{\times}\to P^{\gp}\)が単射であることから従う。
+  \ref{enumi: preint and qint sharp}を示す。
+  
+  まず、\autoref{lem: basic props *-ints}\ref{enumi: int implies q-int implies pre-int}より\(P\)はpre-integralである。
+  従って\(P^{\times}\to P^{\gp}\)は単射であり、\(P^{\times}\times_P M \to P^{\times}\times_{P^{\gp}}M\)は\(M\)の部分モノイドの間の包含射とみなすことができる (単射である)。
+  よって\autoref{lem: int to q-int, sharpness pb}を示すためには、この射が全射であることを証明することが十分である。
+  \(m\in M\)が\(f^{\gp}(m)\in \eta_P(P^{\times})\)を満たすとする。
+  示すべきことは、\(f(m)\in P^{\times}\)となることである。
+  \(f^{\gp}(m)\in \eta_P(P^{\times})\)であるから、ある\(p\in P^{\times}\)が存在して
+  \(\eta_P(p) = f^{\gp}(m)\)となる。
+  \(\eta\)の函手性より、\(f^{\gp}(m) = \eta_P(f(m))\)となる。
+  ここで\(p\in P^{\times}\)であるから、\(\exists [-p]\in P\)である。
+  この\(-p\in P\)を\(\eta_P(p) = f^{\gp}(m) = \eta_P(f(m))\)の両辺に足すことで、\(0=\eta_P(p) + \eta_P(-p) = \eta_P(f(m)) + \eta_P(-p) = \eta_P(f(m)-p)\)が成り立つ。
+  \(P\)はquasi-integralであるから、
+  \autoref{lem: basic props *-ints} \ref{enumi: q-int iff triv ker}より、
+  \(f(m)-p\in \eta_P^{-1}(0)=0\)となる。
+  よって\(f(m)=p\)であり、\(f(m)\in P^{\times}\)が従う。
+  
+  また、\(M\)がsharpでintegralであるときは、
+  \(P^{\times}\times_P M \to P^{\times}\times_{P^{\gp}}M \to M\)を\(M^{\gp}\)の部分モノイドの間の包含射とみなすことで
+  \[
+    P^{\times}\times_P M \subset P^{\times}\times_{P^{\gp}}M = (P^{\times}\times_{P^{\gp}}M^{\gp})\times_{M^{\gp}}M = (P^{\times}\times_{P^{\gp}}M^{\gp})\cap M \subset M^{\times}
+  \]
+  が成り立つので、最後の主張はこれより従う。
+  以上で\autoref{lem: int to q-int, sharpness pb}の証明を完了する。
+\end{proof}
+
+
+
+\begin{prop}[中山の呪い, {cf. \cite[Lemma 2.2.6]{Nak}}]\label{prop: curse of Nak}
+  \(M\xleftarrow{f}N\xrightarrow{g}L\)をモノイドの図式とする。
+  \(P\dfn M\amalg_NL\)と置く (ただしこれは\(\Mon\)におけるpush-outである)。
+  次の主張について考える: 
+  \begin{enumerate}[label=(\alph)]
+    \item \label{P is q-int}
+    \(P\)はquasi-integralである。
+    \item \label{P is q-int}
+    \(P\)はquasi-integralである。
+    \item \label{assert only M,N,L}
+    任意の\(n\in N^{\gp}\)に対して、\(f^{\gp}(n)\in \im(\eta_M)\)と\(g^{\gp}(-n)\in \im(\eta_L)\)が成り立てば、
+    \(f^{\gp}(n) = 0\)と\(g^{\gp}(-n) = 0\)が帰結する。
+  \end{enumerate}
+  このとき、「\ref{assert only M,N,L}\(\Rightarrow\)\ref{P is q-int}」が成り立つ。
+  また、\(M\)と\(L\)がsharpかつintegralであれば、
+\end{prop}
+
+\begin{proof}
+  まず「\ref{assert only M,N,L} \(\Rightarrow\) \ref{P is q-int}」を証明する。
+  \(p\in P\)が\(\eta_P(p) = 0\)を満たしているとする。
+  \(p=0\)を示せば良い。
+  \(i_M:M\to P\)と\(i_L:L\to P\)を自然な射とする。
+  \autoref{po in Mon surj}より、
+  ある\(m\in M, l\in L\)が存在して\(p = i_M(m) + i_L(l)\)が成り立つ。
+  \(\eta\)の函手性より\(i_M^{\gp}(\eta_M(m)) + i_L^{\gp}(\eta_L(l)) = \eta_P(p) = 0\)が成り立つから、
+  \autoref{rem: Mon to Ab}より、
+  ある\(n\in N^{\gp}\)が存在して、\(\eta_M(m) = f^{\gp}(n)\)と\(\eta_L(l) = g^{\gp}(-n)\)が成り立つ。
+  ここで\ref{assert only M,N,L}より、\(m=0\)と\(l=0\)が従う。
+  これは\(p = i_M(m) + i_L(l) = 0\)を導く。
+  以上で「\ref{assert only M,N,L} \(\Rightarrow\) \ref{P is q-int}」の証明を完了する。
+  
+  次に「\ref{P is q-int} \(\Rightarrow\) \ref{assert only M,N,L}」を証明する。
+  \(P\)がquasi-integralであると仮定し、
+  \(n\in N^{\gp}\)が\(f^{\gp}(n)\in \im(\eta_M)\)と\(g^{\gp}(-n)\in L^{\gp}\)を満たすとする。
+  \(\eta_M(m) = f^{\gp}(n)\)となる\(m\in M\)と\(\eta_L(l) = g^{\gp}(-n)\)となる\(l\in L\)をとる。
+  \(h = i_M \circ f = i_N\circ g\)と置く。
+  このとき、\(\eta\)の函手性より、
+  \[\eta_P(i_M(m) + i_L(l)) = i_M^{\gp}(f^{\gp}(n)) + i_L^{\gp}(g^{\gp}(-n)) = h^{\gp}(n + (-n)) = 0\]
+  となる。
+  よって\ref{P is q-int} (\(P\)のquasi-integral性) と
+  \autoref{lem: basic props *-ints} \ref{enumi: q-int iff triv ker}より、\(i_M(m) + i_L(l) = 0\)が成り立つ。
+  とくに、\(i_M(m),i_L(l)\in P^{\times}\)が成り立つ。
+  ここで\(M,L\)はどちらもsharpかつintegralであるから、
+  \autoref{lem: int to q-int, sharpness pb}より、
+  \(m\in M\times_P P^{\gp} = 0\)と
+  \(l\in L\times_P P^{\gp} = 0\)が従い、
+  よって\(f^{\gp}(n) = \eta_M(m) = 0\)と\(g^{\gp}(-n) = \eta_L(l) = 0\)が帰結する。
+  以上で\autoref{prop: curse of Nak}の証明を完了する。
+\end{proof}
+
+
+
+
+
+
+\begin{thebibliography}{9}
+  \bibitem[Nak]{Nak}
+  C. Nakayama,
+  \textit{Log \'{E}tale Cohomology},
+  Math. Ann. \textbf{308} (1997), 365-404.
+\end{thebibliography}
+
+
+
+\end{document}

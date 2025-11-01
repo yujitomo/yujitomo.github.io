@@ -1,0 +1,4 @@
+{
+  "[python]": { "editor.wordWrap": "off" },
+  "latex-workshop.latex.autoBuild.run": "never"
+}

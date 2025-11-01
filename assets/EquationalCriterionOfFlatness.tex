@@ -1,0 +1,1047 @@
+\documentclass[uplatex]{jsarticle}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+
+\usepackage{xcolor}
+\usepackage[dvipdfmx]{graphicx}
+
+
+
+\usepackage{ulem}
+
+\usepackage{braket}
+
+%%%%%ハイパーリンク
+%\usepackage[colorlinks=true,urlcolor=blue!70!black,citecolor=blue!60!black,linkcolor=blue!60!black]{hyperref}
+%\usepackage{aliascnt} %for creating different biblatex references for different theoremstyles
+\usepackage[setpagesize=false,dvipdfmx]{hyperref}
+\usepackage{aliascnt}
+\hypersetup{
+    colorlinks=true,
+    citecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue,
+}
+
+\renewcommand{\eqref}[1]{\textcolor{blue}{(\ref{#1})}}
+
+%%%%%%ハイパーリンク
+
+
+%%%%%図式
+%\usepackage{tikz}%%%図
+\usepackage{amscd}%%%簡単な図式
+
+\usepackage{tikz}
+\usepackage{tikz-cd} %commutative diagrams in TikZ
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{decorations.markings}
+
+%%%%%図式
+
+
+
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+
+\usepackage{amsthm}
+
+%%%%%%%%%%%%Plain型%%%%%%%%%%%%
+
+
+\newcommand{\myTheoremEnvironments}[1]{#1}
+
+\myTheoremEnvironments{
+%%%%%%%%%%%%definition型%%%%%%%%%%%%
+
+\theoremstyle{definition}
+
+\renewcommand{\sectionautorefname}{Section}
+
+\newtheorem{thm}{Theorem}[section]
+\newcommand{\thmautorefname}{Theorem}
+
+
+\newaliascnt{prop}{thm}%%%カウンター「prop」の定義（thmと同じ）
+\newtheorem{prop}[prop]{Proposition}
+\aliascntresetthe{prop}
+\newcommand{\propautorefname}{Proposition}%%%カウンター名propは「命題」で参照する
+
+\newaliascnt{cor}{thm}
+\newtheorem{cor}[cor]{Corollary}
+\aliascntresetthe{cor}
+\newcommand{\corautorefname}{Corollary}
+
+\newaliascnt{lem}{thm}
+\newtheorem{lem}[lem]{Lemma}
+\aliascntresetthe{lem}
+\newcommand{\lemautorefname}{Lemma}
+
+%%%%%%%アルファベットで番号づける定理環境
+\newtheorem{thmA}{Theorem}[section]
+\newcommand{\thmAautorefname}{Theorem}
+\renewcommand\thethmA{\Alph{thmA}}
+
+\newtheorem{corA}{Theorem}[section]
+\newcommand{\corAautorefname}{Corollary}
+\renewcommand\thecorA{\Alph{corA}}
+
+\newaliascnt{defi}{thm}
+\newtheorem{defi}[defi]{Definition}
+\aliascntresetthe{defi}
+\newcommand{\defiautorefname}{Definition}
+
+\newaliascnt{rem}{thm}
+\newtheorem{rem}[rem]{Remark}
+\aliascntresetthe{rem}
+\newcommand{\remautorefname}{Remark}
+
+\newaliascnt{reconstruction}{thm}
+\newtheorem{reconstruction}[reconstruction]{Reconstruction}
+\aliascntresetthe{reconstruction}
+\newcommand{\reconstructionautorefname}{Reconstruction}
+
+%%%%%%%番号づけない定理環境
+\newtheorem*{exam*}{Example}
+\newtheorem*{rrem*}{Remark}
+\newtheorem*{defi*}{Definition}
+
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+}
+
+
+
+
+%%%%%箇条書き環境
+\usepackage[]{enumitem}
+
+\makeatletter
+\AddEnumerateCounter{\fnsymbol}{\c@fnsymbol}{9}%%%%fnsymbolという文字をenumerate環境のパラメーターで使えるようにする。
+\makeatother
+
+\makeatletter
+\renewcommand{\p@enumii}{}
+\makeatother
+
+\renewcommand{\theenumi}{(\roman{enumi})}%%%%%itemは(1),(2),(3)で番号付ける。
+\renewcommand{\labelenumi}{\theenumi}
+
+\renewcommand{\theenumii}{(\alph{enumii})}%%%%%itemは(1),(2),(3)で番号付ける。
+\renewcommand{\labelenumii}{\theenumii}
+
+\usepackage{moreenum}
+
+
+\makeatletter
+\newcommand*{\@yuyuspadecount}[1]{\ensuremath{
+\ifcase #1\or\spadesuit\or\spadesuit_2\or\spadesuit_3
+\or\spadesuit_4\or\spadesuit_5\or\spadesuit_6
+\or\spadesuit_7\or\spadesuit_8\or\spadesuit_9
+\else\@ctrerr\fi\relax}}
+\newcommand*{\yuyuspadecount}[1]{%
+\expandafter\@yuyuspadecount\csname c@#1\endcsname
+}
+\AddEnumerateCounter{\yuyuspadecount}{\@yuyuspadecount}{9}
+
+\newcommand*{\@yuyuclubcount}[1]{\ensuremath{
+\ifcase #1\or\clubsuit_1\or\clubsuit_2\or\clubsuit_3
+\or\clubsuit_4\or\clubsuit_5\or\clubsuit_6
+\or\clubsuit_7\or\clubsuit_8\or\clubsuit_9
+\else\@ctrerr\fi\relax}}
+\newcommand*{\yuyuclubcount}[1]{%
+\expandafter\@yuyuclubcount\csname c@#1\endcsname
+}
+\AddEnumerateCounter{\yuyuclubcount}{\@yuyuclubcount}{9}
+
+\newcommand*{\@yuyustarcount}[1]{\ensuremath{
+\ifcase #1\or\star_1\or\star_2\or\star_3
+\or\star_4\or\star_5\or\star_6
+\or\star_7\or\star_8\or\star_9
+\else \@ctrerr \fi\relax}}
+\newcommand*{\yuyustarcount}[1]{%
+\expandafter\@yuyustarcount\csname c@#1\endcsname
+}
+\AddEnumerateCounter{\yuyustarcount}{\@yuyustarcount}{9}
+\makeatother
+%%%%%箇条書き環境
+
+
+\newcommand{\myOriginalPackages}[1]{#1}
+
+\myOriginalPackages{
+
+
+% \usepackage{mandorasymb}
+% \usepackage{applekeys}
+% \renewcommand{\qedsymbol}{\pencilkey}
+%\renewcommand{\qedsymbol}{\kinoposymbniko}
+}
+
+
+
+\usepackage{latexsym}
+
+
+\newcommand{\myMacros}[1]{#1}
+
+\myMacros{
+
+\DeclareMathOperator{\Hom}{\mathrm{Hom}}
+\DeclareMathOperator{\Isom}{\mathrm{Isom}}
+\DeclareMathOperator{\ISOM}{\mathbf{Isom}}
+\DeclareMathOperator{\id}{\mathrm{id}}
+\DeclareMathOperator{\im}{\mathrm{Im}}
+\DeclareMathOperator{\Spec}{\mathrm{Spec}}
+\newcommand{\Supp}{\mathrm{Supp}}
+\DeclareMathOperator{\Aut}{\mathrm{Aut}}
+
+\newcommand{\coker}{\mathrm{coker}}
+
+\DeclareMathOperator{\Tor}{\mathrm{Tor}}
+\DeclareMathOperator{\Ext}{\mathrm{Ext}}
+
+\DeclareMathOperator{\colim}{\mathrm{colim}}
+\DeclareMathOperator{\plim}{\mathrm{lim}}
+\newcommand{\Lotimes}[1]{\mathop{\otimes^{\mathbf{L}}_{#1}}}
+\newcommand{\bLotimes}[1]{\mathop{\bar{\otimes}^{\mathbf{L}}_{#1}}}
+\DeclareMathOperator{\RHom}{\mathbf{R}Hom}
+\DeclareMathOperator{\bRHom}{\underline{\mathbf{R}Hom}}
+\DeclareMathOperator{\inHom}{\mathcal{H}om}
+\newcommand{\Ob}{\mathrm{Ob}}
+\newcommand{\FP}[1]{\mathsf{FP}_{/#1}}
+
+\newcommand{\rsa}{\rightsquigarrow}
+\renewcommand{\coprod}{\amalg}
+\renewcommand{\emptyset}{\varnothing}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\dg}{\mathrm{dg}}
+\newcommand{\op}{\mathrm{op}}
+
+\newcommand{\dfn}{:\overset{\mathrm{\scriptsize def}}{=}}
+\newcommand{\deff}{:\hspace{-3pt}\overset{\text{def}}{\iff}}
+
+\newcommand{\univ}[1]{\mathbb{#1}}
+\newcommand{\usm}{\(\univ{U}\)-small}
+\newcommand{\vsm}{\(\univ{V}\)-small}
+\newcommand{\unit}[1]{\mathbf{1}_{\mathcal{#1}}}
+
+\newcommand{\Qcoh}{\mathsf{Qcoh}}
+\newcommand{\Coh}{\mathsf{Coh}}
+\newcommand{\Pic}{\mathrm{Pic}}
+\newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\Mod}{\mathsf{Mod}}
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+
+
+\newcommand{\mcA}{\mathcal{A}}
+\newcommand{\mcB}{\mathcal{B}}
+\newcommand{\mcC}{\mathcal{C}}
+\newcommand{\mcD}{\mathcal{D}}
+\newcommand{\mcE}{\mathcal{E}}
+\newcommand{\mcF}{\mathcal{F}}
+\newcommand{\mcG}{\mathcal{G}}
+\newcommand{\mcH}{\mathcal{H}}
+\newcommand{\mcI}{\mathcal{I}}
+\newcommand{\mcJ}{\mathcal{J}}
+\newcommand{\mcK}{\mathcal{K}}
+\newcommand{\mcL}{\mathcal{L}}
+\newcommand{\mcM}{\mathcal{M}}
+\newcommand{\mcN}{\mathcal{N}}
+\newcommand{\mcO}{\mathcal{O}}
+\newcommand{\mcP}{\mathcal{P}}
+\newcommand{\mcQ}{\mathcal{Q}}
+\newcommand{\mcR}{\mathcal{R}}
+\newcommand{\mcS}{\mathcal{S}}
+\newcommand{\mcT}{\mathcal{T}}
+\newcommand{\mcU}{\mathcal{U}}
+\newcommand{\mcV}{\mathcal{V}}
+\newcommand{\mcW}{\mathcal{W}}
+\newcommand{\mcX}{\mathcal{X}}
+\newcommand{\mcY}{\mathcal{Y}}
+\newcommand{\mcZ}{\mathcal{Z}}
+
+\DeclareMathOperator{\OOO}{\mcO}
+
+\renewcommand{\OE}{\OOO_E}
+\newcommand{\OC}{\OOO_C}
+\newcommand{\OD}{\OOO_D}
+\newcommand{\OF}{\OOO_F}
+\newcommand{\OH}{\OOO_H}
+\newcommand{\OS}{\OOO_S}
+\newcommand{\OT}{\OOO_T}
+\newcommand{\OU}{\OOO_U}
+\newcommand{\OV}{\OOO_V}
+\newcommand{\OW}{\OOO_W}
+\newcommand{\OX}{\OOO_X}
+\newcommand{\OY}{\OOO_Y}
+\newcommand{\OZ}{\OOO_Z}
+
+\newcommand{\OO}[1]{\OOO_{#1}}
+
+}
+
+
+
+\newcommand{\HereBeginTikz}{}
+\newcommand{\HereEndTikz}{}
+\newcommand{\HTMLhead}[1]{}
+
+\HTMLhead{
+---
+layout: article-type
+title: "Equational Criterion of Flatness"
+category: Notes
+tag: "Commtative Algebra"
+author: Yujitomo
+description: "平坦性のEquational Criterionについて"
+---
+}
+
+
+
+
+\title{Equational Criterion of Flatness}
+
+\author{ゆじ}
+
+\begin{document}
+
+\maketitle
+
+これは平坦性のEquational Criterionなどに関するノートである。
+このノートでは、可換環のことをたんに環と呼ぶ。
+平坦加群の定義は、以下を採用する：
+
+\begin{defi}
+  \(A\)を環とする。
+  \(A\)-加群\(M\)が\textbf{平坦} (flat) であるとは、
+  任意の単射\(N_1\to N_2\)に対して
+  \(N_1\otimes_AM\to N_2\otimes_AM\)も単射であることを言う。
+\end{defi}
+
+
+\section{定義など}
+
+圏\(\mcC\)と対象\(x\in \mcC\)に対して、
+\(\mcC_{/x}\)によりslice圏を表す。
+圏\(\mcC_{/x}\)の対象は\(x\)への\(\mcC\)の射\(y\to x\)であり、
+圏\(\mcC_{/x}\)の射は\(x\)への射と可換であるような\(\mcC\)の射である。
+
+\begin{defi}\label{defi: filtered}
+  圏\(I\)が\textbf{filtered}であるとは、以下の条件を満たすことを言う：
+  \begin{enumerate}
+    \item
+    \(I\neq \emptyset\)である。
+    \item
+    任意の対象\(i,j\in I\)に対し、
+    対象\(k\in I\)と射\(i\to k, j\to k\)が存在する。
+    \item \label{enumi: filtered 3}
+    任意の対象\(i,j\in I\)と任意の射\(f,g:i\to j\)に対し、
+    ある射\(h:j\to k\)が存在し、
+    \(h\circ f = h\circ g\)となる。
+  \end{enumerate}
+\end{defi}
+
+このノートの話は、
+filtered categoryの定義の
+条件\ref{enumi: filtered 3}
+が本質的な役割を果たす話である。
+
+\begin{defi}
+  filtered category \(I\)の充満部分圏\(J\)が
+  \textbf{cofinal}であるとは、
+  任意の対象\(i\in I\)に対して
+  ある対象\(j\in J\)と\(I\)の射\(i\to j\)が存在することを言う。
+\end{defi}
+
+filtered categoryのcofinalな部分圏はまたfilteredとなることが
+容易に確認できる。
+
+
+
+
+
+\section{有限表示加群}
+
+この節では有限表示加群とコンパクト性に関するRemarkをする。
+
+\begin{defi}
+  \(A\)を環、\(M\)を\(A\)-加群とする。
+  圏\(\mcI_M\)を以下で定める：
+  \begin{itemize}
+    \item
+    圏\(\mcI_M\)の対象は、\(A\)-加群の射の列
+    \[
+    F_2\xrightarrow{\varphi} F_1\xrightarrow{p_{\varphi}} M
+    \]
+    であり、以下を満たすものである：
+    \begin{enumerate}
+      \item
+      \(F_1,F_2\)は有限ランク自由加群。
+      \item
+      \(p_{\varphi}\circ \varphi = 0\).
+    \end{enumerate}
+    圏\(\mathcal{I}_M\)の対象はたんに\(\varphi:F_2\to F_1\)や
+    \(\varphi\)のように表される。
+    \item
+    二つの対象\(\varphi:F_2\to F_1, \varphi':F_2'\to F_1'\)の間の射の集合は、
+    \[
+    \Hom_{\mcI_M}(\varphi,\varphi') \dfn
+    \Hom_{(\Mod_A)_{/M}}(\coker(\varphi),\coker(\varphi'))
+    \]
+    と定める。
+  \end{itemize}
+  \((\Mod_A)_{/M}\)の有限表示部分加群のなす充満部分圏を\(\FP{M}\)と置く。
+  定義から、函手
+  \[
+  \mcI_M \to \Mod_A , (\varphi:F_2\to F_1) \mapsto \coker(\varphi)
+  \]
+  により\(\mcI_M\)は\(\FP{M}\)と圏同値となる。
+\end{defi}
+
+
+
+
+\begin{rem}\label{rem: I_M rem}
+  圏\(\mcI_M\)の二つの対象\(\varphi:F_2\to F_1,\varphi':F_2'\to F_1'\)と
+  任意の射\(f:\coker(\varphi)\to \coker(\varphi')\)に対し、
+  ある\(f_2:F_2\to F_2', f_1:F_1\to F_1'\)が存在して
+  \(f\)は\(f_1,f_2\)が余核の間に引き起こす射と一致する。
+  証明は、射影分解の取り方がup to quasi-isomorphismで一意的であることの証明と全く同様である。
+  これから、圏\(\mcI_M\)の射は
+  二つの射\(f_2:F_2\to F_2', f_1:F_1\to F_1'\)で図式
+  \[
+  \begin{CD}
+    F_2' @>\varphi'>> F_1' @>>> M \\
+    @Vf_2VV @VVf_1V @| \\
+    F_2 @>\varphi>> F_1 @>>> M
+  \end{CD}
+  \]
+  が可換となるものにより代表できる。
+\end{rem}
+
+
+\begin{lem}\label{lem: I_M filtered}
+  任意の環\(A\)と任意の\(A\)-加群\(M\)に対して\(\mcI_M\)はfilteredである。
+\end{lem}
+
+\begin{proof}
+  \(\FP{M}\)がfilteredであることから従う。
+\end{proof}
+
+
+\begin{rem}
+  環\(A\)と\(A\)-加群\(M\)に対し、以下が成り立つ：
+  \[
+  M\cong \colim_{N\in \FP{M}} N
+  \cong \colim_{\varphi\in \mcI_M}\coker(\varphi).
+  \]
+  自然な射\(\colim_{N\in\FP{M}}\to M\)は明らかに全射である。
+  単射であることは\(\FP{M}\)がfilteredであることから従う。
+  特に、任意の\(A\)-加群は有限表示\(A\)-加群のfiltered colimitとして表せる。
+\end{rem}
+
+
+\begin{rem}\label{rem: fp I_M has final}
+  \(M\)が有限表示加群であれば、明らかに圏\(\mcI_M\cong \FP{M}\)は終対象を持つ。
+\end{rem}
+
+
+\begin{rem}\label{rem: fp colim surj}
+  \(F\)を有限ランク自由加群とし、\(N_i,i\in I\)を\(A\)-加群のfilteredな族とする。
+  このとき自然な射
+  \[
+  \colim_{i\in I}\Hom_A(F,N_i) \xrightarrow{\sim} \Hom_A(F,\colim_{i\in I}N_i)
+  \]
+  は同型射である。
+  従ってとくに、
+  任意の射\(F\to \colim_{i\in I}N_i\)はある\(i\in I\)に対する
+  自然な射\(N_i\to \colim_{i\in I}N_i\)を経由し、
+  また、
+  与えられた射\(F\to N_i\)が\(N_i\to \colim_{i\in I}N_i\)
+  と合成することで\(0\)-射となるならば、
+  ある\(N_i\to N_j\)があって\(F\to N_i\to N_j\)の合成が\(0\)-射となる。
+  以上の議論により、任意の対象\(\varphi\in \mcI_{\colim_{i\in I}N_i}\)に対し
+  ある\(i\in I\)が存在して、
+  \(\varphi\)は\(N_i\to \colim_{i\in I}N_i\)を合成することにより定まる函手
+  \(\mcI_{N_i}\to \mcI_{\colim_{i\in I}N_i}\)の像に属する、ということがわかる。
+
+  \(M\)を有限表示加群とすると、圏\(\mcI_M\)は終対象を持つ
+  (cf. \autoref{rem: fp I_M has final})。
+  任意の射\(M\to \colim_{i\in I}N_i\)に対して、この射を合成することにより定まる函手
+  \(\mcI_M\to \mcI_{\colim_{i\in I}N_i}\)での終対象の像は、
+  ある\(i\)に対する函手\(\mcI_{N_i}\to \mcI_{\colim_{i\in I}N_i}\)の像に属する。
+  このことは、射\(M\to \colim_{i\in I}N_i\)が
+  ある\(N_i\to \colim_{i\in I}N_i\)を経由することを示している。
+  従って、自然な射
+  \[
+  \colim_{i\in I}\Hom_A(M,N_i)\to \Hom_A(M,\colim_{i\in I}N_i)
+  \]
+  は全射である。
+\end{rem}
+
+
+\begin{rem}\label{rem: fp colim}
+  \(M\)を\(A\)-加群であって、
+  任意の\(A\)-加群のfilteredな族\(N_i,i\in I\)に対して
+  自然な射
+  \[
+  \varphi:\colim_{i\in I}\Hom_A(M,N_i)\to \Hom_A(M,\colim_{i\in I}N_i)
+  \]
+  が全射であるとする。
+  このとき、\(M\)を有限表示\(A\)-加群のfiltered colimitとして
+  \(M\cong \colim_{j\in J}M_j\)と表示することで、
+  ある\(j\)が存在して
+  \(\id : M\to M\cong \colim_{j\in J}M_j\)が
+  \(M_j \to \colim_{j\in J}M_j\)を経由する。
+  従って\(M\)は有限表示加群のレトラクトとなり、
+  有限表示であることがわかる。
+  \autoref{rem: fp colim surj}の結果とあわせると、
+  以下が同値であることがわかったことになる：
+  \begin{enumerate}
+    \item
+    \(M\)は有限表示加群である。
+    \item
+    任意の\(A\)-加群のfilteredな族\(N_i,i\in I\)に対して自然な射
+    \[
+    \varphi:\colim_{i\in I}\Hom_A(M,N_i)\to \Hom_A(M,\colim_{i\in I}N_i)
+    \]
+    は全射である。
+  \end{enumerate}
+\end{rem}
+
+
+
+
+\section{テンソル積}
+
+
+この節ではテンソル積に関するRemarkをする。
+
+\begin{defi}
+  \(A\)-加群\(M,N\)の\textbf{テンソル積}とは、
+  次を満たす加群\(M\otimes_AN\)のことである：
+  任意の\(A\)-加群\(L\)に対して自然に
+  \[
+  \Hom_A(M\otimes_AN,L)\cong \Hom_A(M,\Hom_A(N,L))
+  \]
+  となる。
+\end{defi}
+
+
+\begin{rem}
+  \(\Hom_A(M,\Hom_A(N,L))\cong \Hom_A(N,\Hom_A(M,L))\)であるから
+  \(M\otimes_AN\cong N\otimes_AM\)である。
+\end{rem}
+
+
+\begin{rem}
+  テンソル積の存在は次のように示される：
+  まず\(M,N\)の一方が自由加群である場合、\(M\cong A^{\oplus I}\)とすれば、
+  \(\Hom_A(M,-)\cong (-)^{\prod I}\)となるので
+  \[
+  \Hom_A(M,\Hom_A(N,L))\cong \Hom_A(N,L)^{\prod I}\cong \Hom_A(N^{\oplus I},L)
+  \]
+  となる。
+  つまりテンソル積\(A^{\oplus I}\otimes_AN\)は存在して
+  自然な同型\(A^{\oplus I}\otimes_AN\cong N^{\oplus I}\)が成り立つ。
+  次に\(M,N\)を任意の\(A\)-加群とする。
+  \(M\)を自由加群の射の余核として表す。
+  すなわち、
+  \[
+  A^{\oplus I}\to A^{\oplus J}\to M \to 0
+  \]
+  という完全列をひとつとる。
+  \(\Hom_A(-,\Hom_A(N,L))\)は左完全であるから、
+  \begin{align*}
+    \Hom_A(M,\Hom_A(N,L)) &\cong
+    \ker(\Hom_A(N^{\prod J},L)\to \Hom_A(N^{\prod I},L)) \\
+    &\cong \Hom_A(\coker (N^{\oplus I}\to N^{\oplus J}), L)
+  \end{align*}
+  となることがわかる。
+  特にテンソル積\(M\otimes_AN\)は存在する。
+\end{rem}
+
+
+
+\begin{lem}[{cf. \cite[1.106]{GW}}]\label{lem: tensor rem}
+  \(A\)を環、\(P\)を\(A\)-加群、
+  \(M,N\)を\(A\)-加群、
+  \(f:P\to M\otimes_AN\)を\(A\)-加群の射とする。
+  \begin{enumerate}
+    \item \label{enumi: tensor rem fp}
+    \(P\)が有限表示であるとき、
+    有限生成部分加群\(i:M_0\xrightarrow{\subset} M,j:N_0\xrightarrow{\subset} N\)と
+    射\(g:P\to M'\otimes_AN'\)が存在し、
+    \(f = (i\otimes j)\circ g\)となる。
+    特に、射\(h_1:P\to M'\otimes_AN, h_2:P\to M\otimes_AN'\)が存在し、
+    \(f = (i\otimes \id_N)\circ h_1, f = (\id_M\otimes j)\circ h_2\)となる。
+    \item \label{enumi: tensor rem fp proj}
+    \(P\)が有限表示射影的であるとき、
+    有限生成自由加群\(F_1,F_2\)、
+    射\(i:F_1\to M, j:F_2\to N\)、
+    射\(g:P\to F_1\otimes_AF_2\)が存在し、
+    \(f = (i\otimes j)\circ g\)となる。
+    特に、射\(h_1:P\to F_1\otimes_AN, h_2:P\to M\otimes_AF_2\)が存在し、
+    \(f = (i\otimes \id_N)\circ h_1, f = (\id_M\otimes j)\circ h_2\)となる。
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+  \(M,N\)を有限生成部分加群のfiltered colimitとして表すことで、
+  \autoref{rem: fp colim}より\ref{enumi: tensor rem fp}がわかる。
+  \ref{enumi: tensor rem fp proj}は\ref{enumi: tensor rem fp}よりただちに従う。
+\end{proof}
+
+
+\begin{rem}
+  \autoref{lem: tensor rem} \ref{enumi: tensor rem fp proj}
+  を\(P=A\)として適用することで、
+  テンソル積\(M\otimes_AN\)の元はすべて有限個の\(m_i\in M, n_i\in N\)により
+  \(\sum m_i\otimes n_i\)のように表せることがわかる。
+\end{rem}
+
+
+
+
+
+
+
+
+
+
+\section{平坦加群}
+
+
+
+\begin{defi}
+  \(A\)を環、\(M\)を\(A\)-加群とする。
+  \(0\to F_1\)という対象からなる
+  \(\mcI_M\)の充満部分圏を\(\mcJ_M\)と書く。
+  これは\((\Mod_A)_{/M}\)の有限ランク自由加群のなす充満部分圏と自然に圏同値である。
+\end{defi}
+
+
+\(\mcI_M\)はfilteredであったが、\(\mcJ_M\)はfilteredとは限らない。
+本節ではそのことを見ていく。
+\(\mcJ_M\)はfiltered categoryの条件
+\autoref{defi: filtered}
+\ref{enumi: filtered 3}
+以外を満たすことは容易にわかる
+(\autoref{lem: I_M filtered}の証明と同じようにする)。
+
+
+\begin{lem}[Equational Criterion of Flatness; cf. {\cite[定理7.6]{Mat}}]
+  \label{lem: eq cri of flat}
+  \(A\)を環、\(M\)を平坦\(A\)-加群とする。
+  \[
+  F_2\xrightarrow{\varphi} F_1 \xrightarrow{p}M
+  \]
+  を圏\(\mcI_M\)の対象とする。
+  このとき、以下の図式が可換となるような有限自由加群\(F'\)と射
+  \(f:F_1\to F',r:F'\to M\)が存在する：
+  \[
+  \begin{CD}
+    F_2 @>\varphi >> F_1 @>p>> M \\
+    @VVV @VfVV @| \\
+    0 @>>> F' @>r>> M.
+  \end{CD}
+  \]
+  特に、\(M\)が平坦であれば\(\mcJ_M\)は\(\mcI_M\)においてcofinalである。
+\end{lem}
+
+
+\begin{proof}
+  有限自由加群\(F\)と\(A\)-加群\(M\)に対して、
+  自然な同型\(M\otimes_A F^*\cong \Hom_A(F,M)\)により両辺を同一視する。
+
+  \(\varphi^*:F_1^*\to F_2^*\)を\(\varphi\)の双対とし、
+  \(k:\ker(\varphi^*) \to F_1^*\)を自然な包含射とする。
+  \(M\)は平坦なので、
+  自然な射\(M\otimes_A \ker(\varphi^*) \to \ker(\id_M\otimes \varphi^*)\)
+  は同型射であり、特に全射である
+  (この証明では、この射が全射であることしか必要ない！\autoref{rem: flat remark}も見よ)。
+  \(p\circ \varphi = 0\)であるから
+  \(p\in \ker(\id_M\otimes \varphi^*)\)であり、
+  よってある元\(q\in M\otimes_A \ker(\varphi^*)\)が存在して
+  \(p = (\id_M\otimes k)(q)\)となる。
+  よって、\autoref{lem: tensor rem} \ref{enumi: tensor rem fp proj}を
+  \(M=M,N=\ker(\varphi^*),P=A,f(1) = q\in M\otimes_A \ker(\varphi^*)\)として適用することで、
+  ある有限ランク自由加群\(F'\)と射\(g:F'^*\to \ker(\varphi^*)\)が
+  \(q\in \im(\id_M\otimes g)\)となるようにとれる。
+  すると、ある元\(r\in M\otimes_AF'^*\)が存在して\(q = (\id_M\otimes g)(r)\)となる。
+  自然な同型\(M\otimes_AF'^*\cong \Hom_A(F',M)\)のもとで
+  \(r:F'\to M\)と考える。
+  \(f:F_1\to F'\)を合成
+  \(F'^*\xrightarrow{g}\ker(\varphi^*)\subset F_1^*\)
+  の双対とする。図式
+  \[
+  \begin{CD}
+    F_2 @>\varphi >> F_1 @>p>> M \\
+    @VVV @VfVV @| \\
+    0 @>>> F' @>r>> M
+  \end{CD}
+  \]
+  は\(r\)の取り方と\(f^*\)が\(\ker(\varphi^*)\)を経由することから可換である。
+\end{proof}
+
+
+\begin{rem}\label{rem: flat remark}
+  一般に、\(A\)-加群の射\(f:N_1\to N_2\)と\(A\)-加群\(M\)に対して、
+  自然な射\(\varphi : M\otimes_A \ker(f) \to \ker(\id_M\otimes f)\)は全射ですらない。
+  図式
+  \[
+  \begin{CD}
+    @. M\otimes_A \ker(f) @>>> M\otimes_A N_1 @>>> M\otimes_A \im(f) @>>> 0. \\
+    @. @V\varphi VV @| @VV\psi V @. \\
+    0 @>>> \ker(\id_M\otimes f) @>>> M\otimes_A N_1 @> \id_M \otimes f >> M\otimes_A N_2 @.
+  \end{CD}
+  \]
+  を見れば、\(\coker(\varphi) \cong \ker(\psi)\)である。
+  \(M\)が平坦でなければ\(\psi\)は一般に単射とはならないことは、
+  平坦加群という用語が存在することからも十分に納得できる。
+\end{rem}
+
+
+
+\begin{rem}
+  \autoref{lem: eq cri of flat}をより具体的に記述すると次のようになる：
+  \(M\)が平坦\(A\)-加群であるとき、
+  \begin{itemize}
+    \item[ \ ] \(a_{ij}\in A, m_j\in M , (1 \leq i \leq r, 1 \leq j \leq n)\)
+    が\(\sum _ja_{ij}m_j = 0, (\forall i)\)を満たす
+  \end{itemize}
+  ならば、正の整数\(s\)と
+  \(b_{jk}\in A, n_k\in M, (1 \leq j \leq n, 1 \leq k \leq s)\)
+  が存在して、
+  \[
+  \sum _j a_{ij}b_{jk}=0 , (\forall i,k), \ \ \ \
+  m_j = \sum_k b_{jk}n_k , (\forall j)
+  \]
+  が成り立つ。
+  実際、\(m_j\)を与える自由加群からの射\(p:A^n\to M\)と
+  \(a_{ij}\)を与える射\(\varphi:A^r\to A^n\)を取れば、
+  条件\(\sum _ja_{ij}m_j = 0\)は\(p\circ \varphi = 0\)ということである。
+  さらに\autoref{lem: eq cri of flat}から
+  射\(f:A^n \to A^s, r':A^s \to M\)が存在して
+  \[
+  \begin{CD}
+    A^r @>\varphi >> A^n @>p>> M \\
+    @VVV @VfVV @| \\
+    0 @>>> A^s @>r'>> M
+  \end{CD}
+  \]
+  が可換となるが、
+  \(f\)を与えることは\(b_{jk}\)を与えることと等しく、
+  \(r'\)を与えることは\(n_k\)を与えることに等しく、
+  \(f\circ \varphi = 0\)は等式\(\sum _j a_{ij}b_{jk}=0\)を意味し、
+  \(p=r'\circ f\)は等式\(m_j = \sum_k b_{jk}n_k\)を意味する。
+\end{rem}
+
+
+
+\begin{lem}\label{lem: Lazerd lem}
+  \(A\)を環、\(M\)を\(A\)-加群とする。
+  このとき、次は同値：
+  \begin{enumerate}
+    \item \label{enumi: eq flat flat}
+    \(M\)は平坦である。
+    \item \label{enumi: eq flat cofinal}
+    \(\mcJ_M\)は\(\mcI_M\)においてcofinalである。
+    \item \label{enumi: eq flat filtered}
+    \(\mcJ_M\)はfilteredである。
+    \item \label{enumi: eq flat filtered cong}
+    \(\mcJ_M\)はfilteredであり、
+    \(M\cong \colim _{(F\to M)\in \mcJ_M}F\)である。
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+  \ref{enumi: eq flat flat} \(\Rightarrow\)
+  \ref{enumi: eq flat cofinal}は\autoref{lem: eq cri of flat}そのものである。
+  \ref{enumi: eq flat cofinal} \(\Rightarrow\)
+  \ref{enumi: eq flat filtered}は初等的な圏論によりわかる。
+  また、\ref{enumi: eq flat filtered cong} \(\Rightarrow\)
+  \ref{enumi: eq flat flat}は平坦加群のfiltered colimitが平坦であることから従う。
+
+  \ref{enumi: eq flat filtered} \(\Rightarrow\)
+  \ref{enumi: eq flat filtered cong}を確かめる。
+  \(\mcJ_F\)がfilteredであると仮定する。
+  自然な射\(\varphi:\colim_{F\in \mcJ_M}F\to M\)は明らかに全射である。
+  単射であることを示す。
+  \(A\to \colim_{F\in\mcJ_M}F\)を
+  \(\varphi\)の核を与える射とすると、
+  これはある自然な射\(F\to \colim_{F\in\mcJ_M}F\)を経由し、
+  射\(f:A\to F\)を得る。
+  また、\(A\to F\to M\)の合成は\(0\)-射である。
+  \(f\)と\(0\)-射という二つの射\(\mcJ_M\)の射\(A\rightrightarrows F\)に
+  \(\mcJ_M\)がfilteredであることの条件を使うと、
+  ある\(g:F\to F'\)が存在して\(g\circ f=0\)となることがわかる。
+  従って\(A\to \colim_{F\in\mcJ_M}F\)は\(0\)-射であり、
+  \(\varphi\)は単射である。
+  以上ですべて示された。
+\end{proof}
+
+
+
+\begin{cor}[Lazardの定理]
+  \(A\)を環、\(M\)を\(A\)-加群とする。
+  このとき\(M\)が平坦であることと、
+  \(M\)が有限自由加群のfiltered colimitとして表せることは同値である。
+\end{cor}
+
+\begin{proof}
+  \autoref{lem: Lazerd lem}より直ちに従う。
+\end{proof}
+
+
+\begin{cor}
+  \(A\)を環、\(M\)を有限表示平坦\(A\)-加群とする。
+  このとき\(M\)は射影的である。
+\end{cor}
+
+\begin{proof}
+  有限自由加群\(F_2,F_1\)と射\(F_2\to F_1\)で
+  \[
+  F_2\to F_1\to M\to 0
+  \]
+  が完全となるものを一つとる。
+  Equational Criterionより、以下の可換図式が存在する：
+  \[
+  \begin{CD}
+    F_2 @>>> F_1 @>>> M \\
+    @Vf_2VV @VVf_1V @| \\
+    0 @>>> F @>r>> M.
+  \end{CD}
+  \]
+  ここで\(F\)は有限自由加群である。
+  図式の可換性から\(r:F\to M\)は全射である。
+  また、\((f_2,f_1)\)が余核の間に引き起こす射\(M\to F\)は\(r\)の分裂を与える。
+  よって\(M\)は射影加群である。
+\end{proof}
+
+
+\begin{rem}
+  有限生成平坦加群は一般に射影的とはならない
+  (cf. \cite[\href{https://stacks.math.columbia.edu/tag/00NY}{Tag 00NY}]{stacks-project})。
+\end{rem}
+
+
+
+\begin{cor}\label{cor: fg flat over local is free}
+  \(A\)を局所環、\(k\)を\(A\)の剰余体、\(M\)を有限生成平坦\(A\)-加群とする。
+  このとき\(M\)は自由\(A\)-加群である。
+\end{cor}
+
+
+\begin{proof}
+  \(M\)は有限生成なので、
+  有限自由加群\(F_1\)と全射\(p:F_1\to M\)で
+  \(p\otimes 1:F_1\otimes_Ak \to M\otimes_Ak\)が同型となるものが存在する。
+  \(p\)が同型射であれば良い。
+  有限自由加群\(F_2\)と射\(\varphi:F_2\to F_1\)で
+  \(p\circ \varphi = 0\)となるものを任意にとる。
+  \(\varphi\)が\(0\)-射であることを示せば良い。
+  Equational Criterionより、以下の可換図式が存在する：
+  \[
+  \begin{CD}
+    F_2 @>\varphi>> F_1 @>p>> M \\
+    @VVV @VVfV @| \\
+    0 @>>> F @>r>> M.
+  \end{CD}
+  \]
+  ここで\(F\)は有限自由加群である。
+  図式の可換性から\(r\)は全射である。
+  また\(p\)が全射であることと\(F\)が自由加群であることから、
+  射\(g:F\to F_1\)が存在して以下の図式が可換となる：
+  \[
+  \begin{CD}
+    F_1 @>f>> F @>g>> F_1 \\
+    @VpVV @VVrV @VVpV \\
+    M @= M @= M.
+  \end{CD}
+  \]
+  図式全体に\(k\)をテンソルして中山の補題を用いることで、
+  \(g\circ f:F_1\to F_1\)は全射であることがわかる。
+  \(F_1\)は有限自由加群であるので、よって\(g\circ f\)は同型射であり、
+  特に\(f\)は単射であることがわかる。
+  一方、\(f\circ \varphi = 0\)であったから、\(\varphi\)は\(0\)-射である。
+  従って\(p\)は単射となる。
+\end{proof}
+
+
+
+
+
+\section{ねじれなし加群}
+
+この節はおまけみたいな感じで書いてます。
+
+
+\begin{defi}
+  \(A\)を整域、\(M\)を\(A\)-加群とする。
+  \(M\)が\textbf{ねじれなし} (torsion free)であるとは、
+  任意の元\(0\neq a\)に対して\(a\)倍写像\(M\to M\)が単射であることを言う。
+\end{defi}
+
+\begin{lem}\label{lem: tor free}
+  \(A\)を整域、\(M\)を\(A\)-加群、\(K\)を\(A\)の商体とする。
+  以下は同値：
+  \begin{enumerate}
+    \item \label{lem: tor free tor}
+    \(M\)はねじれなしである。
+    \item \label{lem: tor free K}
+    自然な包含射\(A\subset K\)により引き起こされる射\(M\to M\otimes_AK\)は単射である。
+    \item \label{lem: tor free tor1}
+    任意の一元生成イデアル\(I\)に対して、\(\Tor_1^A(A/I,M)=0\)である。
+    \item \label{lem: tor free prime}
+    任意の素イデアル\(\mathfrak{p}\)に対して
+    \(M_{\mathfrak{p}}\)はねじれなし\(A_{\mathfrak{p}}\)-加群である。
+    \item \label{lem: tor free max}
+    任意の極大イデアル\(\mathfrak{m}\)に対して
+    \(M_{\mathfrak{m}}\)はねじれなし\(A_{\mathfrak{m}}\)-加群である。
+  \end{enumerate}
+\end{lem}
+
+\begin{proof}
+  \ref{lem: tor free tor} \(\Leftrightarrow\) \ref{lem: tor free K}
+  \(\Leftrightarrow\) \ref{lem: tor free tor1}
+  は定義より従う。
+  局所化は平坦であるから、
+  \ref{lem: tor free K} \(\Leftrightarrow\) \ref{lem: tor free prime}
+  が従う。
+  \ref{lem: tor free prime} \(\Leftrightarrow\) \ref{lem: tor free tor1}
+  は自明である。
+  \(A\)-加群\(\ker(M\to M\otimes_AK)\)が\(0\)かどうかは、
+  任意の極大イデアルによる局所化で\(0\)となるかどうかであるから、
+  \ref{lem: tor free max} \(\Leftrightarrow\) \ref{lem: tor free K}
+  が従う。
+  以上ですべて示された。
+\end{proof}
+
+\begin{cor}
+  平坦加群はねじれなし加群である。
+\end{cor}
+
+\begin{proof}
+  \autoref{lem: tor free}の
+  \ref{lem: tor free tor} \(\Leftrightarrow\) \ref{lem: tor free tor1}
+  より従う。
+\end{proof}
+
+%
+%Equational Criterionを用いることで、次が示せる：
+%
+%\begin{prop}
+  %\(A\)を整域、\(M\)を有限生成ねじれなし\(A\)-加群とする。
+  %このとき\(M\)は有限自由加群の部分加群である。
+  %特に、有限生成加群については、
+  %ねじれなしであることと有限自由加群の部分加群であることは同値である。
+%\end{prop}
+%
+%\begin{proof}
+  %\(K\)を\(A\)の商体とする。
+  %\(d\dfn \dim_K(M\otimes_AK)\)と置く。
+  %全射\(F\to M\)を選び、自然な包含\(M\subset M\otimes_AK\)との合成を\(p\)と置く。
+  %\(p\)は\(K\)をテンソルしたのちに全射となるので、
+  %\(\rank(F)\geq d\)であることがわかる。
+  %\(M\otimes_AK\)は平坦\(A\)-加群なので、
+  %Equational Criterionより以下の可換図式を得る：
+  %\[
+  %\begin{CD}
+    %F @>p>> M\otimes_AK \\
+    %@VfVV @| \\
+    %F' @>q>> M\otimes_AK.
+  %\end{CD}
+  %\]
+  %ここで\(F'\)は有限自由加群である。
+  %\(q\)は\(K\)をテンソルしたのちに全射となるので、\(\rank(F')\geq d\)であることがわかる。
+  %もし\(\rank(F') > d\)であれば、
+  %ある単射\(A\xrightarrow{\varphi} F'\)が存在して\(q\circ\varphi = 0\)となる。
+  %従って、
+%\end{proof}
+
+
+
+
+\begin{defi}
+  整域\(A\)が\textbf{Pr\"{u}fer整域}であるとは、
+  すべてのねじれなし加群が平坦であることを言う。
+\end{defi}
+
+
+
+\begin{cor}
+  任意の局所環が付値環であればPr\"{u}fer整域である。
+  特に、Dedekind環と付値環はPr\"{u}fer整域である。
+\end{cor}
+
+\begin{proof}
+  環\(A\)は任意の局所環が付値環であるとする。
+  \(M\)を\(A\)上のねじれなし加群とする。
+  局所化をすることで、\(A\)は付値環であるとしても良い。
+  よって\(A\)の任意の有限生成イデアルは一元生成である。
+  従って
+  \ref{lem: tor free tor} \(\Leftrightarrow\) \ref{lem: tor free tor1}
+  より\(M\)は平坦となる
+  (cf. \cite[演習2.26]{AM})。
+\end{proof}
+
+
+\begin{prop}
+  \(A\)をPr\"{u}fer整域とする。
+  このとき任意の素イデアル\(\mathfrak{p}\)に対して
+  \(A_{\mathfrak{p}}\)は付値環である。
+  特に、NoetherなPr\"{u}fer整域はDedekind環となる。
+\end{prop}
+
+\begin{proof}
+  \(A\)を局所Pr\"{u}fer整域として、\(A\)が付値環であることを示せば良い。
+  \(I\)を\(A\)の有限生成イデアルとする。
+  \(A\)が付値環であることを示すには、\(I\)が一元生成であることを示せば良い
+  (cf. \cite[\href{https://stacks.math.columbia.edu/tag/090Q}{Tag 090Q}]{stacks-project})。
+  \(I\)はねじれなし\(A\)-加群\(A\)の部分加群なのでねじれなしである。
+  従って平坦である。
+  一方、\(A\)は局所環であり、\(I\)は有限生成平坦加群であるので、
+  \autoref{cor: fg flat over local is free}より\(I\)は有限自由加群である。
+  単射\(I\subset A\)の存在は、\(I\)が一元生成であることを示している
+  (cf. \cite[演習2.11]{AM})。
+\end{proof}
+
+
+
+
+\begin{thebibliography}{9}
+  \bibitem[アティマク]{AM}
+  M. Atiyah, I. Macdonald, (新妻 弘 訳),
+  「可換代数入門」, 共立出版, (2006).
+  \bibitem[後藤渡辺]{GW}
+  後藤 四郎, 渡辺 敬一,
+  「可換環論」, 日本評論社, (2011).
+  \bibitem[松村]{Mat}
+  松村 英之,
+  「可換環論」, 共立出版, (1980).
+  \bibitem[Stacks]{stacks-project}
+  The Stacks Project Authors,
+  \href{https://stacks.math.columbia.edu/}{\textit{Stacks Project}}.
+\end{thebibliography}
+
+
+\end{document}

@@ -1,0 +1,867 @@
+\documentclass[uplatex]{jsarticle}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+
+\usepackage{xcolor}
+\usepackage[dvipdfmx]{graphicx}
+
+
+
+\usepackage{ulem}
+
+\usepackage{braket}
+
+%%%%%ハイパーリンク
+%\usepackage[colorlinks=true,urlcolor=blue!70!black,citecolor=blue!60!black,linkcolor=blue!60!black]{hyperref}
+%\usepackage{aliascnt} %for creating different biblatex references for different theoremstyles
+\usepackage[setpagesize=false,dvipdfmx]{hyperref}
+\usepackage{aliascnt}
+\hypersetup{
+    colorlinks=true,
+    citecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue,
+}
+
+\renewcommand{\eqref}[1]{\textcolor{blue}{(\ref{#1})}}
+
+%%%%%%ハイパーリンク
+
+
+%%%%%図式
+%\usepackage{tikz}%%%図
+\usepackage{amscd}%%%簡単な図式
+
+\usepackage{tikz}
+\usepackage{tikz-cd} %commutative diagrams in TikZ
+\usetikzlibrary{calc}
+\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{decorations.markings}
+
+%%%%%図式
+
+
+
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+
+\usepackage{amsthm}
+
+%%%%%%%%%%%%Plain型%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%definition型%%%%%%%%%%%%
+
+\newcommand{\myTheoremEnvironments}[1]{#1}
+
+\myTheoremEnvironments{
+\theoremstyle{definition}
+
+\renewcommand{\sectionautorefname}{Section}
+
+\newtheorem{thm}{Theorem}[section]
+\newcommand{\thmautorefname}{Theorem}
+
+
+\newaliascnt{prop}{thm}%%%カウンター「prop」の定義（thmと同じ）
+\newtheorem{prop}[prop]{Proposition}
+\aliascntresetthe{prop}
+\newcommand{\propautorefname}{Proposition}%%%カウンター名propは「命題」で参照する
+
+\newaliascnt{cor}{thm}
+\newtheorem{cor}[cor]{Corollary}
+\aliascntresetthe{cor}
+\newcommand{\corautorefname}{Corollary}
+
+\newaliascnt{lem}{thm}
+\newtheorem{lem}[lem]{Lemma}
+\aliascntresetthe{lem}
+\newcommand{\lemautorefname}{Lemma}
+
+%%%%%%%アルファベットで番号づける定理環境
+\newtheorem{thmA}{Theorem}[section]
+\newcommand{\thmAautorefname}{Theorem}
+\renewcommand\thethmA{\Alph{thmA}}
+
+\newtheorem{corA}{Theorem}[section]
+\newcommand{\corAautorefname}{Corollary}
+\renewcommand\thecorA{\Alph{corA}}
+
+\newaliascnt{defi}{thm}
+\newtheorem{defi}[defi]{Definition}
+\aliascntresetthe{defi}
+\newcommand{\defiautorefname}{Definition}
+
+\newaliascnt{rem}{thm}
+\newtheorem{rem}[rem]{Remark}
+\aliascntresetthe{rem}
+\newcommand{\remautorefname}{Remark}
+
+\newaliascnt{reconstruction}{thm}
+\newtheorem{reconstruction}[reconstruction]{Reconstruction}
+\aliascntresetthe{reconstruction}
+\newcommand{\reconstructionautorefname}{Reconstruction}
+
+%%%%%%%番号づけない定理環境
+\newtheorem*{exam*}{Example}
+\newtheorem*{rrem*}{Remark}
+\newtheorem*{defi*}{Definition}
+\newtheorem*{setting*}{Setting}
+\newtheorem*{notation*}{Notations}
+
+
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+%%%%%%%%%%%%定理環境%%%%%%%%%%%%
+}
+
+
+
+
+%%%%%箇条書き環境
+\usepackage[]{enumitem}
+
+\makeatletter
+\AddEnumerateCounter{\fnsymbol}{\c@fnsymbol}{9}%%%%fnsymbolという文字をenumerate環境のパラメーターで使えるようにする。
+\makeatother
+
+\makeatletter
+\renewcommand{\p@enumii}{}
+\makeatother
+
+\renewcommand{\theenumi}{(\roman{enumi})}%%%%%itemは(1),(2),(3)で番号付ける。
+\renewcommand{\labelenumi}{\theenumi}
+
+\renewcommand{\theenumii}{(\alph{enumii})}%%%%%itemは(1),(2),(3)で番号付ける。
+\renewcommand{\labelenumii}{\theenumii}
+
+\usepackage{moreenum}
+
+
+\makeatletter
+\newcommand*{\@yuyuspadecount}[1]{\ensuremath{
+\ifcase #1\or\spadesuit\or\spadesuit_2\or\spadesuit_3
+\or\spadesuit_4\or\spadesuit_5\or\spadesuit_6
+\or\spadesuit_7\or\spadesuit_8\or\spadesuit_9
+\else\@ctrerr\fi\relax}}
+\newcommand*{\yuyuspadecount}[1]{%
+\expandafter\@yuyuspadecount\csname c@#1\endcsname
+}
+\AddEnumerateCounter{\yuyuspadecount}{\@yuyuspadecount}{9}
+
+\newcommand*{\@yuyuclubcount}[1]{\ensuremath{
+\ifcase #1\or\clubsuit_1\or\clubsuit_2\or\clubsuit_3
+\or\clubsuit_4\or\clubsuit_5\or\clubsuit_6
+\or\clubsuit_7\or\clubsuit_8\or\clubsuit_9
+\else\@ctrerr\fi\relax}}
+\newcommand*{\yuyuclubcount}[1]{%
+\expandafter\@yuyuclubcount\csname c@#1\endcsname
+}
+\AddEnumerateCounter{\yuyuclubcount}{\@yuyuclubcount}{9}
+
+\newcommand*{\@yuyustarcount}[1]{\ensuremath{
+\ifcase #1\or\star_1\or\star_2\or\star_3
+\or\star_4\or\star_5\or\star_6
+\or\star_7\or\star_8\or\star_9
+\else \@ctrerr \fi\relax}}
+\newcommand*{\yuyustarcount}[1]{%
+\expandafter\@yuyustarcount\csname c@#1\endcsname
+}
+\AddEnumerateCounter{\yuyustarcount}{\@yuyustarcount}{9}
+\makeatother
+%%%%%箇条書き環境
+
+
+
+
+\newcommand{\myOriginalPackages}[1]{#1}
+
+% \myOriginalPackages{
+% \usepackage{mandorasymb}
+% \usepackage{applekeys}
+% \renewcommand{\qedsymbol}{\pencilkey}
+% %\renewcommand{\qedsymbol}{\kinoposymbniko}
+% }
+
+
+
+\usepackage{latexsym}
+
+\newcommand{\myMacros}[1]{#1}
+
+\myMacros{
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\ISOM}{\mathbf{Isom}}
+\DeclareMathOperator{\id}{\mathrm{id}}
+\DeclareMathOperator{\im}{\mathrm{Im}}
+
+\DeclareMathOperator{\coker}{\mathrm{coker}}
+\DeclareMathOperator{\colim}{\mathrm{colim}}
+\DeclareMathOperator{\plim}{\mathrm{lim}}
+\DeclareMathOperator{\rank}{\mathrm{rank}}
+\DeclareMathOperator{\codim}{\mathrm{codim}}
+
+\DeclareMathOperator{\Spec}{\mathrm{Spec}}
+\DeclareMathOperator{\Proj}{\mathrm{Proj}}
+\DeclareMathOperator{\Sym}{\mathrm{Sym}}
+\DeclareMathOperator{\Ext}{\mathrm{Ext}}
+\DeclareMathOperator{\Bs}{\mathrm{Bs}}
+\DeclareMathOperator{\Bl}{\mathrm{Bl}}
+\DeclareMathOperator{\Sing}{\mathrm{Sing}}
+\DeclareMathOperator{\red}{\mathrm{red}}
+\DeclareMathOperator{\Reg}{\mathrm{Reg}}
+\DeclareMathOperator{\Ridge}{\mathrm{Ridge}}
+\DeclareMathOperator{\Hilb}{\mathrm{Hilb}}
+\DeclareMathOperator{\Grass}{\mathrm{Grass}}
+
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\C}{\mathbb{C}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+
+
+
+\newcommand{\mcA}{\mathcal{A}}
+\newcommand{\mcB}{\mathcal{B}}
+\newcommand{\mcC}{\mathcal{C}}
+\newcommand{\mcD}{\mathcal{D}}
+\newcommand{\mcE}{\mathcal{E}}
+\newcommand{\mcF}{\mathcal{F}}
+\newcommand{\mcG}{\mathcal{G}}
+\newcommand{\mcH}{\mathcal{H}}
+\newcommand{\mcI}{\mathcal{I}}
+\newcommand{\mcJ}{\mathcal{J}}
+\newcommand{\mcK}{\mathcal{K}}
+\newcommand{\mcL}{\mathcal{L}}
+\newcommand{\mcM}{\mathcal{M}}
+\newcommand{\mcN}{\mathcal{N}}
+\newcommand{\mcO}{\mathcal{O}}
+\newcommand{\mcP}{\mathcal{P}}
+\newcommand{\mcQ}{\mathcal{Q}}
+\newcommand{\mcR}{\mathcal{R}}
+\newcommand{\mcS}{\mathcal{S}}
+\newcommand{\mcT}{\mathcal{T}}
+\newcommand{\mcU}{\mathcal{U}}
+\newcommand{\mcV}{\mathcal{V}}
+\newcommand{\mcW}{\mathcal{W}}
+\newcommand{\mcX}{\mathcal{X}}
+\newcommand{\mcY}{\mathcal{Y}}
+\newcommand{\mcZ}{\mathcal{Z}}
+
+\DeclareMathOperator{\OOO}{\mcO}
+
+\newcommand{\OB}{\OOO_B}
+\newcommand{\OC}{\OOO_C}
+\newcommand{\OD}{\OOO_D}
+\renewcommand{\OE}{\OOO_E}
+\newcommand{\OF}{\OOO_F}
+\newcommand{\OH}{\OOO_H}
+\newcommand{\OP}{\OOO_P}
+\newcommand{\OQ}{\OOO_Q}
+\newcommand{\OR}{\OOO_R}
+\newcommand{\OS}{\OOO_S}
+\newcommand{\OT}{\OOO_T}
+\newcommand{\OU}{\OOO_U}
+\newcommand{\OV}{\OOO_V}
+\newcommand{\OW}{\OOO_W}
+\newcommand{\OX}{\OOO_X}
+\newcommand{\OY}{\OOO_Y}
+\newcommand{\OZ}{\OOO_Z}
+
+\newcommand{\OO}[1]{\OOO_{#1}}
+
+\newcommand{\loc}{\mathrm{loc}}
+
+\newcommand{\rsa}{\rightsquigarrow}
+\newcommand{\dto}{\dashrightarrow}
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\dfn}{:\overset{\mathrm{\scriptsize def}}{=}}
+}
+
+
+
+%%%%%%%%%タイトル
+\title{Separating Tangent Vectors}
+\author{ゆじ}
+\date{\today}
+
+
+\newcommand{\lt}{<}
+\renewcommand{\gt}{>}
+
+
+
+\allowdisplaybreaks[1]
+
+
+
+
+\newcommand{\HereBeginTikz}{}
+\newcommand{\HereEndTikz}{}
+\newcommand{\HTMLhead}[1]{}
+
+\HTMLhead{
+---
+layout: article-type
+title: "Separating Tangent Vectors"
+category: Notes
+tag: "Algebraic Geometry"
+author: Yujitomo
+description: "接ベクトルを分離する線形系について"
+---
+}
+
+
+\begin{document}
+\maketitle
+
+
+このノートは、接ベクトルを分離することやそれと関連した線形系の性質に関するノートである。
+
+\section{接ベクトルを分離する線形系}
+
+
+まずは接ベクトルを分離する線形系の性質を調べる。
+
+
+\begin{defi}[{\cite[Remark II.7.8.2]{Ha}}]
+  \(k\)を代数閉体、\(X\)を代数多様体、\(L\)を\(X\)上の直線束とする。
+  \(V\subset H^0(X,L)\)を線形部分空間とする (線形系)。
+  \(V\)が\(L\)の\textbf{接ベクトルを分離する} (separating tangent vectors)
+  とは、
+  任意の点\(p\in X\)と点\(p\)での\(0\)でない任意の接ベクトル
+  \(0\neq v\in T_p(X)\dfn \mathfrak{m}_p/\mathfrak{m}_p^2\)に対し、
+  \(V\)に属するある大域切断\(s\in V\)が存在して、以下を満たすことを言う：
+  \begin{itemize}
+    \item
+    \(s(p)=0\)である。
+    すなわち、
+    点\(p\)は\(s\)の定める\(X\)の有効因子\(D_s\)の台に含まれる。
+    \item
+    接ベクトル\(v\)は\(D_s\)の定める部分空間\(T_p(D_s)\subset T_p(X)\)に属さない。
+  \end{itemize}
+\end{defi}
+
+
+まず、\(D_s\)は次のように構成される：
+\(s\in V\subset H^0(X,L)\)の定める射も同じ記号
+\(s:\OX\to L\)で書く。
+双対\(s^{\vee}:L^{\vee}\to \OX\)の余核が定める閉部分スキームが\(D_s\)である。
+\(D_s\)の台は\(\coker(s:\OX\to L)\)の台と等しい。
+よって、
+任意の点\(p\)に対して
+\(s(p)=0\)となる\(s\in V\)が存在すること、
+すなわち線形系\(V\)に基点がないことは、
+\(V\subset H^0(X,L)\)により得られる射\(V|_X\to L\)が全射であることと同値である。
+ここで\(V|_X\)は\(V\)の\(X\to \Spec (k)\)による基底変換である。
+
+\begin{prop}\label{prop: BPF surj}
+  線形系\(V\subset H^0(X,L)\)が基点なしであることは、
+  対応する射\(V|_X\to L\)が全射であることと同値である。
+\end{prop}
+
+
+
+閉埋め込み\(D_s\subset X\)から
+全射\(\Omega_X|_{D_s}\to \Omega_{D_s}\)を得る。
+点\(p\in D_s\)まで基底変換すれば全射
+\[
+\mathfrak{m}_{X,p}/\mathfrak{m}_{X,p}^2\to
+\mathfrak{m}_{D_s,p}/\mathfrak{m}_{D_s,p}^2
+\]
+を得る。
+双対をとることで包含\(T_p(D_s)\subset T_p(X)\)が定まる。
+点\(p\)でのstalkを取れば、
+\(s_p\in \mathfrak{m}_pL_p\cong \mathfrak{m}_p\)を得る。
+この元は全射\(\mathfrak{m}_{X,p}/\mathfrak{m}_{X,p}^2\to
+\mathfrak{m}_{D_s,p}/\mathfrak{m}_{D_s,p}^2\)
+の核となる\(1\)-次元部分空間を生成する。
+従って、どんな\(v\in T_p(X)\)に対しても\(T_p(D_s)\)\(v\)を含まないように\(s\)が取れることは、
+\(p\)で\(0\)になる大域切断たちが
+\(\mathfrak{m}_{X,p}L_p/\mathfrak{m}_{X,p}^2L_p\)を生成することと同値である
+(cf. \cite[Theorem 7.3.(2)]{Ha})。
+
+
+\(L_p\otimes \mathcal{O}_{X,p}/\mathfrak{m}_{X,p}^2
+\cong k(p) \oplus \mathfrak{m}_{X,p}L_p/\mathfrak{m}_{X,p}^2L_p\)
+に注意すれば、
+全射
+\[
+L_p\to k(p) \oplus \mathfrak{m}_{X,p}L_p/\mathfrak{m}_{X,p}^2L_p
+\]
+を得る。
+従って、線形系\(V\)が接ベクトルを分離することは、
+任意の点\(p\)に対して合成
+\[
+V\to L_p \to k(p) \oplus \mathfrak{m}_{X,p}L_p/\mathfrak{m}_{X,p}^2L_p
+\]
+が\(k\)-線形空間の全射であることと同値である。
+ここで\(V\to L_p\)は点\(p\)でのstalkをとることで得られる\(k\)-線形空間の射である。
+この全射を点\(p\)に依存しない形で大域的に記述する。
+
+\begin{setting*}
+  \(\Delta:X\to X\times_k X\)を対角射、
+  \(I\)をそのイデアル層とする。
+  \(I/I^2\cong \Omega_X\)である。
+  \(X^{(1)}\)を\(I^2\)で定まる\(X\times_kX\)の閉部分スキームとし、
+  \(p_1,p_2:X^{(1)}\to X\)を閉埋め込み\(i:X^{(1)}\to X\times_kX\)と
+  射影\(\mathrm{pr}_1,\mathrm{pr}_2: X\times_kX\rightrightarrows X\)
+  の合成とする。
+\end{setting*}
+
+
+\(X\)上の連接層\(F\)に対し、
+\(X\times_kX\)上で全射の列
+\(\mathrm{pr}_2^*F\to i_*p_2^*F\to \Delta_*F\)を得る。
+これを\(\mathrm{pr}_1\)でpushすることで、
+射の列
+\[
+\mathrm{pr}_{1,*}\mathrm{pr}_2^*F\to p_{1,*}p_2^*F\to F
+\]
+を得る。
+\(p_{1,*}p_2^*F\to F\)は全射であり、
+\(F\)が局所自由であれば、その核は\(\Omega_X\otimes_{\OX}(F)\)と自然に同型である。
+
+\begin{defi}
+  \(\mcP^1(F)\dfn p_{1,*}p_2^*F\)と置く。
+  \(F\)が局所自由であれば、完全列
+  \begin{equation}\label{eq: exact 1-st principal}
+    \begin{CD}
+      0 @>>> \Omega_X\otimes_{\OX}F @>>> \mcP^1(F) @>>> F @>>> 0
+    \end{CD}
+    \tag{\(\dagger\)}
+  \end{equation}
+  がある。
+\end{defi}
+
+また、平坦基底変換により自然に
+\(\mathrm{pr}_{1,*}\mathrm{pr}_2^*F\cong H^0(X,F)|_X\)
+である。
+従って、\(F\)が大域切断で生成されることと、射の列
+\[
+\mathrm{pr}_{1,*}\mathrm{pr}_2^*F\cong H^0(X,F)|_X \to \mcP^1(F)\to F
+\]
+の合成が全射となることは同値である。
+\(L\)を直線束とする。
+点\(p\in X\)に射\(H^0(X,L)|_X\to \mcP^1(L)\)を基底変換すると、
+射
+\[
+H^0(X,L)\to \mcP^1(L)|_p
+\]
+を得る。
+完全列\eqref{eq: exact 1-st principal}と\(L\)が直線束であることから、
+\[
+\mcP^1(F)|_p\cong k(p)\oplus \mathfrak{m}_{X,p}/\mathfrak{m}_{X,p}^2
+\]
+であり、従って射\(H^0(X,L)\to \mcP^1(L)|_p\)は
+stalkをとったのちに商をとる射
+\[
+H^0(X,L)\to L_p \to k(p) \oplus \mathfrak{m}_{X,p}L_p/\mathfrak{m}_{X,p}^2L_p
+\]
+とみなせる。
+以上の議論により次がわかる：
+
+\begin{prop}\label{prop: tan vec sheaf}
+  線形系\(V\subset H^0(X,L)\)が接ベクトルを分離することは、
+  合成\(V|_X\subset H^0(X,L)|_X\to \mcP^1(L)\)が全射であることと同値である。
+\end{prop}
+
+特別な場合に\(\mcP^1(L)\)を調べる。
+\(X=\P(V), F=\OO{\P(V)}(1)\)とする。
+この場合、オイラー完全列 (cf. \cite[定理 8.13]{Ha}, \cite[Proposition 3]{YJ})から、
+完全列の射
+\begin{equation}\label{eq: Eular and principal}
+  \begin{CD}
+    0 @>>> \Omega_{\P(V)}(1) @>>> V|_{\P(V)} @>>> \OO{\P(V)}(1) @>>> 0 \\
+    @. @| @VVV @| @. \\
+    0 @>>> \Omega_{\P(V)}(1) @>>> \mcP^1(\OO{\P(V)}(1)) @>>> \OO{\P(V)}(1) @>>> 0
+  \end{CD}
+  \tag{\(\ddagger\)}
+\end{equation}
+ができ、蛇の補題より次を得る：
+
+\begin{prop}
+  \(\mcP^1(\OO{\P(V)}(1))\cong V|_{\P(V)}\)である。
+\end{prop}
+
+
+\(L\)を\(X\)上の直線束、
+\(V\subset H^0(X,L)\)を基点のない線形系とすると、
+全射\(V|_X\to L\)により射影空間への射
+\(f:X\to \P(V)\)を得る。
+\(f\)によりEular完全列を引き戻したものは
+\[
+\begin{CD}
+  0 @>>> f^*\Omega_{\P(V)} @>>> V|_X @>>> L @>>> 0
+\end{CD}
+\]
+であるから、
+完全列\eqref{eq: exact 1-st principal}との間に射
+\[
+\begin{CD}
+  0 @>>> (f^*\Omega_{\P(V)})\otimes_{\OX}L @>>> V|_X @>>> L @>>> 0 \\
+  @. @VVV @VVV @| @. \\
+  0 @>>> \Omega_X\otimes_{\OX}L @>>> \mcP^1(L) @>>> L @>>> 0
+\end{CD}
+\]
+ができる。
+ここで第一完全系列 (cf. \cite[命題 II.8.11]{Ha})
+より\(\coker(f^*\Omega_{\P(V)}\to \Omega_X)\cong \Omega_{X/\P(V)}\)であるから、
+次がわかる：
+
+\begin{prop}\label{prop: sep tan unramified}
+  基点のない線形系\(V\)が接ベクトルを分離することは、
+  \(V\)により引き起こされる射\(X\to \P(V)\)が不分岐であることと同値である。
+\end{prop}
+
+また、\(f\)が埋め込みであれば、そのイデアル層を\(J\)とすることで、
+第二完全系列 (cf. \cite[命題 II.8.12]{Ha}) より
+\(\ker(f^*\Omega_{\P(V)}\to \Omega_X)\cong J/J^2\)となる。
+従って蛇の補題より次がわかる：
+
+\begin{prop}
+  \(f:X\to \P(V)\)が埋め込みであるとき、
+  \(J\)をそのイデアル層、\(L=f^*\OO{\P(V)}(1)\)とすれば、
+  \(X\)上に完全系列
+  \[
+  \begin{CD}
+    J/J^2 @>>> V|_X @>>> \mcP^1(L) @>>> 0
+  \end{CD}
+  \]
+  が存在する。
+  また\(X\)が局所完全交差であれば、左側も完全である。
+\end{prop}
+
+
+
+
+\section{点を分離する線形系}
+
+
+次に、線形系が点を分離することについて考察する。
+
+
+\begin{defi}
+  線形系\(V\subset H^0(X,L)\)が\textbf{点を分離する}とは、
+  異なる任意の二点\(p,q\in X , p\neq q\)に対して、ある\(s\in V\)が存在し、
+  \(s(p)=0\)であり、かつ\(s(q)\neq 0\)となることを言う。
+\end{defi}
+
+定義より、与えられた線形系が点を分離するならば、それは大域切断で生成される。
+線形系が点を分離するということに
+\autoref{prop: BPF surj}や\autoref{prop: tan vec sheaf}のような
+加群論的意味づけを与える。
+
+\(X\)上の射\(V|_X\to L\)を二つの射影
+\(\mathrm{pr}_1,\mathrm{pr}_2:X\times_kX\to X\)で引き戻すことで、
+二つの射
+\(V|_{X\times_kX}\to \mathrm{pr}_1^*L ,
+V|_{X\times_kX}\to \mathrm{pr}_2^*L\)
+を得る。
+これらを並べることにより、射
+\[
+r:V|_{X\times_kX} \to \mathrm{pr}_1^*L\oplus \mathrm{pr}_2^*L
+\]
+を得る。
+点\((p,q)\in X\times_kX\)へ\(r\)を基底変換すると、
+射
+\[
+r|_{(p,q)}: V\to L|_p\oplus L|_q
+\]
+を得るが、これは二つの射
+\[
+V\to L|_p, v\mapsto v(p), \ \ \ \ \ V\to L|_q, v\mapsto v(q)
+\]
+を並べたものに他ならない。
+従って、点を分離することは以下のように言い換えられる：
+
+\begin{prop}
+  線形系\(V\subset H^0(X,L)\)が点を分離することは、
+  射\(V|_{X\times_kX}\to \mathrm{pr}_1^*L\oplus \mathrm{pr}_2^*L\)
+  が対角集合\(\Delta\)の外\(X\times_kX\setminus \Delta\)で全射であることと同値である。
+\end{prop}
+
+次に、\autoref{prop: sep tan unramified}のような幾何的意味づけを与える。
+
+線形系\(V\subset H^0(X,L)\)が与えられれば、
+\(X\)上で射\(h:V|_X\to L\)ができる。
+この射を点\(p\in X\)へ基底変換すれば、
+線形空間の射\(h_p:V\to L|_x\)ができる。
+\(h_p\)が全射であれば、それは射影空間の点\(f(p)\in \P(X)\)を与え、
+こうして有理写像
+\begin{align*}
+  f:X &\dto \P(V) \\
+  p &\mapsto f(p)
+\end{align*}
+ができる。
+\(V\)が基点なしであるというのは、
+射\(V|_X\to L\)が全射であるということと同値であったが、
+これは有理写像\(f\)が射であることと同値である。
+さらに、\(V\)が点を分離することは、
+異なる二点\(p,q\)に対して
+\(h_p+h_q:V\to L|_p\oplus L|_q\)が全射であることと同値であったから、
+すなわち\(p\neq q \Rightarrow \ker(h_p)\neq \ker(h_q)\)と同値であり、
+つまり射\(f\)が単射であることと同値である。
+
+\begin{prop}
+  線形系\(V\subset H^0(X,L)\)が基点なしであることは、
+  対応する有理写像\(f:X\dto \P(V)\)が射であることと同値であり、
+  基点のない線形系が点を分離することは、射\(f:X\to \P(V)\)が単射であることと同値である。
+\end{prop}
+
+このノートで述べた、線形系に対する3つの性質の加群論的・幾何的な言い換えを、以下にまとめておく：
+
+\begin{thm}\label{thm}
+  \(X\)を代数多様体、\(L\)を\(X\)上の直線束、
+  \(V\subset H^0(X,L)\)を線形系、
+  \(f:X\dto \P(V)\)を対応する有理写像とする。
+  \begin{enumerate}
+    \item
+    以下は同値：
+    \begin{itemize}
+      \item
+      \(V\)は基点がない。
+      \item
+      \(V\subset H^0(X,L)\)に対応する射\(V|_X\to L\)は全射である。
+      \item
+      有理写像\(f:X\dto\P(V)\)は射である。
+    \end{itemize}
+    \item
+    以下は同値：
+    \begin{itemize}
+      \item
+      \(V\)は点を分離する。
+      \item
+      \(X\times_kX\)上の射
+      \(\mathrm{pr}_1^*p+\mathrm{pr}_2^*p:V|_{X\times_kX}\to
+      \mathrm{pr}_1^*L\oplus \mathrm{pr}_2^*L\)は
+      対角集合\(\Delta\)の外\(X\times_kX\setminus \Delta\)で全射である。
+      \item
+      有理写像\(f:X\dto\P(V)\)は射であり、さらに単射である。
+    \end{itemize}
+    \item
+    以下は同値：
+    \begin{itemize}
+      \item
+      \(V\)は接ベクトルを分離する。
+      \item
+      \(V\subset H^0(X,L)\)から得られる射\(V|_X\to \mcP^1(L)\)は全射である。
+      \item
+      有理写像\(f:X\dto\P(V)\)は射であり、さらに不分岐である。
+    \end{itemize}
+  \end{enumerate}
+\end{thm}
+
+
+
+
+
+
+\section{点と接ベクトルを分離する線形系が定める射は埋め込みである}
+
+
+最後に、点と接ベクトルを分離する線形系\(V\subset H^0(X,L)\)が
+埋め込み\(X\to \P(V)\)を与えることを証明する。
+
+\begin{rem}
+  書いてみたら意外と長くなってしまったので、
+  スキームのモノ射や普遍的に単射な射に関するノートを別に作成して、
+  線形系とは関係のないスキーム論的な主張はそっちに移行するかもしれない。
+\end{rem}
+
+
+
+
+\begin{lem}\label{lem: mono var}
+  代数多様体の間のモノ射\(f:X\to Y\)は埋め込みである。
+\end{lem}
+
+
+\begin{proof}
+  \(f\)はモノ射なので、生成点の像のfiberを見ることで像への双有理射であることがわかる。
+  また\(f\)は単射なので局所閉部分集合の上への同相である。
+  よって、\(f\)が埋め込みであることを示すには、
+  \(f\)が閉部分集合の上への同相であると仮定しても良い。
+  properなモノ射は閉埋め込みであるから、
+  \(f\)がproperであることを証明すれば良い。
+
+  \(f\)がproperであることを付値判定法により示す。
+  \(R\)をDVR、\(K\)をその商体として、可換図式
+  \begin{equation}\label{eq: comm}
+    \begin{CD}
+      \Spec(K) @>>> X \\
+      @VVV @VVfV \\
+      \Spec(R) @>i>> Y
+    \end{CD}
+    \tag{\(\star\)}
+  \end{equation}
+  を任意にとる。
+  \(i\)で基底変換することで、モノ射
+  \(f_R:X_R\to \Spec(R)\)を得る。
+  ただしここで\(X_R\dfn X\times_Y\Spec(R)\)である。
+  \(f\)は閉部分集合の上への同相なので、
+  \(i\)による閉点の像は\(f\)の像に含まれる。
+  よって\(f_R\)がモノ射であることから\(X_R\)は二点で連結、
+  特にアフィンである。
+  \(A=\Gamma(X_R,\OO{X_R})\)と置くと、
+  射の列\(\Spec(K)\to X_R\to \Spec(R)\)から環の射の列
+  \(R\to A\to K\)を得る。
+  ここで\(A\)は局所環で、\(R\to A\)は単射な局所準同型、
+  また\(R\)はDVRなので、\(R\subset \im(A\to K)\subset K\)より
+  \(\im(A\to K)\cong R\)がわかる。
+  よって\(X_R\to \Spec(R)\)のsectionができ、
+  図式\eqref{eq: comm}のリフト\(\Spec(R)\to X\)がとれる。
+  以上で\(f\)はproper射である。
+\end{proof}
+
+
+
+
+\begin{lem}\label{lem: univ inj lem}
+  \(K\)を体、\(X\)を\(\emptyset\)でない\(K\)-スキームで、
+  対角射\(X\to X\times_KX\)は全射であるとする。
+  このとき\(X\)の下部位相空間は一点である。
+\end{lem}
+
+\begin{proof}
+  対角射\(X\to X\times_KX\)が全射であることから、
+  射影\(X\times_KX\to X\)は全単射、とくに単射である。
+  \(X\to \Spec(K)\)は忠実平坦であるから、
+  \(X\to\Spec(K)\)は忠実平坦基底変換のあと単射となる射であり、
+  従って単射である。
+  \(X\neq \emptyset\)であるから、\(X\)の下部位相空間は一点である。
+\end{proof}
+
+
+\begin{lem}\label{lem: univ inj}
+  \(f:X\to Y\)をスキームの射とする。
+  \(f\)が普遍的に単射であることは、
+  対角射\(\Delta_f:X\to X\times_YX\)が全射であることと同値である。
+  ただし、\(f\)が\textbf{普遍的に単射} (universally injective) であるとは、
+  任意の射\(Y'\to Y\)に対する基底変換
+  \(f':X'\dfn X\times_YY'\to Y'\)が単射であることを言う。
+\end{lem}
+
+\begin{proof}
+  \(p_1,p_2:X\times_YX\rightrightarrows X\)をそれぞれ射影とする。
+
+  まず\(f\)が普遍的に単射であると仮定する。
+  \(p_1\circ \Delta_f=\id_X\)であるから、
+  \(\Delta_f\)が全射であるためには各\(x\in X\)に対して
+  \(p_1^{-1}(x)\)が一点集合であることが十分である。
+  ここで
+  \[
+  \begin{CD}
+    p_1^{-1}(x) @>>> X\times_YX @>p_2>> X \\
+    @VVV @Vp_1VV @VVfV \\
+    \Spec(k(x)) @>>> X @>f>> Y
+  \end{CD}
+  \]
+  という基底変換の図式と\(f\)が普遍的に単射であることから、
+  \(p_1^{-1}(x)\)は一点集合である
+  (ここで\(k(x)\)は点\(x\)での剰余体を表す)。
+  以上より\(\Delta_f\)は全射である。
+
+  次に\(\Delta_f:X\to X\times_YX\)が全射であると仮定する。
+  任意に射\(Y'\to Y\)をとり、\(f\)の\(Y'\to Y\)に沿った基底変換を
+  \(f':X'\dfn X\times_YY'\to Y'\)を書く。
+  点\(y'\in Y'\)を任意にとる。
+  \(f'^{-1}(y')\)が一点集合または\(\emptyset\)であることを示せば良い。
+  \(K\dfn k(y') , X_K\dfn X\times_Y\Spec(K)\)と置けば、
+  基底変換の図式
+  \[
+  \begin{CD}
+    X_K @>>> X' @>>> X \\
+    @Vf_KVV @VVV @VVfV \\
+    \Spec(K) @>>> Y' @>>> Y
+  \end{CD}
+  \]
+  ができる。
+  ここで\(f_K\)の対角射
+  \(\Delta_{f_K}:X_K\to X_K\times_{\Spec(K)}X_K\)
+  は\(Y\)上の全射\(\Delta_f\)の\(\Spec(K)\to Y\)に沿った基底変換であり、
+  特に全射である。
+  従って\autoref{lem: univ inj lem}より\(X_K\)の下部位相空間は一点である。
+  以上で示された。
+\end{proof}
+
+
+
+\begin{lem}\label{lem: mono}
+  スキームの間の不分岐射\(f:X\to Y\)が普遍的に単射であれば、
+  \(f\)はモノ射である。
+\end{lem}
+
+\begin{proof}
+  不分岐射\(f\)の対角射\(\Delta_f\)は開埋め込みであるが、
+  \(f\)がさらに普遍的に単射であれば、
+  \autoref{lem: univ inj}より\(\Delta_f\)は同型射となる。
+\end{proof}
+
+
+
+\begin{lem}\label{lem: var inj univ inj}
+  \(k\)を代数閉体、\(X,Y\)を\(k\)上の代数多様体、
+  \(f:X\to Y\)を\(k\)上の代数多様体の単射とする。
+  このとき\(f\)は普遍的に単射である。
+\end{lem}
+
+\begin{proof}
+  \autoref{lem: univ inj}より、
+  対角射\(\Delta_f:X\to X\times_Y X\)が全射であることを示せば良い。
+  \(X\times_YX\subset X\times_kX\)は体\(k\)上有限型なのでJacobsonであり、
+  従って、\(\Delta_f\)が全射であるためには
+  任意の閉点\((x_1,x_2)\in X\times_YX\)が\(\Delta_f\)の像に属することを示せば良い。
+  点\((x_1,x_2)\in X\times_kX\)が\(f(x_1)=f(x_2)\)を満たすとすると、
+  \(f\)が単射であることから\(x_1=x_2\)である。
+  従って\((x_1,x_2)\in \Delta\)である。
+  よって\(\Delta_f\)は全射である。
+\end{proof}
+
+
+
+\begin{thm}
+  \(X\)を代数閉体上の代数多様体、\(L\)を\(X\)上の直線束、
+  \(V\subset H^0(X,L)\)を線形系、
+  \(f:X\dto \P(V)\)を対応する有理写像とする。
+  このとき、\(V\)が点と接ベクトルを分離することは、
+  \(f\)が射であり、さらに埋め込みであることと同値である。
+\end{thm}
+
+\begin{proof}
+  \(f\)が埋め込みであれば不分岐かつ単射なので、
+  \autoref{thm}より\(V\)は点と接ベクトルを分離する。
+
+  \(V\)が点と接ベクトルを分離すると仮定する。
+  \autoref{thm}より
+  \(f\)は代数多様体の間の不分岐な単射であり、
+  \autoref{lem: mono}と\autoref{lem: var inj univ inj}より
+  \(f\)はモノ射である。
+  よって\autoref{lem: mono var}より\(f\)は埋め込みである。
+\end{proof}
+
+
+
+
+
+\begin{thebibliography}{9}
+  \bibitem[Ha]{Ha}
+  R.Hartshorne,
+  \textit{Algebraic Geometry}.
+  Springer-Verlag, New Tork, 1977. Graduate Text in Mathematics, No. 52.
+  \bibitem[ゆ]{YJ}
+  ゆじノート,
+  \textit{Blowing Up along Linear Subvarieties}.
+\end{thebibliography}
+\end{document}
